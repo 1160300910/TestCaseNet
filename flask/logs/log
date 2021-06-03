@@ -1,0 +1,846 @@
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 291-250-115 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [30/May/2021 09:11:53] "GET / HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [30/May/2021 09:11:53] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [30/May/2021 09:11:53] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [30/May/2021 09:11:53] "GET /?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [30/May/2021 09:11:53] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [30/May/2021 09:11:53] "GET /?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [30/May/2021 09:11:53] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\config.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 291-250-115 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [30/May/2021 09:12:43] "GET / HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [30/May/2021 09:12:43] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [30/May/2021 09:12:43] "GET /?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [30/May/2021 09:12:43] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [30/May/2021 09:12:43] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [30/May/2021 09:12:43] "GET /?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [30/May/2021 09:12:43] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\config.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 291-250-115 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [30/May/2021 09:12:59] "GET / HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [30/May/2021 09:12:59] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [30/May/2021 09:12:59] "GET /?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [30/May/2021 09:12:59] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [30/May/2021 09:12:59] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [30/May/2021 09:12:59] "GET /?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [30/May/2021 09:12:59] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 - 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [30/May/2021 09:19:04] "GET / HTTP/1.1" 404 - 88
+INFO 127.0.0.1 - - [30/May/2021 09:19:04] "GET / HTTP/1.1" 404 - 88
+INFO 127.0.0.1 - - [30/May/2021 09:20:05] "GET /test_case/ HTTP/1.1" 200 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\manage.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\manage.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\manage.py', reloading 88
+INFO  * Restarting with stat 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [30/May/2021 09:34:44] "GET / HTTP/1.1" 404 - 88
+INFO 127.0.0.1 - - [30/May/2021 09:34:44] "GET / HTTP/1.1" 404 - 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:6000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [30/May/2021 09:39:10] "GET /test_case HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [30/May/2021 09:39:10] "GET /test_case/ HTTP/1.1" 200 - 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:6000/ (Press CTRL+C to quit) 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:6000/ (Press CTRL+C to quit) 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:6000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\manage.py', reloading 88
+INFO  * Restarting with stat 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\manage.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:6000/ (Press CTRL+C to quit) 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:6000/ (Press CTRL+C to quit) 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\config.py', reloading 88
+INFO  * Restarting with stat 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\config.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:6000/ (Press CTRL+C to quit) 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\__init__.py', reloading 88
+INFO  * Restarting with stat 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\__init__.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:6000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\__init__.py', reloading 88
+INFO  * Restarting with stat 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\__init__.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:6000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\config.py', reloading 88
+INFO  * Restarting with stat 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\config.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:6000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\config.py', reloading 88
+INFO  * Restarting with stat 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\config.py', reloading 88
+INFO  * Restarting with stat 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\__init__.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\__init__.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\config.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:6000/ (Press CTRL+C to quit) 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:6000/ (Press CTRL+C to quit) 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:6000/ (Press CTRL+C to quit) 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [30/May/2021 10:08:01] "GET / HTTP/1.1" 404 - 88
+INFO 127.0.0.1 - - [30/May/2021 10:08:01] "GET / HTTP/1.1" 404 - 88
+INFO 127.0.0.1 - - [30/May/2021 10:08:07] "GET /test_case/ HTTP/1.1" 404 - 88
+INFO 127.0.0.1 - - [30/May/2021 10:08:10] "GET /test_case/ HTTP/1.1" 404 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\config.py', reloading 88
+INFO  * Restarting with stat 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\config.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:6000/ (Press CTRL+C to quit) 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [30/May/2021 10:08:19] "GET /test_case/ HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [30/May/2021 10:08:22] "GET / HTTP/1.1" 404 - 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:6000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\config.py', reloading 88
+INFO  * Restarting with stat 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\config.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:6000/ (Press CTRL+C to quit) 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [30/May/2021 10:09:44] "GET /test_case/ HTTP/1.1" 200 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\__init__.py', reloading 88
+INFO  * Restarting with stat 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\__init__.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:6000/ (Press CTRL+C to quit) 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\__init__.py', reloading 88
+INFO  * Restarting with stat 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\__init__.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:6000/ (Press CTRL+C to quit) 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [30/May/2021 10:10:28] "GET /test_case/ HTTP/1.1" 404 - 88
+INFO 127.0.0.1 - - [30/May/2021 10:10:31] "GET /t HTTP/1.1" 404 - 88
+INFO 127.0.0.1 - - [30/May/2021 10:10:33] "GET / HTTP/1.1" 200 - 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:6025/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [30/May/2021 10:11:08] "GET / HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [30/May/2021 10:11:08] "GET /favicon.ico HTTP/1.1" 404 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\__init__.py', reloading 88
+INFO  * Restarting with stat 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\__init__.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:6025/ (Press CTRL+C to quit) 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [30/May/2021 10:11:17] "GET / HTTP/1.1" 404 - 88
+INFO 127.0.0.1 - - [30/May/2021 10:11:21] "GET /test_case HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [30/May/2021 10:11:21] "GET /test_case/ HTTP/1.1" 200 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\config.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [30/May/2021 10:11:52] "GET / HTTP/1.1" 404 - 88
+INFO 127.0.0.1 - - [30/May/2021 10:11:52] "GET / HTTP/1.1" 404 - 88
+INFO 127.0.0.1 - - [30/May/2021 10:12:10] "GET /test_case/ HTTP/1.1" 200 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\config.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [30/May/2021 10:38:20] "GET / HTTP/1.1" 404 - 88
+INFO 127.0.0.1 - - [30/May/2021 10:38:20] "GET / HTTP/1.1" 404 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\__init__.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\__init__.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\__init__.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\__init__.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\__init__.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:6025/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\__init__.py', reloading 88
+INFO  * Restarting with stat 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\config.py', reloading 88
+INFO  * Restarting with stat 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\config.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\__init__.py', reloading 88
+INFO  * Restarting with stat 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\__init__.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [30/May/2021 14:39:41] "GET / HTTP/1.1" 404 - 88
+INFO 127.0.0.1 - - [30/May/2021 15:42:03] "GET / HTTP/1.1" 404 - 88
+INFO 127.0.0.1 - - [30/May/2021 15:42:25] "GET / HTTP/1.1" 404 - 88
+INFO 127.0.0.1 - - [30/May/2021 15:42:39] "GET / HTTP/1.1" 404 - 88
+INFO 127.0.0.1 - - [30/May/2021 15:44:10] "GET / HTTP/1.1" 404 - 88
+INFO 127.0.0.1 - - [30/May/2021 15:44:20] "GET / HTTP/1.1" 404 - 88
+INFO 127.0.0.1 - - [30/May/2021 15:44:29] "GET / HTTP/1.1" 404 - 88
+INFO 127.0.0.1 - - [30/May/2021 15:44:35] "GET / HTTP/1.1" 404 - 88
+INFO 127.0.0.1 - - [30/May/2021 20:46:56] "GET / HTTP/1.1" 404 - 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [31/May/2021 00:24:26] "GET / HTTP/1.1" 404 - 88
+INFO 127.0.0.1 - - [31/May/2021 00:24:33] "GET /test_case/ HTTP/1.1" 404 - 88
+INFO 127.0.0.1 - - [31/May/2021 00:24:40] "GET /test_case/Register HTTP/1.1" 404 - 88
+INFO 127.0.0.1 - - [31/May/2021 00:24:45] "GET /test_case/ HTTP/1.1" 404 - 88
+INFO 127.0.0.1 - - [31/May/2021 00:25:42] "GET /test_case/ HTTP/1.1" 404 - 88
+INFO 127.0.0.1 - - [31/May/2021 00:26:16] "GET /test_case/rigester HTTP/1.1" 404 - 88
+INFO 127.0.0.1 - - [31/May/2021 00:26:22] "GET /test_case/register HTTP/1.1" 404 - 88
+INFO 127.0.0.1 - - [31/May/2021 00:26:36] "GET / HTTP/1.1" 404 - 88
+INFO 127.0.0.1 - - [31/May/2021 00:26:36] "GET / HTTP/1.1" 404 - 88
+INFO 127.0.0.1 - - [31/May/2021 00:26:43] "GET /test_case/ HTTP/1.1" 404 - 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:6025/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [31/May/2021 00:27:19] "GET /test_case/ HTTP/1.1" 404 - 88
+INFO 127.0.0.1 - - [31/May/2021 00:27:48] "GET /test_case HTTP/1.1" 404 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\__init__.py', reloading 88
+INFO  * Restarting with stat 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\__init__.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:6025/ (Press CTRL+C to quit) 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:6025/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\__init__.py', reloading 88
+INFO  * Restarting with stat 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\__init__.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:6025/ (Press CTRL+C to quit) 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [31/May/2021 00:29:19] "GET /test_case HTTP/1.1" 404 - 88
+INFO 127.0.0.1 - - [31/May/2021 00:29:38] "GET / HTTP/1.1" 404 - 88
+INFO 127.0.0.1 - - [31/May/2021 00:29:38] "GET / HTTP/1.1" 404 - 88
+INFO 127.0.0.1 - - [31/May/2021 00:29:50] "GET /test_case/ HTTP/1.1" 404 - 88
+INFO 127.0.0.1 - - [31/May/2021 00:30:56] "GET / HTTP/1.1" 404 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\__init__.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:6025/ (Press CTRL+C to quit) 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [31/May/2021 00:31:46] "GET / HTTP/1.1" 404 - 88
+INFO 127.0.0.1 - - [31/May/2021 00:31:46] "GET / HTTP/1.1" 404 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\__init__.py', reloading 88
+INFO  * Restarting with stat 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\__init__.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:6025/ (Press CTRL+C to quit) 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [31/May/2021 00:32:35] "GET /test_case/ HTTP/1.1" 404 - 88
+INFO 127.0.0.1 - - [31/May/2021 00:34:23] "GET /test_case/hello HTTP/1.1" 404 - 88
+INFO 127.0.0.1 - - [31/May/2021 00:34:49] "GET /test_case/hello HTTP/1.1" 404 - 88
+INFO 127.0.0.1 - - [31/May/2021 00:34:52] "GET /test_case/ HTTP/1.1" 404 - 88
+INFO 127.0.0.1 - - [31/May/2021 00:34:55] "GET /test_case/ HTTP/1.1" 404 - 88
+INFO 127.0.0.1 - - [31/May/2021 00:35:20] "GET /test_case/ HTTP/1.1" 404 - 88
+INFO 127.0.0.1 - - [31/May/2021 00:35:22] "GET /test_case/ HTTP/1.1" 404 - 88
+INFO 127.0.0.1 - - [31/May/2021 00:36:41] "GET /test_case/ HTTP/1.1" 404 - 88
+INFO 127.0.0.1 - - [31/May/2021 00:37:28] "GET /test_case/ HTTP/1.1" 404 - 88
+INFO 127.0.0.1 - - [31/May/2021 00:37:32] "GET / HTTP/1.1" 404 - 88
+INFO 127.0.0.1 - - [31/May/2021 00:37:34] "GET / HTTP/1.1" 404 - 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [31/May/2021 00:48:46] "POST /test_case/ HTTP/1.1" 404 - 88
+INFO 127.0.0.1 - - [31/May/2021 00:48:53] "GET / HTTP/1.1" 404 - 88
+INFO 127.0.0.1 - - [31/May/2021 00:48:53] "GET / HTTP/1.1" 404 - 88
+INFO 127.0.0.1 - - [31/May/2021 00:49:22] "GET /test_case/ HTTP/1.1" 404 - 88
+INFO 127.0.0.1 - - [31/May/2021 00:49:24] "GET /test_case/ HTTP/1.1" 404 - 88
+INFO 127.0.0.1 - - [31/May/2021 00:52:21] "GET /test_case/ HTTP/1.1" 404 - 88
+INFO 127.0.0.1 - - [31/May/2021 00:52:26] "GET /test_case// HTTP/1.1" 404 - 88
+INFO 127.0.0.1 - - [31/May/2021 00:52:34] "GET /test_case/register HTTP/1.1" 404 - 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [31/May/2021 00:52:55] "GET /test_case/register HTTP/1.1" 404 - 88
+INFO 127.0.0.1 - - [31/May/2021 00:53:08] "GET /test_case/ HTTP/1.1" 404 - 88
+INFO 127.0.0.1 - - [31/May/2021 00:53:20] "GET / HTTP/1.1" 404 - 88
+INFO 127.0.0.1 - - [31/May/2021 00:53:25] "GET / HTTP/1.1" 404 - 88
+INFO 127.0.0.1 - - [31/May/2021 00:53:28] "GET / HTTP/1.1" 404 - 88
+INFO 127.0.0.1 - - [31/May/2021 00:53:29] "GET / HTTP/1.1" 404 - 88
+INFO 127.0.0.1 - - [31/May/2021 00:53:35] "GET /test_case/ HTTP/1.1" 404 - 88
+INFO 127.0.0.1 - - [31/May/2021 00:53:39] "GET /test_case/ HTTP/1.1" 404 - 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [31/May/2021 00:57:40] "GET / HTTP/1.1" 404 - 88
+INFO 127.0.0.1 - - [31/May/2021 00:57:54] "GET /test_case/ HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [31/May/2021 00:57:54] "POST /test_case/ HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [31/May/2021 00:57:54] "POST /test_case/ HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [31/May/2021 00:58:55] "POST /test_case/ HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [31/May/2021 00:58:55] "POST /test_case/ HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [31/May/2021 00:59:00] "POST /test_case/ HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [31/May/2021 13:43:06] "POST /test_case/ HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [31/May/2021 13:43:12] "GET /test_case/register HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [31/May/2021 13:43:12] "GET /test_case/register/ HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [31/May/2021 13:43:12] "GET /test_case/register/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [31/May/2021 13:43:12] "GET /test_case/register/?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [31/May/2021 13:43:12] "GET /test_case/register/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [31/May/2021 13:43:12] "GET /test_case/register/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [31/May/2021 13:43:12] "GET /test_case/register/?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [31/May/2021 13:43:12] "GET /test_case/register/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [31/May/2021 13:46:59] "GET /test_case/register/ HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [31/May/2021 13:46:59] "GET /test_case/register/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [31/May/2021 13:46:59] "GET /test_case/register/?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [31/May/2021 13:46:59] "GET /test_case/register/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [31/May/2021 13:46:59] "GET /test_case/register/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [31/May/2021 13:46:59] "GET /test_case/register/?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [31/May/2021 13:46:59] "GET /test_case/register/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [31/May/2021 13:47:10] "GET /test_case/register/ HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [31/May/2021 13:48:22] "POST /test_case/register HTTP/1.1" 500 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [31/May/2021 13:50:17] "POST /test_case/register HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [31/May/2021 13:50:40] "GET /test_case/register/ HTTP/1.1" 200 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [31/May/2021 13:51:13] "POST /test_case/register HTTP/1.1" 500 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [31/May/2021 13:52:43] "POST /test_case/register HTTP/1.1" 500 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [31/May/2021 13:53:21] "POST /test_case/register HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [31/May/2021 13:55:00] "GET /test_case/register?name=1&work=pm HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [31/May/2021 13:55:31] "GET /test_case/register?name=1&work=pm HTTP/1.1" 200 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [31/May/2021 13:57:17] "POST /test_case/register HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [31/May/2021 14:00:44] "POST /test_case/register HTTP/1.1" 500 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [31/May/2021 14:03:51] "POST /test_case/register HTTP/1.1" 500 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [31/May/2021 14:04:53] "POST /test_case/register HTTP/1.1" 500 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [31/May/2021 14:05:18] "POST /test_case/register HTTP/1.1" 500 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [31/May/2021 14:06:31] "POST /test_case/register HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [31/May/2021 14:08:19] "POST /test_case/register HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [31/May/2021 14:08:37] "POST /test_case/register HTTP/1.1" 500 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [31/May/2021 14:10:02] "POST /test_case/register HTTP/1.1" 200 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [31/May/2021 14:11:48] "GET /test_case/register?name=1&work=pm HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [31/May/2021 14:11:54] "GET /test_case/register?name=1&work=pm HTTP/1.1" 200 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [31/May/2021 14:12:36] "GET /test_case/register?name=1&work=pm HTTP/1.1" 200 - 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [31/May/2021 14:13:16] "POST /test_case/register HTTP/1.1" 200 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [31/May/2021 14:14:35] "POST /test_case/register HTTP/1.1" 500 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [31/May/2021 14:15:59] "POST /test_case/register HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [31/May/2021 14:16:12] "POST /test_case/register HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [31/May/2021 14:16:34] "POST /test_case/register HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [31/May/2021 19:39:26] "POST /test_case/register HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [31/May/2021 19:48:51] "POST /test_case/register HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [31/May/2021 19:50:18] "POST /test_case/register HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [31/May/2021 19:57:38] "POST /test_case/register HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [31/May/2021 19:58:05] "POST /test_case/register HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [31/May/2021 20:01:36] "POST /test_case/register HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [31/May/2021 20:42:51] "POST /test_case/register HTTP/1.1" 200 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\__init__.py', reloading 88
+INFO  * Restarting with stat 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [31/May/2021 21:02:05] "POST /test_case/register HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [31/May/2021 21:02:05] "POST /test_case/register HTTP/1.1" 200 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\__init__.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [31/May/2021 21:02:15] "POST /test_case/register HTTP/1.1" 404 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\__init__.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [31/May/2021 21:02:30] "POST /test_case/register HTTP/1.1" 200 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\__init__.py', reloading 88
+INFO  * Restarting with stat 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [31/May/2021 21:07:39] "POST /test_case/register HTTP/1.1" 404 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\__init__.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\__init__.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [31/May/2021 21:08:15] "POST /test_case/register HTTP/1.1" 200 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\__init__.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [31/May/2021 21:28:38] "POST /test_case/register?name=%E8%A5%BF%E5%AD%90%E5%8D%A1&work=1 HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [31/May/2021 21:30:50] "POST /test_case/register?name=%E8%A5%BF%E5%AD%90%E5%8D%A1&work=1 HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [31/May/2021 21:31:02] "POST /test_case/register HTTP/1.1" 500 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [31/May/2021 21:31:37] "POST /test_case/register HTTP/1.1" 500 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [31/May/2021 21:32:05] "POST /test_case/register HTTP/1.1" 500 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [31/May/2021 21:33:45] "POST /test_case/register HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [31/May/2021 21:35:01] "POST /test_case/register HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [31/May/2021 21:35:08] "POST /test_case/register HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [31/May/2021 21:35:21] "POST /test_case/register HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [31/May/2021 21:35:36] "POST /test_case/register HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [31/May/2021 21:37:47] "POST /test_case/register HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [31/May/2021 21:40:00] "POST /test_case/register HTTP/1.1" 500 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [31/May/2021 21:40:33] "POST /test_case/register HTTP/1.1" 200 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [31/May/2021 21:45:47] "POST /test_case/register HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [31/May/2021 21:48:27] "POST /test_case/register HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [31/May/2021 21:51:32] "POST /test_case/register HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [31/May/2021 21:57:47] "POST /test_case/register HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [31/May/2021 21:58:03] "POST /test_case/register HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [31/May/2021 22:00:42] "GET / HTTP/1.1" 404 - 88
+INFO 127.0.0.1 - - [31/May/2021 22:01:37] "POST /test_case/register HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [31/May/2021 22:12:41] "GET / HTTP/1.1" 404 - 88
+INFO 127.0.0.1 - - [31/May/2021 22:13:21] "GET / HTTP/1.1" 404 - 88
+INFO 127.0.0.1 - - [31/May/2021 22:13:46] "POST /test_case/register HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [31/May/2021 22:13:46] "GET / HTTP/1.1" 404 - 88
+INFO 127.0.0.1 - - [31/May/2021 22:24:59] "GET / HTTP/1.1" 404 - 88
+INFO 127.0.0.1 - - [31/May/2021 22:25:11] "POST /test_case/register HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [31/May/2021 22:25:11] "GET / HTTP/1.1" 404 - 88
+INFO 127.0.0.1 - - [31/May/2021 22:25:43] "GET / HTTP/1.1" 404 - 88
+INFO 127.0.0.1 - - [31/May/2021 22:25:51] "POST /test_case/register HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [31/May/2021 22:25:51] "GET / HTTP/1.1" 404 - 88
+INFO 127.0.0.1 - - [31/May/2021 22:26:19] "POST /test_case/register HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [31/May/2021 22:26:19] "GET / HTTP/1.1" 404 - 88
+INFO 127.0.0.1 - - [31/May/2021 22:27:05] "POST /test_case/register HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [31/May/2021 22:27:05] "GET / HTTP/1.1" 404 - 88
+INFO 127.0.0.1 - - [31/May/2021 22:27:08] "GET / HTTP/1.1" 404 - 88
+INFO 127.0.0.1 - - [31/May/2021 22:27:15] "POST /test_case/register HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [31/May/2021 22:27:15] "GET / HTTP/1.1" 404 - 88
+INFO 127.0.0.1 - - [31/May/2021 22:28:14] "POST /test_case/register HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [31/May/2021 23:01:31] "POST /test_case/register HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [31/May/2021 23:02:20] "POST /test_case/register HTTP/1.1" 200 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
