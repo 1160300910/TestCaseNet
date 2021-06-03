@@ -3,8 +3,9 @@ import HelloWorld from '@/components/HelloWorld'
 import Layout from '@/components/Layout'
 import Login from '@/components/Login/Login'
 import HomeMain from '@/components/HomeMain'
-import TestCaseTableTest from '@/components/Appmain/TestCaseTableTest'
+import TestCaseTable from '@/components/Appmain/TestCaseTable'
 import tabletest from '@/components/Appmain/Test/tabletest'
+import TableT1 from '@/components/Appmain/Test/TableT1'
 
 
 const routes = [{
@@ -26,10 +27,13 @@ const routes = [{
         component: HomeMain // 组件对象
     }, {
         path: '/Testcase',
-        component: TestCaseTableTest
+        component: TestCaseTable
     }, {
         path: '/Test',
         component: tabletest
+    }, {
+        path: '/Test2',
+        component: TableT1
     }
 ]
 

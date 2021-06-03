@@ -13,16 +13,16 @@
       <selector></selector>
     </div>
     <div class="selector_css3">
-      <testcase-tablelist></testcase-tablelist>
+      <test-case-table></test-case-table>
     </div>
   </div>
 </template>
 <script>
-import TestcaseTablelist from "./TestcaseTablelist";
+import TestCaseTable from "./TestCaseTable";
 import Selector from "./Selector";
 export default {
-  components: { TestcaseTablelist, Selector },
-  data() {},
+  components: { TestCaseTable, Selector },
+
   methods: {},
 };
 </script>
@@ -38,7 +38,7 @@ export default {
   left: 0px;
   right: 0px;
   font-size: 10px;
-  align-items: center; 
+  align-items: center;
 }
 .selector_css3 {
   flex-grow: 20;
