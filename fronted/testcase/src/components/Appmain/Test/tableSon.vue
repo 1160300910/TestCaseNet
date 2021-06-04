@@ -13,7 +13,7 @@
         <component
           @click="componentTest(scope, colConfig.prop)"
           :data="scope.row"
-          :test="colConfig.prop"
+          :label="colConfig.prop"
           v-else-if="colConfig.component"
           :is="colConfig.component"
         >

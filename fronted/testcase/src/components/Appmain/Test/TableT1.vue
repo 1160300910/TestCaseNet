@@ -5,9 +5,9 @@
 import tableSon from "./tableSon.vue";
 import SetInput from "./SetInput.vue";
 const PrefixPlusText = {
-  props: ["colConfig","data","test"],
+  props: ["colConfig","data","label"],
   template: `
-      <el-input v-model="data[test]" type="textarea">
+      <el-input v-model="data[label]" type="textarea">
       </el-input> 
     `,
 };
@@ -16,7 +16,8 @@ export default {
   components: { tableSon },
   data() {
     this.colConfigs = [
-      { prop: "change", label: "变化" },
+      { prop: "change", label: "变化" ,
+        component: PrefixPlusText,},
       {
         prop: "trend",
         label: "趋势",

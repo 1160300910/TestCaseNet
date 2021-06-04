@@ -58,35 +58,48 @@
 
 <script>
 import myTable from "./my-table.vue";
-
+const EdibleInput = {
+  props: ["row", "column_name", "isOk"],
+  /*
+  
+        
+        v-if="row.isOk[column_name]"
+   v-model="row[column_name]"
+        @focus="Test(row[column_name])"
+  */
+  template: `
+       
+      <el-input
+        type="textarea"
+        v-if="isOk"
+       v-model="row[column_name]"
+      >
+      </el-input>
+      <span v-else><span> {{ row[column_name]}}</span></span>
+    `,
+  //<el-input v-model="data[label]" type="textarea">
+  //  </el-input>
+};
 export default {
-  directives: {
-    //注册一个局部的自定义指令 v-focus
-    focus: {
-      mounted(el) {
-        console.log(el);
-        el.children[0].focus();
-        //因为el-input这是个组件，input外面被一层 div 包裹着,
-        ///el打印出来是外面这个 div，需要找到内层的input
-      },
-    },
-  },
   methods: {
     Test(data) {
       console.log(data);
     },
-    blurClick(row, column) {
-      if (column.label === "用例标题") {
-        row.isOk.title = false;
-      }
-    },
     cellClick(row, column, cell, event) {
-      console.log(row, column.label, cell);
+      //console.log(column.prop);
+      //console.log(row.isOk[column.prop]);
+      //console.log(row.isOk[column.property]);
+      //console.log(cell);
       if (column.label === "用例标题") {
-        row.isOk.title = true;
-      } else if (column.label === "备注") {
-        this.$set(row, "isOK2", true);
-      } else if (column.label === "备注") {
+        row.isOk[column.property] = true;
+        //console.log(row.isOk[column.property]);
+      } else if (column.label === "前置条件") {
+        row.isOk[column.property] = true;
+      } else if (column.label === "执行条件") {
+        row.isOk[column.property] = true;
+      } else if (column.label === "预期结果") {
+        row.isOk[column.property] = true;
+      }else if (column.label === "备注") {
         this.$set(row, "isOK2", true);
       }
     },
@@ -99,7 +112,8 @@ export default {
         label: "用例标题",
         width: 95,
         editable: true,
-        slot: "input",
+        //slot: "input",
+        component: EdibleInput,
       },
       {
         prop: "test_level",
@@ -109,14 +123,27 @@ export default {
         chooseble: false,
         slot: "chooseLevel",
       },
-      { prop: "preCondition", label: "前置条件", width: 140, editable: true },
+      {
+        prop: "preCondition",
+        label: "前置条件",
+        width: 140,
+        editable: true,
+        component: EdibleInput,
+      },
       {
         prop: "actionCondition",
         label: "执行条件",
         width: 180,
         editable: true,
+        component: EdibleInput,
       },
-      { prop: "preResult", label: "预期结果", width: 180, editable: true },
+      {
+        prop: "preResult",
+        label: "预期结果",
+        width: 180,
+        editable: true,
+        component: EdibleInput,
+      },
       { prop: "ps", label: "备注", width: 180, editable: true },
 
       {
@@ -142,6 +169,9 @@ export default {
           ps: "123",
           isOk: {
             title: false,
+            preCondition: false,
+            preResult: false,
+            actionCondition: false,
           },
         },
         {
@@ -150,6 +180,9 @@ export default {
           actionCondition: "西岸",
           isOk: {
             title: false,
+            preCondition: false,
+            preResult: false,
+            actionCondition: false,
           },
         },
       ],
