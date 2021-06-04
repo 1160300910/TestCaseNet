@@ -127,6 +127,7 @@ export default {
         chooseble: false,
       },
       { prop: "operate", label: "操作", width: 140, slot: "opt" },
+      { prop: "changer", label: "修改人", width: 140 },
 
       // 模版中的元素需要对应的有 slot="opt" 属性
     ];
