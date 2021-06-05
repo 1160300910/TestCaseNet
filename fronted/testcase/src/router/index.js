@@ -6,6 +6,7 @@ import HomeMain from '@/components/HomeMain'
 import TestCaseTable from '@/components/Appmain/TestCaseTable'
 import tabletest from '@/components/Appmain/Test/tabletest'
 import TableT1 from '@/components/Appmain/Test/TableT1'
+import test from '@/components/Appnavbar/Test/test'
 
 
 const routes = [{
@@ -34,6 +35,9 @@ const routes = [{
     }, {
         path: '/Test1',
         component: TableT1
+    }, {
+        path: '/Test2',
+        component: test
     }
 ]
 

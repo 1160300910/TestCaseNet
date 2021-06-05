@@ -49,14 +49,14 @@ def addTestCase():
         definedType = request.json.get('definedType')
         tag = request.json.get('tag')
         caseType = request.json.get('caseType')
-        fatherFile = request.json.get('fatherFile')
+        fatherID = request.json.get('fatherID')
         peoType = request.json.get('peoType')
         actionPeo = request.json.get('actionPeo')
         changePeo = request.json.get('changePeo')
         testCase1=TestCase(caseName=caseName,level=level,entry=entry
                            ,conditionInfo=conditionInfo,executeInfo=''
                            ,ps=ps,state=state,definedType=definedType,tag=tag
-                           ,caseType=caseType,fatherFile=fatherFile,
+                           ,caseType=caseType,fatherID=fatherID,
                            peoType=peoType,changePeo=changePeo,actionPeo=actionPeo
                            ,actionedPeo='')
 

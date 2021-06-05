@@ -54,7 +54,8 @@ export default {
     },
     blurClick(row, column, column_name) {
       console.log(column_name);
-      if (column_name === "title") {
+        row.isOk[column.property] = false;
+      /*if (column_name === "title") {
         row.isOk[column.property] = false;
         console.log(row);
       } else if (column_name === "preCondition") {
@@ -66,7 +67,7 @@ export default {
       } else if (column_name === "preResult") {
         row.isOk[column.property] = false;
         console.log(row);
-      }
+      }*/
     },
     tableRowClassName({ row, rowIndex }) {
       if (rowIndex === 1) {

@@ -48,7 +48,7 @@ class TestCase(DB.Model):
     definedType = DB.Column(DB.String(64),DB.ForeignKey('defined_type.type_name'))
     tag = DB.Column(DB.String(64),DB.ForeignKey('tag.tag_name'))
     caseType = DB.Column(DB.Enum('1','2'))
-    fatherFile = DB.Column(DB.String(64))
+    fatherID = DB.Column(DB.Integrt,nullable=False)
     peoType = DB.Column(DB.Enum('1','2','3','4') )
     changePeo = DB.Column(DB.Integer, DB.ForeignKey('peo.peoId'))
     actionPeo = DB.Column(DB.Integer, DB.ForeignKey('peo.peoId'))

@@ -86,22 +86,16 @@ export default {
       console.log(data);
     },
     cellClick(row, column, cell, event) {
+      row.isOk[column.property] = true;
       //console.log(column.prop);
       //console.log(row.isOk[column.prop]);
       //console.log(row.isOk[column.property]);
       //console.log(cell);
-      if (column.label === "用例标题") {
-        row.isOk[column.property] = true;
+      /*if (column.label === "XX") {
         //console.log(row.isOk[column.property]);
-      } else if (column.label === "前置条件") {
-        row.isOk[column.property] = true;
-      } else if (column.label === "执行条件") {
-        row.isOk[column.property] = true;
-      } else if (column.label === "预期结果") {
-        row.isOk[column.property] = true;
-      }else if (column.label === "备注") {
+      } else if (column.label === "XXX") {
         this.$set(row, "isOK2", true);
-      }
+      }*/
     },
   },
   components: { myTable },
@@ -112,7 +106,6 @@ export default {
         label: "用例标题",
         width: 95,
         editable: true,
-        //slot: "input",
         component: EdibleInput,
       },
       {
@@ -144,7 +137,13 @@ export default {
         editable: true,
         component: EdibleInput,
       },
-      { prop: "ps", label: "备注", width: 180, editable: true },
+      {
+        prop: "ps",
+        label: "备注",
+        width: 180,
+        editable: true,
+        component: EdibleInput,
+      },
 
       {
         prop: "tag",
@@ -172,6 +171,7 @@ export default {
             preCondition: false,
             preResult: false,
             actionCondition: false,
+            ps: false,
           },
         },
         {
@@ -183,6 +183,7 @@ export default {
             preCondition: false,
             preResult: false,
             actionCondition: false,
+            ps: false,
           },
         },
       ],

@@ -21,6 +21,9 @@ import AppMain from "./Appmain/AppMain";
 // 导入子组件，缩写格式 AppHeader: AppHeader
 export default {
   components: { AppHeader, AppNavbar, AppMain },
+  methods: {
+    
+  },
 };
 </script>
 
@@ -28,7 +31,6 @@ export default {
 /* 头部样式 */
 .header {
   align-items: center;
-
   display: flex;
   flex: 1;
   justify-content: space-around;
