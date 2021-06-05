@@ -3,10 +3,13 @@
     <h3>A组件：{{ name }}</h3>
     <button @click="sendToFather">将数据发送给父组件</button>
     <button @click="callback('name')">2.将数据发送给父组件</button>
+    <d></d>
   </div>
 </template>
 <script>
+import D from './D.vue';
 export default {
+  components: { D },
   props: {
     callback: Function,
     myName: { type: String, requires: true }, //是必填的参数

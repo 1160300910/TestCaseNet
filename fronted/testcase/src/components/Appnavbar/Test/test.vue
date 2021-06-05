@@ -4,6 +4,7 @@
     <my-b :myName="name" @changeName="editName"></my-b>
     <my-c></my-c>
     {{ name }}
+    <button @click="sendToChild">父组件改变name值</button>
   </div>
 </template>
 <script>
@@ -11,13 +12,22 @@ import A from "./A";
 import B from "./B";
 import C from "./C";
 export default {
+  provide() {
+    return {
+      parentObj: this,
+    };
+  },
   data() {
     return {
       name: "12314",
+      test: "change",
     };
   },
   components: { "my-a": A, "my-b": B, "my-c": C },
   methods: {
+    sendToChild() {
+      this.name = "sendsendToChild";
+    },
     changeName(name) {
       // name形参是子组件中传入的值Jack
       this.name = name;

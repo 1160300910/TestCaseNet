@@ -1,7 +1,6 @@
 <template>
   <div class="custom-tree-container">
     <el-input placeholder="输入关键字进行过滤" v-model="filterText"> </el-input>
-
     <div class="block">
       <p>
         测试用例集
@@ -26,11 +25,10 @@
             <span>{{ node.label }} {{ data.id }}</span>
             <span>
               <!--i @click="edit(data)" class="el-icon-edit"></i-->
+              <!--v-bind:nodeInfo="nodeInfo"-->
               <pop-over-operate
-                v-bind:nodeInfo="nodeInfo"
-                @click="OnChooseNode"
-                :nowId="data.id"
-                :nowLable="node.label"
+                :data="data"
+                :OnAdditionChoice="OnChooseNode"
               ></pop-over-operate>
               <!--i
                 @click="addTestcase(node, data)"
@@ -109,7 +107,6 @@ export default {
       data: JSON.parse(JSON.stringify(data)),
       testif: true,
       nodeInfo: {
-        id: "test",
         nowid: this.nowid,
         nowLabel: this.nowLabel,
       },
@@ -118,12 +115,17 @@ export default {
 
   methods: {
     filterNode(value, data) {
+      //显示过滤节点
       if (!value) return true;
       return data.label.indexOf(value) !== -1;
     },
     OnChooseNode(data) {
-      (this.nowid = data.id), (this.nowLabel = data.label);
-      console.log(data);
+      // 保存并传递当前选中节点的数据
+      this.nowid = data.id;
+      this.nowLabel = data.label;
+      //console.log(data);
+      console.log(data.id);
+      console.log(data.label);
     },
     /*
             <el-button size="mini" on-click={() => this.append(store, data)}>

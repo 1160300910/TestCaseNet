@@ -31,7 +31,6 @@
     </template>
     <template #input="scope" :resize="both" :autosize="{ minRows: 2 }">
       <el-input
-        v-focus
         type="textarea"
         v-if="scope.data.row.isOk.title"
         v-model="scope.data.row.title"
@@ -60,28 +59,32 @@
 import myTable from "./my-table.vue";
 const EdibleInput = {
   props: ["row", "column_name", "isOk"],
-  /*
-  
-        
-        v-if="row.isOk[column_name]"
-   v-model="row[column_name]"
-        @focus="Test(row[column_name])"
-  */
   template: `
-       
-      <el-input
-        type="textarea"
-        v-if="isOk"
-       v-model="row[column_name]"
-      >
+      <el-input type="textarea" v-if="isOk" v-model="row[column_name]">
       </el-input>
       <span v-else><span> {{ row[column_name]}}</span></span>
     `,
-  //<el-input v-model="data[label]" type="textarea">
-  //  </el-input>
 };
 export default {
+  inject: ["parentObj"],
   methods: {
+    /**
+     * 修改测试用例，将全部可编辑区域变成可编辑状态
+     * colConfigs ：
+     * row_index ：需要修改表格的行id
+     * tableData ：表格数据
+     */
+    ChangeTestCase(colConfigs, row_index, tableData) {
+      console.log(colConfig);
+      var colConfig, data, propName;
+      for (data in tableData) {
+        if (data.id == row_index) { //是需要修改的行
+          for (propName in data.isOk) { //对于需要修改的属性名
+            data.isOk[propName] = true;
+          }
+        }
+      }
+    },
     Test(data) {
       console.log(data);
     },
@@ -160,6 +163,7 @@ export default {
     return {
       tableData: [
         {
+          id: 1,
           title: "2016-05-02",
           preCondition: "王小虎",
           actionCondition: "上海市普陀区金沙江路 1518 弄",
@@ -175,6 +179,7 @@ export default {
           },
         },
         {
+          id: 4,
           title: "2016-05-04",
           preCondition: "打磨",
           actionCondition: "西岸",

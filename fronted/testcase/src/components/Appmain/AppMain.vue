@@ -13,7 +13,7 @@
       <selector></selector>
     </div>
     <div class="selector_css3">
-      <test-case-table></test-case-table>
+      <test-case-table ></test-case-table>
     </div>
   </div>
 </template>

@@ -9,7 +9,7 @@
     <!-- 使用子组件,使用-，不建议使用驼峰 -->
     <app-header></app-header>
     <app-navbar></app-navbar>
-    <app-main></app-main>
+    <app-main ></app-main>
   </div>
 </template>
 
@@ -18,12 +18,33 @@
 import AppHeader from "./Apphead/HeadMain";
 import AppNavbar from "./Appnavbar/NavbarMain";
 import AppMain from "./Appmain/AppMain";
+import { ref } from "vue";
+
 // 导入子组件，缩写格式 AppHeader: AppHeader
 export default {
-  components: { AppHeader, AppNavbar, AppMain },
-  methods: {
-    
+  setup() {
+    const testCaseChoose = ref();
+    console.log(testCaseChoose)
+    const changeTestCase = () => {
+      testCaseChoose.value.changeShowText(); //调用孙子组件的方法
+      let arr = testCaseChoose.value.tableData; 
+      debugger
+    };
   },
+  data() {
+    return {
+      nowId: "",
+      nowLabel: "",
+      choice: "",
+    };
+  },
+  provide() {
+    return {
+      parentObj: this,
+    };
+  },
+  components: { AppHeader, AppNavbar, AppMain },
+  methods: {},
 };
 </script>
 
