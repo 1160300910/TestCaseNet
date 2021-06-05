@@ -58,15 +58,26 @@
 <script>
 import myTable from "./my-table.vue";
 const EdibleInput = {
-  props: ["row", "column_name", "isOk"],
+  props: ["row", "column_name", "isOk", "isRowOk"],
   template: `
-      <el-input type="textarea" v-if="isOk" v-model="row[column_name]">
+      <el-input type="textarea" v-if="isOk || isRowOk" v-model="row[column_name]">
       </el-input>
       <span v-else><span> {{ row[column_name]}}</span></span>
     `,
 };
 export default {
   inject: ["parentObj"],
+  mounted() {
+    //在组件B中监听动作的发生
+    this.$bus.on("CHANGE_CHOOSE_TEST", () => {
+      console.log("CHANGE_CHOOSE_TEST发生了");
+      this.ChangeTestCase(
+        this.colConfigs,
+        this.parentObj.nowId,
+        this.tableData
+      );
+    });
+  },
   methods: {
     /**
      * 修改测试用例，将全部可编辑区域变成可编辑状态
@@ -75,13 +86,18 @@ export default {
      * tableData ：表格数据
      */
     ChangeTestCase(colConfigs, row_index, tableData) {
-      console.log(colConfig);
-      var colConfig, data, propName;
+      console.log(row_index);
+      var colConfig, data, title, propName;
+
       for (data in tableData) {
-        if (data.id == row_index) { //是需要修改的行
-          for (propName in data.isOk) { //对于需要修改的属性名
-            data.isOk[propName] = true;
-          }
+        //console.log(data);
+        data = tableData[data];
+        console.log(data);
+        if (data.id == row_index) {
+          //是需要修改的行
+          data.isRowOk = true;
+        } else {
+          data.isRowOk = false;
         }
       }
     },
@@ -170,6 +186,7 @@ export default {
           type: 12312,
           preResult: 1212312312312312312312,
           ps: "123",
+          isRowOk: false,
           isOk: {
             title: false,
             preCondition: false,
@@ -183,6 +200,7 @@ export default {
           title: "2016-05-04",
           preCondition: "打磨",
           actionCondition: "西岸",
+          isRowOk: false,
           isOk: {
             title: false,
             preCondition: false,

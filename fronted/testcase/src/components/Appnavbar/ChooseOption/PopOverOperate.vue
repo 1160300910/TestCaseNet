@@ -82,11 +82,22 @@ export default {
       //console.log(data);
       //alert(data.label);
       this.visible = false;
+      console.log(
+        this.parentObj.nowId,
+        this.parentObj.nowLabel,
+        this.parentObj.choice
+      );
       //console.log(nowId, nowLabel);
       this.parentObj.nowId = data.id;
       this.parentObj.nowLabel = data.label;
       this.parentObj.choice = "change";
+      console.log(
+        this.parentObj.nowId,
+        this.parentObj.nowLabel,
+        this.parentObj.choice
+      );
       
+      this.$bus.emit("CHANGE_CHOOSE_TEST");
     },
   },
 };

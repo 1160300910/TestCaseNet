@@ -17,6 +17,7 @@
           :row="scope.row"
           :column_name="colConfig.prop"
           v-focus
+          :isRowOk="scope.row.isRowOk"
           @focus="Test(scope.row)"
           :is="colConfig.component"
           @blur="blurClick(scope.row, scope.column, colConfig.prop)"
