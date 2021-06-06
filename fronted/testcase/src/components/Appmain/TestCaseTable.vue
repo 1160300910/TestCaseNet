@@ -15,7 +15,7 @@
           v-if="!scope.data.row.isRowOk"
           circle
           @click="
-            ChangeTestCase(this.colConfigs, scope.data.row.id, this.tableData)
+            ChangeTestCase(this.colConfigs, scope.data.row, this.tableData)
           "
         ></el-button>
         <el-button
@@ -25,7 +25,7 @@
           icon="el-icon-circle-check"
           circle
           @click="
-            SaveChange(this.colConfigs, scope.data.row.id, this.tableData)
+            SaveChange(this.colConfigs, scope.data.row, this.tableData)
           "
         ></el-button>
         <el-button
@@ -88,7 +88,7 @@ export default {
       console.log("CHANGE_CHOOSE_TEST发生了");
       this.ChangeTestCase(
         this.colConfigs,
-        this.parentObj.nowId,
+        this.parentObj.node_data,
         this.tableData
       );
     });
@@ -98,35 +98,37 @@ export default {
      * 保存测试用例的修改到服务器
      *
      */
-    SaveChange(colConfigs, id, tableData) {
+    SaveChange(colConfigs, node_data, tableData) {
       var that = this;
       //用例编号，父用例文件夹id，类型（文件夹or用例）
       //用例标题，用例等级,前置条件，执行条件，预期结果，备注，标签，修改人
-      var fatherId, type, data, childId;
-      data = this.FindNodeEdit(id, tableData);
-      if (!this.parentObj.nowChild.data) {
+      var fatherId, type, data, childrenIds;
+      if (!this.parentObj.nowChildren.data) {
+        //如果这个节点没有孩子
         type = -1; //Child
-        childId = -1;
+        childrenIds = -1;
       } else {
-        childId = that.parentObj.nowChild.data.id;
+        //否则有孩子
+        childrenIds = that.parentObj.nowChildren.data.id;
         type = 1; //Parent
       }
-      if (!that.parentObj.nowParent.data) {
-        alert(that.parentObj.nowParent.data);
-        fatherId = -1;
+      if (that.parentObj.nowParent.parent==null) {
+        //如果父节点的父节点没有数据
+        alert("ROot!!");
+        fatherId = -1; //是根节点
       } else {
-        alert(that.parentObj.nowParent.data);
         alert(that.parentObj.nowParent.data.id);
         fatherId = that.parentObj.nowParent.data.id;
       }
+      // 在table里找找有没有这个tabelId==NodeId的东西
+      data = this.FindNodeEdit(node_data.id, tableData);
       if (data) {
         axios
           .post("saveTestCase", {
-            id: id,
+            id: node_data.id,
             fatherId: fatherId,
-            childId: childId,
+            childId: childrenIds,
             type: type,
-
             title: data.title,
             test_level: data.test_level,
             preCondition: data.preCondition,
@@ -138,13 +140,12 @@ export default {
           })
           .then((res) => {
             console.log(res);
-
             //是需要修改的行
             data.isRowOk = false;
           })
           .catch(function(error) {
             console.log(that.parentObj.nowParent.data);
-            console.log(childId);
+            console.log(childrenIds);
             console.log(type);
             console.log(data);
             alert("Error " + error);
@@ -174,10 +175,10 @@ export default {
      * id ：需要修改表格的行id
      * tableData ：表格数据
      */
-    ChangeTestCase(colConfigs, id, tableData) {
-      console.log(id);
-      var colConfig, data, title, propName;
-      data = this.FindNodeEdit(id, tableData);
+    ChangeTestCase(colConfigs, node_data, tableData) {
+      console.log(node_data.id);
+      var data;
+      data = this.FindNodeEdit(node_data.id, tableData);
       if (data) {
         //是需要修改的行
         data.isRowOk = true;
@@ -286,6 +287,8 @@ export default {
           preCondition: "打磨",
           actionCondition: "西岸",
           isRowOk: false,
+          changer: "西子卡",
+          test_level: "P1",
           isOk: {
             title: false,
             preCondition: false,

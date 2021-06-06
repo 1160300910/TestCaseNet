@@ -31,10 +31,9 @@ export default {
   },
   data() {
     return {
-      nowId: "",
-      nowLabel: "",
+      node_data:"",
       choice: "",
-      nowChild:'',
+      nowChildren:'',
       nowParent:'',
       userName:"",
       userWork:""

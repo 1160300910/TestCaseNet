@@ -96,6 +96,8 @@ def saveTestCase():
             level = 3
         elif (level == "P4"):
             level = 4
+        else:
+            level=0
         peo = Peo.query.filter_by(peoName=changePeo).first()
         print(peo.peoId)
         if peo is not None:
@@ -144,4 +146,22 @@ def saveTestCase():
 
         return jsonify(response)
 
+@bp.route('/getUserTestCases/',methods=['Get'])
+def getUserTestCases():
+    if request.method == 'Get':
+       # print( request)
+        userId = request.json.get('userId')
+        # systems = request.json.get('systems')
+        result = TestCase.query,filter(changePeo=userId,fatherID=-1).all()
+        if(result):
+            print(result)
+            pass
+        else:
+            print("false")
+            pass
+
+    response = {
+            'msg':"test",
+        }
+    return jsonify(response)
 

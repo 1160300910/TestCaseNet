@@ -1005,3 +1005,255 @@ INFO  * Restarting with stat 88
 WARNING  * Debugger is active! 88
 INFO  * Debugger PIN: 742-918-802 88
 INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:04:44] "GET /test_case/getUserTestCases&userName=%22%E8%A5%BF%E5%AD%90%E5%8D%A1%E2%80%9C HTTP/1.1" 404 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:04:58] "GET /test_case/getUserTestCases&userId=1 HTTP/1.1" 404 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:05:32] "GET /test_case/getUserTestCases?userId=1 HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:05:32] "GET /test_case/getUserTestCases?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:05:32] "GET /test_case/getUserTestCases?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:05:32] "GET /test_case/getUserTestCases?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:05:32] "GET /test_case/getUserTestCases?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:05:32] "GET /test_case/getUserTestCases?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:05:32] "GET /test_case/getUserTestCases?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:06:18] "GET /test_case/getUserTestCases?userId=1 HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:06:18] "GET /test_case/getUserTestCases?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:06:18] "GET /test_case/getUserTestCases?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:06:18] "GET /test_case/getUserTestCases?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:06:18] "GET /test_case/getUserTestCases?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:06:18] "GET /test_case/getUserTestCases?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:06:18] "GET /test_case/getUserTestCases?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:06:54] "GET /test_case/getUserTestCases?userId=1 HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:06:54] "GET /test_case/getUserTestCases?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:06:54] "GET /test_case/getUserTestCases?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:06:54] "GET /test_case/getUserTestCases?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:06:54] "GET /test_case/getUserTestCases?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:06:54] "GET /test_case/getUserTestCases?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:06:54] "GET /test_case/getUserTestCases?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:07:54] "GET /test_case/getUserTestCases?userId=1 HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:07:54] "GET /test_case/getUserTestCases?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:07:54] "GET /test_case/getUserTestCases?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:07:54] "GET /test_case/getUserTestCases?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:07:54] "GET /test_case/getUserTestCases?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:07:54] "GET /test_case/getUserTestCases?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:07:54] "GET /test_case/getUserTestCases?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:07:56] "GET /test_case/getUserTestCases?userId=1 HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:07:56] "GET /test_case/getUserTestCases?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:07:56] "GET /test_case/getUserTestCases?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:07:56] "GET /test_case/getUserTestCases?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:07:56] "GET /test_case/getUserTestCases?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:07:56] "GET /test_case/getUserTestCases?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:07:56] "GET /test_case/getUserTestCases?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:07:57] "GET /test_case/getUserTestCases?userId=1 HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:07:57] "GET /test_case/getUserTestCases?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:07:57] "GET /test_case/getUserTestCases?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:07:57] "GET /test_case/getUserTestCases?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:07:57] "GET /test_case/getUserTestCases?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:07:57] "GET /test_case/getUserTestCases?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:07:57] "GET /test_case/getUserTestCases?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:09:55] "GET /test_case/getUserTestCases?userId=1 HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:09:55] "GET /test_case/getUserTestCases?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:09:55] "GET /test_case/getUserTestCases?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:09:55] "GET /test_case/getUserTestCases?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:09:55] "GET /test_case/getUserTestCases?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:09:55] "GET /test_case/getUserTestCases?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:09:55] "GET /test_case/getUserTestCases?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 - 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:10:09] "GET /test_case/getUserTestCases?userId=1 HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:10:09] "GET /test_case/getUserTestCases?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:10:09] "GET /test_case/getUserTestCases?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:10:09] "GET /test_case/getUserTestCases?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:10:09] "GET /test_case/getUserTestCases?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:10:09] "GET /test_case/getUserTestCases?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:10:09] "GET /test_case/getUserTestCases?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:11:10] "GET /test_case/getUserTestCases?userId=1 HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:11:10] "GET /test_case/getUserTestCases?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:11:10] "GET /test_case/getUserTestCases?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:11:10] "GET /test_case/getUserTestCases?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:11:10] "GET /test_case/getUserTestCases?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:11:10] "GET /test_case/getUserTestCases?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:11:10] "GET /test_case/getUserTestCases?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:11:33] "GET /test_case/getUserTestCases?{userId:1} HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:11:33] "GET /test_case/getUserTestCases?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:11:33] "GET /test_case/getUserTestCases?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:11:33] "GET /test_case/getUserTestCases?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:11:33] "GET /test_case/getUserTestCases?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:11:33] "GET /test_case/getUserTestCases?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:12:07] "GET /test_case/getUserTestCases?{userId:1} HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:12:07] "GET /test_case/getUserTestCases?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:12:07] "GET /test_case/getUserTestCases?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:12:07] "GET /test_case/getUserTestCases?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:12:07] "GET /test_case/getUserTestCases?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:12:07] "GET /test_case/getUserTestCases?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:12:07] "GET /test_case/getUserTestCases?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:12:13] "GET /test_case/getUserTestCases?{userId:1} HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:12:13] "GET /test_case/getUserTestCases?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:12:13] "GET /test_case/getUserTestCases?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:12:13] "GET /test_case/getUserTestCases?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:12:13] "GET /test_case/getUserTestCases?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:12:13] "GET /test_case/getUserTestCases?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:12:13] "GET /test_case/getUserTestCases?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:12:39] "GET /test_case/getUserTestCases?{userId:1} HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:12:39] "GET /test_case/getUserTestCases/?{userId:1} HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:12:39] "GET /test_case/getUserTestCases/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:12:39] "GET /test_case/getUserTestCases/?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:12:39] "GET /test_case/getUserTestCases/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:12:39] "GET /test_case/getUserTestCases/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:12:39] "GET /test_case/getUserTestCases/?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:12:39] "GET /test_case/getUserTestCases/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:12:56] "GET /test_case/getUserTestCases/?{userId:1} HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:12:56] "GET /test_case/getUserTestCases/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:12:56] "GET /test_case/getUserTestCases/?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:12:56] "GET /test_case/getUserTestCases/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:12:56] "GET /test_case/getUserTestCases/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:12:56] "GET /test_case/getUserTestCases/?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:12:56] "GET /test_case/getUserTestCases/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:13:18] "GET /test_case/getUserTestCases/?{userId:1} HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:13:18] "GET /test_case/getUserTestCases/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:13:18] "GET /test_case/getUserTestCases/?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:13:18] "GET /test_case/getUserTestCases/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:13:18] "GET /test_case/getUserTestCases/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:13:18] "GET /test_case/getUserTestCases/?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:13:18] "GET /test_case/getUserTestCases/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:13:29] "GET /test_case/getUserTestCases/?{userId:1} HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:13:29] "GET /test_case/getUserTestCases/?{userId:1} HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:13:39] "GET /test_case/getUserTestCases/?{userId:1} HTTP/1.1" 200 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:13:59] "GET /test_case/getUserTestCases/?{userId:1} HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:14:03] "GET /test_case/getUserTestCases/?{userId:1} HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:14:09] "GET /test_case/getUserTestCases/?{userId:1} HTTP/1.1" 200 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:14:26] "GET /test_case/getUserTestCases?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:14:30] "GET /test_case/getUserTestCases&userId=1 HTTP/1.1" 404 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:14:45] "GET /test_case/getUserTestCases&userId=1 HTTP/1.1" 404 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:15:28] "GET /test_case/getUserTestCases&userId=1 HTTP/1.1" 404 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:18:52] "POST /test_case/saveTestCase HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:19:05] "POST /test_case/saveTestCase HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:19:29] "POST /test_case/saveTestCase HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:19:56] "POST /test_case/saveTestCase HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:30:17] "POST /test_case/saveTestCase HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 22:54:34] "POST /test_case/saveTestCase HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 23:00:46] "POST /test_case/saveTestCase HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 23:01:12] "POST /test_case/saveTestCase HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 23:01:21] "POST /test_case/saveTestCase HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 23:01:33] "POST /test_case/saveTestCase HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 23:20:14] "POST /test_case/saveTestCase HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 23:20:24] "POST /test_case/saveTestCase HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [06/Jun/2021 23:20:34] "POST /test_case/saveTestCase HTTP/1.1" 500 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [06/Jun/2021 23:21:43] "POST /test_case/saveTestCase HTTP/1.1" 500 - 88
