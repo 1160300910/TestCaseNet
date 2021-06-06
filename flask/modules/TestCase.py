@@ -1,6 +1,6 @@
 from MySQLdb import cursors
 from . import Peo
-from . import PeoType
+from globals import PeoType
 from . import mysql
 
 

@@ -61,8 +61,8 @@ export default {
             this.$router.push({
               name: "Layout",
               params: {
-                name: that.form.name,
-                work: that.form.work,
+                userName: that.form.name,
+                userWork: that.form.work,
               },
             });
           })

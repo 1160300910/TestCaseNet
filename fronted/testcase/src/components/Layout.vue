@@ -22,20 +22,22 @@ import { ref } from "vue";
 
 // 导入子组件，缩写格式 AppHeader: AppHeader
 export default {
+   created() {
+    this.userName = this.$route.params.userName;
+    this.userWork = this.$route.params.userWork;
+  },
   setup() {
-    const testCaseChoose = ref();
-    console.log(testCaseChoose)
-    const changeTestCase = () => {
-      testCaseChoose.value.changeShowText(); //调用孙子组件的方法
-      let arr = testCaseChoose.value.tableData; 
-      debugger
-    };
+    
   },
   data() {
     return {
       nowId: "",
       nowLabel: "",
       choice: "",
+      nowChild:'',
+      nowParent:'',
+      userName:"",
+      userWork:""
     };
   },
   provide() {

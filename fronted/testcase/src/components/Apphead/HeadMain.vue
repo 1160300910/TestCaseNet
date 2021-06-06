@@ -1,9 +1,7 @@
 <template>
   <div class="header">
     <img src="/icons/048-woman.png" class="div1" />
-    <div class="welcomeText">
-      欢迎您! {{work}} : [{{name}}]
-    </div>
+    <div class="welcomeText">欢迎您! {{ work }} : [{{ name }}]</div>
     <div class="TestCaseNameText">XX系统测试用例</div>
     <div class="editButton">
       <el-button size="small" type="primary" v-on:click="getData"
@@ -24,8 +22,8 @@ export default {
     };
   },
   created() {
-    this.name = this.$route.params.name;
-    this.work = this.$route.params.work;
+    this.name = this.$route.params.userName;
+    this.work = this.$route.params.userWork;
   },
   methods: {
     getWorkType() {
@@ -57,7 +55,7 @@ export default {
   },
   mounted() {
     //this.getData();
-    
+
     this.getWorkType();
   },
 };

@@ -12,8 +12,21 @@
           size="mini"
           type="primary"
           icon="el-icon-edit"
+          v-if="!scope.data.row.isRowOk"
           circle
-          @click="Test(scope.data.row)"
+          @click="
+            ChangeTestCase(this.colConfigs, scope.data.row.id, this.tableData)
+          "
+        ></el-button>
+        <el-button
+          v-else
+          size="mini"
+          type="success"
+          icon="el-icon-circle-check"
+          circle
+          @click="
+            SaveChange(this.colConfigs, scope.data.row.id, this.tableData)
+          "
         ></el-button>
         <el-button
           type="info"
@@ -42,7 +55,7 @@
       <span v-else>{{ scope.data.row.title }}</span>
     </template>
     <template #chooseLevel="scope">
-      <el-select v-model="scope.data.row.choose_test_level" placeholder="P0">
+      <el-select v-model="scope.data.row.test_level" placeholder="P0">
         <el-option
           v-for="item in options"
           :key="item.value"
@@ -65,6 +78,8 @@ const EdibleInput = {
       <span v-else><span> {{ row[column_name]}}</span></span>
     `,
 };
+
+import axios from "axios";
 export default {
   inject: ["parentObj"],
   mounted() {
@@ -80,25 +95,92 @@ export default {
   },
   methods: {
     /**
-     * 修改测试用例，将全部可编辑区域变成可编辑状态
-     * colConfigs ：
-     * row_index ：需要修改表格的行id
-     * tableData ：表格数据
+     * 保存测试用例的修改到服务器
+     *
      */
-    ChangeTestCase(colConfigs, row_index, tableData) {
-      console.log(row_index);
-      var colConfig, data, title, propName;
+    SaveChange(colConfigs, id, tableData) {
+      var that = this;
+      //用例编号，父用例文件夹id，类型（文件夹or用例）
+      //用例标题，用例等级,前置条件，执行条件，预期结果，备注，标签，修改人
+      var fatherId, type, data, childId;
+      data = this.FindNodeEdit(id, tableData);
+      if (!this.parentObj.nowChild.data) {
+        type = -1; //Child
+        childId = -1;
+      } else {
+        childId = that.parentObj.nowChild.data.id;
+        type = 1; //Parent
+      }
+      if (!that.parentObj.nowParent.data) {
+        alert(that.parentObj.nowParent.data);
+        fatherId = -1;
+      } else {
+        alert(that.parentObj.nowParent.data);
+        alert(that.parentObj.nowParent.data.id);
+        fatherId = that.parentObj.nowParent.data.id;
+      }
+      if (data) {
+        axios
+          .post("saveTestCase", {
+            id: id,
+            fatherId: fatherId,
+            childId: childId,
+            type: type,
 
+            title: data.title,
+            test_level: data.test_level,
+            preCondition: data.preCondition,
+            actionCondition: data.actionCondition,
+            preResult: data.preResult,
+            ps: data.ps,
+            tag: data.tag,
+            changer: data.changer,
+          })
+          .then((res) => {
+            console.log(res);
+
+            //是需要修改的行
+            data.isRowOk = false;
+          })
+          .catch(function(error) {
+            console.log(that.parentObj.nowParent.data);
+            console.log(childId);
+            console.log(type);
+            console.log(data);
+            alert("Error " + error);
+          });
+      }
+    },
+    /***
+     * 从列表里找到对应的id的数据,修改其他id数据为不可编辑状态
+     * id:对应的用例id
+     * tableData:表格数据
+     */
+    FindNodeEdit(id, tableData) {
+      var data;
       for (data in tableData) {
-        //console.log(data);
         data = tableData[data];
-        console.log(data);
-        if (data.id == row_index) {
-          //是需要修改的行
-          data.isRowOk = true;
+        if (id == data.id) {
+          return data;
         } else {
           data.isRowOk = false;
         }
+      }
+      return false;
+    },
+    /**
+     * 修改测试用例，将对应行全部可编辑区域变成可编辑状态
+     * colConfigs ：
+     * id ：需要修改表格的行id
+     * tableData ：表格数据
+     */
+    ChangeTestCase(colConfigs, id, tableData) {
+      console.log(id);
+      var colConfig, data, title, propName;
+      data = this.FindNodeEdit(id, tableData);
+      if (data) {
+        //是需要修改的行
+        data.isRowOk = true;
       }
     },
     Test(data) {
@@ -177,6 +259,7 @@ export default {
       // 模版中的元素需要对应的有 slot="opt" 属性
     ];
     return {
+      isEditing: false,
       tableData: [
         {
           id: 1,
@@ -187,6 +270,8 @@ export default {
           preResult: 1212312312312312312312,
           ps: "123",
           isRowOk: false,
+          test_level: "P1",
+          changer: "西子卡",
           isOk: {
             title: false,
             preCondition: false,

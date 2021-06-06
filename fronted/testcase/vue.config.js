@@ -4,7 +4,7 @@ module.exports = {
     runtimeCompiler: true,
     devServer: {
         host: 'localhost', //target host
-        port: 5000,
+        port: 5005,
         proxy: {
             '/testcase': {
                 target: 'http://127.0.0.1:5000',

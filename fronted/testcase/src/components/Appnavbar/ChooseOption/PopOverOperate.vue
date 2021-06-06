@@ -16,7 +16,7 @@
           <el-button
             icon="el-icon-edit-outline"
             type="text"
-            @click="ChangeTestCase(data)"
+            @click="ChangeTestCase(data,nowChild,nowParent)"
             >更改用例</el-button
           >
         </el-form-item>
@@ -54,6 +54,8 @@ export default {
   props: {
     //nowId: { type: Number, requires: true },
     //nowLable: { type: String, requires: true },
+    nowChild: {},
+    nowParent: {},
     data: { requires: true },
     OnAdditionChoice: {
       type: Function,
@@ -70,7 +72,7 @@ export default {
 
   methods: {
     ParentOnAdditionChoice(data) {
-      //console.log(data)
+      console.log(data);
       //console.log( this.OnAdditionChoice)
       if (this.OnAdditionChoice && this.data) {
         this.OnAdditionChoice(data);
@@ -78,25 +80,29 @@ export default {
       //this.$emit('OnAdditionChoice="OnChooseNode"', data);
     },
     CreateTestCase() {},
-    ChangeTestCase(data) {
+    ChangeTestCase(data,nowChild,nowParent) {
       //console.log(data);
       //alert(data.label);
       this.visible = false;
       console.log(
         this.parentObj.nowId,
         this.parentObj.nowLabel,
-        this.parentObj.choice
+        this.parentObj.choice,
+        this.parentObj.nowChild,
+        this.parentObj.nowParent
       );
       //console.log(nowId, nowLabel);
       this.parentObj.nowId = data.id;
       this.parentObj.nowLabel = data.label;
       this.parentObj.choice = "change";
+      this.parentObj.nowChild = nowChild;
+      this.parentObj.nowParent = nowParent;
       console.log(
         this.parentObj.nowId,
         this.parentObj.nowLabel,
         this.parentObj.choice
       );
-      
+
       this.$bus.emit("CHANGE_CHOOSE_TEST");
     },
   },

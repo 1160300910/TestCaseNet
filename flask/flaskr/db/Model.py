@@ -35,24 +35,36 @@ class TestCase(DB.Model):
 
     __table_args__ = {'extend_existing': True}
     # 定义字段
+    # 用例编号，父用例文件夹id，类型（文件夹or用例）
+    # 用例标题，用例等级,前置条件，执行条件，预期结果，备注，标签，修改人
     caseId = DB.Column(DB.Integer, primary_key=True, autoincrement=True,unique=True)
+    fatherID = DB.Column(DB.Integer,nullable=False,)
+    childId = DB.Column(DB.Integer,nullable=False)
+    fileType = DB.Column(DB.Integer)
+
+
     caseName = DB.Column(DB.String(64))
-    level = DB.Column(DB.Integer, default='P1')
-    entry = DB.Column(DB.String(64))
-    conditionInfo = DB.Column(DB.String(64))
-    executeInfo = DB.Column(DB.String(64),default='')
+    test_level = DB.Column(DB.Integer, default='P1')
+    preCondition = DB.Column(DB.String(64))
+    actionCondition = DB.Column(DB.String(64))
+    preResult = DB.Column(DB.String(64),default='')
     ps = DB.Column(DB.String(64))
-    state = DB.Column(DB.Enum('1','2','3'),  default='1')
-    changeDate = DB.Column(DB.DateTime, default=datetime.now)
-    actionDate = DB.Column(DB.DateTime, default=datetime.now, onupdate=datetime.now)
-    definedType = DB.Column(DB.String(64),DB.ForeignKey('defined_type.type_name'))
     tag = DB.Column(DB.String(64),DB.ForeignKey('tag.tag_name'))
-    caseType = DB.Column(DB.Enum('1','2'))
-    fatherID = DB.Column(DB.Integrt,nullable=False)
-    peoType = DB.Column(DB.Enum('1','2','3','4') )
     changePeo = DB.Column(DB.Integer, DB.ForeignKey('peo.peoId'))
+
+    # 状态(是否被执行或者指派),修改日期,执行日期,用例类型（用例自定义的类型）
+    # 测试用例类型，定义为 1.原测试用例，2.复制集合
+    # 人员类型
+    # 被指派的执行人，实际执行人，
+    state = DB.Column(DB.Enum('1','2','3'),  default='1')
+    definedType = DB.Column(DB.String(64),DB.ForeignKey('defined_type.type_name'))
+    caseType = DB.Column(DB.Enum('1','2'))
+    peoType = DB.Column(DB.Enum('1','2','3','4') )
     actionPeo = DB.Column(DB.Integer, DB.ForeignKey('peo.peoId'))
     actionedPeo = DB.Column(DB.Integer, DB.ForeignKey('peo.peoId'))
+
+    changeDate = DB.Column(DB.DateTime, default=datetime.now)
+    actionDate = DB.Column(DB.DateTime, default=datetime.now, onupdate=datetime.now)
 
     # users = DB.relationship('User', backref='role')  # 反推与role关联的多个User模型对象
 
