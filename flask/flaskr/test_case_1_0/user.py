@@ -1,6 +1,6 @@
 from . import bp
 from flask import jsonify, flash, g, redirect, render_template, request, session, url_for
-from flaskr.db.Model import Peo, TestCase
+from flaskr.db.Model import Peo, TestCase,query2dict
 from flaskr.db_init import DB
 
 
@@ -69,66 +69,65 @@ def addTestCase():
 def saveTestCase():
     error = ''
     if request.method == 'POST':
-        caseId = request.json.get('id')
-        fatherID = request.json.get('fatherId')
+        caseId = request.json.get('caseId')
+        fatherId = request.json.get('fatherId')
         childId = request.json.get('childId')
-        fileType = request.json.get('type')
 
-        caseName = request.json.get('title')
-        level = request.json.get('test_level')
+        caseName = request.json.get('caseName')
+        test_level = request.json.get('test_level')
         preCondition = request.json.get('preCondition')
         actionCondition = request.json.get('actionCondition')
         preResult = request.json.get('preResult')
         ps = request.json.get('ps')
         tag = request.json.get('tag')
-        changePeo = request.json.get('changer')
+        changer = request.json.get('changer')
 
         state = '1'
         definedType = '人脉'  # 暂定人脉模块
         caseType = '1'  # 未执行，无需被执行
         peoType = '1'  # 暂定为测试
         actionPeo = -1  # 暂定数据
-        if (level == "P1"):
+        if (test_level == "P1"):
             level = 1
-        elif (level == "P2"):
+        elif (test_level == "P2"):
             level = 2
-        elif (level == "P3"):
+        elif (test_level == "P3"):
             level = 3
-        elif (level == "P4"):
+        elif (test_level == "P4"):
             level = 4
         else:
             level=0
-        peo = Peo.query.filter_by(peoName=changePeo).first()
-        print(peo.peoId)
+        peo = Peo.query.filter_by(peoId=changer).first()
+
         if peo is not None:
-            changePeo = peo.peoId
+            print(peo.peoId)
+            changer = peo.peoId
             actionPeo = peo.peoId
             print("==============")
         else:
-            error = '没有id：{}！！'.format(changePeo)
+            error = '没有id：{}！！'.format(changer)
 
-        testCase1 = TestCase(caseId=caseId, fatherID=fatherID, childId=childId, fileType=fileType
+        testCase1 = TestCase(caseId=caseId, fatherId=fatherId, childId=childId
                              , caseName=caseName, test_level=level
                              , preCondition=preCondition, actionCondition=actionCondition
                              , preResult=preResult, ps=ps, tag=tag
-                             , changePeo=changePeo
+                             , changer=changer
                              , state=state, definedType=definedType, caseType=caseType
                              , peoType=peoType, actionPeo=actionPeo)
 
         if TestCase.query.filter_by(caseId=caseId).first() is not None:
             msg = '用例{}被修改！！'.format(caseId)
             result = TestCase.query.filter_by(caseId=caseId).first()
-            result.fatherID = fatherID
+            result.fatherId = fatherId
             result.childId = childId
-            result.fileType = fileType
             result.caseName = caseName
-            result.level = level
+            result.test_level = level
             result.preCondition = preCondition
             result.actionCondition = actionCondition
             result.preResult = preResult
             result.ps = ps
             result.tag = tag
-            result.changePeo = changePeo
+            result.changer = changer
             result.state = state
             result.definedType = definedType
             result.caseType = caseType
@@ -146,22 +145,23 @@ def saveTestCase():
 
         return jsonify(response)
 
-@bp.route('/getUserTestCases/',methods=['Get'])
+@bp.route('/getUserTestCases/',methods=['GET'])
 def getUserTestCases():
-    if request.method == 'Get':
-       # print( request)
-        userId = request.json.get('userId')
+    if request.method == 'GET':
+        userId = request.args.get('userId')
         # systems = request.json.get('systems')
-        result = TestCase.query,filter(changePeo=userId,fatherID=-1).all()
+        result = TestCase.query.filter_by(changer=userId,fatherId=-1).all()
         if(result):
+            print(result)
+            result = query2dict(result)
             print(result)
             pass
         else:
             print("false")
             pass
 
-    response = {
-            'msg':"test",
+        response = {
+            'msg':result,
         }
-    return jsonify(response)
+        return jsonify(response)
 

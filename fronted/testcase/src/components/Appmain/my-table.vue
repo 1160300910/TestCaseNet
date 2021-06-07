@@ -47,12 +47,12 @@ export default {
   mounted() {},
   methods: {
     Test(data) {
-      console.log(data);
+      //console.log(data);
     },
     blurClick(row, column, column_name) {
-      console.log(column_name);
+      //console.log(column_name);
       row.isOk[column.property] = false;
-      /*if (column_name === "title") {
+      /*if (column_name === "caseName") {
         row.isOk[column.property] = false;
         console.log(row);
       } else if (column_name === "preCondition") {

@@ -9,7 +9,7 @@
     <!-- 使用子组件,使用-，不建议使用驼峰 -->
     <app-header></app-header>
     <app-navbar></app-navbar>
-    <app-main ></app-main>
+    <app-main></app-main>
   </div>
 </template>
 
@@ -20,23 +20,27 @@ import AppNavbar from "./Appnavbar/NavbarMain";
 import AppMain from "./Appmain/AppMain";
 import { ref } from "vue";
 
+import axios from "axios";
 // 导入子组件，缩写格式 AppHeader: AppHeader
 export default {
-   created() {
-    this.userName = this.$route.params.userName;
-    this.userWork = this.$route.params.userWork;
+  created() {
+    if (this.$route.params.userName && this.$route.params.userWork) {
+      this.userName = this.$route.params.userName;
+      this.userWork = this.$route.params.userWork;
+    }
   },
-  setup() {
-    
-  },
+  setup() {},
   data() {
     return {
-      node_data:"",
+      node_data: "",
       choice: "",
-      nowChildren:'',
-      nowParent:'',
-      userName:"",
-      userWork:""
+      nowChildren: "",
+      nowParent: "",
+      userName: "西子卡",
+      userId: 1,
+      userWork: "QA",
+      tableRoots: {},
+      nodes_data:"",
     };
   },
   provide() {
@@ -45,7 +49,9 @@ export default {
     };
   },
   components: { AppHeader, AppNavbar, AppMain },
-  methods: {},
+  methods: {
+    
+  },
 };
 </script>
 

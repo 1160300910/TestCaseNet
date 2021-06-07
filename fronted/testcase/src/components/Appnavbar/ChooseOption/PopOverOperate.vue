@@ -5,7 +5,7 @@
       :width="50"
       trigger="click"
       v-model:visible="visible"
-      @show="UpdateFatherChooseNode(data.id,node)"
+      @show="UpdateFatherChooseNode(data.caseId,node)"
     >
       <el-form ref="form" label-width="2px" size="mini">
         <el-form-item>

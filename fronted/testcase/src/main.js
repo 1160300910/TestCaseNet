@@ -13,6 +13,7 @@ app.use(router)
 app.mount('#app')
     //挂载事务总线
 app.config.globalProperties.$bus = new mitt()
+    //app.prototype.GLOBAL = global_
 
 axios.defaults.timeout = 5000 // 请求超时
 axios.defaults.baseURL = '/testcase/';

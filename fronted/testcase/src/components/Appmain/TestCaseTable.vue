@@ -24,9 +24,7 @@
           type="success"
           icon="el-icon-circle-check"
           circle
-          @click="
-            SaveChange(this.colConfigs, scope.data.row, this.tableData)
-          "
+          @click="SaveChange(this.colConfigs, scope.data.row, this.tableData)"
         ></el-button>
         <el-button
           type="info"
@@ -45,14 +43,14 @@
     <template #input="scope" :resize="both" :autosize="{ minRows: 2 }">
       <el-input
         type="textarea"
-        v-if="scope.data.row.isOk.title"
-        v-model="scope.data.row.title"
-        @focus="Test(scope.data.row.title)"
+        v-if="scope.data.row.isOk.caseName"
+        v-model="scope.data.row.caseName"
+        @focus="Test(scope.data.row.caseName)"
         @keyup.enter="blurClick(scope.data.row, scope.data.column)"
         @blur="blurClick(scope.data.row, scope.data.column)"
       >
       </el-input>
-      <span v-else>{{ scope.data.row.title }}</span>
+      <span v-else>{{ scope.data.row.caseName }}</span>
     </template>
     <template #chooseLevel="scope">
       <el-select v-model="scope.data.row.test_level" placeholder="P0">
@@ -82,6 +80,12 @@ const EdibleInput = {
 import axios from "axios";
 export default {
   inject: ["parentObj"],
+  created() {
+    this.GetTableRoot();
+    //console.log(this.tableData)
+    //console.log(this.parentObj.tableRoots)
+    //this.tableData = this.parentObj.tableRoots
+  },
   mounted() {
     //在组件B中监听动作的发生
     this.$bus.on("CHANGE_CHOOSE_TEST", () => {
@@ -109,34 +113,35 @@ export default {
         childrenIds = -1;
       } else {
         //否则有孩子
-        childrenIds = that.parentObj.nowChildren.data.id;
+        childrenIds = that.parentObj.nowChildren.data.caseId;
         type = 1; //Parent
       }
-      if (that.parentObj.nowParent.parent==null) {
+      if (that.parentObj.nowParent.parent == null) {
         //如果父节点的父节点没有数据
         alert("ROot!!");
         fatherId = -1; //是根节点
       } else {
-        alert(that.parentObj.nowParent.data.id);
-        fatherId = that.parentObj.nowParent.data.id;
+        alert(that.parentObj.nowParent.data.caseId);
+        fatherId = that.parentObj.nowParent.data.caseId;
       }
       // 在table里找找有没有这个tabelId==NodeId的东西
-      data = this.FindNodeEdit(node_data.id, tableData);
+      data = this.FindNodeEdit(node_data.caseId, tableData);
       if (data) {
         axios
           .post("saveTestCase", {
-            id: node_data.id,
-            fatherId: fatherId,
-            childId: childrenIds,
-            type: type,
-            title: data.title,
-            test_level: data.test_level,
+            caseId: node_data.caseId,
+            caseName: data.caseName,
             preCondition: data.preCondition,
             actionCondition: data.actionCondition,
+
             preResult: data.preResult,
             ps: data.ps,
-            tag: data.tag,
+            test_level: data.test_level,
             changer: data.changer,
+
+            fatherId: fatherId,
+            childId: childrenIds,
+            tag: data.tag,
           })
           .then((res) => {
             console.log(res);
@@ -154,31 +159,32 @@ export default {
     },
     /***
      * 从列表里找到对应的id的数据,修改其他id数据为不可编辑状态
-     * id:对应的用例id
+     * caseId:对应的用例id
      * tableData:表格数据
      */
-    FindNodeEdit(id, tableData) {
-      var data;
+    FindNodeEdit(caseId, tableData) {
+      var data, save;
       for (data in tableData) {
         data = tableData[data];
-        if (id == data.id) {
-          return data;
+        if (caseId == data.caseId) {
+          save = data;
         } else {
           data.isRowOk = false;
         }
       }
+      if (save) return save;
       return false;
     },
     /**
      * 修改测试用例，将对应行全部可编辑区域变成可编辑状态
      * colConfigs ：
-     * id ：需要修改表格的行id
+     * caseId ：需要修改表格的行id
      * tableData ：表格数据
      */
     ChangeTestCase(colConfigs, node_data, tableData) {
-      console.log(node_data.id);
+      console.log(node_data.caseId);
       var data;
-      data = this.FindNodeEdit(node_data.id, tableData);
+      data = this.FindNodeEdit(node_data.caseId, tableData);
       if (data) {
         //是需要修改的行
         data.isRowOk = true;
@@ -188,6 +194,10 @@ export default {
       console.log(data);
     },
     cellClick(row, column, cell, event) {
+      console.log(this.tableData);
+      console.log(this.parentObj.tableRoots);
+      console.log(this.tableData[0]);
+      console.log(this.parentObj.tableRoots[0]);
       row.isOk[column.property] = true;
       //console.log(column.prop);
       //console.log(row.isOk[column.prop]);
@@ -199,12 +209,109 @@ export default {
         this.$set(row, "isOK2", true);
       }*/
     },
+    /***
+     * 获取
+     */
+    GetTableRoot() {
+      var that = this;
+      axios
+        .get("getUserTestCases", { params: { userId: this.parentObj.userId } })
+        .then((res) => {
+          console.log(res);
+          var tableRoots = res.data.msg;
+          tableRoots = that.SettleCellStates(tableRoots);
+          var NodeRoots = that.SettleTreeNodes(tableRoots);
+
+          console.log(tableRoots);
+          console.log(NodeRoots);
+          that.tableData = tableRoots;
+          that.parentObj.tableRoots = tableRoots;
+          that.parentObj.nodes_data = NodeRoots;
+
+          this.$bus.emit("UPDATE_TABLE_AND_TREE");
+        })
+        .catch(function(error) {
+          alert(error);
+        });
+    },
+    /****
+     * 设置对应的树节点的名称和id
+     */
+    SettleTreeNodes(datas) {
+      var nodes = new Array();
+      for (var i = 0; i < datas.length; i++) {
+        console.log(datas[i].caseId);
+        var node = {};
+        node["caseId"] = datas[i].caseId;
+        node["label"] = datas[i].caseName;
+        nodes.push(node);
+      }
+
+      console.log("enddd");
+      console.log(nodes);
+      return nodes;
+    },
+    /***
+     * 设置每个节点的状态
+     */
+    SettleCellStates(datas) {
+      for (var i = 0; i < datas.length; i++) {
+        datas[i]["isRow"] = false;
+        datas[i]["isOk"] = {
+          caseName: false,
+          preCondition: false,
+          preResult: false,
+          actionCondition: false,
+          ps: false,
+        };
+      }
+      return datas;
+    },
   },
   components: { myTable },
   data() {
+    const tableData = [
+      {
+        caseId: 1,
+        caseName: "2016-05-02",
+        preCondition: "王小虎",
+        actionCondition: "上海市普陀区金沙江路 1518 弄",
+        type: 12312,
+        preResult: 1212312312312312312312,
+        ps: "123",
+        test_level: "P1",
+        changer: "西子卡",
+
+        isRowOk: false,
+        isOk: {
+          caseName: false,
+          preCondition: false,
+          preResult: false,
+          actionCondition: false,
+          ps: false,
+        },
+      },
+      {
+        caseId: 4,
+        caseName: "2016-05-04",
+        preCondition: "打磨",
+        actionCondition: "西岸",
+        changer: "西子卡",
+        test_level: "P1",
+
+        isRowOk: false,
+        isOk: {
+          caseName: false,
+          preCondition: false,
+          preResult: false,
+          actionCondition: false,
+          ps: false,
+        },
+      },
+    ];
     this.colConfigs = [
       {
-        prop: "title",
+        prop: "caseName",
         label: "用例标题",
         width: 95,
         editable: true,
@@ -261,43 +368,7 @@ export default {
     ];
     return {
       isEditing: false,
-      tableData: [
-        {
-          id: 1,
-          title: "2016-05-02",
-          preCondition: "王小虎",
-          actionCondition: "上海市普陀区金沙江路 1518 弄",
-          type: 12312,
-          preResult: 1212312312312312312312,
-          ps: "123",
-          isRowOk: false,
-          test_level: "P1",
-          changer: "西子卡",
-          isOk: {
-            title: false,
-            preCondition: false,
-            preResult: false,
-            actionCondition: false,
-            ps: false,
-          },
-        },
-        {
-          id: 4,
-          title: "2016-05-04",
-          preCondition: "打磨",
-          actionCondition: "西岸",
-          isRowOk: false,
-          changer: "西子卡",
-          test_level: "P1",
-          isOk: {
-            title: false,
-            preCondition: false,
-            preResult: false,
-            actionCondition: false,
-            ps: false,
-          },
-        },
-      ],
+      tableData: tableData, //this.parentObj.tableRoots,
       options: [
         {
           value: "0",

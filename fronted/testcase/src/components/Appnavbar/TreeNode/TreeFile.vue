@@ -21,12 +21,11 @@
     <div class="block">
       <p>
         测试用例集
-        <span>
-          <i @click="edit()" class="el-icon-edit"></i>
-        </span>
+
+        <i @click="appendRoot(node_data)" class="el-icon-edit"></i>
       </p>
       <el-tree
-        node-key="id"
+        node-key="caseId"
         ref="tree"
         :data="node_data"
         :expand-on-click-node="true"
@@ -37,12 +36,14 @@
         @node-click="OnChooseNode"
         ><template #default="{ node, data }">
           <span class="custom-tree-node">
-            <span v-if="testif" span="100">
+            <span v-if="testif" span="1">
               <!--i @click="remove(node, data)" 
               class="el-icon-delete"></i-->
               <el-checkbox> </el-checkbox
             ></span>
-            <span>{{ node.label }} {{ data.id }}</span>
+            <i class="el-icon-folder-opened" v-if="data.type == 'folder'"> </i>
+            <i class="el-icon-star-off" v-else-if="data.type == 'file'"> </i>
+            <span>{{ node.label }} {{ data.caseId }}</span>
             <!--span><i class="el-icon-check">
               </i> </span-->
             <span>
@@ -74,8 +75,9 @@
 
 <script>
 import PopOverOperate from "../ChooseOption/PopOverOperate.vue";
-let id = 1000;
+let caseId = 1000;
 export default {
+  inject: ["parentObj"],
   created() {
     if (this.$route.params.userName && this.$route.params.userWork)
       this.userName = this.$route.params.userName;
@@ -86,15 +88,37 @@ export default {
     filterText(val) {
       this.$refs.tree.filter(val);
     },
+    currentNodeKey(id) {
+      // Tree 内部使用了 Node 类型的对象来包装用户传入的数据，用来保存目前节点的状态。可以用 $refs 获取 Tree 实例
+      if (id.toString()) {
+        this.$refs["tree"].setCurrentKey(id);
+      } else {
+        this.$refs["tree"].setCurrentKey(null);
+      }
+    },
+  },
+  mounted() {
+    this.$bus.on("UPDATE_TABLE_AND_TREE", () => {
+      console.log("UPDATE_TABLE_AND_TREE发生了");
+      this.node_data = JSON.parse(JSON.stringify(this.parentObj.nodes_data));
+    });
   },
   methods: {
-    /**
-     * 设置当前选中的node的值
+    /***
+     * 创建新的系统
      */
-    UpdateChooseNode(currentNodeKey,node) {
+    CreateNewRoot() {},
+    /**
+     * 设置当前选中的node的值,并展开子node
+     */
+    UpdateChooseNode(currentNodeKey, node) {
       console.log("---------------------");
       this.$refs.tree.setCurrentKey(currentNodeKey);
-      this.handleExpandChildNodes(node)
+      this.handleExpandChildNodes(node);
+    },
+    OnlyUpdateChooseNode(currentNodeKey) {
+      console.log(this.$refs.tree);
+      this.$refs.tree.setCurrentKey(currentNodeKey);
     },
     /**
      * 调用函数，展开一级node下的全部子node
@@ -143,7 +167,7 @@ export default {
           console.log("push" + i);
           console.log(child_node);
         }
-        
+
       }
 
       //console.log(this.$refs.tree.store.currentNode.childNodes)
@@ -152,9 +176,6 @@ export default {
       //node.expanded = node.expanded; //在组件点击事件 中使用
     },
     */
-
-
-
 
     filterNode(value, data) {
       //显示过滤节点
@@ -181,7 +202,7 @@ export default {
       this.data = data;
       this.nowParent = node.parent;
       this.nowChildren = node.childNodes;
-      console.log(data.id + " " + data.label);
+      console.log(data.caseId + " " + data.label);
       //自动展开所有的孩子节点
       this.handleExpandChildNodes(node);
     },
@@ -204,8 +225,30 @@ export default {
         </span>
       );
     },
-    append(data) {
-      const newChild = { id: id++, label: "testtest", children: [] };
+    /**
+     * 增加一个根节点
+     */
+    appendRoot(data) {
+      console.log(data);
+      var newChild = this.createNodeData();
+      data.unshift(newChild);
+
+      console.log(newChild.caseId);
+      this.OnlyUpdateChooseNode(newChild.caseId);
+      this.currentNodeKey = newChild.caseId
+    },
+    createNodeData() {
+      var myDate = new Date();
+      const node = {
+        caseId: caseId++,
+        label: myDate.toLocaleString(),
+        type: "folder",
+        children: [],
+      };
+      return node;
+    },
+    append2(data) {
+      const newChild = { caseId: caseId++, label: "testtest", children: [] };
       if (!data.children) {
         data.children = [];
       }
@@ -216,7 +259,7 @@ export default {
     remove(node, data) {
       const parent = node.parent;
       const children = parent.data.children || parent.data;
-      const index = children.findIndex((d) => d.id === data.id);
+      const index = children.findIndex((d) => d.caseId === data.caseId);
       children.splice(index, 1);
       this.data = [...this.data];
     },
@@ -232,19 +275,20 @@ export default {
 
     const node_data = [
       {
-        id: 1,
+        caseId: 1,
         label: "人脉",
+        type: "folder",
         children: [
           {
-            id: 4,
+            caseId: 4,
             label: "入口-1",
             children: [
               {
-                id: 9,
+                caseId: 9,
                 label: "功能-0",
               },
               {
-                id: 10,
+                caseId: 10,
                 label: "功能-1",
               },
             ],
@@ -252,23 +296,24 @@ export default {
         ],
       },
       {
-        id: 2,
+        caseId: 2,
         label: "形象",
+        type: "file",
         children: [
           {
-            id: 5,
+            caseId: 5,
             label: "形象-入口1",
           },
           {
-            id: 6,
+            caseId: 6,
             label: "形象-入口2",
             children: [
               {
-                id: 19,
+                caseId: 19,
                 label: "形象功能1",
               },
               {
-                id: 110,
+                caseId: 110,
                 label: "形象功能2",
               },
             ],
@@ -276,7 +321,7 @@ export default {
         ],
       },
     ];
-    return {
+    return {currentNodeKey: "",
       options: options,
       userName: "西子卡",
       userWork: "QA",
@@ -284,7 +329,7 @@ export default {
       nowChildren: "",
       filterText: "",
       node_data: JSON.parse(JSON.stringify(node_data)),
-      testif: true,
+      testif: false,
     };
   },
 };
@@ -304,5 +349,16 @@ export default {
   display: flex;
 
   justify-content: space-between;
+}
+span {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.el-tree-node:focus > .el-tree-node__content,
+.el-tree-node__content:hover {
+  background: #c2b6b6;
+  color: #66b1ff;
 }
 </style>

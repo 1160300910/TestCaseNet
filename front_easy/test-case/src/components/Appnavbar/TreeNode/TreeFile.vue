@@ -6,7 +6,7 @@
     <el-tree
       :data="data"
       show-checkbox
-      node-key="id"
+      node-key="caseId"
       default-expand-all
       :expand-on-click-node="false"
       :render-content="renderContent">
@@ -17,42 +17,42 @@
 </template>
 
 <script>
-  let id = 1000;
+  let caseId = 1000;
 
   export default {
     data() {
       const data = [{
-        id: 1,
+        caseId: 1,
         label: '一级 1',
         children: [{
-          id: 4,
+          caseId: 4,
           label: '二级 1-1',
           children: [{
-            id: 9,
+            caseId: 9,
             label: '三级 1-1-1'
           }, {
-            id: 10,
+            caseId: 10,
             label: '三级 1-1-2'
           }]
         }]
       }, {
-        id: 2,
+        caseId: 2,
         label: '一级 2',
         children: [{
-          id: 5,
+          caseId: 5,
           label: '二级 2-1'
         }, {
-          id: 6,
+          caseId: 6,
           label: '二级 2-2'
         }]
       }, {
-        id: 3,
+        caseId: 3,
         label: '一级 3',
         children: [{
-          id: 7,
+          caseId: 7,
           label: '二级 3-1'
         }, {
-          id: 8,
+          caseId: 8,
           label: '二级 3-2'
         }]
       }];
@@ -63,7 +63,7 @@
 
     methods: {
       append(data) {
-        const newChild = { id: id++, label: 'testtest', children: [] };
+        const newChild = { caseId: caseId++, label: 'testtest', children: [] };
         if (!data.children) {
           data.children = []
         }
@@ -74,7 +74,7 @@
       remove(node, data) {
         const parent = node.parent;
         const children = parent.data.children || parent.data;
-        const index = children.findIndex(d => d.id === data.id);
+        const index = children.findIndex(d => d.caseId === data.caseId);
         children.splice(index, 1);
         this.data = [...this.data]
       },
