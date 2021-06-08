@@ -151,40 +151,7 @@ export default {
       //node.expanded = node.expanded; //在组件点击事件 中使用
     },
 
-    /*
-    handleExpandChildNodes(node) {
-      console.log("----handleExpandChildNodes---------");
-      //const len = nodeList.length;
-      var child_node = new Array();
-      child_node.unshift(node);
-      console.log(child_node);
-      while (child_node.length!=0) {
-        var nowNode = child_node.pop()
-        console.log("pop");
-        console.log(child_node);
-        for (
-          var i = 0;
-          i < nowNode.childNodes.length;
-          //this.$refs.tree.store.currentNode.childNodes.length;
-          i++
-        ) {
-          nowNode.childNodes[i].expanded = true;
-          console.log(nowNode.childNodes[i].data);
-          console.log(nowNode.childNodes[i].expanded);
-
-          child_node.unshift(nowNode.childNodes[i]);
-          console.log("push" + i);
-          console.log(child_node);
-        }
-
-      }
-
-      //console.log(this.$refs.tree.store.currentNode.childNodes)
-      //console.log("---------")
-      //console.log(this.$refs.tree.getCheckedKeys())
-      //node.expanded = node.expanded; //在组件点击事件 中使用
-    },
-    */
+  
 
     filterNode(value, data) {
       //显示过滤节点
