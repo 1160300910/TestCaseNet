@@ -22,7 +22,7 @@
       <p>
         测试用例集
 
-        <i @click="appendRoot(node_data)" class="el-icon-edit"></i>
+        <i @click="CreateNewRoot(node_data)" class="el-icon-edit"></i>
       </p>
       <el-tree
         node-key="caseId"
@@ -88,10 +88,14 @@ export default {
     filterText(val) {
       this.$refs.tree.filter(val);
     },
-    currentNodeKey(id) {
+    /***
+     * 当前节点的caseId值
+     */
+    currentNodeKey(caseId) {
       // Tree 内部使用了 Node 类型的对象来包装用户传入的数据，用来保存目前节点的状态。可以用 $refs 获取 Tree 实例
-      if (id.toString()) {
-        this.$refs["tree"].setCurrentKey(id);
+      if (caseId.toString()) {
+        this.$refs["tree"].setCurrentKey(caseId);
+        console.log(this.$refs['tree'])
       } else {
         this.$refs["tree"].setCurrentKey(null);
       }
@@ -106,19 +110,24 @@ export default {
   methods: {
     /***
      * 创建新的系统
+     * 1.设置当前选中节点为新建节点，并focus
+     * 2.右侧的table里新增默认列
+     * 3.
      */
-    CreateNewRoot() {},
+    CreateNewRoot(data) {
+      console.log(data);
+      var newChild = this.createNodeData();
+      data.unshift(newChild);
+      console.log(newChild.caseId);
+      this.currentNodeKey = newChild.caseId; //更新当前选中节点
+    },
     /**
      * 设置当前选中的node的值,并展开子node
      */
     UpdateChooseNode(currentNodeKey, node) {
       console.log("---------------------");
-      this.$refs.tree.setCurrentKey(currentNodeKey);
+      this.currentNodeKey = currentNodeKey;
       this.handleExpandChildNodes(node);
-    },
-    OnlyUpdateChooseNode(currentNodeKey) {
-      console.log(this.$refs.tree);
-      this.$refs.tree.setCurrentKey(currentNodeKey);
     },
     /**
      * 调用函数，展开一级node下的全部子node
@@ -232,10 +241,8 @@ export default {
       console.log(data);
       var newChild = this.createNodeData();
       data.unshift(newChild);
-
       console.log(newChild.caseId);
-      this.OnlyUpdateChooseNode(newChild.caseId);
-      this.currentNodeKey = newChild.caseId
+      this.currentNodeKey = newChild.caseId; //更新当前选中节点
     },
     createNodeData() {
       var myDate = new Date();
@@ -321,7 +328,8 @@ export default {
         ],
       },
     ];
-    return {currentNodeKey: "",
+    return {
+      currentNodeKey: "", //保存了当前选中节点的caseId信息，用于更新选中状态
       options: options,
       userName: "西子卡",
       userWork: "QA",
@@ -356,9 +364,19 @@ span {
   white-space: nowrap;
   text-overflow: ellipsis;
 }
-.el-tree-node:focus > .el-tree-node__content,
-.el-tree-node__content:hover {
-  background: #c2b6b6;
-  color: #66b1ff;
+.el-tree-node:focus > .el-tree-node__content {
+  /*设置选中的样式 */
+  background-color: #dde9ff !important;
 }
+.el-tree-node__content:hover {
+  /*设置鼠标飘过的颜色 */
+  background: #eaf9ff !important;
+  color: #007bff;
+}
+ .el-tree--highlight-current .el-tree-node.is-current>.el-tree-node__content {
+   /*设置current选中的样式 */
+    color: #4d95fd;
+    font-weight: bold;
+  background-color: #dde9ff !important;
+} 
 </style>
