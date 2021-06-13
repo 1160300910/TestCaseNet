@@ -12,13 +12,24 @@
         <slot v-if="colConfig.slot" :name="colConfig.slot" :data="scope">
         </slot>
         <component
-          v-else-if="colConfig.component"
+          v-else-if="colConfig.component&&!scope.row.isRowOk"
           :isOk="scope.row.isOk[colConfig.prop]"
           :row="scope.row"
           :column_name="colConfig.prop"
           v-focus
           :isRowOk="scope.row.isRowOk"
           @focus="Test(scope.row)"
+          :is="colConfig.component"
+          @blur="blurClick(scope.row, scope.column, colConfig.prop)"
+          @keyup.enter="blurClick(scope.row, colConfig.prop)"
+        >
+        </component>
+        <component
+          v-else-if="colConfig.component"
+          :isOk="scope.row.isOk[colConfig.prop]"
+          :row="scope.row"
+          :column_name="colConfig.prop"
+          :isRowOk="scope.row.isRowOk"
           :is="colConfig.component"
           @blur="blurClick(scope.row, scope.column, colConfig.prop)"
           @keyup.enter="blurClick(scope.row, colConfig.prop)"

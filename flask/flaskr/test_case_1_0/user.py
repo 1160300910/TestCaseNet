@@ -1,6 +1,6 @@
 from . import bp
 from flask import jsonify, flash, g, redirect, render_template, request, session, url_for
-from flaskr.db.Model import Peo, TestCase,query2dict
+from flaskr.db.Model import Peo, TestCase, query2dict
 from flaskr.db_init import DB
 
 
@@ -41,6 +41,7 @@ def register():
 @bp.route('/addTestCase/', methods=['POST'], )
 def addTestCase():
     if request.method == 'POST':
+        fileType = request.json.get('fileType')
         caseName = request.json.get('caseName')
         entry = request.json.get('entry')
         level = request.json.get('entry')
@@ -81,6 +82,7 @@ def saveTestCase():
         ps = request.json.get('ps')
         tag = request.json.get('tag')
         changer = request.json.get('changer')
+        fileType = request.json.get('fileType')
 
         state = '1'
         definedType = '人脉'  # 暂定人脉模块
@@ -96,7 +98,7 @@ def saveTestCase():
         elif (test_level == "P4"):
             level = 4
         else:
-            level=0
+            level = 0
         peo = Peo.query.filter_by(peoId=changer).first()
 
         if peo is not None:
@@ -113,7 +115,7 @@ def saveTestCase():
                              , preResult=preResult, ps=ps, tag=tag
                              , changer=changer
                              , state=state, definedType=definedType, caseType=caseType
-                             , peoType=peoType, actionPeo=actionPeo)
+                             , peoType=peoType, actionPeo=actionPeo,fileType=fileType)
 
         if TestCase.query.filter_by(caseId=caseId).first() is not None:
             msg = '用例{}被修改！！'.format(caseId)
@@ -133,6 +135,7 @@ def saveTestCase():
             result.caseType = caseType
             result.peoType = peoType
             result.actionPeo = actionPeo
+            result.fileType = fileType
             DB.session.commit()
         else:
             msg = '用例{}被创建！！'.format(caseId)
@@ -145,13 +148,14 @@ def saveTestCase():
 
         return jsonify(response)
 
-@bp.route('/getUserTestCases/',methods=['GET'])
+
+@bp.route('/getUserTestCases/', methods=['GET'])
 def getUserTestCases():
     if request.method == 'GET':
         userId = request.args.get('userId')
         # systems = request.json.get('systems')
-        result = TestCase.query.filter_by(changer=userId,fatherId=-1).all()
-        if(result):
+        result = TestCase.query.filter_by(changer=userId, fatherId=-1).all()
+        if (result):
             print(result)
             result = query2dict(result)
             print(result)
@@ -161,7 +165,30 @@ def getUserTestCases():
             pass
 
         response = {
-            'msg':result,
+            'msg': result,
         }
         return jsonify(response)
 
+
+@bp.route("/deleteTestCase", methods=['POST'])
+def deleteTestCase():
+    if request.method == 'POST':
+        caseId = request.json.get('caseId')
+        print(caseId)
+        result = TestCase.query.filter_by(caseId=caseId).all()
+        print(result)
+        if (result):
+            msg = True
+            for d in result:
+                DB.session.delete(d)
+            DB.session.commit()
+            error = ''
+            pass
+        else:
+            error = '不存在对应测试用例'
+            msg = False
+        response = {
+            'error': error,
+            'msg': msg
+        }
+        return jsonify(response)

@@ -39,7 +39,7 @@ export default {
       userName: "西子卡",
       userId: 1,
       userWork: "QA",
-      tableRoots: {},
+      table_datas: {},
       nodes_data:"",
     };
   },

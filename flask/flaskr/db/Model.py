@@ -48,7 +48,7 @@ class TestCase(DB.Model):
 
     fatherId = DB.Column(DB.Integer,nullable=False,) # 父节点
     childId = DB.Column(DB.Integer,nullable=False) # 孩子节点
-    fileType = DB.Column(DB.Integer) # 类型
+    fileType = DB.Column(DB.String(10)) # 类型
     tag = DB.Column(DB.String(64),DB.ForeignKey('tag.tag_name')) #标签
 
     # 状态(是否被执行或者指派),修改日期,执行日期,用例类型（用例自定义的类型）

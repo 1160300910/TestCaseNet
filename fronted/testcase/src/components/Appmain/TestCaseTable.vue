@@ -4,7 +4,9 @@
     :col-configs="colConfigs"
     highlight-current-row
     border
+    ref="table"
     @cell-click="cellClick"
+    @current-change="CurrentChange"
   >
     <template #opt="scope">
       <el-row>
@@ -37,6 +39,7 @@
           size="mini"
           icon="el-icon-delete"
           circle
+          @click="DeleteTestcase(scope.data.row)"
         ></el-button>
       </el-row>
     </template>
@@ -80,11 +83,22 @@ const EdibleInput = {
 import axios from "axios";
 export default {
   inject: ["parentObj"],
+  watch: {
+    currentRow(row) {
+      if (row) {
+        console.log(this.$refs["table"])
+        //this.$refs["table"].setCurrentRow(row);
+      } else {
+        //this.$refs["table"].setCurrentRow(null);
+      }
+    },
+  },
   created() {
     this.GetTableRoot();
+
     //console.log(this.tableData)
-    //console.log(this.parentObj.tableRoots)
-    //this.tableData = this.parentObj.tableRoots
+    //console.log(this.parentObj.table_datas)
+    //this.tableData = this.parentObj.table_datas
   },
   mounted() {
     //在组件B中监听动作的发生
@@ -96,8 +110,61 @@ export default {
         this.tableData
       );
     });
+    this.$bus.on("CREATE_CHOOSE_TEST", () => {
+      console.log("CREATE_CHOOSE_TEST发生了");
+      this.CreateTestCase();
+    });
   },
   methods: {
+    CurrentChange(currentRow, oldCurrentRow) {
+      console.log(currentRow);
+      console.log("oldCurrentRow");
+      console.log(oldCurrentRow);
+    },
+    /**
+     * 删除测试用例
+     */
+    DeleteTestcase(node_data) {
+      console.log("---------------");
+      console.log(node_data.caseId);
+      axios
+        .post("deleteTestCase", {
+          caseId: node_data.caseId,
+        })
+        .then((res) => {
+          console.log(res);
+        });
+    },
+    /***
+     * 在服务器上创建一个默认测试用例，
+     * 并返回该用例的id
+     */
+    CreateTestCase() {
+      var newTestCase = {
+        caseId: 100,
+        caseName: "2016-05-02",
+        preCondition: "王小虎",
+        actionCondition: "上海市普陀区金沙江路 1518 弄",
+        type: "folder",
+        preResult: 1212312312312312312312,
+        ps: "123",
+        test_level: "P1",
+        changer: 1,
+
+        isRowOk: true,
+        isOk: {
+          caseName: false,
+          preCondition: false,
+          preResult: false,
+          actionCondition: false,
+          ps: false,
+        },
+      };
+      this.parentObj.table_datas.unshift(newTestCase);
+      this.tableData = this.parentObj.table_datas;
+      this.currentRow = this.parentObj.table_datas[0]
+    },
+
     /**
      * 保存测试用例的修改到服务器
      *
@@ -142,6 +209,7 @@ export default {
             fatherId: fatherId,
             childId: childrenIds,
             tag: data.tag,
+            fileType: data.type,
           })
           .then((res) => {
             console.log(res);
@@ -195,9 +263,9 @@ export default {
     },
     cellClick(row, column, cell, event) {
       console.log(this.tableData);
-      console.log(this.parentObj.tableRoots);
+      console.log(this.parentObj.table_datas);
       console.log(this.tableData[0]);
-      console.log(this.parentObj.tableRoots[0]);
+      console.log(this.parentObj.table_datas[0]);
       row.isOk[column.property] = true;
       //console.log(column.prop);
       //console.log(row.isOk[column.prop]);
@@ -218,14 +286,14 @@ export default {
         .get("getUserTestCases", { params: { userId: this.parentObj.userId } })
         .then((res) => {
           console.log(res);
-          var tableRoots = res.data.msg;
-          tableRoots = that.SettleCellStates(tableRoots);
-          var NodeRoots = that.SettleTreeNodes(tableRoots);
+          var table_datas = res.data.msg;
+          table_datas = that.SettleCellStates(table_datas);
+          var NodeRoots = that.SettleTreeNodes(table_datas);
 
-          console.log(tableRoots);
+          console.log(table_datas);
           console.log(NodeRoots);
-          that.tableData = tableRoots;
-          that.parentObj.tableRoots = tableRoots;
+          that.tableData = table_datas;
+          that.parentObj.table_datas = table_datas;
           that.parentObj.nodes_data = NodeRoots;
 
           this.$bus.emit("UPDATE_TABLE_AND_TREE");
@@ -367,8 +435,9 @@ export default {
       // 模版中的元素需要对应的有 slot="opt" 属性
     ];
     return {
+      currentRow: "",
       isEditing: false,
-      tableData: tableData, //this.parentObj.tableRoots,
+      tableData: tableData, //this.parentObj.table_datas,
       options: [
         {
           value: "0",

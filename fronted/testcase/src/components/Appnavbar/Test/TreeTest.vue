@@ -1,14 +1,10 @@
 <template>
-  <div>
-    <el-button type="primary" @click="handleExpandChildNodes"
-      >点我手动【展开】当前选中节点的子节点</el-button
-    ><el-button type="danger" @click="handleUnExpandChildNodes" width
-      >点我手动【关闭】当前选中节点的子节点</el-button
-    >
-  </div>
+  <el-button @click="CreateNode(data)">点击新建节点</el-button>
+
   <el-tree
     ref="tree"
     :data="data"
+    :props="defaultProps"
     node-key="label"
     @node-click="handleNodeClick"
     highlight-current
@@ -17,59 +13,40 @@
 
 <script>
 export default {
-  mounted() {
-    this.$refs["tree"].setCurrentKey("一级 2"); //默认打开的时候，选中一个根node
-    this.handleExpandChildNodes(); //并且展开其子节点
+  watch: {
+    currertKey(label) {
+      if (label) {
+        this.$refs["tree"].setCurrentKey(label);
+        //或者this.$refs.tree.setCurrentKey(label);
+      } else {
+        this.$refs["tree"].setCurrentKey(null);
+      }
+    },
   },
   methods: {
+    CreateNode(data) {
+      var newChild = this.createNodeData();
+      data.unshift(newChild);
+      this.currertKey = newChild.label;
+      //this.refreshNode(newChild.label);
+    },
+    createNodeData() {
+      var myDate = new Date();
+      const node = {
+        caseId: this.caseId++,
+        label: myDate.toLocaleString(),
+        type: "folder",
+        children: [],
+      };
+      return node;
+    },
     handleNodeClick(data) {
       console.log(data);
-    },
-    /***
-     * 手动展开当前选中节点的全部节点
-     */
-    handleExpandChildNodes() {
-      /**
-       * 错误的获取当前节点实例的做法（X）：
-       *     var node = this.$refs["tree"].getCurrentNode();
-       *     node.expanded =true
-       *
-       * 正确做法（ √ ）:
-       */
-      var node = this.$refs.tree.store.currentNode;
-      node.expanded = true;
-      var child_nodes = new Array();
-      child_nodes.unshift(node);
-      while (child_nodes.length != 0) {
-        var nowNode = child_nodes.pop();
-        if (nowNode.childNodes) { //如果有孩子节点才需要进一步遍历
-          for (var i = 0; i < nowNode.childNodes.length; i++) {
-            console.log(nowNode.childNodes[i].expanded);
-            nowNode.childNodes[i].expanded = true;
-            child_nodes.unshift(nowNode.childNodes[i]);
-          }
-        }
-      }
-      //展开全部节点，需要将全部有子节点的节点的expand改成true
-    },
-    /***
-     * 手动关闭当前选中节点的全部节点
-     */
-    handleUnExpandChildNodes() {
-      /**
-       * 错误的获取当前节点实例的做法（X）：
-       *     var node = this.$refs["tree"].getCurrentNode();
-       *     node.expanded =true
-       *
-       * 正确做法（ √ ）:
-       */
-      var node = this.$refs.tree.store.currentNode;
-      node.expanded = false;
-      //关闭的话，只要关掉根节点的expand属性即可
     },
   },
   data() {
     return {
+      currertKey: "",
       data: [
         {
           label: "一级 1",
@@ -99,11 +76,7 @@ export default {
               label: "二级 2-2",
               children: [
                 {
-                  label: "三级 2-2-1", children: [
-                    {
-                      label: "四级 2-2-1-1",
-                    },
-                  ],
+                  label: "三级 2-2-1",
                 },
               ],
             },
@@ -125,7 +98,6 @@ export default {
               children: [
                 {
                   label: "三级 3-2-1",
-                 
                 },
               ],
             },

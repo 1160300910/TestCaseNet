@@ -21,7 +21,6 @@
     <div class="block">
       <p>
         测试用例集
-
         <i @click="CreateNewRoot(node_data)" class="el-icon-edit"></i>
       </p>
       <el-tree
@@ -43,7 +42,17 @@
             ></span>
             <i class="el-icon-folder-opened" v-if="data.type == 'folder'"> </i>
             <i class="el-icon-star-off" v-else-if="data.type == 'file'"> </i>
-            <span>{{ node.label }} {{ data.caseId }}</span>
+            <span v-if="!data.isEditing"
+              >{{ node.label }} {{ data.caseId }}</span
+            >
+            <span v-else
+              ><el-input
+                v-focus
+                @focus="Test(node)"
+                v-model="treeNodeInput"
+                size="mini"
+              ></el-input
+            ></span>
             <!--span><i class="el-icon-check">
               </i> </span-->
             <span>
@@ -77,6 +86,17 @@
 import PopOverOperate from "../ChooseOption/PopOverOperate.vue";
 let caseId = 1000;
 export default {
+  directives: {
+    //注册一个局部的自定义指令 v-focus
+    focus: {
+      mounted(el) {
+        console.log(el.children[0]);
+        el.children[0].focus();
+        //因为el-input这是个组件，input外面被一层 div 包裹着,
+        ///el打印出来是外面这个 div，需要找到内层的input
+      },
+    },
+  },
   inject: ["parentObj"],
   created() {
     if (this.$route.params.userName && this.$route.params.userWork)
@@ -85,9 +105,7 @@ export default {
   },
   components: { PopOverOperate },
   watch: {
-    filterText(val) {
-      this.$refs.tree.filter(val);
-    },
+    
     /***
      * 当前节点的caseId值
      */
@@ -95,7 +113,7 @@ export default {
       // Tree 内部使用了 Node 类型的对象来包装用户传入的数据，用来保存目前节点的状态。可以用 $refs 获取 Tree 实例
       if (caseId.toString()) {
         this.$refs["tree"].setCurrentKey(caseId);
-        console.log(this.$refs['tree'])
+        console.log(this.$refs["tree"]);
       } else {
         this.$refs["tree"].setCurrentKey(null);
       }
@@ -108,10 +126,13 @@ export default {
     });
   },
   methods: {
+    Test(node) {
+      this.treeNodeInput = node.label
+    },
     /***
      * 创建新的系统
      * 1.设置当前选中节点为新建节点，并focus
-     * 2.右侧的table里新增默认列
+     * 2.右侧的table里新增默认行
      * 3.
      */
     CreateNewRoot(data) {
@@ -119,7 +140,10 @@ export default {
       var newChild = this.createNodeData();
       data.unshift(newChild);
       console.log(newChild.caseId);
-      this.currentNodeKey = newChild.caseId; //更新当前选中节点
+      this.currentNodeKey = newChild.caseId;
+      this.parentObj.node_data = newChild;
+
+      this.$bus.emit("CREATE_CHOOSE_TEST"); //告诉table，发生了创造事件
     },
     /**
      * 设置当前选中的node的值,并展开子node
@@ -127,7 +151,7 @@ export default {
     UpdateChooseNode(currentNodeKey, node) {
       console.log("---------------------");
       this.currentNodeKey = currentNodeKey;
-      this.handleExpandChildNodes(node);
+      //this.handleExpandChildNodes(node);
     },
     /**
      * 调用函数，展开一级node下的全部子node
@@ -150,8 +174,6 @@ export default {
       //console.log(this.$refs.tree.getCheckedKeys())
       //node.expanded = node.expanded; //在组件点击事件 中使用
     },
-
-  
 
     filterNode(value, data) {
       //显示过滤节点
@@ -218,10 +240,11 @@ export default {
         label: myDate.toLocaleString(),
         type: "folder",
         children: [],
+        isEditing: true,
       };
       return node;
     },
-    append2(data) {
+    append(data) {
       const newChild = { caseId: caseId++, label: "testtest", children: [] };
       if (!data.children) {
         data.children = [];
@@ -296,6 +319,7 @@ export default {
       },
     ];
     return {
+      treeNodeInput:'',
       currentNodeKey: "", //保存了当前选中节点的caseId信息，用于更新选中状态
       options: options,
       userName: "西子卡",
@@ -340,10 +364,10 @@ span {
   background: #eaf9ff !important;
   color: #007bff;
 }
- .el-tree--highlight-current .el-tree-node.is-current>.el-tree-node__content {
-   /*设置current选中的样式 */
-    color: #4d95fd;
-    font-weight: bold;
+.el-tree--highlight-current .el-tree-node.is-current > .el-tree-node__content {
+  /*current选中的样式 */
+  color: #4d95fd;
+  font-weight: bold;
   background-color: #dde9ff !important;
-} 
+}
 </style>

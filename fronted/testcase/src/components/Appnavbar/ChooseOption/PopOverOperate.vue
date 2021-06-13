@@ -30,7 +30,7 @@
           >
         </el-form-item>
         <el-form-item>
-          <el-button icon="el-icon-document-copy" type="text"
+          <el-button icon="el-icon-document-copy" type="text" @click="DeleteTestcase"
             >复制用例</el-button
           >
         </el-form-item>
@@ -71,6 +71,12 @@ export default {
   //向layout里修改当前选中行的信息
 
   methods: {
+    /***
+     * 删除测试用例
+     */
+    DeleteTestcase(){
+
+    },
     UpdateFatherChooseNode(currentNodeKey, node) {
       this.$emit("updateNode", currentNodeKey, node);
     },
