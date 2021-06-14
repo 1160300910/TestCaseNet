@@ -5,7 +5,7 @@
     highlight-current-row
     border
     ref="table"
-    @cell-click="cellClick"
+    @cell-dblclick="cellClick"
     @current-change="CurrentChange"
   >
     <template #opt="scope">
@@ -43,18 +43,7 @@
         ></el-button>
       </el-row>
     </template>
-    <template #input="scope" :resize="both" :autosize="{ minRows: 2 }">
-      <el-input
-        type="textarea"
-        v-if="scope.data.row.isOk.caseName"
-        v-model="scope.data.row.caseName"
-        @focus="Test(scope.data.row.caseName)"
-        @keyup.enter="blurClick(scope.data.row, scope.data.column)"
-        @blur="blurClick(scope.data.row, scope.data.column)"
-      >
-      </el-input>
-      <span v-else>{{ scope.data.row.caseName }}</span>
-    </template>
+
     <template #chooseLevel="scope">
       <el-select v-model="scope.data.row.test_level" placeholder="P0">
         <el-option
@@ -86,8 +75,8 @@ export default {
   watch: {
     currentRow(row) {
       if (row) {
-        console.log(this.$refs["table"])
-        //this.$refs["table"].setCurrentRow(row);
+        console.log(this.$refs["table"]);
+        this.$refs["table"].ChangeCurrentRow(row);
       } else {
         //this.$refs["table"].setCurrentRow(null);
       }
@@ -116,10 +105,31 @@ export default {
     });
   },
   methods: {
+    /**
+     * 修改当前选中行
+     * 1.保存其他的选中行
+     * 2.修改当前的选中TreeNode节点
+     */
+
     CurrentChange(currentRow, oldCurrentRow) {
+      this.SaveOtherTableRows(currentRow, this.parentObj.table_datas);
+
       console.log(currentRow);
       console.log("oldCurrentRow");
       console.log(oldCurrentRow);
+    },
+    /***
+     * 保存其他选中行
+     */
+    SaveOtherTableRows(row, table_datas) {
+      var t;
+      for (t = 0; t < table_datas.length; t++) {
+        console.log("------");
+        console.log(table_datas[t]);
+        if (table_datas[t].caseId != row.caseId) {
+          table_datas[t].isRowOk = false;
+        }
+      }
     },
     /**
      * 删除测试用例
@@ -141,13 +151,13 @@ export default {
      */
     CreateTestCase() {
       var newTestCase = {
-        caseId: 100,
-        caseName: "2016-05-02",
-        preCondition: "王小虎",
-        actionCondition: "上海市普陀区金沙江路 1518 弄",
+        caseId: this.parentObj.node_data.caseId,
+        caseName: this.parentObj.node_data.label,
+        preCondition: "",
+        actionCondition: "",
         type: "folder",
-        preResult: 1212312312312312312312,
-        ps: "123",
+        preResult: "",
+        ps: "",
         test_level: "P1",
         changer: 1,
 
@@ -162,7 +172,7 @@ export default {
       };
       this.parentObj.table_datas.unshift(newTestCase);
       this.tableData = this.parentObj.table_datas;
-      this.currentRow = this.parentObj.table_datas[0]
+      this.$refs["table"].ChangeCurrentRow(newTestCase);
     },
 
     /**
@@ -215,6 +225,7 @@ export default {
             console.log(res);
             //是需要修改的行
             data.isRowOk = false;
+            this.$bus.emit("SAVE_TABLE_ROW");
           })
           .catch(function(error) {
             console.log(that.parentObj.nowParent.data);

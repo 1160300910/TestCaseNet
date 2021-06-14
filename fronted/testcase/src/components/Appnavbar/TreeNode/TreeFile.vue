@@ -50,6 +50,7 @@
                 v-focus
                 @focus="Test(node)"
                 v-model="treeNodeInput"
+                clearable
                 size="mini"
               ></el-input
             ></span>
@@ -84,7 +85,7 @@
 
 <script>
 import PopOverOperate from "../ChooseOption/PopOverOperate.vue";
-let caseId = 1000;
+let caseId = 1111;
 export default {
   directives: {
     //注册一个局部的自定义指令 v-focus
@@ -105,7 +106,6 @@ export default {
   },
   components: { PopOverOperate },
   watch: {
-    
     /***
      * 当前节点的caseId值
      */
@@ -118,16 +118,47 @@ export default {
         this.$refs["tree"].setCurrentKey(null);
       }
     },
+    /***
+     * 当前节点的节点输入值
+     */
+    treeNodeInput(value) {
+      var node = this.$refs["tree"].getCurrentNode();
+      console.log(node);
+      node.label = value;
+
+      this.$bus.emit("CASE_NAME_TREENODE_CHANGE", {
+        value: value,
+        rowId: node.caseId,
+      }); //告诉table，发生了用例标题修改事件
+    },
   },
   mounted() {
     this.$bus.on("UPDATE_TABLE_AND_TREE", () => {
       console.log("UPDATE_TABLE_AND_TREE发生了");
       this.node_data = JSON.parse(JSON.stringify(this.parentObj.nodes_data));
     });
+    /**
+     * 从table发起了修改caseName
+     */
+    this.$bus.on("CASE_NAME_TABLE_CHANGE", (param) => {
+      console.log(param);
+      console.log("CASE_NAME_TABLE_CHANGE发生了");
+      //设置当前选中行的caseName为对应的value
+      var currentNode = this.$refs["tree"].getCurrentNode();
+      currentNode.label = param.value;
+      this.treeNodeInput = param.value;
+    });
+    /**
+     * 保存了testCase
+     */
+    this.$bus.on("SAVE_TABLE_ROW", (param) => {
+      var node = this.$refs["tree"].getCurrentNode();
+      node.isEditing = false;
+    });
   },
   methods: {
     Test(node) {
-      this.treeNodeInput = node.label
+      this.treeNodeInput = node.label;
     },
     /***
      * 创建新的系统
@@ -235,9 +266,10 @@ export default {
     },
     createNodeData() {
       var myDate = new Date();
+      myDate.toLocaleString();
       const node = {
         caseId: caseId++,
-        label: myDate.toLocaleString(),
+        label: "",
         type: "folder",
         children: [],
         isEditing: true,
@@ -319,7 +351,7 @@ export default {
       },
     ];
     return {
-      treeNodeInput:'',
+      treeNodeInput: "",
       currentNodeKey: "", //保存了当前选中节点的caseId信息，用于更新选中状态
       options: options,
       userName: "西子卡",

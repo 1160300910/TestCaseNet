@@ -2035,3 +2035,46 @@ INFO 127.0.0.1 - - [13/Jun/2021 23:37:53] "GET /test_case/getUserTestCases/?user
 INFO 127.0.0.1 - - [13/Jun/2021 23:39:28] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
 INFO 127.0.0.1 - - [13/Jun/2021 23:40:01] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
 INFO 127.0.0.1 - - [13/Jun/2021 23:40:54] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [14/Jun/2021 11:40:55] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [14/Jun/2021 11:41:05] "POST /test_case/saveTestCase HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [14/Jun/2021 11:41:16] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [14/Jun/2021 11:47:31] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [14/Jun/2021 15:33:15] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [14/Jun/2021 15:35:42] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [14/Jun/2021 15:36:25] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [14/Jun/2021 15:39:34] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [14/Jun/2021 15:39:41] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [14/Jun/2021 15:44:04] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [14/Jun/2021 15:44:43] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [14/Jun/2021 15:45:26] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [14/Jun/2021 15:45:47] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [14/Jun/2021 15:46:27] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [14/Jun/2021 15:46:59] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [14/Jun/2021 15:47:54] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [14/Jun/2021 15:48:03] "POST /test_case/deleteTestCase HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [14/Jun/2021 15:48:07] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [14/Jun/2021 15:48:26] "POST /test_case/saveTestCase HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [14/Jun/2021 15:54:18] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [14/Jun/2021 15:54:53] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [14/Jun/2021 15:55:19] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [14/Jun/2021 15:56:06] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [14/Jun/2021 15:56:43] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [14/Jun/2021 15:59:54] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [14/Jun/2021 16:01:45] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [14/Jun/2021 16:03:51] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [14/Jun/2021 16:04:01] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [14/Jun/2021 16:04:16] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [14/Jun/2021 16:05:01] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [14/Jun/2021 16:05:43] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [14/Jun/2021 16:10:31] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [14/Jun/2021 16:10:40] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [14/Jun/2021 16:16:59] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [14/Jun/2021 16:17:50] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [14/Jun/2021 16:23:02] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [14/Jun/2021 16:23:58] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [14/Jun/2021 16:31:45] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [14/Jun/2021 16:32:37] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88

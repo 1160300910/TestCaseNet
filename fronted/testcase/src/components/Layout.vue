@@ -39,8 +39,8 @@ export default {
       userName: "西子卡",
       userId: 1,
       userWork: "QA",
-      table_datas: {},
-      nodes_data:"",
+      table_datas: {}, //节点数据列表
+      nodes_data:"", //节点数据树
     };
   },
   provide() {

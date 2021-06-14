@@ -1,6 +1,6 @@
 // my-table.vue
 <template>
-  <el-table :data="data" :row-class-name="tableRowClassName" >
+  <el-table :data="data" :row-class-name="tableRowClassName" ref="my-table">
     <el-table-column
       v-for="colConfig in colConfigs"
       :key="colConfig.prop"
@@ -12,7 +12,7 @@
         <slot v-if="colConfig.slot" :name="colConfig.slot" :data="scope">
         </slot>
         <component
-          v-else-if="colConfig.component&&!scope.row.isRowOk"
+          v-else-if="colConfig.component && !scope.row.isRowOk"
           :isOk="scope.row.isOk[colConfig.prop]"
           :row="scope.row"
           :column_name="colConfig.prop"
@@ -31,8 +31,7 @@
           :column_name="colConfig.prop"
           :isRowOk="scope.row.isRowOk"
           :is="colConfig.component"
-          @blur="blurClick(scope.row, scope.column, colConfig.prop)"
-          @keyup.enter="blurClick(scope.row, colConfig.prop)"
+          @input="ChangeInput(colConfig.prop, scope.row)"
         >
         </component>
         <span v-else> {{ scope.row[scope.column.property] }} </span>
@@ -55,14 +54,63 @@ export default {
     },
   },
   props: ["colConfigs", "data"],
-  mounted() {},
+  mounted() {
+    /***
+     * 从节点位置修改列表title
+     */
+    this.$bus.on("CASE_NAME_TREENODE_CHANGE", (param) => {
+      console.log(param);
+      console.log("CASE_NAME_TREENODE_CHANGE发生了");
+      //设置当前选中行的caseName为对应的value
+      var currentRow=this.FindCurrentTableRow(param.rowId)
+      console.log(currentRow)
+      currentRow.caseName = param.value
+    });
+  },
   methods: {
+    /***
+     * 查找当前的选中行
+     */
+    FindCurrentTableRow(rowId) {
+      var d;
+      for(d=0;d<this.data.length;d++){
+        if(this.data[d].caseId==rowId){
+          return this.data[d]
+        }
+      }
+    },
+    /**
+     * 修改输入时触发
+     */
+    ChangeInput(column_name, row) {
+      console.log("changeing");
+      console.log(column_name);
+       this.$bus.emit("CASE_NAME_TABLE_CHANGE", {
+          value: row.caseName,
+          rowId: row.caseId,
+        }); //告诉treeNode，发生了用例标题修改事件
+    },
+    /**
+     * 设置当前的选中行
+     * 在父组件里调用 this.$refs.['子组件名'].ChangeCurrentRow(row)
+     * 能通过调用子组件，设置当前选中行
+     *
+     */
+    ChangeCurrentRow(row) {
+      this.$refs["my-table"].setCurrentRow(row);
+    },
     Test(data) {
       //console.log(data);
     },
     blurClick(row, column, column_name) {
       //console.log(column_name);
       row.isOk[column.property] = false;
+      console.log(row);
+      if (column_name == "caseName") {
+        //保存到服务器
+        //修改treeNode名字为对应值
+        console.log(row);
+      }
       /*if (column_name === "caseName") {
         row.isOk[column.property] = false;
         console.log(row);
