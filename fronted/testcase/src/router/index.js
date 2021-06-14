@@ -8,6 +8,7 @@ import tabletest from '@/components/Appmain/Test/tabletest'
 import TableT1 from '@/components/Appmain/Test/TableT1'
 import test from '@/components/Appnavbar/Test/test'
 import TreeTest from '@/components/Appnavbar/Test/TreeTest'
+import NavbarMain from '@/components/Appnavbar/NavbarMain'
 
 
 const routes = [{
@@ -42,6 +43,9 @@ const routes = [{
     }, {
         path: '/TestTree',
         component: TreeTest
+    }, {
+        path: '/NavbarMain',
+        component: NavbarMain
     }
 ]
 

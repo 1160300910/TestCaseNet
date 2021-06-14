@@ -99,7 +99,7 @@ def saveTestCase():
             level = 4
         else:
             level = 0
-        peo = Peo.query.filter_by(peoId=changer).first()
+        peo = Peo.query.filter_by(peoName=changer).first()
 
         if peo is not None:
             print(peo.peoId)
@@ -187,6 +187,32 @@ def deleteTestCase():
         else:
             error = '不存在对应测试用例'
             msg = False
+        response = {
+            'error': error,
+            'msg': msg
+        }
+        return jsonify(response)
+
+@bp.route("/getNewCaseId", methods=['GET'])
+def getNewCaseId():
+    if request.method == 'GET':
+        fatherId = -1
+        childId = -1
+        testCase1 = TestCase(fatherId=fatherId,
+                             childId=childId)
+
+        DB.session.add(testCase1)
+        DB.session.flush()
+
+        if(testCase1.caseId):
+            msg = testCase1.caseId
+            error = ''
+            DB.session.commit()
+        else:
+            msg =''
+            error = '无'
+
+
         response = {
             'error': error,
             'msg': msg

@@ -99,12 +99,34 @@ export default {
         this.tableData
       );
     });
-    this.$bus.on("CREATE_CHOOSE_TEST", () => {
+    this.$bus.on("CREATE_CHOOSE_TEST", (caseId) => {
       console.log("CREATE_CHOOSE_TEST发生了");
-      this.CreateTestCase();
+      this.CreateTestCase(caseId);
+    });
+    this.$bus.on("UPDATE_CURRENT_DATA_NODE", (caseId) => {
+      console.log("UPDATE_CURRENT_DATA_NODE 发生了");
+      var currentRow = this.FindCurrentRow(caseId);
+      if (currentRow) {
+        this.$refs["table"].ChangeCurrentRow(currentRow);
+      } else {
+        alert("Error !!! 没有找到对应的caseId的tableline");
+      }
     });
   },
   methods: {
+    /***
+     * 查找对应的行
+     */
+    FindCurrentRow(caseId) {
+      var d;
+      for (d = 0; d < this.parentObj.table_datas.length; d++) {
+        console.log(this.parentObj.table_datas[d])
+        if (caseId == this.parentObj.table_datas[d].caseId) {
+          return this.parentObj.table_datas[d];
+        }
+      }
+      return "";
+    },
     /**
      * 修改当前选中行
      * 1.保存其他的选中行
@@ -149,9 +171,9 @@ export default {
      * 在服务器上创建一个默认测试用例，
      * 并返回该用例的id
      */
-    CreateTestCase() {
+    CreateTestCase(caseId) {
       var newTestCase = {
-        caseId: this.parentObj.node_data.caseId,
+        caseId: caseId,
         caseName: this.parentObj.node_data.label,
         preCondition: "",
         actionCondition: "",
@@ -159,7 +181,7 @@ export default {
         preResult: "",
         ps: "",
         test_level: "P1",
-        changer: 1,
+        changer: "西子卡",
 
         isRowOk: true,
         isOk: {
@@ -300,9 +322,6 @@ export default {
           var table_datas = res.data.msg;
           table_datas = that.SettleCellStates(table_datas);
           var NodeRoots = that.SettleTreeNodes(table_datas);
-
-          console.log(table_datas);
-          console.log(NodeRoots);
           that.tableData = table_datas;
           that.parentObj.table_datas = table_datas;
           that.parentObj.nodes_data = NodeRoots;
@@ -319,14 +338,17 @@ export default {
     SettleTreeNodes(datas) {
       var nodes = new Array();
       for (var i = 0; i < datas.length; i++) {
-        console.log(datas[i].caseId);
         var node = {};
         node["caseId"] = datas[i].caseId;
         node["label"] = datas[i].caseName;
+        if (datas[i].fatherId == -1) {
+          node["type"] = "folder";
+        } else {
+          node["type"] = "file";
+        }
+        node["isEditing"] = false;
         nodes.push(node);
       }
-
-      console.log("enddd");
       console.log(nodes);
       return nodes;
     },

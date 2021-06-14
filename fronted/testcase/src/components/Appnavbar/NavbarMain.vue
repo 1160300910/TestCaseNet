@@ -11,7 +11,7 @@
           <span><i class="el-icon-date"></i> 系统tab</span>
         </template>
 
-        <tree-node></tree-node>
+        <systems :tree_datas="tree_datas"></systems>
       </el-tab-pane>
       <el-tab-pane name ="second">
         <template #label>
@@ -25,15 +25,17 @@
 </template>
 
 <script>
-import TreeNode from "./TreeNode/TreeFile";
+import Systems from "./NavTree/Systems";
 export default {
-  components: { TreeNode },
+  components: { Systems },
   data() {
     return {
       activeName: "first",
+      tree_datas:"",
     };
   },
   methods: {
+    
     handleClick(tab, event) {
       console.log(tab, event);
     },

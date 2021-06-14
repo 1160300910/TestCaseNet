@@ -81,6 +81,7 @@
 
 <script>
 import PopOverOperate from "../ChooseOption/PopOverOperate.vue";
+import axios from "axios";
 let caseId = 11112;
 export default {
   directives: {
@@ -158,19 +159,26 @@ export default {
     },
     /***
      * 创建新的系统
-     * 1.设置当前选中节点为新建节点，并focus
-     * 2.右侧的table里新增默认行
-     * 3.
+     * 1.设置当前选中节点为新建节点，并focus到输入框中
+     * 2.右侧的table里新增默认行,设置为待输入模式，且这一行被选中
+     * 3.输入当前输入框的标题，table的标题也会一起改变；table输入，这里也一起输入，保持同步
      */
     CreateNewRoot(data) {
-      console.log(data);
-      var newChild = this.createNodeData();
-      data.unshift(newChild);
-      console.log(newChild.caseId);
-      this.currentNodeKey = newChild.caseId;
-      this.parentObj.node_data = newChild;
+      //从服务器获取新caseId
+      axios
+        .get("getNewCaseId")
+        .then((res) => {
+          var newCaseId = res.data.msg;
+          var newChild = this.createNodeData(newCaseId);
+          data.unshift(newChild);
+          this.currentNodeKey = newChild.caseId;
+          this.parentObj.node_data = newChild; 
 
-      this.$bus.emit("CREATE_CHOOSE_TEST"); //告诉table，发生了创造事件
+          this.$bus.emit("CREATE_CHOOSE_TEST", newCaseId); //告诉table，发生了创造事件
+        })
+        .catch(function(error) {
+          alert(error);
+        });
     },
     /**
      * 设置当前选中的node的值,并展开子node
@@ -208,7 +216,8 @@ export default {
       return data.label.indexOf(value) !== -1;
     },
     /**
-     * 点击节点，选中该节点
+     * 1.点击节点，选中该节点,自动展开该节点下面的子节点
+     * 2.自动选中table中，对应的caseId
      */
     OnChooseNode(data, node) {
       console.log(node);
@@ -230,6 +239,7 @@ export default {
       console.log(data.caseId + " " + data.label);
       //自动展开所有的孩子节点
       this.handleExpandChildNodes(node);
+       this.$bus.emit("UPDATE_CURRENT_DATA_NODE",data.caseId);
     },
     /*
             <el-button size="mini" on-click={() => this.append(store, data)}>
@@ -260,11 +270,11 @@ export default {
       console.log(newChild.caseId);
       this.currentNodeKey = newChild.caseId; //更新当前选中节点
     },
-    createNodeData() {
+    createNodeData(newCaseId) {
       var myDate = new Date();
       myDate.toLocaleString();
       const node = {
-        caseId: caseId++,
+        caseId: newCaseId,
         label: "",
         type: "folder",
         children: [],

@@ -43,7 +43,7 @@ class TestCase(DB.Model):
     actionCondition = DB.Column(DB.String(64)) # 执行条件
     preResult = DB.Column(DB.String(64),default='') # 预期结果
     ps = DB.Column(DB.String(64)) # 备注
-    test_level = DB.Column(DB.Integer, default='P1') # 测试等级
+    test_level = DB.Column(DB.Integer, default='1') # 测试等级
     changer = DB.Column(DB.Integer, DB.ForeignKey('peo.peoId')) # 修改人
 
     fatherId = DB.Column(DB.Integer,nullable=False,) # 父节点
