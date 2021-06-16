@@ -41,15 +41,10 @@
             <span v-if="!data.isEditing"
               >{{ node.label }} {{ data.caseId }}</span
             >
-            <span v-else
-              ><el-input
-                v-focus
-                @focus="Test(node)"
-                v-model="treeNodeInput"
-                clearable
-                size="mini"
-              ></el-input
-            ></span>
+            <span v-else>
+              <el-input v-focus="Test(node)" v-model="treeNodeInput" clearable>
+              </el-input>
+            </span>
             <!--span><i class="el-icon-check">
               </i> </span-->
             <span>
@@ -58,14 +53,14 @@
               
               </i-->
 
-              <!--v-bind:nodeInfo="nodeInfo"-->
+              <!--
+                :nowChildren="this.parentObj.nowChildren"
+                :nowParent="nowParent"-->
 
               <pop-over-operate
                 @updateNode="UpdateChooseNode"
                 :node="node"
                 :data="data"
-                :nowChildren="nowChildren"
-                :nowParent="nowParent"
               ></pop-over-operate>
               <!--i
                 @click="addTestcase(node, data)"
@@ -88,7 +83,7 @@ export default {
     //注册一个局部的自定义指令 v-focus
     focus: {
       mounted(el) {
-        console.log(el.children[0]);
+        console.log(el);
         el.children[0].focus();
         //因为el-input这是个组件，input外面被一层 div 包裹着,
         ///el打印出来是外面这个 div，需要找到内层的input
@@ -106,13 +101,22 @@ export default {
     /***
      * 当前节点的caseId值
      */
+
     currentNodeKey(caseId) {
+      console.log("currentNodeKey");
       // Tree 内部使用了 Node 类型的对象来包装用户传入的数据，用来保存目前节点的状态。可以用 $refs 获取 Tree 实例
       if (caseId.toString()) {
         this.$refs["tree"].setCurrentKey(caseId);
-        console.log(this.$refs["tree"]);
+        console.log(caseId);
+        //console.log(this.$refs["tree"].getCurrentNode());
+        //var nowNode = this.$refs["tree"].getNode(caseId);
+        //console.log()
+        //this.$refs["tree"].setCurrentNode(nowNode.data);
+        // console.log(this.$refs["tree"].store.currentNode.data);
+        //this.setCurrentTreePosGlobal();
       } else {
         this.$refs["tree"].setCurrentKey(null);
+        alert("ERROR!!!没有找到当前节点的caseId值");
       }
     },
     /***
@@ -132,7 +136,10 @@ export default {
   mounted() {
     this.$bus.on("UPDATE_TABLE_AND_TREE", () => {
       console.log("UPDATE_TABLE_AND_TREE发生了");
+      console.log(this.node_data)
       this.node_data = JSON.parse(JSON.stringify(this.parentObj.nodes_data));
+      console.log(this.node_data)
+      console.log(typeof (this.node_data))
     });
     /**
      * 从table发起了修改caseName
@@ -152,10 +159,65 @@ export default {
       var node = this.$refs["tree"].getCurrentNode();
       node.isEditing = false;
     });
+    /**
+     * 创建新用例
+     */
+    this.$bus.on("CREATE_NEW_TREENODE_POP", (node) => {
+      console.log("CREATE_NEW_TREENODE_POP  发生了");
+      this.CreateNewTestCase(node);
+    });
   },
   methods: {
+    /***
+     * 建立某个系统文件夹下的测试用例
+     */
+    CreateNewTestCase(node) {
+      var fileType = "file";
+      //从服务器获取新caseId
+      axios
+        .get("getNewCaseId")
+        .then((res) => {
+          console.log("异步返回");
+          var newCaseId = res.data.msg;
+          var newChild = this.createNodeData(newCaseId, fileType);
+          console.log(node.childNodes)
+          if (!node.data.children) {
+            node.data.children = [];
+          }
+          this.$refs['tree'].append(newChild,node) //新增node
+          this.$refs['tree'].setCurrentNode(newChild) //设置当前节点为新增节点
+          this.setCurrentTreePosGlobal() //设置孩子节点
+          //node.data.children.push(newChild);
+          console.log(node.childNodes)
+          /*
+          new Promise((resolve, reject) => {
+            //todo ：等待这步完成
+            console.log("finish");
+            resolve("success");
+          });
+          console.log("end");*/
+          console.log("????????????????");
+          console.log(this.$refs["tree"].getCurrentNode());
+          //this.UpdateChooseNode(newCaseId)
+          //this.currentNodeKey = newCaseId;
+
+          console.log("????????????????!!!!!");
+          this.parentObj.node_data = newChild;
+
+          this.$bus.emit("CREATE_CHOOSE_TEST", {
+            caseId: newCaseId,
+            type: fileType,
+          }); //告诉table，发生了创造事件
+         
+        })
+        .catch(function(error) {
+          alert(error);
+        });
+    },
     Test(node) {
-      this.treeNodeInput = node.label;
+      //this.treeNodeInput = node.label;
+      console.log("FOCUS FOCUS");
+      console.log(node);
     },
     /***
      * 创建新的系统
@@ -164,17 +226,21 @@ export default {
      * 3.输入当前输入框的标题，table的标题也会一起改变；table输入，这里也一起输入，保持同步
      */
     CreateNewRoot(data) {
+      var fileType = "folder";
       //从服务器获取新caseId
       axios
         .get("getNewCaseId")
         .then((res) => {
           var newCaseId = res.data.msg;
-          var newChild = this.createNodeData(newCaseId);
+          var newChild = this.createNodeData(newCaseId, fileType);
           data.unshift(newChild);
-          this.currentNodeKey = newChild.caseId;
-          this.parentObj.node_data = newChild; 
+          this.currentNodeKey = newCaseId;
+          this.parentObj.node_data = newChild;
 
-          this.$bus.emit("CREATE_CHOOSE_TEST", newCaseId); //告诉table，发生了创造事件
+          this.$bus.emit("CREATE_CHOOSE_TEST", {
+            caseId: newCaseId,
+            type: fileType,
+          }); //告诉table，发生了创造事件
         })
         .catch(function(error) {
           alert(error);
@@ -183,31 +249,21 @@ export default {
     /**
      * 设置当前选中的node的值,并展开子node
      */
-    UpdateChooseNode(currentNodeKey, node) {
+    async UpdateChooseNode(currentNodeKey, node) {
       console.log("---------------------");
       this.currentNodeKey = currentNodeKey;
-      //this.handleExpandChildNodes(node);
+      console.log("===========");
     },
     /**
      * 调用函数，展开一级node下的全部子node
      */
-    handleExpandChildNodes(node) {
-      console.log("handleExpandChildNodes");
-      //const len = nodeList.length;
-      for (
-        var i = 0;
-        i < node.childNodes.length;
-        //this.$refs.tree.store.currentNode.childNodes.length;
-        i++
-      ) {
+    handleExpandChildNodes() {
+      var node = this.$refs.tree.store.currentNode;
+      node.expanded = true;
+      for (var i = 0; i < node.childNodes.length; i++) {
         node.childNodes[i].expanded = true;
-        console.log(node.childNodes[i].data);
-        console.log(node.childNodes[i].expanded);
       }
-      //console.log(this.$refs.tree.store.currentNode.childNodes)
-      //console.log("---------")
-      //console.log(this.$refs.tree.getCheckedKeys())
-      //node.expanded = node.expanded; //在组件点击事件 中使用
+      console.log("handleExpandChildNodes");
     },
 
     filterNode(value, data) {
@@ -215,31 +271,37 @@ export default {
       if (!value) return true;
       return data.label.indexOf(value) !== -1;
     },
+    /***
+     * 用node获取对应的树数据中的当前节点的父节点和儿子节点
+     */
+    setCurrentTreePosGlobal() {
+      var node = this.$refs["tree"].store.currentNode;
+      //console.log("setCurrentTreePosGlobal");
+      //console.log(node);
+      // 获取孩子节点
+      var children = node.childNodes;
+      /*console.log(children);
+      for (var i = 0; i < children.length; i++) {
+        console.log("孩子节点:" + i + " ");
+        console.log(children[i].data);
+      }*/
+      //获取父节点
+      var parent = node.parent;
+      //console.log("父节点:");
+      //console.log(parent.data);
+      // 保存并传递当前选中节点的数据
+      this.parentObj.nowParent = node.parent;
+      this.parentObj.nowChildren = node.childNodes;
+      //console.log(this.parentObj.nowChildren)
+      //console.log(this.parentObj.nowParent)
+    },
     /**
      * 1.点击节点，选中该节点,自动展开该节点下面的子节点
      * 2.自动选中table中，对应的caseId
      */
     OnChooseNode(data, node) {
-      console.log(node);
-      //console.log(node.store.currentNode.childNodes);
-      // 获取孩子节点
-      var children = node.childNodes;
-      for (var i = 0; i < children.length; i++) {
-        console.log("孩子节点:" + i + " ");
-        console.log(children[i].data);
-      }
-      //获取父节点
-      var parent = node.parent;
-      console.log("父节点:");
-      console.log(parent.parent);
-      // 保存并传递当前选中节点的数据
-      this.data = data;
-      this.nowParent = node.parent;
-      this.nowChildren = node.childNodes;
-      console.log(data.caseId + " " + data.label);
-      //自动展开所有的孩子节点
-      this.handleExpandChildNodes(node);
-       this.$bus.emit("UPDATE_CURRENT_DATA_NODE",data.caseId);
+      this.currentNodeKey = node.data.caseId;
+      this.$bus.emit("UPDATE_CURRENT_DATA_NODE", node.data.caseId);
     },
     /*
             <el-button size="mini" on-click={() => this.append(store, data)}>
@@ -270,13 +332,16 @@ export default {
       console.log(newChild.caseId);
       this.currentNodeKey = newChild.caseId; //更新当前选中节点
     },
-    createNodeData(newCaseId) {
+    /***
+     * 新建一个树节点数据
+     */
+    createNodeData(newCaseId, type) {
       var myDate = new Date();
       myDate.toLocaleString();
       const node = {
         caseId: newCaseId,
         label: "",
-        type: "folder",
+        type: type,
         children: [],
         isEditing: true,
       };
@@ -362,8 +427,6 @@ export default {
       options: options,
       userName: "西子卡",
       userWork: "QA",
-      nowParent: "",
-      nowChildren: "",
       filterText: "",
       node_data: JSON.parse(JSON.stringify(node_data)),
       testif: false,
@@ -373,6 +436,10 @@ export default {
 </script>
 
 <style>
+span > .el-input > .el-input__inner {
+  height: 30px;
+  width: 100px;
+}
 .custom-tree-node {
   flex: 1;
   display: flex;
@@ -392,6 +459,10 @@ span {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+}
+.el-tree-node > .el-tree-node__content {
+  /*设置选中的样式 */
+  height: 40px;
 }
 .el-tree-node:focus > .el-tree-node__content {
   /*设置选中的样式 */

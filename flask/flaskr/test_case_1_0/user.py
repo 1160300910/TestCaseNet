@@ -154,7 +154,7 @@ def getUserTestCases():
     if request.method == 'GET':
         userId = request.args.get('userId')
         # systems = request.json.get('systems')
-        result = TestCase.query.filter_by(changer=userId, fatherId=-1).all()
+        result = TestCase.query.filter_by(changer=userId).all()
         if (result):
             print(result)
             result = query2dict(result)

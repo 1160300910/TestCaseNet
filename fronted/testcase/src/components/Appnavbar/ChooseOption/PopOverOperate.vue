@@ -5,7 +5,7 @@
       :width="50"
       trigger="click"
       v-model:visible="visible"
-      @show="UpdateFatherChooseNode(data.caseId,node)"
+      @hide="UpdateFatherChooseNode(data.caseId, node)"
     >
       <el-form ref="form" label-width="2px" size="mini">
         <el-form-item>
@@ -24,13 +24,16 @@
         <el-form-item>
           <el-button
             icon="el-icon-magic-stick"
-            @click="CreateTestCase"
+            @click="CreateTestCase(node, nowChildren, nowParent)"
             type="text"
             >新建用例</el-button
           >
         </el-form-item>
         <el-form-item>
-          <el-button icon="el-icon-document-copy" type="text" @click="DeleteTestcase"
+          <el-button
+            icon="el-icon-document-copy"
+            type="text"
+            @click="DeleteTestcase"
             >复制用例</el-button
           >
         </el-form-item>
@@ -74,9 +77,7 @@ export default {
     /***
      * 删除测试用例
      */
-    DeleteTestcase(){
-
-    },
+    DeleteTestcase() {},
     UpdateFatherChooseNode(currentNodeKey, node) {
       this.$emit("updateNode", currentNodeKey, node);
     },
@@ -93,7 +94,24 @@ export default {
       }
       //this.$emit('OnAdditionChoice="OnChooseNode"', data);
     },
-    CreateTestCase() {},
+    /***
+     * 通知TreeNode创建新用例
+     * 输入：
+     * data : 当前节点的数据
+     */
+    CreateTestCase(node) {
+      console.log("this.visible = false;");
+      this.visible = false;
+      this.$bus.emit("CREATE_NEW_TREENODE_POP", node);
+      /*
+      new Promise((resolve, reject) => {
+         //todo ：等待这步完成
+        console.log("finish");
+        resolve("success");
+      });
+      console.log("end");*/
+      //this.$bus.emit("CREATE_NEW_TABLE_POP", data);
+    },
     /***
      * 修改当前用例
      * 输入：
@@ -103,7 +121,6 @@ export default {
     ChangeTestCase(data, nowChildren, nowParent) {
       //console.log(data);
       //alert(data.label);
-      this.visible = false;
       /*console.log(
         this.parentObj.nowId,
         this.parentObj.nowLabel,
@@ -124,6 +141,7 @@ export default {
       );*/
 
       this.$bus.emit("CHANGE_CHOOSE_TEST");
+      this.visible = false;
     },
   },
 };

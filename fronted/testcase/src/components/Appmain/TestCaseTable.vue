@@ -99,9 +99,9 @@ export default {
         this.tableData
       );
     });
-    this.$bus.on("CREATE_CHOOSE_TEST", (caseId) => {
+    this.$bus.on("CREATE_CHOOSE_TEST", (param) => {
       console.log("CREATE_CHOOSE_TEST发生了");
-      this.CreateTestCase(caseId);
+      this.CreateTestCase(param);
     });
     this.$bus.on("UPDATE_CURRENT_DATA_NODE", (caseId) => {
       console.log("UPDATE_CURRENT_DATA_NODE 发生了");
@@ -112,6 +112,12 @@ export default {
         alert("Error !!! 没有找到对应的caseId的tableline");
       }
     });
+    /***
+     * 在table里创建一行
+     */
+    this.$bus.on("CREATE_NEW_TABLE_POP", (data) => {
+      console.log("CREATE_NEW_TABLE_POP 发生了");
+    });
   },
   methods: {
     /***
@@ -120,7 +126,7 @@ export default {
     FindCurrentRow(caseId) {
       var d;
       for (d = 0; d < this.parentObj.table_datas.length; d++) {
-        console.log(this.parentObj.table_datas[d])
+        console.log(this.parentObj.table_datas[d]);
         if (caseId == this.parentObj.table_datas[d].caseId) {
           return this.parentObj.table_datas[d];
         }
@@ -171,13 +177,13 @@ export default {
      * 在服务器上创建一个默认测试用例，
      * 并返回该用例的id
      */
-    CreateTestCase(caseId) {
+    CreateTestCase(param) {
       var newTestCase = {
-        caseId: caseId,
+        caseId: param.caseId,
         caseName: this.parentObj.node_data.label,
         preCondition: "",
         actionCondition: "",
-        type: "folder",
+        type: param.type,
         preResult: "",
         ps: "",
         test_level: "P1",
@@ -190,15 +196,27 @@ export default {
           preResult: false,
           actionCondition: false,
           ps: false,
+          changer: false,
         },
       };
       this.parentObj.table_datas.unshift(newTestCase);
       this.tableData = this.parentObj.table_datas;
       this.$refs["table"].ChangeCurrentRow(newTestCase);
+      console.log("CreateTestCase  + child");
+      console.log(this.parentObj.nowChildren);
+      console.log(this.parentObj.nowParent);
+    },
+    /**
+     * 用caseId获取对应的树数据中的当前节点的父节点和儿子节点
+     */
+    getTreePosByTableCase(caseId) {
+      var t;
     },
 
     /**
      * 保存测试用例的修改到服务器
+     * 输入：新建测试用例数据 nodedata
+     * 可以用caseId获取对应的树数据中的当前节点的父节点和儿子节点
      *
      */
     SaveChange(colConfigs, node_data, tableData) {
@@ -318,7 +336,7 @@ export default {
       axios
         .get("getUserTestCases", { params: { userId: this.parentObj.userId } })
         .then((res) => {
-          console.log(res);
+          console.log(res.data.msg);
           var table_datas = res.data.msg;
           table_datas = that.SettleCellStates(table_datas);
           var NodeRoots = that.SettleTreeNodes(table_datas);
@@ -341,14 +359,19 @@ export default {
         var node = {};
         node["caseId"] = datas[i].caseId;
         node["label"] = datas[i].caseName;
-        if (datas[i].fatherId == -1) {
-          node["type"] = "folder";
-        } else {
-          node["type"] = "file";
-        }
         node["isEditing"] = false;
-        nodes.push(node);
+        if (datas[i].fatherId == -1) {
+          node["type"] = "folder"; //是根类型
+          nodes.push(node);
+        } else {
+          if (datas[i].fileType == "file") {
+            node["type"] = "file";
+          } else {
+            node["type"] = "folder";
+          }
+        }
       }
+      //然后在生成的树里面再 生成父子关系
       console.log(nodes);
       return nodes;
     },
@@ -463,7 +486,13 @@ export default {
         chooseble: false,
       },
       { prop: "operate", label: "操作", width: 140, slot: "opt" },
-      { prop: "changer", label: "修改人", width: 140 },
+      {
+        prop: "changer",
+        label: "修改人",
+        width: 140,
+        editable: true,
+        component: EdibleInput,
+      },
 
       // 模版中的元素需要对应的有 slot="opt" 属性
     ];
