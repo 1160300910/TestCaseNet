@@ -3993,3 +3993,1203 @@ INFO 127.0.0.1 - - [19/Jun/2021 18:05:16] "POST /test_case/saveTestCasePath HTTP
 INFO 127.0.0.1 - - [19/Jun/2021 18:05:16] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
 INFO 127.0.0.1 - - [19/Jun/2021 18:05:16] "GET /test_case/getFolderTableTestCases/?caseId=9 HTTP/1.1" 200 - 88
 INFO 127.0.0.1 - - [19/Jun/2021 18:05:18] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:05:40] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:05:49] "POST /test_case/register HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:05:49] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:05:50] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:05:52] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:05:53] "GET /test_case/getFolderTableTestCases/?caseId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:05:58] "POST /test_case/changeFolderNodeData HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:05:58] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:05:58] "GET /test_case/getFolderTableTestCases/?caseId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:09:12] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:09:13] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:09:14] "GET /test_case/getFolderTableTestCases/?caseId=2 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:09:18] "POST /test_case/changeFolderNodeData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:09:18] "GET /test_case/getFolderTableTestCases/?caseId=2 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:09:18] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:09:19] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:09:29] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:09:33] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:09:34] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:09:36] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:09:37] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:09:41] "POST /test_case/changeFolderNodeData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:09:41] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:09:41] "GET /test_case/getFolderTableTestCases/?caseId=5 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:09:42] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:09:42] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:09:45] "POST /test_case/changeFolderNodeData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:09:45] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:09:45] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:09:45] "GET /test_case/getFolderTableTestCases/?caseId=6 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:09:46] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:10:02] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:10:10] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:10:52] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:10:54] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:10:58] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:11:01] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:11:02] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:11:04] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:11:05] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:11:07] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:11:13] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:11:16] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:12:46] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:12:48] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:12:54] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:13:13] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:13:14] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:13:25] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:13:27] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:15:31] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:16:10] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:16:12] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:16:43] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:16:44] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:16:47] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:16:48] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:16:48] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:16:49] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:16:50] "GET /test_case/getFolderTableTestCases?caseId=16 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:16:50] "GET /test_case/getFolderTableTestCases/?caseId=16 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:16:50] "GET /test_case/getFolderTableTestCases/?caseId=16 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:16:53] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:16:54] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:16:58] "POST /test_case/changeFolderNodeData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:16:58] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:16:58] "GET /test_case/getFolderTableTestCases?caseId=21 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:16:58] "GET /test_case/getFolderTableTestCases/?caseId=21 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:17:00] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:17:08] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:17:09] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:17:16] "POST /test_case/changeFolderNodeData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:17:16] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:17:16] "GET /test_case/getFolderTableTestCases?caseId=22 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:17:16] "GET /test_case/getFolderTableTestCases/?caseId=22 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:17:18] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:17:21] "POST /test_case/changeFolderNodeData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:17:21] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:17:21] "GET /test_case/getFolderTableTestCases?caseId=23 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:17:21] "GET /test_case/getFolderTableTestCases/?caseId=23 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:17:23] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:17:25] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:17:30] "POST /test_case/changeFolderNodeData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:17:30] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:17:30] "GET /test_case/getFolderTableTestCases/?caseId=24 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:17:31] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:17:36] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:17:37] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:17:40] "POST /test_case/changeFolderNodeData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:17:40] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:17:40] "GET /test_case/getFolderTableTestCases/?caseId=25 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:17:41] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:17:44] "POST /test_case/changeFolderNodeData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:17:44] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:17:44] "GET /test_case/getFolderTableTestCases/?caseId=26 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:17:44] "GET /test_case/getFolderTableTestCases/?caseId=25 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:17:51] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:17:52] "GET /test_case/getFolderTableTestCases?caseId=27 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:17:52] "GET /test_case/getFolderTableTestCases/?caseId=27 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:17:56] "POST /test_case/changeFolderNodeData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:17:57] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:17:57] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:17:57] "GET /test_case/getFolderTableTestCases/?caseId=27 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:17:59] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:17:59] "GET /test_case/getFolderTableTestCases/?caseId=25 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:18:02] "GET /test_case/getFolderTableTestCases/?caseId=25 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:18:04] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:18:04] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:18:09] "POST /test_case/changeFolderNodeData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:18:09] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:18:09] "GET /test_case/getFolderTableTestCases/?caseId=28 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:18:10] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:18:11] "GET /test_case/getFolderTableTestCases/?caseId=25 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:18:16] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:18:22] "POST /test_case/changeFolderNodeData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:18:22] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:18:22] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:18:22] "GET /test_case/getFolderTableTestCases?caseId=29 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:18:22] "GET /test_case/getFolderTableTestCases/?caseId=29 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:18:23] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:18:24] "GET /test_case/getFolderTableTestCases/?caseId=25 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:18:28] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:18:29] "GET /test_case/getFolderTableTestCases?caseId=30 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:18:29] "GET /test_case/getFolderTableTestCases/?caseId=30 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:18:35] "POST /test_case/changeFolderNodeData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:18:35] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:18:35] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:18:35] "GET /test_case/getFolderTableTestCases/?caseId=30 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:18:35] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:18:36] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:22:19] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:22:25] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:22:29] "POST /test_case/changeFolderNodeData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:22:29] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:22:29] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:22:29] "POST /test_case/saveTestCasePath HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:22:29] "GET /test_case/getFolderTableTestCases/?caseId=31 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:23:03] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:23:05] "GET /test_case/getFolderTableTestCases/?caseId=25 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:23:06] "GET /test_case/getFolderTableTestCases/?caseId=29 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:23:08] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:23:15] "POST /test_case/changeFolderNodeData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:23:15] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:23:15] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:23:15] "POST /test_case/saveTestCasePath HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:23:15] "GET /test_case/getFolderTableTestCases?caseId=32 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:23:17] "GET /test_case/getFolderTableTestCases/?caseId=32 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:24:08] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:24:10] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:24:11] "GET /test_case/getFolderTableTestCases?caseId=33 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:24:11] "GET /test_case/getFolderTableTestCases/?caseId=33 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:24:21] "POST /test_case/changeFolderNodeData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:24:21] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:24:21] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:24:21] "GET /test_case/getFolderTableTestCases/?caseId=33 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:24:23] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:24:23] "GET /test_case/getFolderTableTestCases/?caseId=25 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:24:24] "GET /test_case/getFolderTableTestCases/?caseId=29 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:24:25] "GET /test_case/getFolderTableTestCases/?caseId=33 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:35:14] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:39:05] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:48:33] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:48:34] "GET /test_case/getFolderTableTestCases/?caseId=25 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:48:38] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:49:01] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:49:20] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:49:22] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:49:39] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:49:42] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:49:47] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:49:49] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:49:58] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:50:29] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:50:31] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:50:50] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:50:53] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:52:26] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:52:29] "GET /test_case/getFolderTableTestCases/?caseId=25 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:52:30] "GET /test_case/getFolderTableTestCases/?caseId=25 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:52:30] "GET /test_case/getFolderTableTestCases/?caseId=25 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:52:32] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:52:44] "POST /test_case/saveTestCase HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:52:47] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:52:47] "GET /test_case/getFolderTableTestCases/?caseId=25 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:52:49] "GET /test_case/getFolderTableTestCases/?caseId=29 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:52:51] "GET /test_case/getFolderTableTestCases/?caseId=29 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:52:51] "GET /test_case/getFolderTableTestCases/?caseId=27 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:57:54] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:57:59] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:58:09] "GET /test_case/getFolderTableTestCases/?caseId=25 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:58:11] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:11:54] "GET /test_case/getFolderTableTestCases/?caseId=33 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:11:56] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:11:57] "GET /test_case/getFolderTableTestCases/?caseId=25 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:12:01] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:13:07] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:13:09] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:14:02] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:14:05] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:14:32] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:14:35] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:15:42] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:15:46] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:16:02] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:16:05] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:17:40] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:17:44] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:19:39] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:19:42] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:20:09] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:20:12] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:20:20] "POST /test_case/changeFolderNodeData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:20:20] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:20:20] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:20:30] "POST /test_case/saveTestCase HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:20:31] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:20:31] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:34:27] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:34:31] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:37:31] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:37:33] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:37:42] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:37:46] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:37:57] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:37:58] "GET /test_case/getFolderTableTestCases/?caseId=25 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:38:03] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:38:04] "GET /test_case/getFolderTableTestCases/?caseId=26 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:38:05] "GET /test_case/getFolderTableTestCases/?caseId=55 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:38:06] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:38:07] "GET /test_case/getFolderTableTestCases/?caseId=25 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:38:09] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:38:34] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:38:39] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:38:49] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:38:52] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:39:17] "GET /test_case/getFolderTableTestCases/?caseId=25 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:39:21] "POST /test_case/deleteTestCase HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:39:26] "POST /test_case/deleteTestCase HTTP/1.1" 500 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\db\\Model.py', reloading 88
+INFO  * Restarting with stat 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:47:27] "POST /test_case/register HTTP/1.1" 500 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\db\\Model.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:49:20] "POST /test_case/register HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:49:20] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:49:22] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:49:29] "POST /test_case/changeFolderNodeData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:49:29] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:49:29] "GET /test_case/getFolderTableTestCases/?caseId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:49:31] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:49:36] "POST /test_case/changeFolderNodeData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:49:36] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:49:36] "GET /test_case/getFolderTableTestCases/?caseId=2 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:49:41] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:49:50] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:49:50] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:49:52] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:49:53] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:49:54] "GET /test_case/getFolderTableTestCases/?caseId=5 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:50:02] "POST /test_case/changeFolderNodeData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:50:02] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:50:02] "GET /test_case/getFolderTableTestCases/?caseId=5 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:50:03] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:50:10] "POST /test_case/changeFolderNodeData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:50:11] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:50:11] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:50:11] "GET /test_case/getFolderTableTestCases/?caseId=6 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:50:12] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:50:13] "GET /test_case/getFolderTableTestCases/?caseId=2 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:50:22] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:50:24] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:50:27] "POST /test_case/changeFolderNodeData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:50:27] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:50:27] "GET /test_case/getFolderTableTestCases/?caseId=7 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:50:27] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:50:31] "POST /test_case/changeFolderNodeData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:50:31] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:50:31] "GET /test_case/getFolderTableTestCases/?caseId=8 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:50:32] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:50:36] "POST /test_case/changeFolderNodeData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:50:36] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:50:36] "GET /test_case/getFolderTableTestCases/?caseId=9 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:50:38] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:50:43] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:50:47] "POST /test_case/changeFolderNodeData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:50:49] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:50:49] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:50:49] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:50:51] "POST /test_case/changeFolderNodeData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:50:51] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:50:51] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:50:51] "GET /test_case/getFolderTableTestCases?caseId=11 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:50:51] "GET /test_case/getFolderTableTestCases/?caseId=11 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:50:54] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:50:57] "POST /test_case/changeFolderNodeData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:50:57] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:50:57] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:50:57] "GET /test_case/getFolderTableTestCases?caseId=12 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:50:57] "GET /test_case/getFolderTableTestCases/?caseId=12 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:50:59] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:51:05] "POST /test_case/changeFolderNodeData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:51:05] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:51:05] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:51:05] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:51:09] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:51:12] "POST /test_case/changeFolderNodeData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:51:12] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:51:12] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:51:12] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:51:13] "GET /test_case/getFolderTableTestCases/?caseId=12 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:51:14] "GET /test_case/getFolderTableTestCases/?caseId=12 HTTP/1.1" 200 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\db\\Model.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\db\\Model.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\db\\Model.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [19/Jun/2021 19:54:22] "POST /test_case/register HTTP/1.1" 500 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\db\\Model.py', reloading 88
+INFO  * Restarting with stat 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:33:44] "POST /test_case/register HTTP/1.1" 500 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\db\\Model.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:34:57] "POST /test_case/register HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:34:57] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:35:20] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:35:22] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:35:22] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:35:23] "GET /test_case/getFolderTableTestCases/?caseId=1 HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:35:27] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:35:28] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:35:29] "GET /test_case/getFolderTableTestCases/?caseId=3 HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:35:35] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:35:37] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:35:38] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:35:38] "GET /test_case/getFolderTableTestCases/?caseId=4 HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:35:41] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:35:41] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:35:42] "GET /test_case/getFolderTableTestCases/?caseId=6 HTTP/1.1" 500 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:38:04] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:38:04] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:38:07] "GET /test_case/getFolderTableTestCases/?caseId=7 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:38:08] "POST /test_case/changeFolderNodeData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:38:08] "POST /test_case/saveTestCasePath HTTP/1.1" 404 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:38:08] "GET /test_case/getFolderTableTestCases/?caseId=7 HTTP/1.1" 200 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:38:29] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:38:56] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:38:57] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:39:00] "POST /test_case/changeFolderNodeData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:39:00] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:39:00] "GET /test_case/getFolderTableTestCases/?caseId=8 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:39:02] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:39:04] "GET /test_case/getFolderTableTestCases/?caseId=9 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:39:10] "POST /test_case/changeFolderNodeData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:39:10] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:39:10] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:39:10] "GET /test_case/getFolderTableTestCases/?caseId=9 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:39:11] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:39:13] "GET /test_case/getFolderTableTestCases?caseId=10 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:39:13] "GET /test_case/getFolderTableTestCases/?caseId=10 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:39:15] "POST /test_case/changeFolderNodeData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:39:15] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:39:15] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:39:15] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:39:15] "GET /test_case/getFolderTableTestCases/?caseId=10 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:39:17] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:39:22] "POST /test_case/changeFolderNodeData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:39:22] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:39:22] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:39:22] "GET /test_case/getFolderTableTestCases/?caseId=11 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:39:24] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:39:25] "GET /test_case/getFolderTableTestCases/?caseId=8 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:40:02] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:40:03] "GET /test_case/getFolderTableTestCases/?caseId=8 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:40:12] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:40:19] "POST /test_case/saveTestCase HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:40:19] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:40:20] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:40:22] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:40:24] "GET /test_case/getFolderTableTestCases/?caseId=8 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:41:10] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:42:58] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:43:00] "GET /test_case/getFolderTableTestCases/?caseId=8 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:43:02] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:43:15] "POST /test_case/saveTestCase HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:44:29] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:44:30] "GET /test_case/getFolderTableTestCases/?caseId=8 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:44:32] "GET /test_case/getFolderTableTestCases/?caseId=8 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:44:34] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:44:41] "POST /test_case/changeFolderNodeData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:44:42] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:44:42] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:44:53] "POST /test_case/saveTestCase HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:48:31] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:48:33] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:49:06] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:49:07] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:52:34] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:52:36] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:53:24] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:53:27] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:54:28] "POST /test_case/saveTestCase HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:54:28] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:54:28] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:54:31] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:55:03] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:55:25] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:55:32] "POST /test_case/changeFolderNodeData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:55:32] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:55:32] "GET /test_case/getFolderTableTestCases/?caseId=20 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:55:34] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:55:38] "GET /test_case/getFolderTableTestCases/?caseId=21 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:55:55] "POST /test_case/changeFolderNodeData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:55:55] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:55:55] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:55:55] "GET /test_case/getFolderTableTestCases/?caseId=21 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:55:58] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:56:11] "POST /test_case/changeFolderNodeData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:56:11] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:56:11] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:56:22] "POST /test_case/saveTestCase HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:56:23] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:56:23] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:56:26] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:56:30] "GET /test_case/getFolderTableTestCases/?caseId=20 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:57:00] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 21:57:01] "GET /test_case/getFolderTableTestCases/?caseId=20 HTTP/1.1" 200 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [19/Jun/2021 22:03:07] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 22:03:09] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 22:03:10] "GET /test_case/getFolderTableTestCases/?caseId=23 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 22:03:12] "POST /test_case/changeFolderNodeData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 22:03:12] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 22:03:12] "GET /test_case/getFolderTableTestCases/?caseId=23 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 22:03:14] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 22:03:23] "POST /test_case/saveTestCase HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 22:03:26] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 22:03:27] "GET /test_case/getFolderTableTestCases/?caseId=23 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 22:03:28] "GET /test_case/getFolderTableTestCases/?caseId=23 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 22:03:30] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 22:03:31] "GET /test_case/getFolderTableTestCases/?caseId=23 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 22:04:09] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 22:04:10] "GET /test_case/getFolderTableTestCases/?caseId=23 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 22:04:21] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 22:04:21] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 22:04:25] "POST /test_case/changeFolderNodeData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 22:04:25] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 22:04:25] "GET /test_case/getFolderTableTestCases/?caseId=25 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 22:04:27] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 22:04:33] "POST /test_case/changeFolderNodeData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 22:04:33] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 22:04:33] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 22:04:36] "POST /test_case/saveTestCase HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 22:04:40] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 22:04:42] "GET /test_case/getFolderTableTestCases/?caseId=25 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 22:04:44] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 22:04:51] "POST /test_case/saveTestCase HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 22:04:51] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 22:04:51] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 22:04:53] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 22:04:54] "GET /test_case/getFolderTableTestCases/?caseId=25 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 22:05:03] "GET /test_case/getFolderTableTestCases/?caseId=25 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 22:05:08] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 22:05:14] "POST /test_case/changeFolderNodeData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 22:05:14] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 22:05:14] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 22:05:14] "GET /test_case/getFolderTableTestCases/?caseId=28 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 22:05:16] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 22:05:16] "GET /test_case/getFolderTableTestCases/?caseId=25 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 22:05:18] "GET /test_case/getFolderTableTestCases/?caseId=28 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 22:05:20] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 22:05:27] "POST /test_case/changeFolderNodeData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 22:05:27] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 22:05:27] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 22:05:27] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 22:05:29] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 22:05:30] "GET /test_case/getFolderTableTestCases/?caseId=25 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 22:05:31] "GET /test_case/getFolderTableTestCases/?caseId=28 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 22:05:36] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 22:05:46] "POST /test_case/changeFolderNodeData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 22:05:46] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 22:05:46] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 22:05:46] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 22:05:50] "POST /test_case/saveTestCase HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 22:05:52] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 22:05:53] "GET /test_case/getFolderTableTestCases/?caseId=25 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 22:05:54] "GET /test_case/getFolderTableTestCases/?caseId=28 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 22:05:59] "GET /test_case/getFolderTableTestCases/?caseId=29 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 22:06:01] "GET /test_case/getFolderTableTestCases/?caseId=29 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 22:06:03] "GET /test_case/getFolderTableTestCases/?caseId=28 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 22:06:04] "GET /test_case/getFolderTableTestCases/?caseId=28 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 22:06:10] "GET /test_case/getFolderTableTestCases/?caseId=28 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 22:06:11] "GET /test_case/getFolderTableTestCases/?caseId=25 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 22:06:12] "GET /test_case/getFolderTableTestCases/?caseId=25 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 22:08:02] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 22:08:03] "GET /test_case/getFolderTableTestCases/?caseId=25 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 22:08:29] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 22:08:29] "GET /test_case/getFolderTableTestCases/?caseId=25 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 22:11:13] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 22:11:14] "GET /test_case/getFolderTableTestCases/?caseId=25 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 22:12:27] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 22:12:28] "GET /test_case/getFolderTableTestCases/?caseId=25 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 22:12:31] "GET /test_case/getFolderTableTestCases/?caseId=28 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 22:12:32] "GET /test_case/getFolderTableTestCases/?caseId=29 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 22:12:38] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 22:12:39] "GET /test_case/getFolderTableTestCases/?caseId=25 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 22:12:40] "GET /test_case/getFolderTableTestCases/?caseId=28 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 22:14:49] "GET /test_case/getFolderTableTestCases/?caseId=29 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 22:40:43] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 22:40:44] "GET /test_case/getFolderTableTestCases/?caseId=25 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 22:40:45] "GET /test_case/getFolderTableTestCases/?caseId=28 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 22:40:48] "GET /test_case/getFolderTableTestCases/?caseId=25 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 22:43:28] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 22:43:30] "GET /test_case/getFolderTableTestCases/?caseId=25 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 22:43:32] "GET /test_case/getFolderTableTestCases/?caseId=28 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 22:43:34] "GET /test_case/getFolderTableTestCases/?caseId=25 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 22:52:36] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 22:52:37] "GET /test_case/getFolderTableTestCases/?caseId=25 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 22:52:39] "GET /test_case/getFolderTableTestCases/?caseId=28 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 22:52:52] "GET /test_case/getFolderTableTestCases/?caseId=25 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:05:38] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:05:39] "GET /test_case/getFolderTableTestCases/?caseId=25 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:05:40] "GET /test_case/getFolderTableTestCases/?caseId=28 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:05:41] "GET /test_case/getFolderTableTestCases/?caseId=27 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:06:13] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:06:15] "GET /test_case/getFolderTableTestCases/ HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:06:16] "GET /test_case/getFolderTableTestCases/?caseId=25 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:06:18] "GET /test_case/getFolderTableTestCases/ HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:06:19] "GET /test_case/getFolderTableTestCases/?caseId=25 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:06:22] "GET /test_case/getFolderTableTestCases/ HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:06:23] "GET /test_case/getFolderTableTestCases/?caseId=25 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:06:25] "GET /test_case/getFolderTableTestCases/ HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:06:26] "GET /test_case/getFolderTableTestCases/?caseId=25 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:06:28] "GET /test_case/getFolderTableTestCases/ HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:06:29] "GET /test_case/getFolderTableTestCases/?caseId=25 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:06:30] "GET /test_case/getFolderTableTestCases/ HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:07:22] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:07:23] "GET /test_case/getFolderTableTestCases/?caseId=25 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:07:25] "GET /test_case/getFolderTableTestCases/?caseId=28 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:07:28] "GET /test_case/getFolderTableTestCases/?caseId=29 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:07:31] "GET /test_case/getFolderTableTestCases/?caseId=25 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:07:33] "GET /test_case/getFolderTableTestCases/?caseId=28 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:07:36] "GET /test_case/getFolderTableTestCases/?caseId=28 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:07:37] "GET /test_case/getFolderTableTestCases/?caseId=29 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:07:38] "GET /test_case/getFolderTableTestCases/?caseId=28 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:07:39] "GET /test_case/getFolderTableTestCases/?caseId=25 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:07:41] "GET /test_case/getFolderTableTestCases/?caseId=28 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:07:42] "GET /test_case/getFolderTableTestCases/?caseId=28 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:07:43] "GET /test_case/getFolderTableTestCases/?caseId=29 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:07:43] "GET /test_case/getFolderTableTestCases/?caseId=28 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:08:07] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:08:08] "GET /test_case/getFolderTableTestCases/?caseId=25 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:08:12] "GET /test_case/getFolderTableTestCases/?caseId=29 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:08:14] "GET /test_case/getFolderTableTestCases/?caseId=25 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:08:14] "GET /test_case/getFolderTableTestCases/?caseId=28 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:08:15] "GET /test_case/getFolderTableTestCases/?caseId=29 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:08:15] "GET /test_case/getFolderTableTestCases/?caseId=28 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:08:16] "GET /test_case/getFolderTableTestCases/?caseId=25 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:08:19] "GET /test_case/getFolderTableTestCases/?caseId=29 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:08:20] "GET /test_case/getFolderTableTestCases/?caseId=28 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:08:21] "GET /test_case/getFolderTableTestCases/?caseId=28 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:08:23] "GET /test_case/getFolderTableTestCases/?caseId=28 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:08:24] "GET /test_case/getFolderTableTestCases/?caseId=25 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:08:27] "GET /test_case/getFolderTableTestCases/?caseId=29 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:08:28] "GET /test_case/getFolderTableTestCases/?caseId=28 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:08:32] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:08:37] "POST /test_case/changeFolderNodeData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:08:37] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:08:37] "GET /test_case/getFolderTableTestCases/?caseId=31 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:08:43] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:08:50] "POST /test_case/changeFolderNodeData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:08:50] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:08:50] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:08:50] "GET /test_case/getFolderTableTestCases/?caseId=25 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:08:51] "GET /test_case/getFolderTableTestCases/?caseId=25 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:08:52] "GET /test_case/getFolderTableTestCases/?caseId=31 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:08:54] "GET /test_case/getFolderTableTestCases/?caseId=25 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:08:55] "GET /test_case/getFolderTableTestCases/?caseId=31 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:08:59] "GET /test_case/getFolderTableTestCases/?caseId=31 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:09:03] "GET /test_case/getFolderTableTestCases/?caseId=25 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:09:37] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:09:45] "GET /test_case/getFolderTableTestCases/?caseId=25 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:10:09] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:10:38] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:10:50] "GET /test_case/getFolderTableTestCases/?caseId=28 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:10:56] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:11:16] "POST /test_case/changeFolderNodeData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:11:16] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:11:16] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:11:17] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:11:17] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:11:24] "POST /test_case/saveTestCase HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:11:26] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:11:27] "GET /test_case/getFolderTableTestCases/?caseId=25 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:11:30] "GET /test_case/getFolderTableTestCases/?caseId=28 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:11:30] "GET /test_case/getFolderTableTestCases/?caseId=29 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:12:09] "GET /test_case/getFolderTableTestCases/?caseId=29 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:13:05] "POST /test_case/saveTestCase HTTP/1.1" 500 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:17:12] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:17:20] "POST /test_case/register HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:17:20] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:17:23] "GET /test_case/getFolderTableTestCases/?caseId=25 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:17:29] "POST /test_case/saveTestCase HTTP/1.1" 500 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:20:58] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:20:59] "GET /test_case/getFolderTableTestCases/?caseId=25 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:21:09] "POST /test_case/saveTestCase HTTP/1.1" 200 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:22:26] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:22:29] "GET /test_case/getFolderTableTestCases/?caseId=25 HTTP/1.1" 200 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:27:22] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:27:29] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:27:33] "GET /test_case/getFolderTableTestCases/?caseId=28 HTTP/1.1" 500 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:28:06] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:28:07] "GET /test_case/getFolderTableTestCases/?caseId=25 HTTP/1.1" 500 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:28:25] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:28:45] "GET /test_case/getFolderTableTestCases/?caseId=25 HTTP/1.1" 500 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:30:14] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:30:15] "GET /test_case/getFolderTableTestCases/?caseId=25 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:30:17] "GET /test_case/getFolderTableTestCases/?caseId=25 HTTP/1.1" 500 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:31:02] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:31:02] "GET /test_case/getFolderTableTestCases/?caseId=25 HTTP/1.1" 500 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:31:16] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:31:17] "GET /test_case/getFolderTableTestCases/?caseId=25 HTTP/1.1" 500 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:31:36] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:31:36] "GET /test_case/getFolderTableTestCases/?caseId=25 HTTP/1.1" 500 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:31:50] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:31:51] "GET /test_case/getFolderTableTestCases/?caseId=25 HTTP/1.1" 500 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:32:18] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:32:19] "GET /test_case/getFolderTableTestCases/?caseId=25 HTTP/1.1" 500 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:32:43] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:32:44] "GET /test_case/getFolderTableTestCases/?caseId=25 HTTP/1.1" 200 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:35:25] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:35:26] "GET /test_case/getFolderTableTestCases/?caseId=25 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:42:14] "POST /test_case/saveTestCase HTTP/1.1" 500 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\db\\Model.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:43:17] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:43:20] "GET /test_case/getFolderTableTestCases/?caseId=25 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:43:40] "POST /test_case/saveTestCase HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:43:43] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:43:44] "GET /test_case/getFolderTableTestCases/?caseId=25 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:45:05] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:45:05] "GET /test_case/getFolderTableTestCases/?caseId=25 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:46:30] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:46:31] "GET /test_case/getFolderTableTestCases/?caseId=25 HTTP/1.1" 200 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\db\\Model.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\db\\Model.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:48:43] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:48:43] "GET /test_case/getFolderTableTestCases/?caseId=25 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:48:50] "POST /test_case/saveTestCase HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:48:55] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:48:56] "GET /test_case/getFolderTableTestCases/?caseId=25 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:49:04] "POST /test_case/saveTestCase HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:49:09] "POST /test_case/saveTestCase HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:49:13] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:49:14] "GET /test_case/getFolderTableTestCases/?caseId=25 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:49:17] "GET /test_case/getFolderTableTestCases/?caseId=28 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:49:18] "GET /test_case/getFolderTableTestCases/?caseId=25 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 23:50:06] "POST /test_case/saveTestCase HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:04:12] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:04:13] "GET /test_case/getFolderTableTestCases/?caseId=25 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:04:17] "GET /test_case/getFolderTableTestCases/?caseId=28 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:05:30] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:05:31] "GET /test_case/getFolderTableTestCases/?caseId=25 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:05:34] "GET /test_case/getFolderTableTestCases?caseId=32 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:05:34] "GET /test_case/getFolderTableTestCases/?caseId=32 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:05:38] "GET /test_case/getNewCaseId HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:06:27] "POST /test_case/register HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:06:28] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:06:44] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:06:44] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:06:45] "GET /test_case/getFolderTableTestCases/?caseId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:06:52] "POST /test_case/changeFolderNodeData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:06:53] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:06:53] "GET /test_case/getFolderTableTestCases/?caseId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:06:59] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:07:15] "POST /test_case/changeFolderNodeData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:07:16] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:07:16] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:07:17] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:07:19] "GET /test_case/getFolderTableTestCases/?caseId=2 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:07:21] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:07:39] "POST /test_case/changeFolderNodeData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:07:40] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:07:40] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:07:40] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:07:42] "POST /test_case/saveTestCase HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:07:44] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:08:04] "GET /test_case/getFolderTableTestCases/?caseId=2 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:08:05] "GET /test_case/getFolderTableTestCases/?caseId=2 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:08:12] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:08:15] "POST /test_case/changeFolderNodeData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:08:16] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:08:16] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:08:16] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:08:18] "POST /test_case/saveTestCase HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:08:22] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:08:28] "POST /test_case/changeFolderNodeData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:08:28] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:08:28] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:08:28] "GET /test_case/getFolderTableTestCases/?caseId=5 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:08:29] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:08:35] "POST /test_case/changeFolderNodeData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:08:35] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:08:35] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:08:36] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:08:38] "POST /test_case/saveTestCase HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:08:39] "GET /test_case/getFolderTableTestCases/?caseId=5 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:08:41] "GET /test_case/getFolderTableTestCases/?caseId=2 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:09:05] "GET /test_case/getFolderTableTestCases/?caseId=5 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:09:06] "GET /test_case/getFolderTableTestCases/?caseId=2 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:26:39] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:26:41] "GET /test_case/getFolderTableTestCases/?caseId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:26:45] "POST /test_case/deleteTestCase HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:27:43] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:27:47] "POST /test_case/deleteTestCase HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:28:46] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:28:49] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:28:52] "POST /test_case/changeFolderNodeData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:28:52] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:28:52] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:28:52] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:28:54] "POST /test_case/saveTestCase HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:28:56] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:28:58] "GET /test_case/getFolderTableTestCases/?caseId=2 HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:29:03] "GET /test_case/getFolderTableTestCases/?caseId=2 HTTP/1.1" 500 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:30:06] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:30:09] "GET /test_case/getFolderTableTestCases/?caseId=2 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:30:13] "POST /test_case/deleteTestCase HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:30:42] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:30:45] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:30:52] "POST /test_case/changeFolderNodeData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:30:53] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:30:53] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:30:53] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:30:53] "POST /test_case/saveTestCase HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:30:57] "POST /test_case/deleteTestCase HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:31:13] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:31:31] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:31:34] "POST /test_case/changeFolderNodeData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:31:34] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:31:34] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:31:34] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:31:35] "POST /test_case/saveTestCase HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:31:38] "POST /test_case/deleteTestCase HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:31:38] "GET /test_case/getFolderTableTestCases/ HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:32:22] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:33:10] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:33:13] "GET /test_case/getFolderTableTestCases/?caseId=2 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:33:14] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:33:16] "POST /test_case/changeFolderNodeData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:33:16] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:33:16] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:33:16] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:33:17] "POST /test_case/saveTestCase HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:33:19] "POST /test_case/deleteTestCase HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:34:02] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:34:06] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:34:10] "POST /test_case/changeFolderNodeData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:34:10] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:34:11] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:34:11] "POST /test_case/saveTestCase HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:34:13] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:34:16] "POST /test_case/deleteTestCase HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:34:16] "GET /test_case/getFolderTableTestCases/ HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:34:24] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:34:26] "POST /test_case/changeFolderNodeData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:34:26] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:34:27] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:34:27] "POST /test_case/saveTestCase HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:34:30] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:34:32] "POST /test_case/changeFolderNodeData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:34:32] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:34:32] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:34:33] "POST /test_case/saveTestCase HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:34:35] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:34:37] "GET /test_case/getFolderTableTestCases/?caseId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:34:39] "POST /test_case/deleteTestCase HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:34:39] "GET /test_case/getFolderTableTestCases/ HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:34:41] "POST /test_case/deleteTestCase HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:34:41] "GET /test_case/getFolderTableTestCases/ HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:34:43] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:34:45] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:34:47] "POST /test_case/changeFolderNodeData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:34:47] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:34:47] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:34:48] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:34:50] "POST /test_case/changeFolderNodeData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:34:50] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:34:50] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:34:52] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:34:54] "GET /test_case/getFolderTableTestCases?caseId=15 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:34:54] "GET /test_case/getFolderTableTestCases/?caseId=15 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:34:55] "GET /test_case/getFolderTableTestCases?caseId=14 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:34:55] "GET /test_case/getFolderTableTestCases/?caseId=14 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:34:58] "GET /test_case/getFolderTableTestCases/?caseId=14 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:35:39] "POST /test_case/deleteTestCase HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:35:39] "GET /test_case/getFolderTableTestCases/ HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:35:41] "POST /test_case/deleteTestCase HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:35:41] "GET /test_case/getFolderTableTestCases/ HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:35:43] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:35:46] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:35:50] "POST /test_case/saveTestCase HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:35:50] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:35:50] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:35:53] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:35:55] "POST /test_case/saveTestCase HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:35:55] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:35:55] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:35:57] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:36:04] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:36:06] "GET /test_case/getFolderTableTestCases/?caseId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:36:11] "POST /test_case/deleteTestCase HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:36:11] "GET /test_case/getFolderTableTestCases/ HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:36:49] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:36:53] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:36:54] "POST /test_case/changeFolderNodeData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:36:55] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:36:55] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:36:57] "POST /test_case/saveTestCase HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:36:58] "GET /test_case/getFolderTableTestCases/?caseId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:37:01] "POST /test_case/deleteTestCase HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:37:01] "GET /test_case/getFolderTableTestCases/?caseId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:37:05] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:37:06] "POST /test_case/saveTestCase HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:37:07] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:37:07] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:37:08] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:37:10] "POST /test_case/saveTestCase HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:37:11] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:37:11] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:37:13] "POST /test_case/deleteTestCase HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:37:13] "GET /test_case/getFolderTableTestCases/?caseId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:37:17] "POST /test_case/deleteTestCase HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:37:17] "GET /test_case/getFolderTableTestCases/?caseId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:37:29] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:38:32] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:38:33] "GET /test_case/getFolderTableTestCases/?caseId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:38:36] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:38:39] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:38:39] "GET /test_case/getFolderTableTestCases/?caseId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:38:46] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:38:52] "POST /test_case/changeFolderNodeData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:38:53] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:38:53] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:38:54] "POST /test_case/saveTestCase HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:38:57] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:38:58] "GET /test_case/getFolderTableTestCases/?caseId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:40:05] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:59:30] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:59:31] "GET /test_case/getFolderTableTestCases/?caseId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:59:35] "POST /test_case/saveTestCase HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:59:37] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:59:38] "GET /test_case/getFolderTableTestCases/?caseId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 00:59:44] "POST /test_case/saveTestCase HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:06:19] "GET /test_case/getFolderTableTestCases/?caseId=5 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:06:20] "GET /test_case/getFolderTableTestCases/?caseId=5 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:06:23] "GET /test_case/getFolderTableTestCases/?caseId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:11:44] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:11:46] "GET /test_case/getFolderTableTestCases/?caseId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:11:47] "GET /test_case/getFolderTableTestCases/?caseId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:11:47] "GET /test_case/getFolderTableTestCases/?caseId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:11:50] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:11:54] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:11:54] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:12:32] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:12:33] "GET /test_case/getFolderTableTestCases/?caseId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:12:39] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:12:44] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:12:45] "GET /test_case/getFolderTableTestCases/?caseId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:12:47] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:12:56] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:12:56] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:15:09] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:15:11] "GET /test_case/getFolderTableTestCases/?caseId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:15:29] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:15:30] "GET /test_case/getFolderTableTestCases/?caseId=1 HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:16:09] "POST /test_case/register HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:16:10] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:16:12] "GET /test_case/getFolderTableTestCases/?caseId=1 HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:16:41] "POST /test_case/deleteTestCase HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:16:41] "GET /test_case/getFolderTableTestCases/?caseId=1 HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:16:43] "GET /test_case/getFolderTableTestCases/?caseId=1 HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:16:45] "POST /test_case/deleteTestCase HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:16:45] "GET /test_case/getFolderTableTestCases/?caseId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:16:48] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:16:49] "GET /test_case/getFolderTableTestCases/?caseId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:17:17] "POST /test_case/saveTestCase HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:17:23] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:17:25] "GET /test_case/getFolderTableTestCases/?caseId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:19:10] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:19:12] "GET /test_case/getFolderTableTestCases/?caseId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:19:17] "POST /test_case/saveTestCase HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:19:25] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:19:26] "GET /test_case/getFolderTableTestCases/?caseId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:20:34] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:20:35] "GET /test_case/getFolderTableTestCases/?caseId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:20:47] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:20:48] "GET /test_case/getFolderTableTestCases/?caseId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:26:25] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:26:26] "GET /test_case/getFolderTableTestCases/?caseId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:27:09] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:27:10] "GET /test_case/getFolderTableTestCases/?caseId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:27:17] "POST /test_case/saveTestCase HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:27:36] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:27:37] "GET /test_case/getFolderTableTestCases/?caseId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:27:44] "POST /test_case/saveTestCase HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:27:46] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:27:47] "GET /test_case/getFolderTableTestCases/?caseId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:27:51] "POST /test_case/saveTestCase HTTP/1.1" 200 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:33:24] "GET /test_case/getProjectPeos HTTP/1.1" 200 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:33:33] "GET /test_case/getProjectPeos HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:39:02] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:39:04] "GET /test_case/getFolderTableTestCases/?caseId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:40:02] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:40:03] "GET /test_case/getFolderTableTestCases/?caseId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:40:40] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:40:41] "GET /test_case/getFolderTableTestCases/?caseId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:41:20] "GET /test_case/getProjectPeos HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:41:20] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:41:21] "GET /test_case/getFolderTableTestCases/?caseId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:42:24] "GET /test_case/getProjectPeos HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:42:24] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:42:44] "GET /test_case/getProjectPeos HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:42:44] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:43:46] "GET /test_case/getProjectPeos HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:43:46] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:44:18] "GET /test_case/getProjectPeos HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:44:27] "GET /test_case/getProjectPeos HTTP/1.1" 200 - 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:45:12] "GET /test_case/getProjectPeos HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:45:12] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:45:47] "GET /test_case/getProjectPeos HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:45:47] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:45:48] "GET /test_case/getFolderTableTestCases/?caseId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:46:04] "GET /test_case/getProjectPeos HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:46:04] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:46:23] "GET /test_case/getProjectPeos HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:46:23] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:46:33] "GET /test_case/getProjectPeos HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:46:33] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:46:38] "GET /test_case/getFolderTableTestCases/?caseId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:46:45] "POST /test_case/saveTestCase HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:46:48] "GET /test_case/getProjectPeos HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:46:48] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:46:50] "GET /test_case/getFolderTableTestCases/?caseId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:47:02] "POST /test_case/register HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:47:02] "GET /test_case/getProjectPeos HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:47:02] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:47:04] "GET /test_case/getFolderTableTestCases/?caseId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:47:16] "GET /test_case/getProjectPeos HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:47:16] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:47:18] "GET /test_case/getFolderTableTestCases/?caseId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:47:31] "POST /test_case/saveTestCase HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:50:32] "GET /test_case/getProjectPeos HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:50:33] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:50:34] "GET /test_case/getFolderTableTestCases/?caseId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:51:16] "GET /test_case/getProjectPeos HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:51:16] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:51:17] "GET /test_case/getFolderTableTestCases/?caseId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:51:55] "GET /test_case/getProjectPeos HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:51:55] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:51:56] "GET /test_case/getFolderTableTestCases/?caseId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:52:16] "GET /test_case/getProjectPeos HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:52:16] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:52:17] "GET /test_case/getFolderTableTestCases/?caseId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:53:38] "GET /test_case/getProjectPeos HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:53:38] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:53:39] "GET /test_case/getFolderTableTestCases/?caseId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:54:13] "GET /test_case/getProjectPeos HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:54:13] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:54:13] "GET /test_case/getFolderTableTestCases/?caseId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:55:43] "GET /test_case/getProjectPeos HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:55:43] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:55:43] "GET /test_case/getFolderTableTestCases/?caseId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:57:12] "GET /test_case/getProjectPeos HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:57:12] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:57:13] "GET /test_case/getFolderTableTestCases/?caseId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:58:09] "POST /test_case/saveTestCase HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:58:22] "GET /test_case/getProjectPeos HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:58:22] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [20/Jun/2021 01:58:23] "GET /test_case/getFolderTableTestCases/?caseId=1 HTTP/1.1" 200 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88

@@ -1,5 +1,6 @@
 from datetime import datetime
 from flaskr.db_init import DB
+from sqlalchemy.orm import relationship, backref
 
 
 class Peo(DB.Model):
@@ -35,13 +36,13 @@ class Tag(DB.Model):
 '''
 
 
-class TestCasePath(DB.Model):
-    __tablename__ = 'testcasepath'
+class CasePath(DB.Model):
+    __tablename__ = 'casepath'
     __table_args__ = {'extend_existing': True}
     pathId = DB.Column(DB.Integer, primary_key=True, autoincrement=True, unique=True)  # 用例编号
-    path_level = DB.Column(DB.Integer, nullable=False)
-    testcase_caseId = DB.Column(DB.Integer, DB.ForeignKey('testcase.caseId'), nullable=False)  # 测试用例ID
-    ancestor_caseId = DB.Column(DB.Integer, DB.ForeignKey('testcase.caseId'), nullable=False)  # 保存了全部路径id
+    level = DB.Column(DB.Integer, nullable=False)
+    testcase_caseId = DB.Column(DB.Integer, nullable=False)  # 测试用例ID
+    testcase_ancestor = DB.Column(DB.Integer, DB.ForeignKey('testcase.caseId'), nullable=False)  # 保存了全部路径id
 
 
 class TestCase(DB.Model):
@@ -49,6 +50,9 @@ class TestCase(DB.Model):
     __tablename__ = 'testcase'
 
     __table_args__ = {'extend_existing': True}
+
+    # 定义关系
+    paths = relationship("CasePath", backref="testcase_", cascade="all")
     # 定义字段
     # 用例编号，父用例文件夹id，类型（文件夹or用例）
     # 用例标题，用例等级,前置条件，执行条件，预期结果，备注，标签，修改人
@@ -58,11 +62,10 @@ class TestCase(DB.Model):
     actionCondition = DB.Column(DB.String(64))  # 执行条件
     preResult = DB.Column(DB.String(64), default='')  # 预期结果
     ps = DB.Column(DB.String(64))  # 备注
-    test_level = DB.Column(DB.Integer, default='1')  # 测试等级
+    test_level = DB.Column(DB.String(6), default='P1')  # 测试等级
     changer = DB.Column(DB.Integer, DB.ForeignKey('peo.peoId'))  # 修改人
 
     fatherId = DB.Column(DB.Integer, nullable=False, )  # 父节点
-    childId = DB.Column(DB.Integer, nullable=False)  # 孩子节点
     fileType = DB.Column(DB.String(10))  # 类型
     tag = DB.Column(DB.String(64), DB.ForeignKey('tag.tag_name'))  # 标签
 
@@ -96,7 +99,7 @@ if __name__ == '__main__':
 
 def query2dict(model_list):
     if isinstance(model_list, list):  # 如果传入的参数是一个list类型的，说明是使用的all()的方式查询的
-        if(len(model_list)!=0):
+        if (len(model_list) != 0):
             if isinstance(model_list[0], DB.Model):  # 这种方式是获得的整个对象  相当于 select * from table
                 lst = []
                 for model in model_list:

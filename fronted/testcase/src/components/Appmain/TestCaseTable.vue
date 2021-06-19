@@ -26,15 +26,24 @@
           type="success"
           icon="el-icon-circle-check"
           circle
-          @click="SaveChange(this.colConfigs, scope.data.row, this.tableData)"
+          @click="SaveChange(scope.data.row)"
         ></el-button>
         <el-button
           type="info"
           icon="el-icon-picture-outline"
           circle
           size="mini"
+        ></el-button
+        ><el-button
+          v-if="scope.data.row.isRowOk"
+          type="warning"
+          size="mini"
+          icon="el-icon-error"
+          circle
+          @click="CancelEditingTestCase(scope.data.row)"
         ></el-button>
         <el-button
+          v-else
           type="danger"
           size="mini"
           icon="el-icon-delete"
@@ -69,6 +78,21 @@ const EdibleInput = {
     `,
 };
 
+const SelectInput = {
+  props: ["row", "column_name", "isOk", "isRowOk", "options"],
+  template: `
+      <el-select type="textarea" v-if="isOk || isRowOk" v-model="row[column_name]" >
+      <el-option
+          v-for="item in options[column_name]"
+          :key="item.value"
+          :label="item.label"
+          :value="item.value"
+        ></el-option>
+      </el-select>
+      <span v-else><span> {{ row[column_name]}}</span></span>
+    `,
+};
+
 import axios from "axios";
 export default {
   inject: ["parentObj"],
@@ -98,25 +122,39 @@ export default {
         this.tableData
       );
     });
-    this.$bus.on("CREATE_CHOOSE_TEST", (param) => {
-      console.log("CREATE_CHOOSE_TEST发生了");
-      this.CreateTestCase(param);
+    /***
+     * 接受Tree组件的通知，保存table数据到服务器
+     */
+    this.$bus.on("SAVE_TESTCASE_TABLE_DATA", (param) => {
+      console.log("SAVE_TESTCASE_TABLE_DATA");
+      this.saveTableData(param.data, param.fatherId);
     });
-
     /**
-     * 告诉table,创建了一个新的测试用例行
+     * 告诉table,
+     * 创建了一个新的测试用例行
+     * 传入节点数据（）
      */
     this.$bus.on("CREATE_NEW_TESTCASE_NOTIFY_TABLE", (param) => {
       console.log("CREATE_NEW_TESTCASE_NOTIFY_TABLE 发生了");
-      this.CreateTestCase(param);
+      this.CreateDefaultTestCaseLine(param.data, param.fatherId);
     });
-    this.$bus.on("UPDATE_CURRENT_DATA_NODE", (data) => {
-      console.log("UPDATE_CURRENT_DATA_NODE 发生了");
+    /***
+     * 告诉table,
+     * 导航栏选中了新的测试用例行（文件类型）
+     * 需要高亮对应行
+     */
+    this.$bus.on("UPDATE_CURRENT_NODE_DATA_CHOOSE", (data) => {
+      console.log("UPDATE_CURRENT_NODE_DATA_CHOOSE 发生了");
       var currentRow = this.FindCurrentRow(data.caseId);
       if (currentRow) {
         this.$refs["table"].ChangeCurrentRow(currentRow);
       } else {
-        alert("Error !!! 没有找到对应的caseId的tableline");
+        //alert("Error !!! 没有找到对应的caseId的tableline");
+        //需要利用fatherId获取选中testcase的父节点，得到对应的测试用例表
+        this.$bus.emit("UPDATE_FATHER_TABLE_DATAS", {
+          fatherId: data.fatherId,
+          caseId: data.caseId,
+        });
       }
     });
     /***
@@ -128,30 +166,215 @@ export default {
     /***
      * 在table里传入新数据
      */
-    this.$bus.on("UPDATE_CURRENT_FOLDER_TABLEDATAS", (data) => {
+    this.$bus.on("UPDATE_CURRENT_FOLDER_TABLEDATAS", (param) => {
       console.log("UPDATE_CURRENT_FOLDER_TABLEDATAS 发生了");
-      data = this.SettleCellStates(data);
+      var data = this.SettleCellStates(param.data);
       this.tableData = data;
+      console.log(param);
+      if (param.caseId) {
+        var currentRow = this.FindCurrentRow(param.caseId);
+        this.$refs["table"].ChangeCurrentRow(currentRow);
+      }
     });
   },
   methods: {
     /**
-     * 根据caseId,得到该文件夹下的子用例id，并展示在右侧
+     * 取消编辑测试用例
+     * 1.取消编辑态
+     * 2.回滚到和数据库保持同步
      */
-    getFileTable() {},
+    CancelEditingTestCase(node_data) {
+      console.log(
+        "——————————————————————CancelEditingTestCase——————————————————————"
+      );
+      axios
+        .get("getTestCaseInfoByCaseId", {
+          params: { caseId: node_data.caseId },
+        })
+        .then((res) => {
+          console.log(res.data.msg);
+          var data = this.SettleCellState(res.data.msg);
+          var d;
+          for (d = 0; d < this.tableData.length; d++) {
+            if (node_data.caseId == this.tableData[d].caseId) {
+              this.tableData[d] = data;
+              this.tableData[d].isRowOk = false;
+              this.$bus.emit("CASE_NAME_TABLE_CHANGE", {
+                value: data.caseName,
+                rowId: node_data.caseId,
+              }); //告诉treeNode，发生了用例标题修改事件
+            }
+          }
+        })
+        .catch(function(error) {
+          alert(error);
+        });
+    },
     /***
-     * 查找对应的行
+     * 在服务器上创建一个默认测试用例，
+     * 并返回该用例的id
+     */
+    CreateDefaultTestCaseLine(data, fatherId) {
+      console.log(data);
+      console.log(fatherId);
+      var newTestCase = {
+        caseId: data.caseId,
+        caseName: "",
+        preCondition: "",
+        actionCondition: "",
+        type: data.type,
+        preResult: "",
+        ps: "",
+        test_level: "P1",
+        changer: "西子卡",
+        fatherId: fatherId,
+
+        isRowOk: true,
+        isOk: {
+          caseName: false,
+          preCondition: false,
+          preResult: false,
+          actionCondition: false,
+          ps: false,
+          changer: false,
+        },
+      };
+      //this.parentObj.table_datas.unshift(newTestCase);
+      //this.tableData = this.parentObj.table_datas;
+      this.tableData.unshift(newTestCase);
+      this.$refs["table"].ChangeCurrentRow(newTestCase);
+    },
+    /***
+     * 查找导航栏中选中用例所对应的行
      */
     FindCurrentRow(caseId) {
       var d;
-      for (d = 0; d < this.parentObj.table_datas.length; d++) {
-        console.log(this.parentObj.table_datas[d]);
-        if (caseId == this.parentObj.table_datas[d].caseId) {
-          return this.parentObj.table_datas[d];
+      for (d = 0; d < this.tableData.length; d++) {
+        console.log(this.tableData[d]);
+        if (caseId == this.tableData[d].caseId) {
+          return this.tableData[d];
         }
       }
       return "";
     },
+    /**
+     * 保存测试用例的修改到服务器
+     * 输入：
+     *    data：测试用例的树节点数据,
+     *    fatherId：测试用例的父节点
+     *
+     */
+    saveTableData(data, fatherId) {
+      // 查找对应的tabel数据
+      var table_line = this.FindNodeEdit(data.caseId, this.tableData);
+      axios
+        .post("saveTestCase", {
+          caseId: data.caseId,
+          caseName: table_line.caseName,
+          preCondition: table_line.preCondition,
+          actionCondition: table_line.actionCondition,
+
+          preResult: table_line.preResult,
+          ps: table_line.ps,
+          test_level: table_line.test_level,
+          changer: table_line.changer,
+
+          fatherId: fatherId,
+          tag: table_line.tag,
+          fileType: "file",
+        })
+        .then((res) => {
+          console.log(res);
+          //是需要修改的行
+          table_line.isRowOk = false;
+        });
+    },
+    /**
+     * 保存测试用例的修改到服务器
+     * 输入：新建测试用例数据 nodedata
+     * 可以用caseId获取对应的树数据中的当前节点的父节点和儿子节点
+     *
+     */
+    SaveChange(node_data) {
+      var that = this;
+      //console.log("_____________SaveChange----_______________________");
+      //console.log(node_data);
+      //console.log(tableData);
+      //用例编号，父用例文件夹id，类型（文件夹or用例）
+      //用例标题，用例等级,前置条件，执行条件，预期结果，备注，标签，修改人
+      var fatherId, data, childrenIds;
+      fatherId = node_data.fatherId;
+      //alert("fatherId:  " + fatherId);
+      // 在table里找找有没有这个tabelId==NodeId的东西
+      data = this.FindNodeEdit(node_data.caseId);
+      if (data) {
+        axios
+          .post("saveTestCase", {
+            caseId: node_data.caseId,
+            caseName: data.caseName,
+            preCondition: data.preCondition,
+            actionCondition: data.actionCondition,
+
+            preResult: data.preResult,
+            ps: data.ps,
+            test_level: data.test_level,
+            changer: data.changer,
+
+            fatherId: fatherId,
+            childId: childrenIds,
+            tag: data.tag,
+            fileType: "file",
+          })
+          .then((res) => {
+            console.log(res);
+            //是需要修改的行
+            data.isRowOk = false;
+            this.$bus.emit("SAVE_TABLE_ROW", { caseId: node_data.caseId });
+          })
+          .catch(function(error) {
+            console.log(that.parentObj.nowParent.data);
+            console.log(childrenIds);
+            console.log(data);
+            alert("Error " + error);
+          });
+      }
+    },
+    /***
+     * 设置每个节点的状态
+     */
+    SettleCellStates(datas) {
+      for (var i = 0; i < datas.length; i++) {
+        datas[i]["isRow"] = false;
+        datas[i]["isOk"] = {
+          caseName: false,
+          preCondition: false,
+          preResult: false,
+          actionCondition: false,
+          ps: false,
+        };
+      }
+      return datas;
+    },
+    /***
+     * 设置节点的状态
+     */
+    SettleCellState(data) {
+      data["isRow"] = false;
+      data["isOk"] = {
+        caseName: false,
+        preCondition: false,
+        preResult: false,
+        actionCondition: false,
+        ps: false,
+      };
+
+      return data;
+    },
+
+    /***
+     * ——————————————————————————————————————————————————————————————————————————————————————
+     */
+
     /**
      * 修改当前选中行
      * 1.保存其他的选中行
@@ -193,115 +416,12 @@ export default {
         });
     },
     /***
-     * 在服务器上创建一个默认测试用例，
-     * 并返回该用例的id
-     */
-    CreateTestCase(param) {
-      var newTestCase = {
-        caseId: param.caseId,
-        caseName: this.parentObj.node_data.label,
-        preCondition: "",
-        actionCondition: "",
-        type: param.type,
-        preResult: "",
-        ps: "",
-        test_level: "P1",
-        changer: "西子卡",
-
-        isRowOk: true,
-        isOk: {
-          caseName: false,
-          preCondition: false,
-          preResult: false,
-          actionCondition: false,
-          ps: false,
-          changer: false,
-        },
-      };
-      this.parentObj.table_datas.unshift(newTestCase);
-      this.tableData = this.parentObj.table_datas;
-      this.$refs["table"].ChangeCurrentRow(newTestCase);
-      console.log("CreateTestCase  + child");
-      console.log(this.parentObj.nowChildren);
-      console.log(this.parentObj.nowParent);
-    },
-    /**
-     * 用caseId获取对应的树数据中的当前节点的父节点和儿子节点
-     */
-    getTreePosByTableCase(caseId) {
-      var t;
-    },
-
-    /**
-     * 保存测试用例的修改到服务器
-     * 输入：新建测试用例数据 nodedata
-     * 可以用caseId获取对应的树数据中的当前节点的父节点和儿子节点
-     *
-     */
-    SaveChange(colConfigs, node_data, tableData) {
-      var that = this;
-      //用例编号，父用例文件夹id，类型（文件夹or用例）
-      //用例标题，用例等级,前置条件，执行条件，预期结果，备注，标签，修改人
-      var fatherId, type, data, childrenIds;
-      if (!this.parentObj.nowChildren.data) {
-        //如果这个节点没有孩子
-        type = -1; //Child
-        childrenIds = -1;
-      } else {
-        //否则有孩子
-        childrenIds = that.parentObj.nowChildren.data.caseId;
-        type = 1; //Parent
-      }
-      if (that.parentObj.nowParent.parent == null) {
-        //如果父节点的父节点没有数据
-        alert("ROot!!");
-        fatherId = -1; //是根节点
-      } else {
-        fatherId = 0;
-        ///alert(that.parentObj.nowParent.data.caseId);
-        //fatherId = that.parentObj.nowParent.data.caseId;
-      }
-      // 在table里找找有没有这个tabelId==NodeId的东西
-      data = this.FindNodeEdit(node_data.caseId, tableData);
-      if (data) {
-        axios
-          .post("saveTestCase", {
-            caseId: node_data.caseId,
-            caseName: data.caseName,
-            preCondition: data.preCondition,
-            actionCondition: data.actionCondition,
-
-            preResult: data.preResult,
-            ps: data.ps,
-            test_level: data.test_level,
-            changer: data.changer,
-
-            fatherId: fatherId,
-            childId: childrenIds,
-            tag: data.tag,
-            fileType: data.type,
-          })
-          .then((res) => {
-            console.log(res);
-            //是需要修改的行
-            data.isRowOk = false;
-            this.$bus.emit("SAVE_TABLE_ROW");
-          })
-          .catch(function(error) {
-            console.log(that.parentObj.nowParent.data);
-            console.log(childrenIds);
-            console.log(type);
-            console.log(data);
-            alert("Error " + error);
-          });
-      }
-    },
-    /***
      * 从列表里找到对应的id的数据,修改其他id数据为不可编辑状态
      * caseId:对应的用例id
      * tableData:表格数据
      */
-    FindNodeEdit(caseId, tableData) {
+    FindNodeEdit(caseId) {
+      var tableData = this.tableData;
       var data, save;
       for (data in tableData) {
         data = tableData[data];
@@ -323,7 +443,7 @@ export default {
     ChangeTestCase(colConfigs, node_data, tableData) {
       console.log(node_data.caseId);
       var data;
-      data = this.FindNodeEdit(node_data.caseId, tableData);
+      data = this.FindNodeEdit(node_data.caseId);
       if (data) {
         //是需要修改的行
         data.isRowOk = true;
@@ -394,22 +514,6 @@ export default {
       console.log(nodes);
       return nodes; */
     },
-    /***
-     * 设置每个节点的状态
-     */
-    SettleCellStates(datas) {
-      for (var i = 0; i < datas.length; i++) {
-        datas[i]["isRow"] = false;
-        datas[i]["isOk"] = {
-          caseName: false,
-          preCondition: false,
-          preResult: false,
-          actionCondition: false,
-          ps: false,
-        };
-      }
-      return datas;
-    },
   },
   components: { myTable },
   data() {
@@ -466,7 +570,7 @@ export default {
         width: 100,
         editable: true,
         chooseble: false,
-        slot: "chooseLevel",
+        component: SelectInput,
       },
       {
         prop: "preCondition",
@@ -510,7 +614,7 @@ export default {
         label: "修改人",
         width: 140,
         editable: true,
-        component: EdibleInput,
+        component: SelectInput,
       },
 
       // 模版中的元素需要对应的有 slot="opt" 属性
@@ -519,28 +623,6 @@ export default {
       currentRow: "",
       isEditing: false,
       tableData: [], //this.parentObj.table_datas,
-      options: [
-        {
-          value: "0",
-          label: "P0",
-        },
-        {
-          value: "1",
-          label: "P1",
-        },
-        {
-          value: "2",
-          label: "P2",
-        },
-        {
-          value: "3",
-          label: "P3",
-        },
-        {
-          value: "4",
-          label: "P4",
-        },
-      ],
     };
   },
 };

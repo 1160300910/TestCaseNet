@@ -23,12 +23,13 @@
         node-key="caseId"
         ref="tree"
         :data="node_data"
-        :expand-on-click-node="true"
+        :expand-on-click-node="false"
         :filter-node-method="filterNode"
         draggable
         accordion
         highlight-current
         @node-click="OnTreeClickChooseNode"
+        @node-expand="OnTreeClickChooseNode"
         ><template #default="{ node, data }">
           <span class="custom-tree-node">
             <span v-if="testif" span="1">
@@ -135,9 +136,7 @@ export default {
      */
     treeNodeInput(value) {
       var node = this.$refs["tree"].getCurrentNode();
-      console.log(node);
       node.label = value;
-
       this.$bus.emit("CASE_NAME_TREENODE_CHANGE", {
         value: value,
         node: node,
@@ -145,6 +144,12 @@ export default {
     },
   },
   mounted() {
+    /***
+     * 获取父节点下的测试用例列表
+     */
+    this.$bus.on("UPDATE_FATHER_TABLE_DATAS", (data) => {
+      this.getFolderNodeDatas(data.fatherId, data.caseId);
+    });
     this.$bus.on("UPDATE_TABLE_AND_TREE", (NodeRoots) => {
       console.log("UPDATE_TABLE_AND_TREE发生了");
       //console.log(this.node_data);
@@ -168,14 +173,23 @@ export default {
      */
     this.$bus.on("SAVE_TABLE_ROW", (param) => {
       var node = this.$refs["tree"].getCurrentNode();
-      node.isEditing = false;
+      if (node.isEditing == true) {
+        node.isEditing = false;
+        this.saveNodePathData(param.caseId);
+      }
     });
     /**
      * 创建新用例
+     * 1.如果是文件夹类型，创建子用例，
+     * 2.如果是文件类型，创建兄弟用例
      */
-    this.$bus.on("CREATE_NEW_TREENODE_POP", (node) => {
-      console.log("CREATE_NEW_TREENODE_POP  发生了");
-      this.CreateNewTestCase(node);
+    this.$bus.on("CREATE_NEW_TESTCASE_FILE_POP", (node) => {
+      console.log("CREATE_NEW_TESTCASE_FILE_POP  发生了");
+      if (node.type == "file") {
+        this.CreateNewTestCase(node);
+      } else if (node.type == "folder") {
+        this.CreateNewTestCase(node);
+      }
     });
     /***
      * 创建新TreeNode节点
@@ -186,8 +200,72 @@ export default {
       );
       this.CreateNewTreeNode(param.data, param.node, param.fileType);
     });
+    /***
+     * 通过popOver通知testCaseNode删除对应节点
+     * 1.删除服务器节点
+     * 2.删除客户端数据中的节点
+     * 3.刷新当前选中为被删除节点曾经的父亲节点，并且通知table更新选中数据
+     */
+    this.$bus.on("DELETE_TESTCASE_NODE_BYPOP", (param) => {
+      console.log("————删除————  DELETE_TESTCASE_NODE_BYPOP 发生了");
+      this.deleteTestCaseNode(param.data, param.node);
+    });
   },
   methods: {
+    /***
+     * 删除测试用例节点
+     */
+    deleteTestCaseNode(data, node) {
+      axios
+        .post("deleteTestCase", {
+          caseId: data.caseId,
+        })
+        .then((res) => {
+          console.log(res);
+          var parentNode = node.parent;
+          console.log(parentNode.data);
+          this.$refs["tree"].setCurrentNode(parentNode.data);
+          this.$refs["tree"].remove(node);
+
+          this.getFolderNodeDatas(parentNode.data.caseId, null);
+        });
+    },
+    /**
+     * 删除测试用例文件夹
+     * 包括其子文件夹,子用例里面的全部内容
+     */
+    deleteTestCaseFolder() {},
+    /***
+     * 保存节点的路径关系到服务器
+     */
+    saveNodePathData(caseId) {
+      var path_node = this.$refs["tree"].store.currentNode;
+      console.log("———————————————————savePath————————————————");
+      var level = 0;
+      while (path_node.parent) {
+        /*console.log(
+          "savePathInside:level: " +
+            level +
+            " path_node: " +
+            path_node.data.caseId
+        );*/
+        axios
+          .post("saveTestCasePath", {
+            caseId: caseId,
+            ancestorId: path_node.data.caseId,
+            level: level,
+          })
+          .then((res) => {
+            console.log(res);
+          })
+          .catch(function(error) {
+            alert("Error " + error);
+          });
+        level += 1;
+        path_node = path_node.parent;
+        //console.log(path_node);
+      }
+    },
     /***
      * 创建新的系统文件夹
      * 1.设置当前选中节点为新建节点，并focus到输入框中
@@ -211,7 +289,6 @@ export default {
           alert(error);
         });
     },
-
     /***
      * 保存新建节点文件夹
      * 1.保存节点之间的关系
@@ -222,16 +299,25 @@ export default {
       console.log(data);
       data.isEditing = false;
       data.label = this.treeNodeInput;
-      this.changeFolderNodeData(data, node);
-      this.saveNodePath(data.caseId);
+      if (data.type == "file") {
+        this.changeTreeNodeData(data, node); //保存树数据
+        //保存table数据CREATE_NEW_TESTCASE_NOTIFY_TABLE
+        this.$bus.emit("SAVE_TESTCASE_TABLE_DATA", {
+          data: data,
+          fatherId: node.parent.data.caseId,
+        }); //告诉table，发生了保存事件*/
+      } else if (data.type == "folder") {
+        this.changeTreeNodeData(data, node);
+      }
+      this.saveNodePathData(data.caseId);
     },
     /**
      * 修改文件夹类型的测试用例节点数据
      * 保存到服务器
      */
-    changeFolderNodeData(data, node) {
+    changeTreeNodeData(data, node) {
       var fatherId;
-      console.log("changeFolderNodeData");
+      console.log("changeTreeNodeData");
       console.log(this.$refs["tree"].store.currentNode.parent.data);
       console.log(node.data);
       console.log(node.parent.data);
@@ -243,10 +329,10 @@ export default {
       }
 
       axios
-        .post("changeFolderNodeData", {
+        .post("changeTreeNodeData", {
           caseId: data.caseId,
           caseName: data.label,
-          fileType: "folder",
+          fileType: data.type,
           changer: this.parentObj.userId,
           fatherId: fatherId,
         })
@@ -273,64 +359,67 @@ export default {
       return node;
     },
     /***
-     * 创造文件新节点类型
+     * 创造兄弟新节点类型
      * 在节点的后面增加一个新节点
+     * fileType：需要创建的节点类型
      */
-    createFileNewNode(data, node, fileType, newCaseId) {
+    createBrotherNewNode(node, fileType, newCaseId) {
       var newChild = this.CreateNodeData(newCaseId, fileType);
       this.$refs["tree"].insertAfter(newChild, node); //为节点的后面增加一个节点
       this.$refs["tree"].setCurrentNode(newChild); //设置当前节点为新增节点
-      this.$bus.emit("CREATE_NEW_TESTCASE_NOTIFY_TABLE", {
-        caseId: newCaseId,
-        type: fileType,
-      }); //告诉table，发生了创造事件*/
+      return newChild;
     },
     /***
-     * 创建子文件夹新节点类型，
+     * 创建子文件新节点类型，
+     * 节点增加一个新子节点
+     * fileType：需要创建的节点类型
      */
-    createFolderNewNode(data, node, fileType, newCaseId) {
+    createChildNewNode(node, fileType, newCaseId) {
       var newChild = this.CreateNodeData(newCaseId, fileType);
       this.$refs["tree"].append(newChild, node); //新增node
       this.$refs["tree"].setCurrentNode(newChild); //设置当前节点为新增节点
+      return newChild;
     },
     /**
      * 新建树节点
+     * data：当前节点
+     * node：当前节点data
+     * fileType：需要创建的文件夹类型
+     * creatorType：发起创造的文件类型
+     * aimFileType：需要创造的文件类型
+     * 文件夹创造文件或者文件夹，只能创造子节点
+     * 文件创建文件，只能创造兄弟节点
      */
-    CreateNewTreeNode(data, node, fileType) {
+    CreateNewTreeNode(data, node, aimFileType) {
       //从服务器获取新caseId
       axios
         .get("getNewCaseId")
         .then((res) => {
           var newCaseId = res.data.msg;
           console.log(node.childNodes);
-          if (fileType == "file") {
-            this.createFileNewNode(data, node, fileType, newCaseId);
-          } else if (fileType == "folder") {
-            this.createFolderNewNode(data, node, fileType, newCaseId);
+          let creatorFileType = data.type;
+          console.log(data.type);
+          console.log(aimFileType);
+          var newChild;
+          if (aimFileType == "file" && creatorFileType == "file") {
+            //文件创建文件，只能创造兄弟节点
+            newChild = this.createBrotherNewNode(node, aimFileType, newCaseId);
+          } else if (aimFileType == "folder" && creatorFileType == "folder") {
+            // 文件夹创造文件夹,只能创造子节点
+            newChild = this.createChildNewNode(node, aimFileType, newCaseId);
+          } else if (aimFileType == "file" && creatorFileType == "folder") {
+            // 文件夹创造文件,只能创造子节点
+            newChild = this.createChildNewNode(node, aimFileType, newCaseId);
           } else {
-            alert("只能是文件夹或者文件类型！");
+            alert("出现了异常创造情况！！！");
           }
-          /*
-          if (!node.data.children) {
-            node.data.children = [];
+          console.log(node.childNodes);
+          if (aimFileType == "file") {
+            this.$bus.emit("CREATE_NEW_TESTCASE_NOTIFY_TABLE", {
+              data: newChild,
+              fatherId: data.caseId,
+            }); //告诉table，发生了创造事件*/
           }
-          this.$refs["tree"].append(newChild, node); //新增node
-          this.$refs["tree"].setCurrentNode(newChild); //设置当前节点为新增节点
-          //this.setCurrentTreePosGlobal(); //设置全局孩子节点
-          //this.saveNodePath(newCaseId); //保存节点路径
-
-          console.log(node.childNodes); */
-
-          //console.log("????????????????");
-          //console.log(this.$refs["tree"].getCurrentNode());
-
-          //console.log("????????????????!!!!!");
-          //this.parentObj.node_data = newChild;
-          /*
-          this.$bus.emit("CREATE_CHOOSE_TEST", {
-            caseId: newCaseId,
-            type: fileType,
-          }); //告诉table，发生了创造事件*/
         })
         .catch(function(error) {
           alert(error);
@@ -363,9 +452,10 @@ export default {
       this.$refs["tree"].setCurrentNode(data); //设置当前节点为选中节点
       //this.$bus.emit("UPDATE_CURRENT_DATA_NODE", node.data);
       if (data.type == "folder") {
-        this.getFolderNodeDatas(data.caseId);
+        this.getFolderNodeDatas(data.caseId, null);
       } else if (data.type === "file") {
-        this.getFileNodeDataChoosed(data.caseId);
+        var fatherId = node.parent.data.caseId;
+        this.getFileNodeDataChoosed(data.caseId, fatherId);
       } else {
         alert("节点只能是文件或者文件夹类型！！！");
       }
@@ -373,16 +463,20 @@ export default {
     /***
      * 获取文件夹类型节点下的直接子用例节点
      */
-    getFolderNodeDatas(caseId) {
+    getFolderNodeDatas(fatherId, caseId) {
       axios
         .get("getFolderTableTestCases", {
           params: {
-            caseId: caseId,
+            caseId: fatherId,
           },
         })
         .then((res) => {
           console.log(res.data.msg);
-          this.$bus.emit("UPDATE_CURRENT_FOLDER_TABLEDATAS", res.data.msg);
+          this.$bus.emit("UPDATE_CURRENT_FOLDER_TABLEDATAS", {
+            data: res.data.msg,
+            caseId: caseId,
+            fatherId: fatherId,
+          });
         })
         .catch(function(error) {
           alert("Error " + error);
@@ -392,7 +486,12 @@ export default {
      * 获取文件类型节点下的直接子用例节点
      * 自动选中table中，对应的caseId
      */
-    getFileNodeDataChoosed(caseId) {},
+    getFileNodeDataChoosed(caseId, fatherId) {
+      this.$bus.emit("UPDATE_CURRENT_NODE_DATA_CHOOSE", {
+        caseId: caseId,
+        fatherId: fatherId,
+      });
+    },
 
     /**
      * 设置当前选中的node的值,并展开子node
@@ -407,6 +506,7 @@ export default {
     /***
      * 建立某个系统文件夹下的测试用例
      */
+    /*
     CreateNewTestCase(node) {
       var fileType = "file";
       //从服务器获取新caseId
@@ -423,7 +523,7 @@ export default {
           this.$refs["tree"].append(newChild, node); //新增node
           this.$refs["tree"].setCurrentNode(newChild); //设置当前节点为新增节点
           this.setCurrentTreePosGlobal(); //设置全局孩子节点
-          this.saveNodePath(newCaseId); //保存节点路径
+          this.saveNodePathData(newCaseId); //保存节点路径
 
           console.log(node.childNodes);
 
@@ -441,41 +541,8 @@ export default {
         .catch(function(error) {
           alert(error);
         });
-    },
-    /***
-     * 保存节点路径
-     */
-    saveNodePath(caseId) {
-      var path_node = this.$refs["tree"].store.currentNode; // this.$refs["tree"].getCurrentNode();
+    },*/
 
-      console.log("savePath");
-      console.log(path_node);
-      //console.log(this.$refs["tree"].store.currentNode.parent);
-      var level = 0;
-      while (path_node.parent) {
-        console.log(
-          "savePathInside:level: " +
-            level +
-            " path_node: " +
-            path_node.data.caseId
-        );
-        axios
-          .post("saveTestCasePath", {
-            caseId: caseId,
-            ancestorId: path_node.data.caseId,
-            level: level,
-          })
-          .then((res) => {
-            console.log(res);
-          })
-          .catch(function(error) {
-            alert("Error " + error);
-          });
-        level += 1;
-        path_node = path_node.parent;
-        console.log(path_node);
-      }
-    },
     Test(node) {
       //this.treeNodeInput = node.label;
       console.log("FOCUS FOCUS");

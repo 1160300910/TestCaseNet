@@ -1,7 +1,7 @@
 from modules.Stack import Stack
 from . import bp
 from flask import jsonify, flash, g, redirect, render_template, request, session, url_for
-from flaskr.db.Model import Peo, TestCase, query2dict, TestCasePath
+from flaskr.db.Model import Peo, TestCase, query2dict, CasePath
 from flaskr.db_init import DB
 
 
@@ -73,7 +73,6 @@ def saveTestCase():
     if request.method == 'POST':
         caseId = request.json.get('caseId')
         fatherId = request.json.get('fatherId')
-        childId = request.json.get('childId')
 
         caseName = request.json.get('caseName')
         test_level = request.json.get('test_level')
@@ -90,16 +89,7 @@ def saveTestCase():
         caseType = '1'  # 未执行，无需被执行
         peoType = '1'  # 暂定为测试
         actionPeo = -1  # 暂定数据
-        if (test_level == "P1"):
-            level = 1
-        elif (test_level == "P2"):
-            level = 2
-        elif (test_level == "P3"):
-            level = 3
-        elif (test_level == "P4"):
-            level = 4
-        else:
-            level = 0
+
         peo = Peo.query.filter_by(peoName=changer).first()
 
         if peo is not None:
@@ -110,8 +100,8 @@ def saveTestCase():
         else:
             error = '没有id：{}！！'.format(changer)
 
-        testCase1 = TestCase(caseId=caseId, fatherId=fatherId, childId=childId
-                             , caseName=caseName, test_level=level
+        testCase1 = TestCase(caseId=caseId, fatherId=fatherId
+                             , caseName=caseName, test_level=test_level
                              , preCondition=preCondition, actionCondition=actionCondition
                              , preResult=preResult, ps=ps, tag=tag
                              , changer=changer
@@ -122,9 +112,8 @@ def saveTestCase():
             msg = '用例{}被修改！！'.format(caseId)
             result = TestCase.query.filter_by(caseId=caseId).first()
             result.fatherId = fatherId
-            result.childId = childId
             result.caseName = caseName
-            result.test_level = level
+            result.test_level = test_level
             result.preCondition = preCondition
             result.actionCondition = actionCondition
             result.preResult = preResult
@@ -189,7 +178,7 @@ def getUserTestCaseNodesArray():
             father = treeStack.pop()
             print(father)
             fatherId = father['caseId']
-            children = TestCasePath.query.filter_by(ancestor_caseId=fatherId, path_level=1).all()
+            children = CasePath.query.filter_by(testcase_ancestor=fatherId, level=1).all()
             print(children)
             if (children):
                 for c in children:
@@ -227,15 +216,19 @@ def getFolderTableTestCases():
         nodes = []
         print(request.args)
         caseId = request.args.get('caseId')
-        children = TestCasePath.query.filter_by(ancestor_caseId=caseId, path_level=1).all()
+        children = CasePath.query.filter_by(testcase_ancestor=caseId, level=1).all()
         for c in children:
             node = TestCase.query.filter_by(caseId=c.testcase_caseId).first()
-            if node.fileType == "file":
-                nodes.append(node)
-            else:
-                print(node)
-                print("文件夹")
+            if node:
+                if node.fileType == "file":
+                    nodes.append(node)
+                else:
+                    print(node)
+                    print("文件夹")
         msg = query2dict(nodes)
+        for m in msg:
+            changer = Peo.query.filter_by(peoId=m['changer']).first()
+            m['changer'] = changer.peoName
         print(msg)
         response = {
             'msg': msg
@@ -271,9 +264,7 @@ def deleteTestCase():
 def getNewCaseId():
     if request.method == 'GET':
         fatherId = -1
-        childId = -1
-        testCase1 = TestCase(fatherId=fatherId,
-                             childId=childId)
+        testCase1 = TestCase(fatherId=fatherId)
 
         DB.session.add(testCase1)
         DB.session.flush()
@@ -294,15 +285,18 @@ def getNewCaseId():
 
 
 @bp.route("/saveTestCasePath", methods=['POST'])
-def saveTestCasePath():
+def saveCasePath():
     if request.method == 'POST':
         caseId = request.json.get('caseId')
         ancestorId = request.json.get('ancestorId')
         level = request.json.get('level')
-        testCasePath = TestCasePath(testcase_caseId=caseId, ancestor_caseId=ancestorId, path_level=level)
-
-        DB.session.add(testCasePath)
-        DB.session.commit()
+        check_path = CasePath.query.filter_by(testcase_caseId=caseId, testcase_ancestor=ancestorId, level=level).first()
+        if check_path:
+            pass
+        else:
+            testcase_path = CasePath(testcase_caseId=caseId, testcase_ancestor=ancestorId, level=level)
+            DB.session.add(testcase_path)
+            DB.session.commit()
 
         msg = ''
         error = ''
@@ -336,5 +330,31 @@ def changeFolderNodeData():
         response = {
             'msg': msg,
             'error': error
+        }
+        return jsonify(response)
+
+@bp.route("/getProjectPeos", methods=['GET'])
+def getProjectPeos():
+    if request.method == 'GET':
+        peos = Peo.query.all()
+        msg = query2dict(peos)
+        response = {
+            'msg': msg
+        }
+        return jsonify(response)
+
+
+
+@bp.route('/getTestCaseInfoByCaseId/', methods=['GET'])
+def getTestCaseInfoByCaseId():
+    if request.method == 'GET':
+        caseId = request.args.get('caseId')
+        testcase = TestCase.query.filter_by(caseId=caseId).first()
+        if testcase:
+            msg = query2dict(testcase)
+        else:
+            msg=''
+        response = {
+            'msg': msg
         }
         return jsonify(response)

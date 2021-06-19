@@ -169,7 +169,6 @@ export default {
       console.log(newChild.caseId);
       this.currentNodeKey = newChild.caseId;
       this.parentObj.node_data = newChild;
-
       this.$bus.emit("CREATE_CHOOSE_TEST"); //告诉table，发生了创造事件
     },
     /**

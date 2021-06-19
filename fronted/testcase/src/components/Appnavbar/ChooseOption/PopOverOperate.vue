@@ -8,7 +8,7 @@
       @hide="UpdateFatherChooseNode(data, node, data.caseId)"
     >
       <el-form ref="form" label-width="2px" size="mini">
-        <el-form-item>
+        <el-form-item v-if="data.type == 'folder'">
           <el-button
             type="text"
             icon="el-icon-folder-add"
@@ -27,22 +27,33 @@
         <el-form-item>
           <el-button
             icon="el-icon-magic-stick"
-            @click="CreateTestCase(node, nowChildren, nowParent)"
+            @click="CreateNewTestCaseFile(data, node)"
             type="text"
             >新建用例</el-button
           >
         </el-form-item>
-        <el-form-item>
+        <!--el-form-item>
           <el-button
             icon="el-icon-document-copy"
             type="text"
             @click="CopyTestcasePopOver(node, data)"
             >复制用例</el-button
           >
+        </el-form-item-->
+        <el-form-item v-if="data.type == 'file'">
+          <el-button
+            icon="el-icon-document-delete"
+            type="danger"
+            @click="DeleteTestCase(node, data)"
+            >删除用例</el-button
+          >
         </el-form-item>
-        <el-form-item>
-          <el-button icon="el-icon-document-delete" type="danger"
-            >删除该用例</el-button
+        <el-form-item v-if="data.type == 'folder'">
+          <el-button
+            icon="el-icon-document-delete"
+            type="danger"
+            @click="DeleteTestCase(node, data)"
+            >删除文件夹</el-button
           >
         </el-form-item>
       </el-form>
@@ -78,16 +89,30 @@ export default {
 
   methods: {
     /***
-     * 创建新的测试用例文件夹
+     * 通知TreeNode创建新的子用例
+     * 输入：
+     * data : 当前节点的数据
+     */
+    CreateNewTestCaseFile(data, node) {
+      this.visible = false;
+      var fileType = "file";
+      this.$bus.emit("CREATE_NEW_TESTCASE_NODE_POP", {
+        data: data,
+        node: node,
+        fileType: fileType, //需要创造的文件类型
+      });
+    },
+    /***
+     * 通知TreeNode创建新的测试用例文件夹
      */
     CreateNewTestCaseFolder(data, node) {
+      this.visible = false;
       var fileType = "folder";
       this.$bus.emit("CREATE_NEW_TESTCASE_NODE_POP", {
         data: data,
         node: node,
-        fileType: fileType,
+        fileType: fileType, //需要创造的文件类型
       });
-      this.visible = false;
     },
     /**
      * 复制测试用例
@@ -97,8 +122,14 @@ export default {
     },
     /***
      * 删除测试用例
+     * 1.node节点中需要删除这个用例
+     * 2.table里需要删除
      */
-    DeleteTestcase() {},
+    DeleteTestCase(node, data) {
+      this.visible = false;
+      this.$bus.emit("DELETE_TESTCASE_NODE_BYPOP", { data: data, node: node });
+      //this.$bus.emit("DELETE_TESTCASE_TABLE_BYPOP", { node: node, data: data });
+    },
     UpdateFatherChooseNode(data, node, currentNodeKey) {
       this.$emit("updateNode", data, node, currentNodeKey);
     },
@@ -115,24 +146,7 @@ export default {
       }
       //this.$emit('OnAdditionChoice="OnChooseNode"', data);
     },
-    /***
-     * 通知TreeNode创建新用例
-     * 输入：
-     * data : 当前节点的数据
-     */
-    CreateTestCase(node) {
-      console.log("this.visible = false;");
-      this.visible = false;
-      this.$bus.emit("CREATE_NEW_TREENODE_POP", node);
-      /*
-      new Promise((resolve, reject) => {
-         //todo ：等待这步完成
-        console.log("finish");
-        resolve("success");
-      });
-      console.log("end");*/
-      //this.$bus.emit("CREATE_NEW_TABLE_POP", data);
-    },
+
     /***
      * 修改当前用例
      * 输入：

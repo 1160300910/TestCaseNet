@@ -32,6 +32,7 @@
           :isRowOk="scope.row.isRowOk"
           :is="colConfig.component"
           @input="ChangeInput(colConfig.prop, scope.row)"
+          :options="options"
         >
         </component>
         <span v-else> {{ scope.row[scope.column.property] }} </span>
@@ -41,6 +42,7 @@
 </template>
 
 <script>
+import axios from "axios";
 export default {
   directives: {
     //注册一个局部的自定义指令 v-focus
@@ -54,28 +56,60 @@ export default {
     },
   },
   props: ["colConfigs", "data"],
+  created() {
+    this.getChangers();
+  },
   mounted() {
     /***
      * 从节点位置修改列表title
      */
     this.$bus.on("CASE_NAME_TREENODE_CHANGE", (param) => {
-      console.log(param);
-      console.log("CASE_NAME_TREENODE_CHANGE发生了");
+      //console.log(param);
+      //console.log("CASE_NAME_TREENODE_CHANGE发生了");
       if (param.node.type == "file") {
         //设置当前选中行的caseName为对应的value
         var currentRow = this.FindCurrentTableRow(param.node.caseId);
-        console.log(currentRow);
+        //console.log(currentRow);
+        //console.log(this.data);
         currentRow.caseName = param.value;
       }
     });
   },
   methods: {
+    /**
+     * 获取修改人（只能是QA）
+     */
+    getChangers() {
+      axios
+        .get("getProjectPeos")
+        .then((res) => {
+          console.log(res.data.msg);
+          var changer = [];
+          for (var p = 0; p < res.data.msg.length; p++) {
+            changer.unshift({
+              value: res.data.msg[p].peoName,
+              key: res.data.msg[p].peoId,
+            });
+          }
+          this.options.changer = changer;
+    console.log("this.options.changer");
+    console.log(this.options.changer);
+        })
+        .catch(function(error) {
+          alert(error);
+        });
+    },
+    /**
+     * 获取标签
+     */
+    getTags() {},
     /***
      * 查找当前的选中行
      */
     FindCurrentTableRow(rowId) {
       var d;
       for (d = 0; d < this.data.length; d++) {
+        console.log(this.data[d]);
         if (this.data[d].caseId == rowId) {
           return this.data[d];
         }
@@ -113,19 +147,6 @@ export default {
         //修改treeNode名字为对应值
         console.log(row);
       }
-      /*if (column_name === "caseName") {
-        row.isOk[column.property] = false;
-        console.log(row);
-      } else if (column_name === "preCondition") {
-        row.isOk[column.property] = false;
-        console.log(row);
-      } else if (column_name === "actionCondition") {
-        row.isOk[column.property] = false;
-        console.log(row);
-      } else if (column_name === "preResult") {
-        row.isOk[column.property] = false;
-        console.log(row);
-      }*/
     },
     tableRowClassName({ row, rowIndex }) {
       if (rowIndex === 1) {
@@ -135,6 +156,36 @@ export default {
       }
       return "";
     },
+  },
+  data() {
+    return {
+      options: {
+        test_level: [
+          {
+            value: "P4",
+            label: "P0",
+          },
+          {
+            value: "P4",
+            label: "P1",
+          },
+          {
+            value: "P4",
+            label: "P2",
+          },
+          {
+            value: "P4",
+            label: "P3",
+          },
+          {
+            value: "P4",
+            label: "P4",
+          },
+        ],
+        changer: [],
+        tag: [],
+      },
+    };
   },
 };
 </script>
