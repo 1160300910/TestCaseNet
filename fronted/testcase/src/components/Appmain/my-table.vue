@@ -61,10 +61,12 @@ export default {
     this.$bus.on("CASE_NAME_TREENODE_CHANGE", (param) => {
       console.log(param);
       console.log("CASE_NAME_TREENODE_CHANGE发生了");
-      //设置当前选中行的caseName为对应的value
-      var currentRow=this.FindCurrentTableRow(param.rowId)
-      console.log(currentRow)
-      currentRow.caseName = param.value
+      if (param.node.type == "file") {
+        //设置当前选中行的caseName为对应的value
+        var currentRow = this.FindCurrentTableRow(param.node.caseId);
+        console.log(currentRow);
+        currentRow.caseName = param.value;
+      }
     });
   },
   methods: {
@@ -73,9 +75,9 @@ export default {
      */
     FindCurrentTableRow(rowId) {
       var d;
-      for(d=0;d<this.data.length;d++){
-        if(this.data[d].caseId==rowId){
-          return this.data[d]
+      for (d = 0; d < this.data.length; d++) {
+        if (this.data[d].caseId == rowId) {
+          return this.data[d];
         }
       }
     },
@@ -85,10 +87,10 @@ export default {
     ChangeInput(column_name, row) {
       console.log("changeing");
       console.log(column_name);
-       this.$bus.emit("CASE_NAME_TABLE_CHANGE", {
-          value: row.caseName,
-          rowId: row.caseId,
-        }); //告诉treeNode，发生了用例标题修改事件
+      this.$bus.emit("CASE_NAME_TABLE_CHANGE", {
+        value: row.caseName,
+        rowId: row.caseId,
+      }); //告诉treeNode，发生了用例标题修改事件
     },
     /**
      * 设置当前的选中行

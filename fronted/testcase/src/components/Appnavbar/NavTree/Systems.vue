@@ -17,7 +17,7 @@
     <div class="block">
       <p>
         测试用例集
-        <i @click="CreateNewRoot(node_data)" class="el-icon-edit"></i>
+        <i @click="CreateNewRoot()" class="el-icon-edit"></i>
       </p>
       <el-tree
         node-key="caseId"
@@ -28,7 +28,7 @@
         draggable
         accordion
         highlight-current
-        @node-click="OnChooseNode"
+        @node-click="OnTreeClickChooseNode"
         ><template #default="{ node, data }">
           <span class="custom-tree-node">
             <span v-if="testif" span="1">
@@ -36,15 +36,30 @@
               class="el-icon-delete"></i-->
               <el-checkbox> </el-checkbox
             ></span>
-            <i class="el-icon-folder-opened" v-if="data.type == 'folder'"> </i>
-            <i class="el-icon-star-off" v-else-if="data.type == 'file'"> </i>
-            <span v-if="!data.isEditing"
-              >{{ node.label }} {{ data.caseId }}</span
-            >
-            <span v-else>
+            <div class="node_label" v-if="!data.isEditing">
+              <i class="el-icon-folder-opened" v-if="data.type == 'folder'">
+              </i>
+              <i class="el-icon-star-off" v-else-if="data.type == 'file'"> </i>
+              <span>{{ node.label }} {{ data.caseId }}</span>
+              <pop-over-operate
+                @updateNode="UpdateChooseNode"
+                :node="node"
+                :data="data"
+              ></pop-over-operate>
+            </div>
+            <div class="node_editing" v-else>
+              <i class="el-icon-folder-opened" v-if="data.type == 'folder'">
+              </i>
+              <i class="el-icon-star-off" v-else-if="data.type == 'file'"> </i>
               <el-input v-focus="Test(node)" v-model="treeNodeInput" clearable>
               </el-input>
-            </span>
+              <i
+                class="el-icon-circle-check"
+                style="font-size: 25px; color: green"
+                @click="saveNewTreeNodeFolder(data, node)"
+              >
+              </i>
+            </div>
             <!--span><i class="el-icon-check">
               </i> </span-->
             <span>
@@ -57,11 +72,6 @@
                 :nowChildren="this.parentObj.nowChildren"
                 :nowParent="nowParent"-->
 
-              <pop-over-operate
-                @updateNode="UpdateChooseNode"
-                :node="node"
-                :data="data"
-              ></pop-over-operate>
               <!--i
                 @click="addTestcase(node, data)"
                 class="el-icon-circle-plus-outline"
@@ -92,6 +102,7 @@ export default {
   },
   inject: ["parentObj"],
   created() {
+    this.initTreeNodeData();
     if (this.$route.params.userName && this.$route.params.userWork)
       this.userName = this.$route.params.userName;
     this.userWork = this.$route.params.userWork;
@@ -101,7 +112,7 @@ export default {
     /***
      * 当前节点的caseId值
      */
-
+    /*
     currentNodeKey(caseId) {
       console.log("currentNodeKey");
       // Tree 内部使用了 Node 类型的对象来包装用户传入的数据，用来保存目前节点的状态。可以用 $refs 获取 Tree 实例
@@ -118,7 +129,7 @@ export default {
         this.$refs["tree"].setCurrentKey(null);
         alert("ERROR!!!没有找到当前节点的caseId值");
       }
-    },
+    },*/
     /***
      * 当前节点的节点输入值
      */
@@ -129,17 +140,17 @@ export default {
 
       this.$bus.emit("CASE_NAME_TREENODE_CHANGE", {
         value: value,
-        rowId: node.caseId,
+        node: node,
       }); //告诉table，发生了用例标题修改事件
     },
   },
   mounted() {
-    this.$bus.on("UPDATE_TABLE_AND_TREE", () => {
+    this.$bus.on("UPDATE_TABLE_AND_TREE", (NodeRoots) => {
       console.log("UPDATE_TABLE_AND_TREE发生了");
-      console.log(this.node_data)
-      this.node_data = JSON.parse(JSON.stringify(this.parentObj.nodes_data));
-      console.log(this.node_data)
-      console.log(typeof (this.node_data))
+      //console.log(this.node_data);
+      this.node_data = JSON.parse(JSON.stringify(NodeRoots));
+      //console.log(this.node_data);
+      //console.log(typeof this.node_data);
     });
     /**
      * 从table发起了修改caseName
@@ -166,8 +177,233 @@ export default {
       console.log("CREATE_NEW_TREENODE_POP  发生了");
       this.CreateNewTestCase(node);
     });
+    /***
+     * 创建新TreeNode节点
+     */
+    this.$bus.on("CREATE_NEW_TESTCASE_NODE_POP", (param) => {
+      console.log(
+        "CREATE_NEW_TESTCASE_NODE_POP 发生了————节点类型： " + param.fileType
+      );
+      this.CreateNewTreeNode(param.data, param.node, param.fileType);
+    });
   },
   methods: {
+    /***
+     * 创建新的系统文件夹
+     * 1.设置当前选中节点为新建节点，并focus到输入框中
+     * 2.右侧的table里新增默认行,设置为待输入模式，且这一行被选中
+     * 3.输入当前输入框的标题，table的标题也会一起改变；table输入，这里也一起输入，保持同步
+     */
+    CreateNewRoot() {
+      var fileType = "folder";
+      //从服务器获取新caseId
+      axios
+        .get("getNewCaseId")
+        .then((res) => {
+          var newCaseId = res.data.msg;
+          var newChild = this.CreateNodeData(newCaseId, fileType);
+          console.log(this.$refs["tree"]);
+          this.$refs["tree"].append(newChild, null); //新增node
+          this.$refs["tree"].setCurrentNode(newChild);
+          //this.parentObj.node_data = newChild;
+        })
+        .catch(function(error) {
+          alert(error);
+        });
+    },
+
+    /***
+     * 保存新建节点文件夹
+     * 1.保存节点之间的关系
+     * 2.保存节点本身到testCase表
+     */
+    saveNewTreeNodeFolder(data, node) {
+      console.log("---saveNewTreeNodeFolder---");
+      console.log(data);
+      data.isEditing = false;
+      data.label = this.treeNodeInput;
+      this.changeFolderNodeData(data, node);
+      this.saveNodePath(data.caseId);
+    },
+    /**
+     * 修改文件夹类型的测试用例节点数据
+     * 保存到服务器
+     */
+    changeFolderNodeData(data, node) {
+      var fatherId;
+      console.log("changeFolderNodeData");
+      console.log(this.$refs["tree"].store.currentNode.parent.data);
+      console.log(node.data);
+      console.log(node.parent.data);
+      if (node.parent.parent == null) {
+        //如果父节点的父节点没有数据
+        fatherId = -1;
+      } else {
+        fatherId = node.parent.data.caseId;
+      }
+
+      axios
+        .post("changeFolderNodeData", {
+          caseId: data.caseId,
+          caseName: data.label,
+          fileType: "folder",
+          changer: this.parentObj.userId,
+          fatherId: fatherId,
+        })
+        .then((res) => {
+          console.log(res);
+        })
+        .catch(function(error) {
+          alert(error);
+        });
+    },
+    /***
+     * 新建一个树节点数据
+     */
+    CreateNodeData(newCaseId, type) {
+      var myDate = new Date();
+      myDate.toLocaleString();
+      const node = {
+        caseId: newCaseId,
+        label: "",
+        type: type,
+        children: [],
+        isEditing: true,
+      };
+      return node;
+    },
+    /***
+     * 创造文件新节点类型
+     * 在节点的后面增加一个新节点
+     */
+    createFileNewNode(data, node, fileType, newCaseId) {
+      var newChild = this.CreateNodeData(newCaseId, fileType);
+      this.$refs["tree"].insertAfter(newChild, node); //为节点的后面增加一个节点
+      this.$refs["tree"].setCurrentNode(newChild); //设置当前节点为新增节点
+      this.$bus.emit("CREATE_NEW_TESTCASE_NOTIFY_TABLE", {
+        caseId: newCaseId,
+        type: fileType,
+      }); //告诉table，发生了创造事件*/
+    },
+    /***
+     * 创建子文件夹新节点类型，
+     */
+    createFolderNewNode(data, node, fileType, newCaseId) {
+      var newChild = this.CreateNodeData(newCaseId, fileType);
+      this.$refs["tree"].append(newChild, node); //新增node
+      this.$refs["tree"].setCurrentNode(newChild); //设置当前节点为新增节点
+    },
+    /**
+     * 新建树节点
+     */
+    CreateNewTreeNode(data, node, fileType) {
+      //从服务器获取新caseId
+      axios
+        .get("getNewCaseId")
+        .then((res) => {
+          var newCaseId = res.data.msg;
+          console.log(node.childNodes);
+          if (fileType == "file") {
+            this.createFileNewNode(data, node, fileType, newCaseId);
+          } else if (fileType == "folder") {
+            this.createFolderNewNode(data, node, fileType, newCaseId);
+          } else {
+            alert("只能是文件夹或者文件类型！");
+          }
+          /*
+          if (!node.data.children) {
+            node.data.children = [];
+          }
+          this.$refs["tree"].append(newChild, node); //新增node
+          this.$refs["tree"].setCurrentNode(newChild); //设置当前节点为新增节点
+          //this.setCurrentTreePosGlobal(); //设置全局孩子节点
+          //this.saveNodePath(newCaseId); //保存节点路径
+
+          console.log(node.childNodes); */
+
+          //console.log("????????????????");
+          //console.log(this.$refs["tree"].getCurrentNode());
+
+          //console.log("????????????????!!!!!");
+          //this.parentObj.node_data = newChild;
+          /*
+          this.$bus.emit("CREATE_CHOOSE_TEST", {
+            caseId: newCaseId,
+            type: fileType,
+          }); //告诉table，发生了创造事件*/
+        })
+        .catch(function(error) {
+          alert(error);
+        });
+    },
+    /**
+     * 初始化数据，获取测试用例目录数组
+     */
+    initTreeNodeData() {
+      axios
+        .get("getUserTestCaseNodesArray", {
+          params: { userId: this.parentObj.userId },
+        })
+        .then((res) => {
+          var NodeRoots = res.data.msg;
+          this.node_data = JSON.parse(JSON.stringify(NodeRoots));
+        })
+        .catch(function(error) {
+          alert(error);
+        });
+    },
+    /**
+     * 1.对于文件夹，点击节点，选中该节点,自动展开该节点下面的子节点；
+     *   右侧显示子一级的全部用例
+     * 2.对于不可展开的用例，自动选中table中对应的caseId的行
+     */
+    OnTreeClickChooseNode(data, node) {
+      //this.currentNodeKey = node.data.caseId;
+      console.log(node);
+      this.$refs["tree"].setCurrentNode(data); //设置当前节点为选中节点
+      //this.$bus.emit("UPDATE_CURRENT_DATA_NODE", node.data);
+      if (data.type == "folder") {
+        this.getFolderNodeDatas(data.caseId);
+      } else if (data.type === "file") {
+        this.getFileNodeDataChoosed(data.caseId);
+      } else {
+        alert("节点只能是文件或者文件夹类型！！！");
+      }
+    },
+    /***
+     * 获取文件夹类型节点下的直接子用例节点
+     */
+    getFolderNodeDatas(caseId) {
+      axios
+        .get("getFolderTableTestCases", {
+          params: {
+            caseId: caseId,
+          },
+        })
+        .then((res) => {
+          console.log(res.data.msg);
+          this.$bus.emit("UPDATE_CURRENT_FOLDER_TABLEDATAS", res.data.msg);
+        })
+        .catch(function(error) {
+          alert("Error " + error);
+        });
+    },
+    /***
+     * 获取文件类型节点下的直接子用例节点
+     * 自动选中table中，对应的caseId
+     */
+    getFileNodeDataChoosed(caseId) {},
+
+    /**
+     * 设置当前选中的node的值,并展开子node
+     */
+    UpdateChooseNode(data, node, caseId) {
+      //console.log("---------------------");
+      //this.currentNodeKey = currentNodeKey;
+      this.$refs["tree"].setCurrentNode(data); //设置当前节点为选中节点
+      //console.log("===========");
+    },
+    //————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
     /***
      * 建立某个系统文件夹下的测试用例
      */
@@ -179,27 +415,20 @@ export default {
         .then((res) => {
           console.log("异步返回");
           var newCaseId = res.data.msg;
-          var newChild = this.createNodeData(newCaseId, fileType);
-          console.log(node.childNodes)
+          var newChild = this.CreateNodeData(newCaseId, fileType);
+          console.log(node.childNodes);
           if (!node.data.children) {
             node.data.children = [];
           }
-          this.$refs['tree'].append(newChild,node) //新增node
-          this.$refs['tree'].setCurrentNode(newChild) //设置当前节点为新增节点
-          this.setCurrentTreePosGlobal() //设置孩子节点
-          //node.data.children.push(newChild);
-          console.log(node.childNodes)
-          /*
-          new Promise((resolve, reject) => {
-            //todo ：等待这步完成
-            console.log("finish");
-            resolve("success");
-          });
-          console.log("end");*/
+          this.$refs["tree"].append(newChild, node); //新增node
+          this.$refs["tree"].setCurrentNode(newChild); //设置当前节点为新增节点
+          this.setCurrentTreePosGlobal(); //设置全局孩子节点
+          this.saveNodePath(newCaseId); //保存节点路径
+
+          console.log(node.childNodes);
+
           console.log("????????????????");
           console.log(this.$refs["tree"].getCurrentNode());
-          //this.UpdateChooseNode(newCaseId)
-          //this.currentNodeKey = newCaseId;
 
           console.log("????????????????!!!!!");
           this.parentObj.node_data = newChild;
@@ -208,52 +437,51 @@ export default {
             caseId: newCaseId,
             type: fileType,
           }); //告诉table，发生了创造事件
-         
         })
         .catch(function(error) {
           alert(error);
         });
+    },
+    /***
+     * 保存节点路径
+     */
+    saveNodePath(caseId) {
+      var path_node = this.$refs["tree"].store.currentNode; // this.$refs["tree"].getCurrentNode();
+
+      console.log("savePath");
+      console.log(path_node);
+      //console.log(this.$refs["tree"].store.currentNode.parent);
+      var level = 0;
+      while (path_node.parent) {
+        console.log(
+          "savePathInside:level: " +
+            level +
+            " path_node: " +
+            path_node.data.caseId
+        );
+        axios
+          .post("saveTestCasePath", {
+            caseId: caseId,
+            ancestorId: path_node.data.caseId,
+            level: level,
+          })
+          .then((res) => {
+            console.log(res);
+          })
+          .catch(function(error) {
+            alert("Error " + error);
+          });
+        level += 1;
+        path_node = path_node.parent;
+        console.log(path_node);
+      }
     },
     Test(node) {
       //this.treeNodeInput = node.label;
       console.log("FOCUS FOCUS");
       console.log(node);
     },
-    /***
-     * 创建新的系统
-     * 1.设置当前选中节点为新建节点，并focus到输入框中
-     * 2.右侧的table里新增默认行,设置为待输入模式，且这一行被选中
-     * 3.输入当前输入框的标题，table的标题也会一起改变；table输入，这里也一起输入，保持同步
-     */
-    CreateNewRoot(data) {
-      var fileType = "folder";
-      //从服务器获取新caseId
-      axios
-        .get("getNewCaseId")
-        .then((res) => {
-          var newCaseId = res.data.msg;
-          var newChild = this.createNodeData(newCaseId, fileType);
-          data.unshift(newChild);
-          this.currentNodeKey = newCaseId;
-          this.parentObj.node_data = newChild;
 
-          this.$bus.emit("CREATE_CHOOSE_TEST", {
-            caseId: newCaseId,
-            type: fileType,
-          }); //告诉table，发生了创造事件
-        })
-        .catch(function(error) {
-          alert(error);
-        });
-    },
-    /**
-     * 设置当前选中的node的值,并展开子node
-     */
-    async UpdateChooseNode(currentNodeKey, node) {
-      console.log("---------------------");
-      this.currentNodeKey = currentNodeKey;
-      console.log("===========");
-    },
     /**
      * 调用函数，展开一级node下的全部子node
      */
@@ -295,14 +523,7 @@ export default {
       //console.log(this.parentObj.nowChildren)
       //console.log(this.parentObj.nowParent)
     },
-    /**
-     * 1.点击节点，选中该节点,自动展开该节点下面的子节点
-     * 2.自动选中table中，对应的caseId
-     */
-    OnChooseNode(data, node) {
-      this.currentNodeKey = node.data.caseId;
-      this.$bus.emit("UPDATE_CURRENT_DATA_NODE", node.data.caseId);
-    },
+
     /*
             <el-button size="mini" on-click={() => this.append(store, data)}>
               Append
@@ -330,23 +551,9 @@ export default {
       var newChild = this.createNodeData();
       data.unshift(newChild);
       console.log(newChild.caseId);
-      this.currentNodeKey = newChild.caseId; //更新当前选中节点
+      //this.currentNodeKey = newChild.caseId; //更新当前选中节点
     },
-    /***
-     * 新建一个树节点数据
-     */
-    createNodeData(newCaseId, type) {
-      var myDate = new Date();
-      myDate.toLocaleString();
-      const node = {
-        caseId: newCaseId,
-        label: "",
-        type: type,
-        children: [],
-        isEditing: true,
-      };
-      return node;
-    },
+
     append(data) {
       const newChild = { caseId: caseId++, label: "testtest", children: [] };
       if (!data.children) {
@@ -423,7 +630,6 @@ export default {
     ];
     return {
       treeNodeInput: "",
-      currentNodeKey: "", //保存了当前选中节点的caseId信息，用于更新选中状态
       options: options,
       userName: "西子卡",
       userWork: "QA",
@@ -436,9 +642,25 @@ export default {
 </script>
 
 <style>
-span > .el-input > .el-input__inner {
+.node_editing > .el-input > .el-input__inner {
   height: 30px;
-  width: 100px;
+  width: 120px;
+}
+.node_editing {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+  padding-right: 8px;
+}
+.node_label {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 14px;
+  padding-right: 8px;
 }
 .custom-tree-node {
   flex: 1;

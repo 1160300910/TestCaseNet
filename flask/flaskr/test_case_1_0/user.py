@@ -1,6 +1,7 @@
+from modules.Stack import Stack
 from . import bp
 from flask import jsonify, flash, g, redirect, render_template, request, session, url_for
-from flaskr.db.Model import Peo, TestCase, query2dict
+from flaskr.db.Model import Peo, TestCase, query2dict, TestCasePath
 from flaskr.db_init import DB
 
 
@@ -115,7 +116,7 @@ def saveTestCase():
                              , preResult=preResult, ps=ps, tag=tag
                              , changer=changer
                              , state=state, definedType=definedType, caseType=caseType
-                             , peoType=peoType, actionPeo=actionPeo,fileType=fileType)
+                             , peoType=peoType, actionPeo=actionPeo, fileType=fileType)
 
         if TestCase.query.filter_by(caseId=caseId).first() is not None:
             msg = '用例{}被修改！！'.format(caseId)
@@ -170,6 +171,78 @@ def getUserTestCases():
         return jsonify(response)
 
 
+@bp.route('/getUserTestCaseNodesArray/', methods=['GET'])
+def getUserTestCaseNodesArray():
+    if request.method == 'GET':
+        nodes = []
+        print(request.args)
+        userId = request.args.get('userId')
+        # 选出全部根节点
+        results = TestCase.query.filter_by(changer=userId, fatherId=-1).all()
+        print(results)
+        treeStack = Stack()
+        for r in results:
+            fatherNode = SetNode(r)
+            treeStack.push(fatherNode)
+            nodes.append(fatherNode)
+        while (not treeStack.is_empty()):
+            father = treeStack.pop()
+            print(father)
+            fatherId = father['caseId']
+            children = TestCasePath.query.filter_by(ancestor_caseId=fatherId, path_level=1).all()
+            print(children)
+            if (children):
+                for c in children:
+                    child = TestCase.query.filter_by(caseId=c.testcase_caseId).first()
+                    if (child):
+                        childNode = SetNode(child)
+                        treeStack.push(childNode)
+                        print(childNode)
+                        father['children'].append(childNode)
+            else:
+                print(children)
+                print("没有子节点")
+
+        response = {
+            'msg': nodes,
+        }
+        print(response)
+        return jsonify(response)
+
+
+def SetNode(node):
+    tmp = {}
+    # print(node.caseId)
+    tmp['caseId'] = node.caseId
+    tmp['label'] = node.caseName
+    tmp['type'] = node.fileType
+    tmp['isEditing'] = 0
+    tmp['children'] = []
+    return tmp
+
+
+@bp.route('/getFolderTableTestCases/', methods=['GET'])
+def getFolderTableTestCases():
+    if request.method == 'GET':
+        nodes = []
+        print(request.args)
+        caseId = request.args.get('caseId')
+        children = TestCasePath.query.filter_by(ancestor_caseId=caseId, path_level=1).all()
+        for c in children:
+            node = TestCase.query.filter_by(caseId=c.testcase_caseId).first()
+            if node.fileType == "file":
+                nodes.append(node)
+            else:
+                print(node)
+                print("文件夹")
+        msg = query2dict(nodes)
+        print(msg)
+        response = {
+            'msg': msg
+        }
+        return jsonify(response)
+
+
 @bp.route("/deleteTestCase", methods=['POST'])
 def deleteTestCase():
     if request.method == 'POST':
@@ -193,6 +266,7 @@ def deleteTestCase():
         }
         return jsonify(response)
 
+
 @bp.route("/getNewCaseId", methods=['GET'])
 def getNewCaseId():
     if request.method == 'GET':
@@ -204,17 +278,63 @@ def getNewCaseId():
         DB.session.add(testCase1)
         DB.session.flush()
 
-        if(testCase1.caseId):
+        if (testCase1.caseId):
             msg = testCase1.caseId
             error = ''
             DB.session.commit()
         else:
-            msg =''
+            msg = ''
             error = '无'
-
 
         response = {
             'error': error,
             'msg': msg
+        }
+        return jsonify(response)
+
+
+@bp.route("/saveTestCasePath", methods=['POST'])
+def saveTestCasePath():
+    if request.method == 'POST':
+        caseId = request.json.get('caseId')
+        ancestorId = request.json.get('ancestorId')
+        level = request.json.get('level')
+        testCasePath = TestCasePath(testcase_caseId=caseId, ancestor_caseId=ancestorId, path_level=level)
+
+        DB.session.add(testCasePath)
+        DB.session.commit()
+
+        msg = ''
+        error = ''
+        response = {
+            'error': error,
+            'msg': msg
+        }
+        return jsonify(response)
+
+
+@bp.route('/changeFolderNodeData/', methods=['POST'], strict_slashes=False)
+def changeFolderNodeData():
+    error = ''
+    if request.method == 'POST':
+        caseId = request.json.get('caseId')
+        caseName = request.json.get('caseName')
+        fileType = request.json.get('fileType')
+        changer = request.json.get('changer')
+        fatherId = request.json.get('fatherId')
+        changeTestCase = TestCase.query.filter_by(caseId=caseId).first()
+        if changeTestCase is not None:
+            msg = '用例{}被修改！！'.format(caseId)
+            changeTestCase.caseName = caseName
+            changeTestCase.fileType = fileType
+            changeTestCase.changer = changer
+            changeTestCase.fatherId = fatherId
+            DB.session.commit()
+        else:
+            msg = ''
+            error = "没有对应Id的测试用例！！！"
+        response = {
+            'msg': msg,
+            'error': error
         }
         return jsonify(response)

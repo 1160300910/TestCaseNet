@@ -83,8 +83,7 @@ export default {
     },
   },
   created() {
-    this.GetTableRoot();
-
+    //this.GetTableRoot();
     //console.log(this.tableData)
     //console.log(this.parentObj.table_datas)
     //this.tableData = this.parentObj.table_datas
@@ -103,9 +102,17 @@ export default {
       console.log("CREATE_CHOOSE_TEST发生了");
       this.CreateTestCase(param);
     });
-    this.$bus.on("UPDATE_CURRENT_DATA_NODE", (caseId) => {
+
+    /**
+     * 告诉table,创建了一个新的测试用例行
+     */
+    this.$bus.on("CREATE_NEW_TESTCASE_NOTIFY_TABLE", (param) => {
+      console.log("CREATE_NEW_TESTCASE_NOTIFY_TABLE 发生了");
+      this.CreateTestCase(param);
+    });
+    this.$bus.on("UPDATE_CURRENT_DATA_NODE", (data) => {
       console.log("UPDATE_CURRENT_DATA_NODE 发生了");
-      var currentRow = this.FindCurrentRow(caseId);
+      var currentRow = this.FindCurrentRow(data.caseId);
       if (currentRow) {
         this.$refs["table"].ChangeCurrentRow(currentRow);
       } else {
@@ -118,8 +125,20 @@ export default {
     this.$bus.on("CREATE_NEW_TABLE_POP", (data) => {
       console.log("CREATE_NEW_TABLE_POP 发生了");
     });
+    /***
+     * 在table里传入新数据
+     */
+    this.$bus.on("UPDATE_CURRENT_FOLDER_TABLEDATAS", (data) => {
+      console.log("UPDATE_CURRENT_FOLDER_TABLEDATAS 发生了");
+      data = this.SettleCellStates(data);
+      this.tableData = data;
+    });
   },
   methods: {
+    /**
+     * 根据caseId,得到该文件夹下的子用例id，并展示在右侧
+     */
+    getFileTable() {},
     /***
      * 查找对应的行
      */
@@ -238,8 +257,9 @@ export default {
         alert("ROot!!");
         fatherId = -1; //是根节点
       } else {
-        alert(that.parentObj.nowParent.data.caseId);
-        fatherId = that.parentObj.nowParent.data.caseId;
+        fatherId = 0;
+        ///alert(that.parentObj.nowParent.data.caseId);
+        //fatherId = that.parentObj.nowParent.data.caseId;
       }
       // 在table里找找有没有这个tabelId==NodeId的东西
       data = this.FindNodeEdit(node_data.caseId, tableData);
@@ -339,12 +359,10 @@ export default {
           console.log(res.data.msg);
           var table_datas = res.data.msg;
           table_datas = that.SettleCellStates(table_datas);
-          var NodeRoots = that.SettleTreeNodes(table_datas);
+          // var NodeRoots = that.SettleTreeNodes(table_datas);
           that.tableData = table_datas;
           that.parentObj.table_datas = table_datas;
-          that.parentObj.nodes_data = NodeRoots;
-
-          this.$bus.emit("UPDATE_TABLE_AND_TREE");
+          //that.parentObj.nodes_data = NodeRoots;
         })
         .catch(function(error) {
           alert(error);
@@ -354,6 +372,7 @@ export default {
      * 设置对应的树节点的名称和id
      */
     SettleTreeNodes(datas) {
+      /*
       var nodes = new Array();
       for (var i = 0; i < datas.length; i++) {
         var node = {};
@@ -373,7 +392,7 @@ export default {
       }
       //然后在生成的树里面再 生成父子关系
       console.log(nodes);
-      return nodes;
+      return nodes; */
     },
     /***
      * 设置每个节点的状态
@@ -499,7 +518,7 @@ export default {
     return {
       currentRow: "",
       isEditing: false,
-      tableData: tableData, //this.parentObj.table_datas,
+      tableData: [], //this.parentObj.table_datas,
       options: [
         {
           value: "0",

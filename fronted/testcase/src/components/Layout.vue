@@ -75,7 +75,7 @@ export default {
 /* 左侧样式 */
 .navbar {
   position: absolute;
-  width: 230px;
+  width: 280px;
   top: 50px; /* 距离上面50像素 */
   left: 0px;
   bottom: 0px;
@@ -90,7 +90,7 @@ export default {
   flex-direction: column;
   position: absolute;
   top: 50px;
-  left: 230px;
+  left: 280px;
   bottom: 0px;
   right: 0px; /* 距离右边0像素 */
   padding: 10px;

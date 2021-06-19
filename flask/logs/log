@@ -2980,3 +2980,1016 @@ WARNING  * Debugger is active! 88
 INFO  * Debugger PIN: 742-918-802 88
 INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
 INFO 127.0.0.1 - - [16/Jun/2021 00:15:32] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [16/Jun/2021 00:18:43] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [16/Jun/2021 00:26:33] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [16/Jun/2021 00:28:16] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [16/Jun/2021 00:29:05] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [17/Jun/2021 12:14:49] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [17/Jun/2021 12:14:53] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [17/Jun/2021 20:35:36] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\db\\Model.py', reloading 88
+INFO  * Restarting with stat 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:19:05] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:19:13] "POST /test_case/register HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:19:13] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:19:17] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:19:25] "POST /test_case/saveTestCase HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:19:56] "POST /test_case/saveTestCase HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:19:58] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:25:08] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:28:10] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:28:12] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:28:30] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:29:27] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:29:30] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:30:38] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:30:40] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:31:42] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:31:45] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:32:14] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:32:16] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:33:36] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:33:37] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:34:26] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:34:28] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:34:39] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:34:44] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:35:11] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:35:13] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:35:28] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:35:31] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:36:31] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:36:33] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:37:10] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:37:12] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:37:53] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:37:54] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:38:09] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:38:12] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:39:34] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:39:36] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:40:01] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:40:04] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:40:22] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:40:24] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:44:07] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:44:09] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:44:09] "POST /test_case/saveTestCasePath HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:44:09] "POST /test_case/saveTestCasePath HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:44:52] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:44:55] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:44:55] "POST /test_case/saveTestCasePath HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:44:55] "POST /test_case/saveTestCasePath HTTP/1.1" 500 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\db\\Model.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\db\\Model.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:46:55] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:46:57] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:46:57] "POST /test_case/saveTestCasePath HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:46:57] "POST /test_case/saveTestCasePath HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:47:38] "POST /test_case/register HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:47:38] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:47:40] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:47:41] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:47:47] "POST /test_case/saveTestCase HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:47:54] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:47:54] "POST /test_case/saveTestCasePath HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:47:54] "POST /test_case/saveTestCasePath HTTP/1.1" 500 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:48:10] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:48:13] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:48:13] "POST /test_case/saveTestCasePath HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:48:13] "POST /test_case/saveTestCasePath HTTP/1.1" 500 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\db\\Model.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\db\\Model.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:50:59] "POST /test_case/register HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:51:00] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:51:02] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:51:08] "POST /test_case/saveTestCase HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:51:28] "POST /test_case/saveTestCase HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:51:33] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:51:33] "POST /test_case/saveTestCasePath HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:51:33] "POST /test_case/saveTestCasePath HTTP/1.1" 500 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:51:51] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:51:52] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:51:53] "POST /test_case/saveTestCasePath HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:51:53] "POST /test_case/saveTestCasePath HTTP/1.1" 500 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\db\\Model.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:52:06] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:52:13] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:52:13] "POST /test_case/saveTestCasePath HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:52:13] "POST /test_case/saveTestCasePath HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:53:49] "POST /test_case/register HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:53:49] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:53:51] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:53:55] "POST /test_case/saveTestCase HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:53:58] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:53:58] "POST /test_case/saveTestCasePath HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:53:58] "POST /test_case/saveTestCasePath HTTP/1.1" 500 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\db\\Model.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\db\\Model.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\db\\Model.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:56:20] "POST /test_case/register HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:56:20] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:56:27] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:56:27] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:56:31] "POST /test_case/saveTestCase HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:56:33] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:56:35] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:56:36] "POST /test_case/saveTestCasePath HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:56:36] "POST /test_case/saveTestCasePath HTTP/1.1" 500 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\db\\Model.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:59:14] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:59:17] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:59:17] "POST /test_case/saveTestCasePath HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:59:18] "POST /test_case/saveTestCasePath HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:59:41] "POST /test_case/register HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:59:42] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:59:43] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:59:50] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:59:53] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:59:54] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:59:58] "POST /test_case/saveTestCase HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 09:59:59] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 10:00:00] "POST /test_case/saveTestCasePath HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 10:00:00] "POST /test_case/saveTestCasePath HTTP/1.1" 500 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [18/Jun/2021 10:01:12] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 10:01:14] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 10:01:14] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 10:01:14] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 10:02:00] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 10:02:02] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 10:02:02] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 10:02:02] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\db\\Model.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\db\\Model.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [18/Jun/2021 10:02:45] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 10:02:47] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 10:02:47] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 10:02:47] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 10:08:52] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 10:08:54] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 10:08:54] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 10:08:55] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 10:09:10] "POST /test_case/saveTestCase HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 10:09:13] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 11:20:36] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [18/Jun/2021 11:31:42] "GET / HTTP/1.1" 404 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 11:31:43] "GET /favicon.ico HTTP/1.1" 404 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 11:31:49] "GET /getUserTestCaseNodesArray HTTP/1.1" 404 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 11:32:03] "GET /getUserTestCaseNodesArray?userId=1 HTTP/1.1" 404 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [18/Jun/2021 11:32:40] "GET /getUserTestCaseNodesArray?userId=1 HTTP/1.1" 404 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 11:32:41] "GET /getUserTestCaseNodesArray?userId=1 HTTP/1.1" 404 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 11:33:16] "GET / HTTP/1.1" 404 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 11:33:23] "GET / HTTP/1.1" 404 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 11:34:16] "GET / HTTP/1.1" 404 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 11:34:39] "GET / HTTP/1.1" 404 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 11:34:40] "GET / HTTP/1.1" 404 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 11:34:49] "GET /test_case/ HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 11:35:16] "GET /test_case/getUserTestCaseNodesArray?userId=1 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 11:35:16] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 11:41:17] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 11:41:17] "POST /test_case/register HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 11:41:17] "POST /test_case/register HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 11:41:17] "POST /test_case/register HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 11:41:17] "POST /test_case/register HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 11:41:17] "POST /test_case/register HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 11:41:18] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 11:41:30] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 11:41:40] "POST /test_case/saveTestCase HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 11:42:28] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 11:42:28] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 11:42:28] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 11:42:39] "POST /test_case/saveTestCase HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 11:42:45] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 11:42:50] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 11:42:58] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:29:30] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:29:30] "GET /test_case/getUserTestCaseNodesArray/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:29:30] "GET /test_case/getUserTestCaseNodesArray/?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:29:30] "GET /test_case/getUserTestCaseNodesArray/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:29:30] "GET /test_case/getUserTestCaseNodesArray/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:29:30] "GET /test_case/getUserTestCaseNodesArray/?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:29:30] "GET /test_case/getUserTestCaseNodesArray/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:29:56] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:29:56] "GET /test_case/getUserTestCaseNodesArray/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:29:56] "GET /test_case/getUserTestCaseNodesArray/?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:29:56] "GET /test_case/getUserTestCaseNodesArray/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:29:56] "GET /test_case/getUserTestCaseNodesArray/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:29:56] "GET /test_case/getUserTestCaseNodesArray/?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:29:56] "GET /test_case/getUserTestCaseNodesArray/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:30:09] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:30:09] "GET /test_case/getUserTestCaseNodesArray/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:30:09] "GET /test_case/getUserTestCaseNodesArray/?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:30:09] "GET /test_case/getUserTestCaseNodesArray/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:30:09] "GET /test_case/getUserTestCaseNodesArray/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:30:09] "GET /test_case/getUserTestCaseNodesArray/?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:30:09] "GET /test_case/getUserTestCaseNodesArray/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:30:29] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:30:29] "GET /test_case/getUserTestCaseNodesArray/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:30:29] "GET /test_case/getUserTestCaseNodesArray/?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:30:29] "GET /test_case/getUserTestCaseNodesArray/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:30:29] "GET /test_case/getUserTestCaseNodesArray/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:30:29] "GET /test_case/getUserTestCaseNodesArray/?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:30:29] "GET /test_case/getUserTestCaseNodesArray/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:31:05] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:31:05] "GET /test_case/getUserTestCaseNodesArray/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:31:05] "GET /test_case/getUserTestCaseNodesArray/?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:31:05] "GET /test_case/getUserTestCaseNodesArray/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:31:05] "GET /test_case/getUserTestCaseNodesArray/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:31:05] "GET /test_case/getUserTestCaseNodesArray/?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:31:05] "GET /test_case/getUserTestCaseNodesArray/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:31:19] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:31:19] "GET /test_case/getUserTestCaseNodesArray/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:31:19] "GET /test_case/getUserTestCaseNodesArray/?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:31:19] "GET /test_case/getUserTestCaseNodesArray/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:31:19] "GET /test_case/getUserTestCaseNodesArray/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:31:19] "GET /test_case/getUserTestCaseNodesArray/?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:31:19] "GET /test_case/getUserTestCaseNodesArray/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:33:48] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:33:48] "GET /test_case/getUserTestCaseNodesArray/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:33:48] "GET /test_case/getUserTestCaseNodesArray/?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:33:48] "GET /test_case/getUserTestCaseNodesArray/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:33:48] "GET /test_case/getUserTestCaseNodesArray/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:33:48] "GET /test_case/getUserTestCaseNodesArray/?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:33:48] "GET /test_case/getUserTestCaseNodesArray/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\modules\\Stack.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:34:08] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:34:08] "GET /test_case/getUserTestCaseNodesArray/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:34:08] "GET /test_case/getUserTestCaseNodesArray/?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:34:08] "GET /test_case/getUserTestCaseNodesArray/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:34:08] "GET /test_case/getUserTestCaseNodesArray/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:34:08] "GET /test_case/getUserTestCaseNodesArray/?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:34:08] "GET /test_case/getUserTestCaseNodesArray/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:34:38] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:34:38] "GET /test_case/getUserTestCaseNodesArray/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:34:38] "GET /test_case/getUserTestCaseNodesArray/?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:34:38] "GET /test_case/getUserTestCaseNodesArray/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:34:38] "GET /test_case/getUserTestCaseNodesArray/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:34:38] "GET /test_case/getUserTestCaseNodesArray/?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:34:38] "GET /test_case/getUserTestCaseNodesArray/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:34:52] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:34:52] "GET /test_case/getUserTestCaseNodesArray/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:34:52] "GET /test_case/getUserTestCaseNodesArray/?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:34:52] "GET /test_case/getUserTestCaseNodesArray/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:34:52] "GET /test_case/getUserTestCaseNodesArray/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:34:52] "GET /test_case/getUserTestCaseNodesArray/?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:34:52] "GET /test_case/getUserTestCaseNodesArray/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:36:58] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:36:58] "GET /test_case/getUserTestCaseNodesArray/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:36:58] "GET /test_case/getUserTestCaseNodesArray/?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:36:58] "GET /test_case/getUserTestCaseNodesArray/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:36:58] "GET /test_case/getUserTestCaseNodesArray/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:36:58] "GET /test_case/getUserTestCaseNodesArray/?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:36:58] "GET /test_case/getUserTestCaseNodesArray/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:43:21] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:44:25] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:45:27] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:45:28] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:45:28] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:45:34] "POST /test_case/saveTestCase HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:45:36] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:45:36] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:45:36] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:45:36] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:45:46] "POST /test_case/saveTestCase HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:45:49] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:45:54] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:48:04] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:48:06] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:48:20] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:49:00] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:49:19] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:49:21] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:49:50] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:49:50] "GET /test_case/getUserTestCaseNodesArray?userId=1 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:49:51] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:50:05] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:50:06] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:50:10] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:50:12] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:50:21] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:50:22] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:51:20] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:51:20] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:52:37] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:52:38] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:53:25] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:53:25] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:53:28] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:53:28] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:53:43] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:53:43] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:57:31] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:57:31] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:57:47] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:57:47] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:59:45] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:59:46] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:59:53] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:59:53] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 12:59:53] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 13:00:05] "POST /test_case/saveTestCase HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 13:00:07] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 13:00:07] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 13:00:12] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 13:00:22] "POST /test_case/saveTestCase HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 13:00:28] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 13:00:28] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 13:00:28] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 13:00:34] "POST /test_case/saveTestCase HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 13:00:36] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 13:00:36] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 13:00:40] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 13:00:40] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 13:00:40] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 13:00:46] "POST /test_case/saveTestCase HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 13:00:49] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 13:00:49] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 15:36:30] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [18/Jun/2021 15:36:30] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [19/Jun/2021 14:00:58] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 14:01:15] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [19/Jun/2021 14:01:44] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 14:01:44] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 14:01:56] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 14:02:30] "GET /test_case/getFolderTableTestCases?caseId=1 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 14:02:30] "GET /test_case/getFolderTableTestCases/?caseId=1 HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 14:02:30] "GET /test_case/getFolderTableTestCases/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 14:02:30] "GET /test_case/getFolderTableTestCases/?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 14:02:30] "GET /test_case/getFolderTableTestCases/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 14:02:30] "GET /test_case/getFolderTableTestCases/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 14:02:30] "GET /test_case/getFolderTableTestCases/?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 14:02:30] "GET /test_case/getFolderTableTestCases/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [19/Jun/2021 14:04:23] "GET /test_case/getFolderTableTestCases/?caseId=1 HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 14:04:23] "GET /test_case/getFolderTableTestCases/?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 14:04:23] "GET /test_case/getFolderTableTestCases/?__debugger__=yes&cmd=resource&f=jquery.js HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 14:04:23] "GET /test_case/getFolderTableTestCases/?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 14:04:23] "GET /test_case/getFolderTableTestCases/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 14:04:23] "GET /test_case/getFolderTableTestCases/?__debugger__=yes&cmd=resource&f=ubuntu.ttf HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 14:04:23] "GET /test_case/getFolderTableTestCases/?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [19/Jun/2021 14:06:37] "GET /test_case/getFolderTableTestCases/?caseId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 15:46:11] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 15:46:36] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 15:46:36] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 15:50:12] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 15:50:12] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 15:51:06] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 15:51:06] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 15:53:43] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 15:53:43] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 15:54:39] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 15:54:39] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 15:54:53] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 15:54:53] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 15:58:52] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 15:58:52] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 16:00:14] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 16:00:14] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 16:01:17] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 16:01:17] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 16:03:13] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 16:03:13] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 16:03:33] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 16:03:33] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 16:03:33] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 16:03:33] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 16:03:39] "POST /test_case/saveTestCase HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 16:04:11] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 16:04:11] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 16:04:32] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 16:04:32] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 16:04:32] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 16:04:33] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 16:04:35] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 16:04:35] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 16:04:45] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 16:04:45] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 16:05:48] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 16:05:48] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 16:05:49] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 16:05:59] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 16:05:59] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 16:07:23] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 16:07:23] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 16:07:30] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 16:07:30] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 16:08:24] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 16:08:24] "GET /test_case/getUserTestCases/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 16:08:48] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 16:09:09] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 16:11:38] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 16:20:03] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 16:20:05] "GET /test_case/getFolderTableTestCases HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 16:20:05] "GET /test_case/getFolderTableTestCases/ HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 16:21:09] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 16:21:10] "GET /test_case/getFolderTableTestCases?caseId=1 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 16:21:10] "GET /test_case/getFolderTableTestCases/?caseId=1 HTTP/1.1" 200 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [19/Jun/2021 16:22:20] "GET /test_case/getFolderTableTestCases/?caseId=1 HTTP/1.1" 200 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [19/Jun/2021 16:22:39] "GET /test_case/getFolderTableTestCases/?caseId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 16:24:11] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 16:24:12] "GET /test_case/getFolderTableTestCases/?caseId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 16:25:26] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 16:25:27] "GET /test_case/getFolderTableTestCases/?caseId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 16:25:31] "GET /test_case/getFolderTableTestCases?caseId=6 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 16:25:31] "GET /test_case/getFolderTableTestCases/?caseId=6 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 16:25:34] "GET /test_case/getFolderTableTestCases/?caseId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 16:37:28] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:00:14] "GET /test_case/getFolderTableTestCases/?caseId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:00:17] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:00:17] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:00:17] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:00:43] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:00:49] "GET /test_case/getFolderTableTestCases/?caseId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:00:52] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:00:55] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:01:00] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:01:03] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:01:08] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:01:14] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:01:16] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:01:20] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:01:23] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:02:57] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:03:01] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:03:33] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:03:37] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:03:42] "GET /test_case/getFolderTableTestCases?caseId=19 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:03:42] "GET /test_case/getFolderTableTestCases/?caseId=19 HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:03:49] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:03:52] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:03:54] "GET /test_case/getFolderTableTestCases?caseId=20 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:03:54] "GET /test_case/getFolderTableTestCases/?caseId=20 HTTP/1.1" 500 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\db\\Model.py', reloading 88
+INFO  * Restarting with stat 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:07:06] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:07:07] "GET /test_case/getFolderTableTestCases/?caseId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:07:10] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:07:25] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:07:48] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:09:14] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:09:17] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:09:19] "GET /test_case/getFolderTableTestCases?caseId=24 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:09:19] "GET /test_case/getFolderTableTestCases/?caseId=24 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:12:27] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:12:30] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:12:32] "GET /test_case/getFolderTableTestCases?caseId=25 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:12:32] "GET /test_case/getFolderTableTestCases/?caseId=25 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:12:52] "GET /test_case/getFolderTableTestCases/?caseId=25 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:13:48] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:13:51] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:13:54] "GET /test_case/getFolderTableTestCases?caseId=26 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:13:54] "GET /test_case/getFolderTableTestCases/?caseId=26 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:14:33] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:14:36] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:15:13] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:15:27] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:15:31] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:15:33] "GET /test_case/getFolderTableTestCases?caseId=28 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:15:33] "GET /test_case/getFolderTableTestCases/?caseId=28 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:15:48] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:17:07] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:17:10] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:17:45] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:17:47] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:17:47] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:17:47] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:17:51] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:17:53] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:17:56] "GET /test_case/getFolderTableTestCases?caseId=31 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:17:56] "GET /test_case/getFolderTableTestCases/?caseId=31 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:17:57] "GET /test_case/getFolderTableTestCases/?caseId=31 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:18:08] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:18:14] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:18:29] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:18:35] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:18:47] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:18:59] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:19:04] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:19:39] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:19:42] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:19:45] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:19:46] "GET /test_case/getFolderTableTestCases/?caseId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:20:10] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:20:13] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:20:20] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:20:23] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:20:25] "GET /test_case/getFolderTableTestCases?caseId=37 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:20:25] "GET /test_case/getFolderTableTestCases/?caseId=37 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:20:52] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:20:58] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:21:09] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:21:30] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:22:35] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:22:43] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:22:52] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:22:59] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:23:12] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:23:33] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:23:34] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:23:34] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:23:36] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:23:38] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:24:01] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:24:04] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:24:32] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:24:33] "GET /test_case/getFolderTableTestCases/?caseId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:24:36] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:24:38] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:24:40] "GET /test_case/getFolderTableTestCases?caseId=40 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:24:40] "GET /test_case/getFolderTableTestCases/?caseId=40 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:25:00] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:25:03] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:25:23] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:25:26] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:25:40] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:25:42] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:25:52] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:25:55] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:25:56] "GET /test_case/getFolderTableTestCases/?caseId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:26:00] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:26:02] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:26:05] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:26:07] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:26:11] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:26:13] "GET /test_case/getFolderTableTestCases?caseId=46 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:26:13] "GET /test_case/getFolderTableTestCases/?caseId=46 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:26:19] "GET /test_case/getFolderTableTestCases/?caseId=46 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:26:53] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:26:55] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:27:18] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:27:20] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:28:02] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:28:04] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:28:13] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:28:15] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:28:24] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:28:26] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:28:33] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:28:35] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:29:20] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:29:22] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:32:16] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:32:18] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:32:20] "GET /test_case/getFolderTableTestCases?caseId=54 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:32:20] "GET /test_case/getFolderTableTestCases/?caseId=54 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:32:27] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:32:28] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:32:28] "GET /test_case/getFolderTableTestCases/?caseId=54 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:32:28] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:32:30] "GET /test_case/getFolderTableTestCases/?caseId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:33:17] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:33:19] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:33:22] "GET /test_case/getFolderTableTestCases?caseId=55 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:33:22] "GET /test_case/getFolderTableTestCases/?caseId=55 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:33:27] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:33:27] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:33:27] "GET /test_case/getFolderTableTestCases/?caseId=55 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:33:40] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:33:42] "GET /test_case/getFolderTableTestCases/?caseId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:33:44] "GET /test_case/getFolderTableTestCases/?caseId=6 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:33:45] "GET /test_case/getFolderTableTestCases/?caseId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:34:03] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:34:04] "GET /test_case/getFolderTableTestCases/?caseId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:34:07] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:34:11] "GET /test_case/getFolderTableTestCases?caseId=56 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:34:11] "GET /test_case/getFolderTableTestCases/?caseId=56 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:34:23] "GET /test_case/getFolderTableTestCases/?caseId=56 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:34:24] "GET /test_case/getFolderTableTestCases/?caseId=56 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:35:27] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:35:30] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:35:31] "GET /test_case/getFolderTableTestCases?caseId=57 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:35:31] "GET /test_case/getFolderTableTestCases/?caseId=57 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:35:33] "GET /test_case/getFolderTableTestCases/?caseId=57 HTTP/1.1" 200 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:46:44] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:46:46] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:46:47] "GET /test_case/getFolderTableTestCases?caseId=58 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:46:47] "GET /test_case/getFolderTableTestCases/?caseId=58 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:46:56] "POST /test_case/changeFolderNodeData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:46:56] "GET /test_case/getFolderTableTestCases/?caseId=58 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:47:27] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:47:30] "GET /test_case/getFolderTableTestCases/?caseId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:47:33] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:47:34] "GET /test_case/getFolderTableTestCases?caseId=59 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:47:34] "GET /test_case/getFolderTableTestCases/?caseId=59 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:47:37] "POST /test_case/changeFolderNodeData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:47:37] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:47:37] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:47:37] "GET /test_case/getFolderTableTestCases/?caseId=59 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:47:39] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:47:41] "GET /test_case/getFolderTableTestCases/?caseId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:47:51] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:49:07] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:49:08] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:52:57] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:53:29] "POST /test_case/register HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:53:29] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:53:32] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:53:33] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:53:34] "GET /test_case/getFolderTableTestCases/?caseId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:53:40] "GET /test_case/getFolderTableTestCases/?caseId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:53:42] "POST /test_case/changeFolderNodeData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:53:42] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:53:42] "GET /test_case/getFolderTableTestCases/?caseId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:53:44] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:54:52] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:55:18] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:57:22] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:57:24] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:57:24] "GET /test_case/getFolderTableTestCases?caseId=2 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:57:24] "GET /test_case/getFolderTableTestCases/?caseId=2 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:57:31] "POST /test_case/changeFolderNodeData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:57:31] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:57:31] "GET /test_case/getFolderTableTestCases/?caseId=2 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:57:31] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:57:34] "GET /test_case/getFolderTableTestCases/?caseId=2 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:57:37] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:57:38] "GET /test_case/getFolderTableTestCases?caseId=3 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:57:38] "GET /test_case/getFolderTableTestCases/?caseId=3 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:57:44] "POST /test_case/changeFolderNodeData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:57:44] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:57:44] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:57:44] "GET /test_case/getFolderTableTestCases/?caseId=3 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:57:46] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:57:58] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:58:03] "GET /test_case/getFolderTableTestCases?caseId=4 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:58:03] "GET /test_case/getFolderTableTestCases/?caseId=4 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:58:05] "POST /test_case/changeFolderNodeData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:58:05] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:58:06] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:58:06] "GET /test_case/getFolderTableTestCases/?caseId=4 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 17:58:07] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:00:27] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:00:30] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:00:32] "GET /test_case/getFolderTableTestCases?caseId=5 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:00:32] "GET /test_case/getFolderTableTestCases/?caseId=5 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:00:38] "POST /test_case/changeFolderNodeData HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:00:38] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:00:39] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:00:39] "GET /test_case/getFolderTableTestCases/?caseId=5 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:02:03] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:02:05] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:02:07] "GET /test_case/getFolderTableTestCases/?caseId=6 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:02:09] "GET /test_case/getFolderTableTestCases/?caseId=6 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:03:05] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:03:07] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:03:08] "GET /test_case/getFolderTableTestCases?caseId=7 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:03:08] "GET /test_case/getFolderTableTestCases/?caseId=7 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:03:11] "POST /test_case/changeFolderNodeData HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:03:11] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:03:11] "GET /test_case/getFolderTableTestCases/?caseId=7 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:03:11] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:04:06] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:04:10] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:04:11] "GET /test_case/getFolderTableTestCases?caseId=8 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:04:11] "GET /test_case/getFolderTableTestCases/?caseId=8 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:04:15] "POST /test_case/changeFolderNodeData HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:04:15] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:04:15] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:04:15] "GET /test_case/getFolderTableTestCases/?caseId=8 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:05:03] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:05:09] "GET /test_case/getFolderTableTestCases/?caseId=2 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:05:10] "GET /test_case/getFolderTableTestCases/?caseId=2 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:05:12] "GET /test_case/getNewCaseId HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:05:13] "GET /test_case/getFolderTableTestCases?caseId=9 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:05:13] "GET /test_case/getFolderTableTestCases/?caseId=9 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:05:14] "GET /test_case/getFolderTableTestCases/?caseId=9 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:05:16] "POST /test_case/changeFolderNodeData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:05:16] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:05:16] "POST /test_case/saveTestCasePath HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:05:16] "GET /test_case/getFolderTableTestCases/?caseId=9 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [19/Jun/2021 18:05:18] "GET /test_case/getUserTestCaseNodesArray/?userId=1 HTTP/1.1" 200 - 88

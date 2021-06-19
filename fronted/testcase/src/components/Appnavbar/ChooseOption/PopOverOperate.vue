@@ -5,11 +5,14 @@
       :width="50"
       trigger="click"
       v-model:visible="visible"
-      @hide="UpdateFatherChooseNode(data.caseId, node)"
+      @hide="UpdateFatherChooseNode(data, node, data.caseId)"
     >
       <el-form ref="form" label-width="2px" size="mini">
         <el-form-item>
-          <el-button type="text" icon="el-icon-folder-add"
+          <el-button
+            type="text"
+            icon="el-icon-folder-add"
+            @click="CreateNewTestCaseFolder(data, node)"
             >新建子文件夹</el-button
           >
         </el-form-item>
@@ -33,7 +36,7 @@
           <el-button
             icon="el-icon-document-copy"
             type="text"
-            @click="DeleteTestcase"
+            @click="CopyTestcasePopOver(node, data)"
             >复制用例</el-button
           >
         </el-form-item>
@@ -75,11 +78,29 @@ export default {
 
   methods: {
     /***
+     * 创建新的测试用例文件夹
+     */
+    CreateNewTestCaseFolder(data, node) {
+      var fileType = "folder";
+      this.$bus.emit("CREATE_NEW_TESTCASE_NODE_POP", {
+        data: data,
+        node: node,
+        fileType: fileType,
+      });
+      this.visible = false;
+    },
+    /**
+     * 复制测试用例
+     */
+    CopyTestcasePopOver(node, data) {
+      this.visible = false;
+    },
+    /***
      * 删除测试用例
      */
     DeleteTestcase() {},
-    UpdateFatherChooseNode(currentNodeKey, node) {
-      this.$emit("updateNode", currentNodeKey, node);
+    UpdateFatherChooseNode(data, node, currentNodeKey) {
+      this.$emit("updateNode", data, node, currentNodeKey);
     },
     /**
      *  @click="ParentOnAdditionChoice(node)"
