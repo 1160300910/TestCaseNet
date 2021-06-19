@@ -307,8 +307,8 @@ def saveCasePath():
         return jsonify(response)
 
 
-@bp.route('/changeFolderNodeData/', methods=['POST'], strict_slashes=False)
-def changeFolderNodeData():
+@bp.route('/changeTreeNodeData/', methods=['POST'], strict_slashes=False)
+def changeTreeNodeData():
     error = ''
     if request.method == 'POST':
         caseId = request.json.get('caseId')
