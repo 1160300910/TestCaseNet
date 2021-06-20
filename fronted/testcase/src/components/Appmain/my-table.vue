@@ -79,7 +79,7 @@ export default {
      */
     getChangers() {
       axios
-        .get("getProjectPeos")
+        .get("getQAPeoData")
         .then((res) => {
           console.log(res.data.msg);
           var changer = [];

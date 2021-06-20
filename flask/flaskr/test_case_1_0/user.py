@@ -402,5 +402,20 @@ def updateTableColumnDataByName():
             'msg': msg,
             'error': error
         }
+        return jsonify(response)
 
+@bp.route('/getQAPeoData/', methods=['GET'], strict_slashes=False)
+def getQAPeoData():
+    error = ''
+    if request.method == 'GET':
+        peos = Peo.query.filter_by(peoType=1).all()
+        if peos:
+            msg = query2dict(peos)
+        else:
+            msg=""
+            error="未找到对应人员"
+        response = {
+            'msg': msg,
+            'error': error
+        }
         return jsonify(response)

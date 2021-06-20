@@ -32,6 +32,34 @@ export default {
   setup() {},
   data() {
     return {
+      options: {
+        QAs: [],
+        caseTypes: [],
+        peos: [], //策划，qa，和程序,PM
+        tags: [],
+        test_level: [
+          {
+            value: "P0",
+            label: "P0",
+          },
+          {
+            value: "P1",
+            label: "P1",
+          },
+          {
+            value: "P2",
+            label: "P2",
+          },
+          {
+            value: "P3",
+            label: "P3",
+          },
+          {
+            value: "P4",
+            label: "P4",
+          },
+        ],
+      },
       node_data: "",
       choice: "",
       nowChildren: "",
@@ -40,7 +68,7 @@ export default {
       userId: 1,
       userWork: "QA",
       table_datas: {}, //节点数据列表
-      nodes_data:"", //节点数据树
+      nodes_data: "", //节点数据树
     };
   },
   provide() {
@@ -50,7 +78,42 @@ export default {
   },
   components: { AppHeader, AppNavbar, AppMain },
   methods: {
-    
+    /**
+     * 初始化QA组数据（只有QA可以修改和创建测试用例）
+     */
+    getQAPeoData() {
+      axios.get("getQAPeoData").then((res) => {
+        console.log(res.data.msg);
+        this.options.QAs = res.data.msg;
+      });
+    },
+    /**
+     * 初始化项目组人员数据（QA,策划和程序,PM）
+     */
+    getProjectPeoData() {
+      axios.get("getProjectPeos").then((res) => {
+        console.log(res.data.msg);
+        this.options.peos = res.data.msg;
+      });
+    },
+    /**
+     * 初始化项目测试用例类型数据
+     */
+    getProjectTypeData() {
+      axios.get("？？？").then((res) => {
+        console.log(res.data.msg);
+        this.options.peos = res.data.msg;
+      });
+    },
+    /**
+     * 初始化项目测试用例标签数据
+     */
+    getProjectTestCaseTagData() {
+      axios.get("？？？").then((res) => {
+        console.log(res.data.msg);
+        this.options.peos = res.data.msg;
+      });
+    },
   },
 };
 </script>
