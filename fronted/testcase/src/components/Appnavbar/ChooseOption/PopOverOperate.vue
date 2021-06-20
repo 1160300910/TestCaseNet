@@ -2,33 +2,35 @@
   <div>
     <el-popover
       placement="right-end"
-      :width="50"
       trigger="click"
       v-model:visible="visible"
       @hide="UpdateFatherChooseNode(data, node, data.caseId)"
     >
-      <el-form ref="form" label-width="2px" size="mini">
-        <el-form-item v-if="data.type == 'folder'">
+      <el-form ref="form" class="elform_popover">
+        <el-form-item v-if="data.type == 'folder'"
+          ><i class="el-icon-folder-add" style="font-size: 20px; "></i>
           <el-button
             type="text"
-            icon="el-icon-folder-add"
+            style="font-size: 16px; "
             @click="CreateNewTestCaseFolder(data, node)"
             >新建子文件夹</el-button
           >
         </el-form-item>
-        <el-form-item>
+        <el-form-item v-if="data.type == 'file'"
+          ><i class="el-icon-edit-outline" style="font-size: 20px; "></i>
           <el-button
-            icon="el-icon-edit-outline"
             type="text"
-            @click="ChangeTestCase(data, nowChildren, nowParent)"
+            style="font-size: 16px; "
+            @click="ChangeTestCase(data, node)"
             >更改用例</el-button
           >
         </el-form-item>
         <el-form-item>
+          <i class="el-icon-magic-stick" style="font-size: 20px; "></i>
           <el-button
-            icon="el-icon-magic-stick"
-            @click="CreateNewTestCaseFile(data, node)"
             type="text"
+            style="font-size: 16px; "
+            @click="CreateNewTestCaseFile(data, node)"
             >新建用例</el-button
           >
         </el-form-item>
@@ -41,25 +43,36 @@
           >
         </el-form-item-->
         <el-form-item v-if="data.type == 'file'">
+          <i
+            class="el-icon-document-delete"
+            style="font-size: 20px; color: red;"
+          ></i>
           <el-button
-            icon="el-icon-document-delete"
-            type="danger"
-            @click="DeleteTestCase(node, data)"
+            type="text"
+            style="font-size: 16px; color: red;"
+            @click="DeleteTestCase( data,node)"
             >删除用例</el-button
           >
         </el-form-item>
         <el-form-item v-if="data.type == 'folder'">
+          <i
+            class="el-icon-folder-delete"
+            style="font-size: 20px; color: red;"
+          ></i>
           <el-button
-            icon="el-icon-document-delete"
             type="danger"
-            @click="DeleteTestCase(node, data)"
+            style="font-size: 16px; color: white;"
+            @click="DeleteTestCase(data, node)"
             >删除文件夹</el-button
           >
         </el-form-item>
       </el-form>
 
       <template #reference>
-        <i class="el-icon-circle-plus-outline"></i>
+        <i
+          class="el-icon-circle-plus-outline"
+          style="font-size: 20px; color: grey"
+        ></i>
       </template>
     </el-popover>
   </div>
@@ -121,14 +134,13 @@ export default {
       this.visible = false;
     },
     /***
-     * 删除测试用例
+     * 删除测试用例节点
      * 1.node节点中需要删除这个用例
      * 2.table里需要删除
      */
-    DeleteTestCase(node, data) {
+    DeleteTestCase(data, node) {
       this.visible = false;
       this.$bus.emit("DELETE_TESTCASE_NODE_BYPOP", { data: data, node: node });
-      //this.$bus.emit("DELETE_TESTCASE_TABLE_BYPOP", { node: node, data: data });
     },
     UpdateFatherChooseNode(data, node, currentNodeKey) {
       this.$emit("updateNode", data, node, currentNodeKey);
@@ -153,31 +165,30 @@ export default {
      * data : 当前节点的数据
      * nowChildren：当前节点的孩子
      */
-    ChangeTestCase(data, nowChildren, nowParent) {
-      //console.log(data);
-      //alert(data.label);
-      /*console.log(
-        this.parentObj.nowId,
-        this.parentObj.nowLabel,
-        this.parentObj.choice,
-        this.parentObj.nowChildren,
-        this.parentObj.nowParent
-      );*/
-      //console.log(nowId, nowLabel);
-      this.parentObj.node_data = data;
-      this.parentObj.choice = "change";
-      this.parentObj.nowChildren = nowChildren;
-      this.parentObj.nowParent = nowParent;
-      /*
-      console.log(
-        this.parentObj.nowId,
-        this.parentObj.nowLabel,
-        this.parentObj.choice
-      );*/
-
-      this.$bus.emit("CHANGE_CHOOSE_TEST");
+    ChangeTestCase(data, node) {
       this.visible = false;
+      this.$bus.emit("CHANGE_TESTCASE_BY_POP", { data: data, node: node });
+      
     },
   },
 };
 </script>
+
+<style scoped>
+.elform_popover > .el-form-item {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  height: 22px;
+  padding: auto;
+}
+.elform_popover {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-content: center;
+  font-size: 14px;
+}
+</style>

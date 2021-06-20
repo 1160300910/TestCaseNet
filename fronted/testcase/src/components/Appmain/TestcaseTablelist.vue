@@ -34,7 +34,7 @@
       <template #default="scope">
         <el-input
           type="textarea"
-          v-if="scope.row.isOk"
+          v-if="scope.row.isColumnEditing"
           :autosize="{ minRows: 2 }"
           :resize="both"
           @keyup.enter="blurClick(scope.$index, scope.row, scope.column)"
@@ -95,11 +95,11 @@ export default {
     cellClick(row, column, cell, event) {
       console.log(row, column.label, cell);
       if (column.label === "执行方案") {
-        row.isOk = true;
+        row.isColumnEditing = true;
       } else if (column.label === "备注") {
-        this.$set(row, "isOK2", true);
+        this.$set(row, "isColumnEditing2", true);
       } else if (column.label === "备注") {
-        this.$set(row, "isOK2", true);
+        this.$set(row, "isColumnEditing2", true);
       }
       /*
       this.$nextTick(() => {
@@ -109,7 +109,7 @@ export default {
     },
     blurClick(index, row, column) {
       if (column.label === "执行方案") {
-        row.isOk = false;
+        row.isColumnEditing = false;
 
         //alert("ok!");
       }
@@ -158,28 +158,28 @@ export default {
           ps: "备注巴啦啦把",
           actionResult: "成功",
           changePeo: "西子卡",
-          isOk: false,
+          isColumnEditing: false,
           choose_test_level: ref("P0"),
         },
         {
           name: "入口-2",
           actionmethod: "点击弹出对应GM命令或者执行方案",
           level: "P2",
-          isOk: false,
+          isColumnEditing: false,
           choose_test_level: ref(""),
         },
         {
           name: "入口-3",
           actionmethod: "点击弹出对应GM命令或者执行方案",
           level: "P1",
-          isOk: false,
+          isColumnEditing: false,
           choose_test_level: ref(""),
         },
         {
           name: "入口-4",
           actionmethod: "点击弹出对应GM命令或者执行方案",
           level: "P1",
-          isOk: false,
+          isColumnEditing: false,
           choose_test_level: ref(""),
         },
       ],

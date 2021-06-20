@@ -10,9 +10,7 @@
         >
         </el-option>
       </el-select>
-
-      <el-input placeholder="输入关键字进行过滤" v-model="filterText">
-      </el-input>
+      <el-input placeholder="关键字过滤查询" v-model="filterText"> </el-input>
     </div>
     <div class="block">
       <p>
@@ -110,27 +108,12 @@ export default {
   },
   components: { PopOverOperate },
   watch: {
-    /***
-     * 当前节点的caseId值
+    /**
+     * 实时根据输入的过滤内容输出过滤结果
      */
-    /*
-    currentNodeKey(caseId) {
-      console.log("currentNodeKey");
-      // Tree 内部使用了 Node 类型的对象来包装用户传入的数据，用来保存目前节点的状态。可以用 $refs 获取 Tree 实例
-      if (caseId.toString()) {
-        this.$refs["tree"].setCurrentKey(caseId);
-        console.log(caseId);
-        //console.log(this.$refs["tree"].getCurrentNode());
-        //var nowNode = this.$refs["tree"].getNode(caseId);
-        //console.log()
-        //this.$refs["tree"].setCurrentNode(nowNode.data);
-        // console.log(this.$refs["tree"].store.currentNode.data);
-        //this.setCurrentTreePosGlobal();
-      } else {
-        this.$refs["tree"].setCurrentKey(null);
-        alert("ERROR!!!没有找到当前节点的caseId值");
-      }
-    },*/
+    filterText(val) {
+      this.$refs.tree.filter(val);
+    },
     /***
      * 当前节点的节点输入值
      */
@@ -145,20 +128,20 @@ export default {
   },
   mounted() {
     /***
+     * 从table设置当前选中的节点node
+     */
+    this.$bus.on("CHANGE_CURRENT_TREENODE_FROM_TABLE", (data) => {
+      this.$refs["tree"].setCurrentKey(data.caseId);
+    });
+    /***
      * 获取父节点下的测试用例列表
      */
     this.$bus.on("UPDATE_FATHER_TABLE_DATAS", (data) => {
       this.getFolderNodeDatas(data.fatherId, data.caseId);
     });
-    this.$bus.on("UPDATE_TABLE_AND_TREE", (NodeRoots) => {
-      console.log("UPDATE_TABLE_AND_TREE发生了");
-      //console.log(this.node_data);
-      this.node_data = JSON.parse(JSON.stringify(NodeRoots));
-      //console.log(this.node_data);
-      //console.log(typeof this.node_data);
-    });
     /**
-     * 从table发起了修改caseName
+     * 当从table发起了修改caseName时
+     * treeNode节点的值和 caseName的一起进行变化
      */
     this.$bus.on("CASE_NAME_TABLE_CHANGE", (param) => {
       console.log(param);
@@ -208,10 +191,55 @@ export default {
      */
     this.$bus.on("DELETE_TESTCASE_NODE_BYPOP", (param) => {
       console.log("————删除————  DELETE_TESTCASE_NODE_BYPOP 发生了");
-      this.deleteTestCaseNode(param.data, param.node);
+      if (param.type == "file") {
+        this.deleteTestCaseNode(param.data, param.node);
+      } else if (param.type == "folder") {
+        this.deleteTestCaseFolder(param.data, param.node);
+      } else {
+        alert("出现了不能存在的类型");
+      }
+    });
+    /***
+     * 通过Table通知testCaseNode删除对应节点
+     * 1.删除服务器节点
+     * 2.删除客户端数据中的节点
+     * 3.刷新当前选中为被删除节点曾经的父亲节点，并且通知table更新选中数据
+     */
+    this.$bus.on("DELETE_TESTCASE_NODE_BYTABLE", (param) => {
+      console.log("————删除————  DELETE_TESTCASE_NODE_BYTABLE 发生了");
+      this.deleteTestCaseNodeByTable(param.data.caseId);
     });
   },
   methods: {
+    /**
+     * 利用关键字过滤节点的过滤函数
+     */
+    filterNode(value, data) {
+      //显示过滤节点
+      console.log(data.label + "  " + data.label.indexOf(value));
+      if (!value) return true;
+      return data.label.indexOf(value) == -1;
+    },
+    /***
+     * 删除测试用例节点
+     * 1.删除服务器节点
+     * 2.删除客户端数据中的节点
+     * 3.刷新当前选中为被删除节点曾经的父亲节点，并且通知table更新选中数据
+     */ deleteTestCaseNodeByTable(caseId) {
+      axios
+        .post("deleteTestCase", {
+          caseId: caseId,
+        })
+        .then((res) => {
+          console.log(caseId);
+          console.log(res.data);
+          var node = this.$refs["tree"].getNode(caseId);
+          var parentNode = node.parent;
+          this.$refs["tree"].setCurrentNode(parentNode.data);
+          this.$refs["tree"].remove(node);
+          this.getFolderNodeDatas(parentNode.data.caseId, null);
+        });
+    },
     /***
      * 删除测试用例节点
      */
@@ -226,7 +254,6 @@ export default {
           console.log(parentNode.data);
           this.$refs["tree"].setCurrentNode(parentNode.data);
           this.$refs["tree"].remove(node);
-
           this.getFolderNodeDatas(parentNode.data.caseId, null);
         });
     },
@@ -559,12 +586,6 @@ export default {
         node.childNodes[i].expanded = true;
       }
       console.log("handleExpandChildNodes");
-    },
-
-    filterNode(value, data) {
-      //显示过滤节点
-      if (!value) return true;
-      return data.label.indexOf(value) !== -1;
     },
     /***
      * 用node获取对应的树数据中的当前节点的父节点和儿子节点

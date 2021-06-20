@@ -1,6 +1,6 @@
 const cellStateTag = {
-    isRowOk: false,
-    isOk: {
+    isRowEditing: false,
+    isColumnEditing: {
         caseName: false,
         preCondition: false,
         preResult: false,

@@ -5,8 +5,8 @@
     highlight-current-row
     border
     ref="table"
-    @cell-dblclick="cellClick"
-    @current-change="CurrentChange"
+    @cell-dblclick="ChangeInfoByCell"
+    @current-change="CurrentTableLineChange"
   >
     <template #opt="scope">
       <el-row>
@@ -14,11 +14,9 @@
           size="mini"
           type="primary"
           icon="el-icon-edit"
-          v-if="!scope.data.row.isRowOk"
+          v-if="!scope.data.row.isRowEditing"
           circle
-          @click="
-            ChangeTestCase(this.colConfigs, scope.data.row, this.tableData)
-          "
+          @click="ChangeTestCaseTableEditable(scope.data.row)"
         ></el-button>
         <el-button
           v-else
@@ -35,7 +33,7 @@
           size="mini"
         ></el-button
         ><el-button
-          v-if="scope.data.row.isRowOk"
+          v-if="scope.data.row.isRowEditing"
           type="warning"
           size="mini"
           icon="el-icon-error"
@@ -48,12 +46,12 @@
           size="mini"
           icon="el-icon-delete"
           circle
-          @click="DeleteTestcase(scope.data.row)"
+          @click="DeleteTableTestcase(scope.data.row)"
         ></el-button>
       </el-row>
     </template>
 
-    <template #chooseLevel="scope">
+    <!--template #chooseLevel="scope">
       <el-select v-model="scope.data.row.test_level" placeholder="P0">
         <el-option
           v-for="item in options"
@@ -63,25 +61,82 @@
         >
         </el-option>
       </el-select>
-    </template>
+    </template-->
   </my-table>
 </template>
 
 <script>
 import myTable from "./my-table.vue";
 const EdibleInput = {
-  props: ["row", "column_name", "isOk", "isRowOk"],
+  props: ["row", "column_name", "isColumnEditing", "isRowEditing"],
   template: `
-      <el-input type="textarea" v-if="isOk || isRowOk" v-model="row[column_name]">
+      <el-input type="textarea" v-if="isColumnEditing || isRowEditing" v-model="row[column_name]"
+           @input="changeTableCellInput(row, column_name)"
+           @blur="blurClickFinishInput(row, column_name)"
+           @keyup.enter="
+            blurClickFinishInput(row, column_name)
+          ">
       </el-input>
       <span v-else><span> {{ row[column_name]}}</span></span>
     `,
+  methods: {
+    /**
+     * 修改输入时触发
+     * 1.如果修改对象为用例名，同步修改左侧导航节点的用例名
+     */
+    changeTableCellInput(row, column_name) {
+      //console.log("====================changeTableCellInput==========================");
+      //console.log(column_name);
+      if (column_name == "caseName") {
+        //只有修改对象为用例名时，触发同步修改
+        this.$bus.emit("CASE_NAME_TABLE_CHANGE", {
+          value: row.caseName,
+          rowId: row.caseId,
+        }); //告诉treeNode，发生了用例标题修改事件
+      }
+    },
+    /**
+     * 完成输入
+     * 1.当输入enter键或者鼠标聚焦到其他的地方时，触发保存
+     * 2.将被修改列的数据保存到服务器
+     */
+    blurClickFinishInput(row, column_name) {
+      //console.log(column_name);
+      console.log(
+        "row[column_name] : " + column_name + "  -----   " + row[column_name]
+      );
+      this.saveColumnData(row, column_name); //保存到服务器
+      row.isColumnEditing[column_name] = false;
+    },
+    /**
+     * 保存当前列的数据到服务器
+     * row：当前行
+     * column：当前列
+     * column_name：当前列名
+     */
+    saveColumnData(row, column_name) {
+      console.log("_______saveColumnData_____________");
+      console.log(row.caseId);
+      console.log(row[column_name]);
+      axios
+        .post("updateTableColumnDataByName", {
+          caseId: row.caseId,
+          column_data: row[column_name],
+          column_name: column_name,
+        })
+        .then((res) => {
+          console.log(res.data);
+        });
+    },
+  },
 };
 
 const SelectInput = {
-  props: ["row", "column_name", "isOk", "isRowOk", "options"],
+  props: ["row", "column_name", "isColumnEditing", "isRowEditing", "options"],
   template: `
-      <el-select type="textarea" v-if="isOk || isRowOk" v-model="row[column_name]" >
+      <el-select v-if="isColumnEditing || isRowEditing" v-model="row[column_name]"
+          @change="changeSelectTableCell(row, column_name)"
+          @focus="focusTableCell(row, column_name)">
       <el-option
           v-for="item in options[column_name]"
           :key="item.value"
@@ -91,6 +146,46 @@ const SelectInput = {
       </el-select>
       <span v-else><span> {{ row[column_name]}}</span></span>
     `,
+  methods: {
+    /**
+     * 触发了聚焦输入事件
+     */
+    focusTableCell(row, column_name) {
+      console.log("===============focusTableCell===============");
+      console.log(row);
+      console.log(column_name);
+    },
+    /**
+     * 修改选中的表格内容
+     */
+    changeSelectTableCell(row, column_name) {
+      console.log("=============== changeSelectTableCell  ===============");
+      console.log(row[column_name]);
+      console.log(column_name);
+      this.saveColumnData(row, column_name); //保存到服务器
+      row.isColumnEditing[column_name] = false;
+    },
+    /**
+     * 保存当前列的数据到服务器
+     * row：当前行
+     * column：当前列
+     * column_name：当前列名
+     */
+    saveColumnData(row, column_name) {
+      console.log("_______saveColumnData_____________");
+      console.log(row.caseId);
+      console.log(row[column_name]);
+      axios
+        .post("updateTableColumnDataByName", {
+          caseId: row.caseId,
+          column_data: row[column_name],
+          column_name: column_name,
+        })
+        .then((res) => {
+          console.log(res.data);
+        });
+    },
+  },
 };
 
 import axios from "axios";
@@ -107,20 +202,15 @@ export default {
     },
   },
   created() {
-    //this.GetTableRoot();
     //console.log(this.tableData)
     //console.log(this.parentObj.table_datas)
     //this.tableData = this.parentObj.table_datas
   },
   mounted() {
     //在组件B中监听动作的发生
-    this.$bus.on("CHANGE_CHOOSE_TEST", () => {
-      console.log("CHANGE_CHOOSE_TEST发生了");
-      this.ChangeTestCase(
-        this.colConfigs,
-        this.parentObj.node_data,
-        this.tableData
-      );
+    this.$bus.on("CHANGE_TESTCASE_BY_POP", (param) => {
+      console.log("CHANGE_TESTCASE_BY_POP 发生了");
+      this.ChangeTestCaseTableEditable(param.data);
     });
     /***
      * 接受Tree组件的通知，保存table数据到服务器
@@ -182,6 +272,7 @@ export default {
      * 取消编辑测试用例
      * 1.取消编辑态
      * 2.回滚到和数据库保持同步
+     * 3.节点标题单独回滚
      */
     CancelEditingTestCase(node_data) {
       console.log(
@@ -198,11 +289,11 @@ export default {
           for (d = 0; d < this.tableData.length; d++) {
             if (node_data.caseId == this.tableData[d].caseId) {
               this.tableData[d] = data;
-              this.tableData[d].isRowOk = false;
+              this.tableData[d].isRowEditing = false;
               this.$bus.emit("CASE_NAME_TABLE_CHANGE", {
                 value: data.caseName,
                 rowId: node_data.caseId,
-              }); //告诉treeNode，发生了用例标题修改事件
+              }); //告诉treeNode，发生了用例标题修改事件；title被修改为旧的值
             }
           }
         })
@@ -229,14 +320,15 @@ export default {
         changer: "西子卡",
         fatherId: fatherId,
 
-        isRowOk: true,
-        isOk: {
+        isRowEditing: true,
+        isColumnEditing: {
           caseName: false,
           preCondition: false,
           preResult: false,
           actionCondition: false,
           ps: false,
           changer: false,
+          test_level: false,
         },
       };
       //this.parentObj.table_datas.unshift(newTestCase);
@@ -286,7 +378,7 @@ export default {
         .then((res) => {
           console.log(res);
           //是需要修改的行
-          table_line.isRowOk = false;
+          table_line.isRowEditing = false;
         });
     },
     /**
@@ -297,7 +389,7 @@ export default {
      */
     SaveChange(node_data) {
       var that = this;
-      //console.log("_____________SaveChange----_______________________");
+      console.log("_____________SaveChange_______________________");
       //console.log(node_data);
       //console.log(tableData);
       //用例编号，父用例文件夹id，类型（文件夹or用例）
@@ -328,7 +420,7 @@ export default {
           .then((res) => {
             console.log(res);
             //是需要修改的行
-            data.isRowOk = false;
+            data.isRowEditing = false;
             this.$bus.emit("SAVE_TABLE_ROW", { caseId: node_data.caseId });
           })
           .catch(function(error) {
@@ -345,12 +437,14 @@ export default {
     SettleCellStates(datas) {
       for (var i = 0; i < datas.length; i++) {
         datas[i]["isRow"] = false;
-        datas[i]["isOk"] = {
+        datas[i]["isColumnEditing"] = {
           caseName: false,
           preCondition: false,
           preResult: false,
           actionCondition: false,
           ps: false,
+          test_level: false,
+          changer: false,
         };
       }
       return datas;
@@ -360,15 +454,88 @@ export default {
      */
     SettleCellState(data) {
       data["isRow"] = false;
-      data["isOk"] = {
+      data["isColumnEditing"] = {
         caseName: false,
         preCondition: false,
         preResult: false,
         actionCondition: false,
         ps: false,
+        test_level: false,
+        changer: false,
       };
 
       return data;
+    },
+    /**
+     * 双击table的单个Cell
+     * 触发单个内容的修改事件
+     */
+    ChangeInfoByCell(row, column, cell, event) {
+      if (!row.isRowEditing) {
+        //当不在整行编辑模式时
+        console.log("——————————cellClick—————————");
+        console.log(row);
+        console.log(column);
+        console.log(cell);
+        console.log(event);
+        row.isColumnEditing[column.property] = true;
+        console.log("——————————cellClickActivate—————————");
+      }
+    },
+    /**
+     * 修改测试用例，将对应行全部可编辑区域变成可编辑状态
+     * colConfigs ：
+     * caseId ：需要修改表格的行id
+     * tableData ：表格数据
+     */
+    ChangeTestCaseTableEditable(node_data) {
+      console.log(node_data.caseId);
+      var data;
+      data = this.FindNodeEdit(node_data.caseId);
+      if (data) {
+        //是需要修改的行
+        data.isRowEditing = true;
+      }
+    },
+
+    /**
+     * 切换当前选中的行
+     * 输入：当前选中行currentRow；之前的选中行oldCurrentRow
+     * 1.保存其他的选中行
+     * 2.修改当前的选中TreeNode节点,展开其父节点，并显示选中了对应节点
+     * 3.
+     */
+    CurrentTableLineChange(currentRow, oldCurrentRow) {
+      console.log(
+        "——————————————————————————CurrentTableLineChange————————————————————————"
+      );
+      console.log(currentRow);
+      console.log(oldCurrentRow);
+      if (currentRow) {
+        this.SaveOtherTableRows(currentRow);
+        this.$bus.emit("CHANGE_CURRENT_TREENODE_FROM_TABLE", {
+          caseId: currentRow.caseId,
+        });
+      }
+    },
+    /***
+     * 保存其他选中行到服务器
+     * 输入：
+     *     需要保存的行内信息：除了row之外的行,row不能为空
+     *
+     */
+    SaveOtherTableRows(row) {
+      var t;
+      var table_datas = this.tableData;
+      for (t = 0; t < table_datas.length; t++) {
+        console.log("------");
+        console.log(table_datas[t]);
+        if (table_datas[t].caseId != row.caseId) {
+          if (table_datas[t].isRowEditing) {
+            this.SaveChange(row);
+          }
+        }
+      }
     },
 
     /***
@@ -376,44 +543,25 @@ export default {
      */
 
     /**
-     * 修改当前选中行
-     * 1.保存其他的选中行
-     * 2.修改当前的选中TreeNode节点
-     */
-
-    CurrentChange(currentRow, oldCurrentRow) {
-      this.SaveOtherTableRows(currentRow, this.parentObj.table_datas);
-
-      console.log(currentRow);
-      console.log("oldCurrentRow");
-      console.log(oldCurrentRow);
-    },
-    /***
-     * 保存其他选中行
-     */
-    SaveOtherTableRows(row, table_datas) {
-      var t;
-      for (t = 0; t < table_datas.length; t++) {
-        console.log("------");
-        console.log(table_datas[t]);
-        if (table_datas[t].caseId != row.caseId) {
-          table_datas[t].isRowOk = false;
-        }
-      }
-    },
-    /**
      * 删除测试用例
+     * 1.从tableData里面删除
+     * 2.TreeNode也需要删除对应数据
      */
-    DeleteTestcase(node_data) {
+    DeleteTableTestcase(table_data) {
+      this.$bus.emit("DELETE_TESTCASE_NODE_BYTABLE", {
+        data: table_data,
+      });
+      /*
       console.log("---------------");
-      console.log(node_data.caseId);
+      console.log(table_data.caseId);
+
       axios
         .post("deleteTestCase", {
-          caseId: node_data.caseId,
+          caseId: table_data.caseId,
         })
         .then((res) => {
           console.log(res);
-        });
+        });*/
     },
     /***
      * 从列表里找到对应的id的数据,修改其他id数据为不可编辑状态
@@ -428,176 +576,55 @@ export default {
         if (caseId == data.caseId) {
           save = data;
         } else {
-          data.isRowOk = false;
+          data.isRowEditing = false;
         }
       }
       if (save) return save;
       return false;
     },
-    /**
-     * 修改测试用例，将对应行全部可编辑区域变成可编辑状态
-     * colConfigs ：
-     * caseId ：需要修改表格的行id
-     * tableData ：表格数据
-     */
-    ChangeTestCase(colConfigs, node_data, tableData) {
-      console.log(node_data.caseId);
-      var data;
-      data = this.FindNodeEdit(node_data.caseId);
-      if (data) {
-        //是需要修改的行
-        data.isRowOk = true;
-      }
-    },
+
     Test(data) {
       console.log(data);
-    },
-    cellClick(row, column, cell, event) {
-      console.log(this.tableData);
-      console.log(this.parentObj.table_datas);
-      console.log(this.tableData[0]);
-      console.log(this.parentObj.table_datas[0]);
-      row.isOk[column.property] = true;
-      //console.log(column.prop);
-      //console.log(row.isOk[column.prop]);
-      //console.log(row.isOk[column.property]);
-      //console.log(cell);
-      /*if (column.label === "XX") {
-        //console.log(row.isOk[column.property]);
-      } else if (column.label === "XXX") {
-        this.$set(row, "isOK2", true);
-      }*/
-    },
-    /***
-     * 获取
-     */
-    GetTableRoot() {
-      var that = this;
-      axios
-        .get("getUserTestCases", { params: { userId: this.parentObj.userId } })
-        .then((res) => {
-          console.log(res.data.msg);
-          var table_datas = res.data.msg;
-          table_datas = that.SettleCellStates(table_datas);
-          // var NodeRoots = that.SettleTreeNodes(table_datas);
-          that.tableData = table_datas;
-          that.parentObj.table_datas = table_datas;
-          //that.parentObj.nodes_data = NodeRoots;
-        })
-        .catch(function(error) {
-          alert(error);
-        });
-    },
-    /****
-     * 设置对应的树节点的名称和id
-     */
-    SettleTreeNodes(datas) {
-      /*
-      var nodes = new Array();
-      for (var i = 0; i < datas.length; i++) {
-        var node = {};
-        node["caseId"] = datas[i].caseId;
-        node["label"] = datas[i].caseName;
-        node["isEditing"] = false;
-        if (datas[i].fatherId == -1) {
-          node["type"] = "folder"; //是根类型
-          nodes.push(node);
-        } else {
-          if (datas[i].fileType == "file") {
-            node["type"] = "file";
-          } else {
-            node["type"] = "folder";
-          }
-        }
-      }
-      //然后在生成的树里面再 生成父子关系
-      console.log(nodes);
-      return nodes; */
     },
   },
   components: { myTable },
   data() {
-    const tableData = [
-      {
-        caseId: 1,
-        caseName: "2016-05-02",
-        preCondition: "王小虎",
-        actionCondition: "上海市普陀区金沙江路 1518 弄",
-        type: 12312,
-        preResult: 1212312312312312312312,
-        ps: "123",
-        test_level: "P1",
-        changer: "西子卡",
-
-        isRowOk: false,
-        isOk: {
-          caseName: false,
-          preCondition: false,
-          preResult: false,
-          actionCondition: false,
-          ps: false,
-        },
-      },
-      {
-        caseId: 4,
-        caseName: "2016-05-04",
-        preCondition: "打磨",
-        actionCondition: "西岸",
-        changer: "西子卡",
-        test_level: "P1",
-
-        isRowOk: false,
-        isOk: {
-          caseName: false,
-          preCondition: false,
-          preResult: false,
-          actionCondition: false,
-          ps: false,
-        },
-      },
-    ];
+    const tableData = [];
     this.colConfigs = [
       {
         prop: "caseName",
         label: "用例标题",
         width: 95,
-        editable: true,
         component: EdibleInput,
       },
       {
         prop: "test_level",
         label: "用例等级",
         width: 100,
-        editable: true,
-        chooseble: false,
         component: SelectInput,
       },
       {
         prop: "preCondition",
         label: "前置条件",
         width: 140,
-        editable: true,
         component: EdibleInput,
       },
       {
         prop: "actionCondition",
         label: "执行条件",
         width: 180,
-        editable: true,
         component: EdibleInput,
       },
       {
         prop: "preResult",
         label: "预期结果",
         width: 180,
-        editable: true,
         component: EdibleInput,
       },
       {
         prop: "ps",
         label: "备注",
         width: 180,
-        editable: true,
         component: EdibleInput,
       },
 
@@ -605,7 +632,6 @@ export default {
         prop: "tag",
         label: "标签",
         width: 80,
-        editable: true,
         chooseble: false,
       },
       { prop: "operate", label: "操作", width: 140, slot: "opt" },
@@ -613,7 +639,6 @@ export default {
         prop: "changer",
         label: "修改人",
         width: 140,
-        editable: true,
         component: SelectInput,
       },
 
@@ -621,7 +646,6 @@ export default {
     ];
     return {
       currentRow: "",
-      isEditing: false,
       tableData: [], //this.parentObj.table_datas,
     };
   },

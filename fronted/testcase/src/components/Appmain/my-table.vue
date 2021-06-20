@@ -11,27 +11,25 @@
       <template #default="scope">
         <slot v-if="colConfig.slot" :name="colConfig.slot" :data="scope">
         </slot>
+        <!--当不处于整行编辑模式的时候-->
         <component
-          v-else-if="colConfig.component && !scope.row.isRowOk"
-          :isOk="scope.row.isOk[colConfig.prop]"
+          v-else-if="colConfig.component && !scope.row.isRowEditing"
+          :isColumnEditing="scope.row.isColumnEditing[colConfig.prop]"
           :row="scope.row"
           :column_name="colConfig.prop"
           v-focus
-          :isRowOk="scope.row.isRowOk"
-          @focus="Test(scope.row)"
+          :isRowEditing="scope.row.isRowEditing"
           :is="colConfig.component"
-          @blur="blurClick(scope.row, scope.column, colConfig.prop)"
-          @keyup.enter="blurClick(scope.row, colConfig.prop)"
+          :options="options"
         >
         </component>
         <component
           v-else-if="colConfig.component"
-          :isOk="scope.row.isOk[colConfig.prop]"
+          :isColumnEditing="scope.row.isColumnEditing[colConfig.prop]"
           :row="scope.row"
           :column_name="colConfig.prop"
-          :isRowOk="scope.row.isRowOk"
+          :isRowEditing="scope.row.isRowEditing"
           :is="colConfig.component"
-          @input="ChangeInput(colConfig.prop, scope.row)"
           :options="options"
         >
         </component>
@@ -92,13 +90,16 @@ export default {
             });
           }
           this.options.changer = changer;
-    console.log("this.options.changer");
-    console.log(this.options.changer);
+          console.log("this.options.changer");
+          console.log(this.options.changer);
         })
         .catch(function(error) {
           alert(error);
         });
     },
+    /**
+     * ——————————————————————————————————————————————————————————————————————
+     */
     /**
      * 获取标签
      */
@@ -116,17 +117,6 @@ export default {
       }
     },
     /**
-     * 修改输入时触发
-     */
-    ChangeInput(column_name, row) {
-      console.log("changeing");
-      console.log(column_name);
-      this.$bus.emit("CASE_NAME_TABLE_CHANGE", {
-        value: row.caseName,
-        rowId: row.caseId,
-      }); //告诉treeNode，发生了用例标题修改事件
-    },
-    /**
      * 设置当前的选中行
      * 在父组件里调用 this.$refs.['子组件名'].ChangeCurrentRow(row)
      * 能通过调用子组件，设置当前选中行
@@ -135,19 +125,7 @@ export default {
     ChangeCurrentRow(row) {
       this.$refs["my-table"].setCurrentRow(row);
     },
-    Test(data) {
-      //console.log(data);
-    },
-    blurClick(row, column, column_name) {
-      //console.log(column_name);
-      row.isOk[column.property] = false;
-      console.log(row);
-      if (column_name == "caseName") {
-        //保存到服务器
-        //修改treeNode名字为对应值
-        console.log(row);
-      }
-    },
+
     tableRowClassName({ row, rowIndex }) {
       if (rowIndex === 1) {
         return "warning-row";
@@ -162,19 +140,19 @@ export default {
       options: {
         test_level: [
           {
-            value: "P4",
+            value: "P0",
             label: "P0",
           },
           {
-            value: "P4",
+            value: "P1",
             label: "P1",
           },
           {
-            value: "P4",
+            value: "P2",
             label: "P2",
           },
           {
-            value: "P4",
+            value: "P3",
             label: "P3",
           },
           {

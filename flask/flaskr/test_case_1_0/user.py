@@ -358,3 +358,49 @@ def getTestCaseInfoByCaseId():
             'msg': msg
         }
         return jsonify(response)
+
+
+
+@bp.route('/updateTableColumnDataByName/', methods=['POST'], strict_slashes=False)
+def updateTableColumnDataByName():
+    error = ''
+    if request.method == 'POST':
+        column_name = request.json.get('column_name')
+        column_data = request.json.get('column_data')
+        caseId = request.json.get('caseId')
+
+        testcase = TestCase.query.filter_by(caseId=caseId).first()
+        print(testcase)
+        print(column_name)
+        if testcase is not None:
+            msg = '用例{}被修改！！'.format(caseId)
+            if column_name == 'preCondition':
+                testcase.preCondition = column_data
+            elif column_name == 'caseName':
+                testcase.caseName = column_data
+            elif column_name == 'actionCondition':
+                testcase.actionCondition = column_data
+            elif column_name == 'preResult':
+                testcase.preResult = column_data
+            elif column_name == 'ps':
+                testcase.ps = column_data
+            elif column_name == 'changer':
+                # todo:!统一角色id和角色名的引用
+                changer = Peo.query.filter_by(peoName=column_data).first()
+                testcase.changer = changer.peoId
+            elif column_name == 'test_level':
+                testcase.test_level = column_data
+            else:
+                msg = ''
+                error ='查找不到用例属性'
+            DB.session.commit()
+        else:
+            msg = ''
+            error = '错误修改！不存在该 Id 的testcase'
+
+        response = {
+            'msg': msg,
+            'error': error
+        }
+
+        return jsonify(response)
