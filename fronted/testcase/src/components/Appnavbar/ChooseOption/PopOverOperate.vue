@@ -16,6 +16,15 @@
             >新建子文件夹</el-button
           >
         </el-form-item>
+        <el-form-item v-if="data.type == 'folder'"
+          ><i class="el-icon-edit-outline" style="font-size: 20px; "></i>
+          <el-button
+            type="text"
+            style="font-size: 16px; "
+            @click="changeTestCaseFolder(data, node)"
+            >更改文件夹名</el-button
+          >
+        </el-form-item>
         <el-form-item v-if="data.type == 'file'"
           ><i class="el-icon-edit-outline" style="font-size: 20px; "></i>
           <el-button
@@ -168,8 +177,14 @@ export default {
     ChangeTestCase(data, node) {
       this.visible = false;
       this.$bus.emit("CHANGE_TESTCASE_BY_POP", { data: data, node: node });
-      
     },
+    /**
+     * 修改当前测试用例文件夹
+     */
+    changeTestCaseFolder(data,node){
+      this.visible = false;
+      this.$bus.emit("CHANGE_TESTCASE_FOLDER_BY_POP", { data: data, node: node });
+    }
   },
 };
 </script>

@@ -1,19 +1,19 @@
 <template>
   <div class="main">
     <div class="selector_css">
-      <div>类型:</div>
-      <selector></selector>
+      <div>系统名:</div>
+      <selector :data="options.caseSystems"></selector>
       <div>修改人:</div>
-      <selector></selector>
+      <selector :data="options.QAs"></selector>
       <div>用例等级:</div>
-      <selector></selector>
+      <selector :data="options.test_level"></selector>
       <div>执行人:</div>
-      <selector></selector>
+      <selector :data="options.peos"></selector>
       <div>tag:</div>
-      <selector></selector>
+      <selector :data="options.tags"></selector>
     </div>
     <div class="selector_css3">
-      <test-case-table ></test-case-table>
+      <test-case-table></test-case-table>
     </div>
   </div>
 </template>
@@ -21,9 +21,23 @@
 import TestCaseTable from "./TestCaseTable";
 import Selector from "./Selector";
 export default {
+  data() {
+    return {
+      options: [],
+    };
+  },
+  mounted() {
+    this.$bus.on("UPDATE_SELETOR_DATA", (param) => {
+      console.log("_____________UPDATE_SELETOR_DATA_______发生了")
+      this.options = param.options;
+      console.log(param.options)
+    });
+  },
+
   components: { TestCaseTable, Selector },
 
   methods: {},
+  
 };
 </script>
 <style scoped>

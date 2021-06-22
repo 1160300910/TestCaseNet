@@ -90,8 +90,8 @@ export default {
             });
           }
           this.options.changer = changer;
-          console.log("this.options.changer");
-          console.log(this.options.changer);
+          //console.log("this.options.changer");
+          //console.log(this.options.changer);
         })
         .catch(function(error) {
           alert(error);

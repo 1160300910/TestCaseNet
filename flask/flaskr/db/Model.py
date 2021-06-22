@@ -18,10 +18,12 @@ class Peo(DB.Model):
     ip = DB.Column(DB.String(20))
 
 
-class DefinedType(DB.Model):
-    __tablename__ = 'defined_type'
+class CaseSystem(DB.Model):
+    __tablename__ = 'case_system'
     __table_args__ = {'extend_existing': True}
-    type_name = DB.Column(DB.String(20), primary_key=True, nullable=False)
+    system_name = DB.Column(DB.String(20), primary_key=True, nullable=False)
+    testcase_system = relationship("TestCase",cascade="all")
+
 
 
 class Tag(DB.Model):
@@ -41,8 +43,8 @@ class CasePath(DB.Model):
     __table_args__ = {'extend_existing': True}
     pathId = DB.Column(DB.Integer, primary_key=True, autoincrement=True, unique=True)  # 用例编号
     level = DB.Column(DB.Integer, nullable=False)
-    testcase_caseId = DB.Column(DB.Integer, nullable=False)  # 测试用例ID
-    testcase_ancestor = DB.Column(DB.Integer, DB.ForeignKey('testcase.caseId'), nullable=False)  # 保存了全部路径id
+    testcase_caseId = DB.Column(DB.Integer, DB.ForeignKey('testcase.caseId'), nullable=False)  # 测试用例ID
+    testcase_ancestor = DB.Column(DB.Integer, nullable=False)  # 保存了全部路径id
 
 
 class TestCase(DB.Model):
@@ -52,7 +54,7 @@ class TestCase(DB.Model):
     __table_args__ = {'extend_existing': True}
 
     # 定义关系
-    paths = relationship("CasePath", backref="testcase_", cascade="all")
+    paths_caseId = relationship("CasePath", cascade="all")
     # 定义字段
     # 用例编号，父用例文件夹id，类型（文件夹or用例）
     # 用例标题，用例等级,前置条件，执行条件，预期结果，备注，标签，修改人
@@ -74,7 +76,8 @@ class TestCase(DB.Model):
     # 人员类型
     # 被指派的执行人，实际执行人，
     state = DB.Column(DB.Enum('1', '2', '3'), default='1')
-    definedType = DB.Column(DB.String(64), DB.ForeignKey('defined_type.type_name'))
+    system_name = DB.Column(DB.String(64), DB.ForeignKey('case_system.system_name'))
+
     caseType = DB.Column(DB.Enum('1', '2'))
     peoType = DB.Column(DB.Enum('1', '2', '3', '4'))
     actionPeo = DB.Column(DB.Integer, DB.ForeignKey('peo.peoId'))

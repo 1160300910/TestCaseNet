@@ -2,6 +2,7 @@
 module.exports = {
     publicPath: './',
     runtimeCompiler: true,
+
     devServer: {
         host: 'localhost', //target host
         port: 5005,

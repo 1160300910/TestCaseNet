@@ -7,7 +7,7 @@
       href="https://unpkg.com/element-ui/lib/theme-chalk/index.css"
     />
     <!-- 使用子组件,使用-，不建议使用驼峰 -->
-    <app-header></app-header>
+    <app-header ></app-header>
     <app-navbar></app-navbar>
     <app-main></app-main>
   </div>
@@ -24,17 +24,33 @@ import axios from "axios";
 // 导入子组件，缩写格式 AppHeader: AppHeader
 export default {
   created() {
-    if (this.$route.params.userName && this.$route.params.userWork) {
+    this.initOptions();
+    if (
+      this.$route.params.userName &&
+      this.$route.params.userWork &&
+      this.$route.params.userId
+    ) {
       this.userName = this.$route.params.userName;
       this.userWork = this.$route.params.userWork;
+      this.userId = this.$route.params.userId;
+    } else {
+      //若尚未登录，跳转到登录界面
+      this.$router.replace({
+        name: "Login",
+        params: {},
+      });
     }
   },
   setup() {},
   data() {
     return {
+      userName: "西子卡",
+      userId: 1,
+      userWork: "QA",
       options: {
         QAs: [],
         caseTypes: [],
+        caseSystems: [],
         peos: [], //策划，qa，和程序,PM
         tags: [],
         test_level: [
@@ -64,9 +80,7 @@ export default {
       choice: "",
       nowChildren: "",
       nowParent: "",
-      userName: "西子卡",
-      userId: 1,
-      userWork: "QA",
+
       table_datas: {}, //节点数据列表
       nodes_data: "", //节点数据树
     };
@@ -79,38 +93,70 @@ export default {
   components: { AppHeader, AppNavbar, AppMain },
   methods: {
     /**
+     * 初始化全局选项
+     */
+    initOptions() {
+      this.getQAPeoData();
+      this.getProjectPeoData();
+      this.getProjectSystemsData();
+    },
+    /**
      * 初始化QA组数据（只有QA可以修改和创建测试用例）
      */
     getQAPeoData() {
       axios.get("getQAPeoData").then((res) => {
-        console.log(res.data.msg);
-        this.options.QAs = res.data.msg;
+        //console.log(res.data.msg);
+        var option = this.initOptionArray(res.data.msg, "peoId", "peoName");
+        this.options.QAs = option;
       });
+    },
+    /**
+     * 输入数组，选项名，
+     * keyName ，valueName
+     * 输出option数组(直接引用修改了)
+     */
+    initOptionArray(data, keyName, valName) {
+      var options = [];
+      for (var d = 0; d < data.length; d++) {
+        options.unshift({
+          key: data[d][keyName],
+          value: data[d][valName],
+        });
+      }
+      return options;
     },
     /**
      * 初始化项目组人员数据（QA,策划和程序,PM）
      */
     getProjectPeoData() {
       axios.get("getProjectPeos").then((res) => {
-        console.log(res.data.msg);
-        this.options.peos = res.data.msg;
+        //console.log(res.data.msg);
+        var option = this.initOptionArray(res.data.msg, "peoId", "peoName");
+        this.options.peos = option;
       });
     },
     /**
-     * 初始化项目测试用例类型数据
+     * 初始化项目测试用例系统选项
+     * fatherId =-1,且类型是fileType的即为系统名节点
      */
-    getProjectTypeData() {
-      axios.get("？？？").then((res) => {
-        console.log(res.data.msg);
-        this.options.peos = res.data.msg;
+    getProjectSystemsData() {
+      axios.get("getProjectSystemsData").then((res) => {
+        //console.log(res.data.msg);
+        this.options.caseSystems = res.data.msg;
+        var option = this.initOptionArray(res.data.msg, "caseId", "caseName");
+        this.options.caseSystems = option;
+
+        this.$bus.emit("UPDATE_SELETOR_DATA", {
+          options: this.options,
+        }); //更新选项数据
       });
     },
     /**
      * 初始化项目测试用例标签数据
      */
     getProjectTestCaseTagData() {
-      axios.get("？？？").then((res) => {
-        console.log(res.data.msg);
+      axios.get("get").then((res) => {
+        //console.log(res.data.msg);
         this.options.peos = res.data.msg;
       });
     },

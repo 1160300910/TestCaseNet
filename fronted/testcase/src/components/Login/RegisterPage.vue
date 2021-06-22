@@ -1,16 +1,16 @@
 <template>
   <div width="360px">
     <el-dialog
-      title="登录信息"
+      title="注册信息"
       v-model="dialogFormVisible"
       width="360px"
       :before-close="handleClose"
     >
       <el-form :label-position="labelPosition" label-width="80px" :model="form">
         <el-form-item label="用户名：">
-          <el-input v-model="form.name" placeholder="请输入用户名"></el-input>
+          <el-input v-model="form.name" placeholder="请输入注册名"></el-input>
         </el-form-item>
-        <!--el-form-item label="职能：">
+        <el-form-item label="职能：">
           <el-select
             v-model="form.work"
             placeholder="请选择 职能"
@@ -21,16 +21,12 @@
             <el-option label="QA" value="1"></el-option>
             <el-option label="程序" value="3"></el-option>
           </el-select>
-        </el-form-item-->
+        </el-form-item>
       </el-form>
-      <div class="user_change_button">
-        <el-button type="text" @click="registUser">注册用户</el-button>
-        <el-button type="text" @click="modifyUserInfo"> 修改用户信息</el-button>
-      </div>
+
       <template #footer>
         <div class="dialog-footer">
-          <el-button @click="handleClose">取 消</el-button>
-          <el-button type="primary" @click="UserLogin">确 定</el-button>
+          <el-button type="primary" @click="UserRegister">注册</el-button>
         </div>
       </template>
     </el-dialog>
@@ -45,52 +41,46 @@ export default {
       labelPosition: "right",
       form: {
         name: "",
+        work: "",
       },
       dialogFormVisible: true,
       filled: false,
     };
   },
   methods: {
-    /**
-     * 用户注册
-     */
-    registUser() {
-      this.$router.replace({
-        name: "RegisterPage",
-        params: {},
-      });
+    handleClose() {
+      console.log(this.form.name);
+      console.log(this.form.name != "");
+      if (this.IsFilled()) {
+        this.dialogFormVisible = false;
+      } else {
+        console.log(this.form);
+        alert("登录后才能使用噢！");
+      }
     },
     /**
-     * 用户数据修改
+     * 用户进行注册
      */
-    modifyUserInfo() {
-       this.$router.push({
-        name: "ModifyUserInfoPage",
-        params: {},
-      });
-    },
-    /**
-     * 用户登录：
-     * 需要输入用户名，用户职能
-     * 不能使用重复的用户名
-     */
-    UserLogin() {
+    UserRegister() {
       var that = this;
       if (this.IsFilled()) {
         axios
-          .post("/userLogin", {
+          .post("/userRegister", {
             userName: that.form.name,
+            userWork: that.form.work,
           })
           .then((res) => {
             console.log(res.data);
             if (res.data.msg) {
+              //注册成功，跳转到主界面
               that.dialogFormVisible = false; //隐藏登录弹窗
+              //指定跳转回到Login页面，可带参数
               this.$router.replace({
                 name: "Layout",
                 params: {
                   userName: that.form.name,
-                  userId: res.data.msg.peoId,
-                  userWork: this.transWorkType(res.data.msg.peoType),
+                  userId: res.data.msg,
+                  userWork: that.transWorkType(that.form.work),
                 },
               });
             } else {
@@ -104,17 +94,7 @@ export default {
         alert("填写全部信息后才能使用噢！");
       }
     },
-    handleClose() {
-      console.log(this.form.name);
-      console.log(this.form.name != "");
-      if (this.IsFilled()) {
-        this.dialogFormVisible = false;
-      } else {
-        console.log(this.form);
-        alert("登录后才能使用噢！");
-      }
-    },
-    /**
+     /**
      * 获取角色类型，数字转换为具体类型
      */
     transWorkType(workId) {
@@ -130,6 +110,9 @@ export default {
         }
       }
     },
+    /**
+     * 检查下空是不是都填写了
+     */
     IsFilled() {
       if (this.form.name != "" && this.form.work != "") {
         return true;
@@ -142,8 +125,6 @@ export default {
 </script>
 
 <style>
-.el-form-item {
-}
 .user_change_button {
   font-size: 10px;
   display: flex;

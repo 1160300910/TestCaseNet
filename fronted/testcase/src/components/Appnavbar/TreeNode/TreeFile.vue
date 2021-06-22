@@ -376,12 +376,6 @@ export default {
 
   justify-content: space-between;
 }
-span {
-  display: block;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
 .el-tree-node:focus > .el-tree-node__content {
   /*设置选中的样式 */
   background-color: #dde9ff !important;

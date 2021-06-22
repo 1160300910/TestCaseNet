@@ -1,7 +1,7 @@
 from modules.Stack import Stack
 from . import bp
 from flask import jsonify, flash, g, redirect, render_template, request, session, url_for
-from flaskr.db.Model import Peo, TestCase, query2dict, CasePath
+from flaskr.db.Model import Peo, TestCase, query2dict, CasePath, CaseSystem
 from flaskr.db_init import DB
 
 
@@ -13,30 +13,79 @@ def hello():
     return jsonify(response)
 
 
-@bp.route('/register/', methods=['GET', 'POST'], strict_slashes=False)
-def register():
+@bp.route('/userLogin/', methods=['POST'], strict_slashes=False)
+def userLogin():
     if request.method == 'POST':
-        print(request.get_json())
-        peoName = request.json.get('name')
-        peoType = request.json.get('work')
-        peo1 = Peo(peoName=peoName, peoType=int(peoType))
-        print(peoName, peoType)
-        error = None
-        if not peoName:
-            error = '请输入你的名字~'
-        elif not peoType:
-            error = '请选择你的身份~'
-        elif Peo.query.filter_by(peoName=peoName).first() is not None:
-            error = '用户{}已经注册过啦！'.format(peoName)
-        if error is None:
-            DB.session.add(peo1)
+        error = ''
+        peoName = request.json.get('userName')
+        peo = Peo.query.filter_by(peoName=peoName).first()
+        if peo:
+            msg = {'peoId': peo.peoId, 'peoType': peo.peoType}
+        else:
+            msg = 0
+            error = "该用户名尚未注册"
+            flash(error)
+        response = {
+            'msg': msg,
+            'error': error
+        }
+        return jsonify(response)
+
+
+@bp.route('/modifyUserInfo/', methods=['POST'], strict_slashes=False)
+def modifyUserInfo():
+    if request.method == 'POST':
+        error = ''
+        userOldName = request.json.get('userOldName')
+        peo = Peo.query.filter_by(peoName=userOldName).first()
+        if peo:
+            # 存在这个用户，可以修改其信息
+            userWork = request.json.get('userWork')
+            userNewName = request.json.get('userNewName')
+            peo.peoName = userNewName
+            peo.peoType = int(userWork)
+            DB.session.flush()
             DB.session.commit()
-            return jsonify({'msg': 'true'})
+            msg = {'peoId': peo.peoId, 'peoType': peo.peoType, 'peoName': peo.peoName}
+        else:
+            msg = 0
+            error = "该用户名尚未注册,不可修改"
+            flash(error)
+        response = {
+            'msg': msg,
+            'error': error
+        }
+        return jsonify(response)
+
+
+@bp.route('/userRegister/', methods=['POST'], strict_slashes=False)
+def userRegister():
+    if request.method == 'POST':
+        peoName = request.json.get('userName')
+        peoType = request.json.get('userWork')
+        print(peoName, peoType)
+
+        msg = 0
+        if not peoName:
+            error = '输入名字为空'
+        elif not peoType:
+            error = '尚未选择身份'
+        elif Peo.query.filter_by(peoName=peoName).first() is not None:
+            error = '用户名：{} 已经被注册过啦！'.format(peoName)
+        else:
+            peo1 = Peo(peoName=peoName, peoType=int(peoType))
+            DB.session.add(peo1)
+            DB.session.flush()
+            msg = peo1.peoId
+            error = None
+        if error is None:
+            DB.session.commit()
         flash(error)
-    response = {
-        'msg': 'hello,world!'
-    }
-    return jsonify(response)
+        response = {
+            'msg': msg,
+            'error': error
+        }
+        return jsonify(response)
 
 
 @bp.route('/addTestCase/', methods=['POST'], )
@@ -49,16 +98,17 @@ def addTestCase():
         conditionInfo = request.json.get('conditionInfo')
         ps = request.json.get('ps')
         state = request.json.get('state')
-        definedType = request.json.get('definedType')
+        system_name = request.json.get('system_name')
         tag = request.json.get('tag')
         caseType = request.json.get('caseType')
         fatherID = request.json.get('fatherID')
         peoType = request.json.get('peoType')
         actionPeo = request.json.get('actionPeo')
         changePeo = request.json.get('changePeo')
+
         testCase1 = TestCase(caseName=caseName, level=level, entry=entry
                              , conditionInfo=conditionInfo, executeInfo=''
-                             , ps=ps, state=state, definedType=definedType, tag=tag
+                             , ps=ps, state=state, system_name=system_name, tag=tag
                              , caseType=caseType, fatherID=fatherID,
                              peoType=peoType, changePeo=changePeo, actionPeo=actionPeo
                              , actionedPeo='')
@@ -69,10 +119,12 @@ def addTestCase():
 
 @bp.route('/saveTestCase/', methods=['POST'], strict_slashes=False)
 def saveTestCase():
+    msg = ''
     error = ''
     if request.method == 'POST':
         caseId = request.json.get('caseId')
         fatherId = request.json.get('fatherId')
+        system_name = request.json.get('system_name')
 
         caseName = request.json.get('caseName')
         test_level = request.json.get('test_level')
@@ -85,12 +137,14 @@ def saveTestCase():
         fileType = request.json.get('fileType')
 
         state = '1'
-        definedType = '人脉'  # 暂定人脉模块
         caseType = '1'  # 未执行，无需被执行
         peoType = '1'  # 暂定为测试
         actionPeo = -1  # 暂定数据
 
         peo = Peo.query.filter_by(peoName=changer).first()
+
+        if system_name:
+            msg = setSystem(system_name, system_name)
 
         if peo is not None:
             print(peo.peoId)
@@ -105,11 +159,11 @@ def saveTestCase():
                              , preCondition=preCondition, actionCondition=actionCondition
                              , preResult=preResult, ps=ps, tag=tag
                              , changer=changer
-                             , state=state, definedType=definedType, caseType=caseType
+                             , state=state, system_name=system_name, caseType=caseType
                              , peoType=peoType, actionPeo=actionPeo, fileType=fileType)
 
         if TestCase.query.filter_by(caseId=caseId).first() is not None:
-            msg = '用例{}被修改！！'.format(caseId)
+            msg = msg + '用例{}被修改！！'.format(caseId)
             result = TestCase.query.filter_by(caseId=caseId).first()
             result.fatherId = fatherId
             result.caseName = caseName
@@ -121,14 +175,14 @@ def saveTestCase():
             result.tag = tag
             result.changer = changer
             result.state = state
-            result.definedType = definedType
+            result.system_name = system_name
             result.caseType = caseType
             result.peoType = peoType
             result.actionPeo = actionPeo
             result.fileType = fileType
             DB.session.commit()
         else:
-            msg = '用例{}被创建！！'.format(caseId)
+            msg = msg + '用例{}被创建！！'.format(caseId)
             DB.session.add(testCase1)
             DB.session.commit()
         response = {
@@ -160,8 +214,15 @@ def getUserTestCases():
         return jsonify(response)
 
 
+def checkAndCleanTestCases():
+    testcases = TestCase.query.filter(TestCase.fileType == None).all()
+    for testcase in testcases:
+        deleteTestCaseFolderAndFile(testcase.caseId)
+
+
 @bp.route('/getUserTestCaseNodesArray/', methods=['GET'])
 def getUserTestCaseNodesArray():
+    checkAndCleanTestCases()
     if request.method == 'GET':
         nodes = []
         print(request.args)
@@ -260,6 +321,48 @@ def deleteTestCase():
         return jsonify(response)
 
 
+'''
+    删除caseId下对应的测试用例和文件
+'''
+
+
+def deleteTestCaseFolderAndFile(caseId):
+    msg = '待删除caseid：{},'.format(caseId)
+    error = ''
+    result = TestCase.query.filter_by(caseId=caseId).first()  # 选择出需要被删除的测试用例文件夹节点
+    if (result):
+        if result.fileType == 'folder' and result.fatherId == -1:
+            CaseSystem.query.filter_by(system_name=result.caseName).delete()
+            msg += "系统标签:{}被删除, ".format(result.caseName)
+        # 循环删除其全部子节点
+        # 1.查询全部子节点 删除对应路径
+        nodes = CasePath.query.filter_by(testcase_ancestor=caseId).order_by(CasePath.level.desc()).all()
+        for node in nodes:
+            msg += "路径用例 id:{}被删除, ".format(node.testcase_caseId)
+            CasePath.query.filter_by(testcase_caseId=node.testcase_caseId).delete()  # 删除对应路径
+            TestCase.query.filter_by(caseId=node.testcase_caseId).delete()  # 删除对应testcase
+            DB.session.commit()
+        TestCase.query.filter_by(caseId=caseId).delete()
+    else:
+        error = '不存在对应测试用例'
+        msg = False
+    print(msg, error)
+    return msg, error
+
+
+@bp.route("/deleteTestCaseFolder", methods=['POST'])
+def deleteTestCaseFolder():
+    if request.method == 'POST':
+        caseId = request.json.get('caseId')
+        msg, error = deleteTestCaseFolderAndFile(caseId)
+
+        response = {
+            'error': error,
+            'msg': msg
+        }
+        return jsonify(response)
+
+
 @bp.route("/getNewCaseId", methods=['GET'])
 def getNewCaseId():
     if request.method == 'GET':
@@ -316,22 +419,58 @@ def changeTreeNodeData():
         fileType = request.json.get('fileType')
         changer = request.json.get('changer')
         fatherId = request.json.get('fatherId')
+        print("caseId:" + str(caseId))
         changeTestCase = TestCase.query.filter_by(caseId=caseId).first()
+
+        print(fatherId)
+        msg = ''
+        if fileType == 'folder' and int(fatherId) == -1:
+            msg = setSystem(changeTestCase.caseName, caseName)
         if changeTestCase is not None:
-            msg = '用例{}被修改！！'.format(caseId)
+            msg += '用例{}被修改！！'.format(caseId)
             changeTestCase.caseName = caseName
             changeTestCase.fileType = fileType
             changeTestCase.changer = changer
             changeTestCase.fatherId = fatherId
-            DB.session.commit()
         else:
-            msg = ''
+            DB.session.add(changeTestCase)
             error = "没有对应Id的测试用例！！！"
+
+        DB.session.commit()
         response = {
             'msg': msg,
-            'error': error
+            'error': error,
         }
+
+        print(response)
         return jsonify(response)
+
+
+'''
+    设置定义的系统，如果没有，则直接插入，
+    如果重复了，不变动
+'''
+
+
+def setSystem(old_system_name, new_system_name):
+    system = CaseSystem.query.filter_by(system_name=old_system_name).first()
+    new_system_exist = CaseSystem.query.filter_by(system_name=new_system_name).first()
+    if new_system_exist:  # 不能插入
+        msg = '不能插入'
+        pass
+    else:
+        if system:
+            print(system)
+            msg = '系统{}被修改！！'.format(new_system_name)
+            system.system_name = new_system_name
+        else:
+            msg = '系统{}增加！！'.format(new_system_name)
+            system = CaseSystem(system_name=new_system_name)
+            DB.session.add(system)
+
+    DB.session.commit()
+    return msg
+
 
 @bp.route("/getProjectPeos", methods=['GET'])
 def getProjectPeos():
@@ -344,7 +483,6 @@ def getProjectPeos():
         return jsonify(response)
 
 
-
 @bp.route('/getTestCaseInfoByCaseId/', methods=['GET'])
 def getTestCaseInfoByCaseId():
     if request.method == 'GET':
@@ -353,12 +491,11 @@ def getTestCaseInfoByCaseId():
         if testcase:
             msg = query2dict(testcase)
         else:
-            msg=''
+            msg = ''
         response = {
             'msg': msg
         }
         return jsonify(response)
-
 
 
 @bp.route('/updateTableColumnDataByName/', methods=['POST'], strict_slashes=False)
@@ -392,7 +529,7 @@ def updateTableColumnDataByName():
                 testcase.test_level = column_data
             else:
                 msg = ''
-                error ='查找不到用例属性'
+                error = '查找不到用例属性'
             DB.session.commit()
         else:
             msg = ''
@@ -404,6 +541,7 @@ def updateTableColumnDataByName():
         }
         return jsonify(response)
 
+
 @bp.route('/getQAPeoData/', methods=['GET'], strict_slashes=False)
 def getQAPeoData():
     error = ''
@@ -412,8 +550,25 @@ def getQAPeoData():
         if peos:
             msg = query2dict(peos)
         else:
-            msg=""
-            error="未找到对应人员"
+            msg = ""
+            error = "未找到对应人员"
+        response = {
+            'msg': msg,
+            'error': error
+        }
+        return jsonify(response)
+
+
+@bp.route('/getProjectSystemsData/', methods=['GET'], strict_slashes=False)
+def getProjectSystemsData():
+    error = ''
+    if request.method == 'GET':
+        testcaseFolders = TestCase.query.filter_by(fatherId=-1, fileType='folder').all()
+        if testcaseFolders:
+            msg = query2dict(testcaseFolders)
+        else:
+            msg = ""
+            error = "未找到对应测试用例系统"
         response = {
             'msg': msg,
             'error': error

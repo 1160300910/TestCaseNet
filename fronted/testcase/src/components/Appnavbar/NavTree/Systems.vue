@@ -1,9 +1,9 @@
 <template>
   <div class="custom-tree-container">
     <div class="tree-condition-suffix">
-      <el-select v-model="userName">
+      <el-select v-model="userName" @change="getNodeDataByUser(userName)">
         <el-option
-          v-for="item in options"
+          v-for="item in parentObj.options.QAs"
           :key="item.value"
           :label="item.label"
           :value="item.value"
@@ -70,11 +70,6 @@
               <!--
                 :nowChildren="this.parentObj.nowChildren"
                 :nowParent="nowParent"-->
-
-              <!--i
-                @click="addTestcase(node, data)"
-                class="el-icon-circle-plus-outline"
-              ></i-->
             </span>
           </span>
         </template>
@@ -101,9 +96,10 @@ export default {
   },
   inject: ["parentObj"],
   created() {
-    this.initTreeNodeData();
-    if (this.$route.params.userName && this.$route.params.userWork)
+    if (this.$route.params.userName && this.$route.params.userWork) {
       this.userName = this.$route.params.userName;
+    this.initTreeNodeData(this.userName);
+    }
     this.userWork = this.$route.params.userWork;
   },
   components: { PopOverOperate },
@@ -114,11 +110,13 @@ export default {
     filterText(val) {
       this.$refs.tree.filter(val);
     },
+
     /***
      * 当前节点的节点输入值
      */
     treeNodeInput(value) {
       var node = this.$refs["tree"].getCurrentNode();
+      console.log(node);
       node.label = value;
       this.$bus.emit("CASE_NAME_TREENODE_CHANGE", {
         value: value,
@@ -127,6 +125,14 @@ export default {
     },
   },
   mounted() {
+    /***
+     * 发起修改当前文件夹名
+     */
+    this.$bus.on("CHANGE_TESTCASE_FOLDER_BY_POP", (param) => {
+      this.$refs["tree"].setCurrentKey(param.data.caseId);
+      //console.log(param.node.data)
+      param.data.isEditing = true;
+    });
     /***
      * 从table设置当前选中的节点node
      */
@@ -191,9 +197,9 @@ export default {
      */
     this.$bus.on("DELETE_TESTCASE_NODE_BYPOP", (param) => {
       console.log("————删除————  DELETE_TESTCASE_NODE_BYPOP 发生了");
-      if (param.type == "file") {
+      if (param.data.type == "file") {
         this.deleteTestCaseNode(param.data, param.node);
-      } else if (param.type == "folder") {
+      } else if (param.data.type == "folder") {
         this.deleteTestCaseFolder(param.data, param.node);
       } else {
         alert("出现了不能存在的类型");
@@ -211,6 +217,31 @@ export default {
     });
   },
   methods: {
+    /**
+     * 实时根据选中的修改人Id输出过滤结果
+     *
+     */
+    getNodeDataByUser(val) {
+      console.log(val);
+      let obj = {};
+      obj = this.parentObj.options.QAs.find((item) => {
+        //model就是上面的数据源
+        return item.value === val; //筛选出匹配数据
+      });
+      console.log(obj);
+      var userId = obj.key;
+      axios
+        .get("getUserTestCaseNodesArray", {
+          params: { userId: userId },
+        })
+        .then((res) => {
+          var NodeRoots = res.data.msg;
+          this.node_data = JSON.parse(JSON.stringify(NodeRoots));
+        })
+        .catch(function(error) {
+          alert(error);
+        });
+    },
     /**
      * 利用关键字过滤节点的过滤函数
      */
@@ -259,9 +290,25 @@ export default {
     },
     /**
      * 删除测试用例文件夹
-     * 包括其子文件夹,子用例里面的全部内容
+     * 1.包括其子文件夹,子用例里面的全部内容
+     * 2.删除当前显示的节点
      */
-    deleteTestCaseFolder() {},
+    deleteTestCaseFolder(data, node) {
+      axios
+        .post("deleteTestCaseFolder", {
+          caseId: data.caseId,
+        })
+        .then((res) => {
+          console.log(res.data);
+          var parentNode = node.parent;
+          if (parentNode.parent) {
+            console.log(parentNode);
+            this.$refs["tree"].setCurrentNode(parentNode.data);
+          }
+          console.log(node);
+          this.$refs["tree"].remove(node);
+        });
+    },
     /***
      * 保存节点的路径关系到服务器
      */
@@ -455,10 +502,11 @@ export default {
     /**
      * 初始化数据，获取测试用例目录数组
      */
-    initTreeNodeData() {
+    initTreeNodeData(userName) {
+      var userId = 1
       axios
         .get("getUserTestCaseNodesArray", {
-          params: { userId: this.parentObj.userId },
+          params: { userId: userId },
         })
         .then((res) => {
           var NodeRoots = res.data.msg;
@@ -571,7 +619,7 @@ export default {
     },*/
 
     Test(node) {
-      //this.treeNodeInput = node.label;
+      this.treeNodeInput = node.label;
       console.log("FOCUS FOCUS");
       console.log(node);
     },
@@ -658,7 +706,6 @@ export default {
       children.splice(index, 1);
       this.data = [...this.data];
     },
-    addTestcase() {},
   },
   data() {
     const options = [
@@ -764,7 +811,7 @@ export default {
 
   justify-content: space-between;
 }
-span {
+.span {
   display: block;
   overflow: hidden;
   white-space: nowrap;

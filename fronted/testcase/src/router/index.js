@@ -4,7 +4,8 @@ import Layout from '@/components/Layout'
 import Login from '@/components/Login/Login'
 import HomeMain from '@/components/HomeMain'
 import TestCaseTable from '@/components/Appmain/TestCaseTable'
-import tabletest from '@/components/Appmain/Test/tabletest'
+import RegisterPage from '@/components/Login/RegisterPage'
+import ModifyUserInfoPage from '@/components/Login/ModifyUserInfoPage'
 import TableT1 from '@/components/Appmain/Test/TableT1'
 import test from '@/components/Appnavbar/Test/test'
 import TreeTest from '@/components/Appnavbar/Test/TreeTest'
@@ -32,8 +33,14 @@ const routes = [{
         path: '/Testcase',
         component: TestCaseTable
     }, {
-        path: '/Test',
-        component: tabletest
+        path: '/RegisterPage',
+        name: 'RegisterPage',
+        component: RegisterPage
+    },
+    {
+        path: '/ModifyUserInfoPage',
+        name: 'ModifyUserInfoPage',
+        component: ModifyUserInfoPage
     }, {
         path: '/Test1',
         component: TableT1
