@@ -26,6 +26,7 @@
 
       <template #footer>
         <div class="dialog-footer">
+          <el-button @click="handleClose">返回</el-button>
           <el-button type="primary" @click="UserRegister">注册</el-button>
         </div>
       </template>
@@ -51,12 +52,14 @@ export default {
     handleClose() {
       console.log(this.form.name);
       console.log(this.form.name != "");
-      if (this.IsFilled()) {
-        this.dialogFormVisible = false;
-      } else {
-        console.log(this.form);
-        alert("登录后才能使用噢！");
-      }
+
+      console.log(this.form);
+      alert("注册并登陆后才能使用噢！");
+      //若尚未登录，跳转到登录界面
+      this.$router.replace({
+        name: "HomeMain",
+        params: {},
+      });
     },
     /**
      * 用户进行注册
@@ -94,7 +97,7 @@ export default {
         alert("填写全部信息后才能使用噢！");
       }
     },
-     /**
+    /**
      * 获取角色类型，数字转换为具体类型
      */
     transWorkType(workId) {
@@ -104,9 +107,9 @@ export default {
         { key: "3", value: "程序" },
         { key: "4", value: "PM" },
       ];
-      for(var w=0;w<  works.length;w++){
-        if(workId==works[w].key){
-          return works[w].value
+      for (var w = 0; w < works.length; w++) {
+        if (workId == works[w].key) {
+          return works[w].value;
         }
       }
     },

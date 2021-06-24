@@ -1,8 +1,10 @@
 <template>
   <div class="header">
-    <img src="./heads/005-man.png" class="div1" />
+    <img :src="headSrc" class="div1" />
     <div class="welcomeText">欢迎您! {{ work }} : [{{ userName }}]</div>
-    <div class="TestCaseNameText">XX系统测试用例</div>
+    <div class="TestCaseNameText">
+      L30测试用例
+    </div>
     <div class="editButton">
       <!--el-button size="small" type="primary" v-on:click="getData"
         >编辑用例</el-button
@@ -13,32 +15,11 @@
 
 <script>
 import axios from "axios";
-const peoHeads = [
-  {
-    img: "./heads/048-woman.png",
-    work: "QA",
-    key: "1",
-  },
-  {
-    img: "./heads/010-woman.png",
-    work: "策划",
-    key: "2",
-  },
-  {
-    img: "./heads/005-man.png",
-    work: "程序",
-    key: "3",
-  },
-  {
-    img: "./heads/016-woman.png",
-    work: "PM",
-    key: "4",
-  },
-];
+
 export default {
+  props: ["headSrc"],
   data: function() {
     return {
-      headSrc: "",
       serverResponse: "resp",
       userName: "",
       work: "",
@@ -54,40 +35,14 @@ export default {
     this.work = this.$route.params.userWork;
     this.userId = this.$route.params.userId;
   },
-  methods: {
-    /**
-     * 根据角色类型设定工作和头像图片
-     */
-    getHeadImgUrl(work) {
-      console.log(
-        "++++++++++++++++++++++++getWorkImg+++++++++++++++++++++++++++++"
-      );
-      console.log(this.$route.params);
-      for (var t = 0; t < peoHeads.length; t++) {
-        //console.log(work);
-        //console.log(peoHeads[t]);
-        if (peoHeads[t].work == work || peoHeads[t].key == work) {
-          //this.headSrc =require(peoHeads[t].img)
-          this.work = peoHeads[t].work;
-          try {
-            var img = peoHeads[t].img;
-            console.log(img);
-            return img;
-          } catch (err) {
-            alert(err);
-          }
-        }
-      }
-      console.log("+++++++++++++++++++啦啦啦啦++++++++++++++++++++++++++++++");
-    },
-  },
-  mounted() {
-    this.getHeadImgUrl(this.work);
-  },
+  methods: {},
+  mounted() {},
 };
 </script>
 
 <style scoped>
+.header {
+}
 .div1 {
   width: 50px;
   height: 50px;

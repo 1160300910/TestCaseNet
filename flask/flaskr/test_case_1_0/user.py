@@ -220,41 +220,54 @@ def checkAndCleanTestCases():
         deleteTestCaseFolderAndFile(testcase.caseId)
 
 
+'''
+  获取测试用例数组
+'''
+
+
 @bp.route('/getUserTestCaseNodesArray/', methods=['GET'])
 def getUserTestCaseNodesArray():
-    checkAndCleanTestCases()
+    checkAndCleanTestCases()  # 清理测试用例集
+    error = ''
     if request.method == 'GET':
         nodes = []
-        print(request.args)
         userId = request.args.get('userId')
-        # 选出全部根节点
-        results = TestCase.query.filter_by(changer=userId, fatherId=-1).all()
-        print(results)
-        treeStack = Stack()
-        for r in results:
-            fatherNode = SetNode(r)
-            treeStack.push(fatherNode)
-            nodes.append(fatherNode)
-        while (not treeStack.is_empty()):
-            father = treeStack.pop()
-            print(father)
-            fatherId = father['caseId']
-            children = CasePath.query.filter_by(testcase_ancestor=fatherId, level=1).all()
-            print(children)
-            if (children):
-                for c in children:
-                    child = TestCase.query.filter_by(caseId=c.testcase_caseId).first()
-                    if (child):
-                        childNode = SetNode(child)
-                        treeStack.push(childNode)
-                        print(childNode)
-                        father['children'].append(childNode)
-            else:
+        userName = request.args.get('userName')
+        peo = Peo.query.filter_by(peoName=userName, peoId=userId).first()
+        if not peo:
+            error = "不存在对应的用户Id和用户名！"
+            msg = 0
+        else:
+            # 选出全部根节点
+            results = TestCase.query.filter_by(fatherId=-1).all()
+            print(results)
+            treeStack = Stack()
+            for r in results:
+                fatherNode = SetNode(r)
+                treeStack.push(fatherNode)
+                nodes.append(fatherNode)
+            while (not treeStack.is_empty()):
+                father = treeStack.pop()
+                print(father)
+                fatherId = father['caseId']
+                children = CasePath.query.filter_by(testcase_ancestor=fatherId, level=1).all()
                 print(children)
-                print("没有子节点")
+                if (children):
+                    for c in children:
+                        child = TestCase.query.filter_by(caseId=c.testcase_caseId).first()
+                        if (child):
+                            childNode = SetNode(child)
+                            treeStack.push(childNode)
+                            print(childNode)
+                            father['children'].append(childNode)
+                else:
+                    print(children)
+                    print("没有子节点")
+            msg = nodes
 
         response = {
-            'msg': nodes,
+            'msg': msg,
+            'error': error
         }
         print(response)
         return jsonify(response)
@@ -277,6 +290,7 @@ def getFolderTableTestCases():
         nodes = []
         print(request.args)
         caseId = request.args.get('caseId')
+        # 获取该caseId的节点的全部子节点的用例详细信息
         children = CasePath.query.filter_by(testcase_ancestor=caseId, level=1).all()
         for c in children:
             node = TestCase.query.filter_by(caseId=c.testcase_caseId).first()

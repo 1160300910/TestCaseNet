@@ -28,6 +28,7 @@ const routes = [{
     },
     {
         path: '/',
+        name: 'HomeMain',
         component: HomeMain // 组件对象
     }, {
         path: '/Testcase',

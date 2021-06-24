@@ -1,5 +1,5 @@
 <template>
-  <el-select v-model="value" filterable placeholder="请选择" size="small">
+  <el-select v-model="value" filterable placeholder="请选择" size="small" class = "select_css">
     <el-option
       v-for="item in data"
       :key="item.value"
@@ -22,3 +22,9 @@ export default {
   },
 };
 </script>
+<style scoped>
+.select_css {
+  width: 120px;
+  }
+
+</style>

@@ -101,6 +101,9 @@ export default {
       required: false,
     },
   },
+  created() {
+    console.log("——————————————————————————PopoverOperator created————————————————————————————")
+  },
   data() {
     return {
       visible: false,
@@ -116,6 +119,8 @@ export default {
      * data : 当前节点的数据
      */
     CreateNewTestCaseFile(data, node) {
+      console.log("——————————————————————————CreateNewTestCaseFile————————————————————————————")
+  
       this.visible = false;
       var fileType = "file";
       this.$bus.emit("CREATE_NEW_TESTCASE_NODE_POP", {

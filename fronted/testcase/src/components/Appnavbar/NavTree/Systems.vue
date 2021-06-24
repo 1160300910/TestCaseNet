@@ -94,13 +94,21 @@ export default {
       },
     },
   },
+  beforeUnmount() {
+   
+  },
   inject: ["parentObj"],
   created() {
-    if (this.$route.params.userName && this.$route.params.userWork) {
+    if (
+      this.$route.params.userName &&
+      this.$route.params.userWork &&
+      this.$route.params.userId
+    ) {
       this.userName = this.$route.params.userName;
-    this.initTreeNodeData(this.userName);
+      this.userWork = this.$route.params.userWork;
+      this.userId = this.$route.params.userId;
+      this.initTreeNodeData(this.userName, this.userId);
     }
-    this.userWork = this.$route.params.userWork;
   },
   components: { PopOverOperate },
   watch: {
@@ -124,6 +132,7 @@ export default {
       }); //告诉table，发生了用例标题修改事件
     },
   },
+
   mounted() {
     /***
      * 发起修改当前文件夹名
@@ -354,6 +363,9 @@ export default {
         .then((res) => {
           var newCaseId = res.data.msg;
           var newChild = this.CreateNodeData(newCaseId, fileType);
+          console.log(
+            "________________________Create_New_Root________________________________"
+          );
           console.log(this.$refs["tree"]);
           this.$refs["tree"].append(newChild, null); //新增node
           this.$refs["tree"].setCurrentNode(newChild);
@@ -501,16 +513,25 @@ export default {
     },
     /**
      * 初始化数据，获取测试用例目录数组
+     * 传入用户名和用户Id进行校验
      */
-    initTreeNodeData(userName) {
-      var userId = 1
+    initTreeNodeData(userName, userId) {
       axios
         .get("getUserTestCaseNodesArray", {
-          params: { userId: userId },
+          params: { userId: userId, userName: userName },
         })
         .then((res) => {
           var NodeRoots = res.data.msg;
-          this.node_data = JSON.parse(JSON.stringify(NodeRoots));
+          if (res.data.msg) {
+            this.node_data = JSON.parse(JSON.stringify(NodeRoots));
+          } else {
+            alert("用户信息错误！");
+            //用户信息有问题，跳转到重新登录界面
+            this.$router.replace({
+              name: "HomeMain",
+              params: {},
+            });
+          }
         })
         .catch(function(error) {
           alert(error);
@@ -523,9 +544,8 @@ export default {
      */
     OnTreeClickChooseNode(data, node) {
       //this.currentNodeKey = node.data.caseId;
-      console.log(node);
+      //console.log(node);
       this.$refs["tree"].setCurrentNode(data); //设置当前节点为选中节点
-      //this.$bus.emit("UPDATE_CURRENT_DATA_NODE", node.data);
       if (data.type == "folder") {
         this.getFolderNodeDatas(data.caseId, null);
       } else if (data.type === "file") {
@@ -768,6 +788,7 @@ export default {
       options: options,
       userName: "西子卡",
       userWork: "QA",
+      userId: 1,
       filterText: "",
       node_data: JSON.parse(JSON.stringify(node_data)),
       testif: false,

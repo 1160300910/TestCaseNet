@@ -7,8 +7,14 @@
       href="https://unpkg.com/element-ui/lib/theme-chalk/index.css"
     />
     <!-- 使用子组件,使用-，不建议使用驼峰 -->
-    <app-header ></app-header>
-    <app-navbar></app-navbar>
+    <app-header
+      :style="{
+        'background-color': work_head_bk_color,
+        color: work_head_font_color,
+      }"
+      :headSrc="headSrc"
+    ></app-header>
+    <app-navbar :style="{ 'background-color': work_nav_bk_color }"></app-navbar>
     <app-main></app-main>
   </div>
 </template>
@@ -22,9 +28,77 @@ import { ref } from "vue";
 
 import axios from "axios";
 // 导入子组件，缩写格式 AppHeader: AppHeader
+const peoHeads = [
+  {
+    img: "/icons/048-woman.png",
+    work: "QA",
+    key: "1",
+    background_head: "rgb(94,139,126)",
+    background_nav: "rgb(167,196,188)",
+    font: "rgb(223,238,234)",
+  },
+  {
+    img: "/icons/010-woman.png",
+    work: "策划",
+    key: "2",
+    background_head: "rgb(144,127,164)",
+    background_nav: "rgb(165,143,170)",
+    font: "white",
+  },
+  {
+    img: "/icons/005-man.png",
+    work: "程序",
+    key: "3",
+    background_head: "rgb(45,58,75)",
+    background_nav: "rgb(84,92,100)",
+    font: "white",
+  },
+  {
+    img: "/icons/016-woman.png",
+    work: "PM",
+    key: "4",
+    background_head: "rgb(255,216,204)",
+    background_nav: "rgb(252, 229, 222)",
+    font: "rgb(10,29,55)",
+  },
+];
 export default {
+  beforeUnmount() {
+    console.log(this.$bus)
+    this.$bus.all.clear()
+    /*
+      this.$bus.all.delete("CHANGE_TESTCASE_FOLDER_BY_POP")
+      this.$bus.all.delete("CHANGE_TESTCASE_FOLDER_BY_POP",{});
+      this.$bus.all.delete("CHANGE_CURRENT_TREENODE_FROM_TABLE");
+      this.$bus.all.delete("UPDATE_FATHER_TABLE_DATAS");
+      this.$bus.all.delete("CASE_NAME_TABLE_CHANGE");
+      this.$bus.all.delete("SAVE_TABLE_ROW");
+      this.$bus.all.delete("CREATE_NEW_TESTCASE_FILE_POP");
+      this.$bus.all.delete("CREATE_NEW_TESTCASE_NODE_POP");
+      this.$bus.all.delete("DELETE_TESTCASE_NODE_BYPOP");
+      this.$bus.all.delete("DELETE_TESTCASE_NODE_BYTABLE");*/
+      
+    console.log(this.$bus)
+    },
+  unmounted() {
+    console.log(
+      "——————————————————————————layput-offTestCaseListener——————————————————————————————————Layout"
+    );
+    this.offTestCaseListener();
+    console.log(
+      "——————————————————————————layput-unmouted——————————————————————————————————Layout"
+    );
+  },
+  activated() {
+    console.log(
+      "——————————————————————————layput-activated——————————————————————————————————Layout"
+    );
+  },
   created() {
-    this.initOptions();
+    console.log(
+      "——————————————————————————layput-created——————————————————————————————————Layout"
+    );
+
     if (
       this.$route.params.userName &&
       this.$route.params.userWork &&
@@ -33,17 +107,21 @@ export default {
       this.userName = this.$route.params.userName;
       this.userWork = this.$route.params.userWork;
       this.userId = this.$route.params.userId;
+      this.initOptions();
     } else {
       //若尚未登录，跳转到登录界面
-      this.$router.replace({
+      this.$router.push({
         name: "Login",
         params: {},
       });
     }
   },
-  setup() {},
   data() {
     return {
+      headSrc: "",
+      work_head_bk_color: "",
+      work_head_font_color: "",
+      work_nav_bk_color: "",
       userName: "西子卡",
       userId: 1,
       userWork: "QA",
@@ -91,7 +169,62 @@ export default {
     };
   },
   components: { AppHeader, AppNavbar, AppMain },
+  mounted() {
+    this.getRoleData(this.userWork);
+  },
   methods: {
+    /***
+     * 注销bus监听器，避免重复注册bus容器的监听
+     */
+    offTestCaseListener: function() {
+
+      /*
+      //App-main
+      console.log(this.$bus);
+      this.$bus.all.delete("UPDATE_SELETOR_DATA");
+      //my-table
+      this.$bus.all.delete("CASE_NAME_TREENODE_CHANGE");
+      //table
+      this.$bus.all.delete("CHANGE_TESTCASE_BY_POP");
+      this.$bus.all.delete("SAVE_TESTCASE_TABLE_DATA");
+      this.$bus.all.delete("CREATE_NEW_TESTCASE_NOTIFY_TABLE");
+      this.$bus.all.delete("UPDATE_CURRENT_NODE_DATA_CHOOSE");
+      this.$bus.all.delete("CREATE_NEW_TABLE_POP");
+      this.$bus.all.delete("UPDATE_CURRENT_FOLDER_TABLEDATAS");
+      //systems
+      this.$bus.all.delete("CHANGE_TESTCASE_FOLDER_BY_POP");
+      this.$bus.all.delete("CHANGE_CURRENT_TREENODE_FROM_TABLE");
+      this.$bus.all.delete("UPDATE_FATHER_TABLE_DATAS");
+      this.$bus.all.delete("CASE_NAME_TABLE_CHANGE");
+      this.$bus.all.delete("SAVE_TABLE_ROW");
+      this.$bus.all.delete("CREATE_NEW_TESTCASE_FILE_POP");
+      this.$bus.all.delete("CREATE_NEW_TESTCASE_NODE_POP");
+      this.$bus.all.delete("DELETE_TESTCASE_NODE_BYPOP");
+      this.$bus.all.delete("DELETE_TESTCASE_NODE_BYTABLE");
+      console.log(this.$bus);
+      */
+    },
+    /**
+     * 根据角色类型设定工作和头像图片
+     */
+    getRoleData(work) {
+      for (var t = 0; t < peoHeads.length; t++) {
+        //console.log(work);
+        //console.log(peoHeads[t]);
+        if (peoHeads[t].work == work || peoHeads[t].key == work) {
+          //this.headSrc =require(peoHeads[t].img)
+          this.work = peoHeads[t].work;
+          try {
+            this.work_head_bk_color = peoHeads[t].background_head;
+            this.work_head_font_color = peoHeads[t].font;
+            this.work_nav_bk_color = peoHeads[t].background_nav;
+            this.headSrc = peoHeads[t].img;
+          } catch (err) {
+            alert(err);
+          }
+        }
+      }
+    },
     /**
      * 初始化全局选项
      */
@@ -178,7 +311,7 @@ export default {
   top: 0px;
   left: 0px;
   right: 0px;
-  background-color: #2d3a4b;
+  /*background-color: #2d3a4b;*/
 }
 
 /* 左侧样式 */
@@ -189,7 +322,7 @@ export default {
   left: 0px;
   bottom: 0px;
   overflow-y: auto; /* 当内容过多时y轴出现滚动条 */
-  background-color: #545c64;
+  /*background-color: #545c64;*/
 }
 
 /* 主区域 */
@@ -202,7 +335,8 @@ export default {
   left: 280px;
   bottom: 0px;
   right: 0px; /* 距离右边0像素 */
-  padding: 10px;
+  padding-top: 0px;
+  padding-left: 10px;
   overflow-y: auto; /* 当内容过多时y轴出现滚动条 */
   /* background-color: red; */
 }

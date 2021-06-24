@@ -81,7 +81,7 @@ export default {
       axios
         .get("getQAPeoData")
         .then((res) => {
-          console.log(res.data.msg);
+          //console.log(res.data.msg);
           var changer = [];
           for (var p = 0; p < res.data.msg.length; p++) {
             changer.unshift({

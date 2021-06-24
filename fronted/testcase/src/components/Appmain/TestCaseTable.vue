@@ -254,20 +254,22 @@ export default {
       console.log("CREATE_NEW_TABLE_POP 发生了");
     });
     /***
-     * 在table里传入新数据
+     * 在当前展示的数据table里传入新数据
      */
     this.$bus.on("UPDATE_CURRENT_FOLDER_TABLEDATAS", (param) => {
       console.log("UPDATE_CURRENT_FOLDER_TABLEDATAS 发生了");
       var data = this.SettleCellStates(param.data);
-      this.tableData = data;
-      console.log(param);
+      this.tableData = data; 
+      //console.log(param);
       if (param.caseId) {
+        //如果有当前选中用例，则选中该用例
         var currentRow = this.FindCurrentRow(param.caseId);
         this.$refs["table"].ChangeCurrentRow(currentRow);
       }
     });
   },
   methods: {
+    
     /**
      * 取消编辑测试用例
      * 1.取消编辑态
@@ -432,7 +434,8 @@ export default {
       }
     },
     /***
-     * 设置每个节点的状态
+     * 从服务器传过来的数据缺少客户端状态
+     * 增设客户端里，每个节点的状态标记
      */
     SettleCellStates(datas) {
       for (var i = 0; i < datas.length; i++) {
