@@ -17,7 +17,7 @@
           :isColumnEditing="scope.row.isColumnEditing[colConfig.prop]"
           :row="scope.row"
           :column_name="colConfig.prop"
-          v-focus
+          v-focus-table
           :isRowEditing="scope.row.isRowEditing"
           :is="colConfig.component"
           :options="options"
@@ -44,7 +44,7 @@ import axios from "axios";
 export default {
   directives: {
     //注册一个局部的自定义指令 v-focus
-    focus: {
+    focusTable: {
       mounted(el) {
         //console.log(el);
         el.children[0].focus();
@@ -141,23 +141,23 @@ export default {
         test_level: [
           {
             value: "P0",
-            label: "P0",
+            key: "P0",
           },
           {
             value: "P1",
-            label: "P1",
+            key: "P1",
           },
           {
             value: "P2",
-            label: "P2",
+            key: "P2",
           },
           {
             value: "P3",
-            label: "P3",
+            key: "P3",
           },
           {
             value: "P4",
-            label: "P4",
+            key: "P4",
           },
         ],
         changer: [],

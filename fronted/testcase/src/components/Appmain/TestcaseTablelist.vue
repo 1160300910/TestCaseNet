@@ -17,7 +17,7 @@
         >
           <el-option
             v-for="item in options"
-            :key="item.value"
+            :key="item.key"
             :label="item.label"
             :value="item.value"
           >
@@ -129,23 +129,23 @@ export default {
       options: [
         {
           value: "0",
-          label: "P0",
+          key: "P0",
         },
         {
           value: "1",
-          label: "P1",
+          key: "P1",
         },
         {
           value: "2",
-          label: "P2",
+          key: "P2",
         },
         {
           value: "3",
-          label: "P3",
+          key: "P3",
         },
         {
           value: "4",
-          label: "P4",
+          key: "P4",
         },
       ],
       tableData: [

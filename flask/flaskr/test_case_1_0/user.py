@@ -3,6 +3,7 @@ from . import bp
 from flask import jsonify, flash, g, redirect, render_template, request, session, url_for
 from flaskr.db.Model import Peo, TestCase, query2dict, CasePath, CaseSystem
 from flaskr.db_init import DB
+from sqlalchemy.sql import and_
 
 
 @bp.route('/', methods=['GET', 'POST'])
@@ -588,3 +589,217 @@ def getProjectSystemsData():
             'error': error
         }
         return jsonify(response)
+
+
+@bp.route('/getSelectedTableDatas/', methods=['POST'], strict_slashes=False)
+def getSelectedTableDatas():
+    error = ''
+    if request.method == 'POST':
+
+        caseSystem = request.json.get('caseSystem')
+        QA = request.json.get('QA')
+        test_level = request.json.get('test_level')
+        peo = request.json.get('peo')
+        tag = request.json.get('tag')
+        print("caseSystem: {} , QA: {} ,test_level : {} ,peo: {},tag:{}".format(caseSystem, QA, test_level, peo, tag))
+        condition = (TestCase.caseId > 0)
+        test_results = []
+        if not caseSystem and not QA and not test_level and not peo and not tag:
+            test_results = TestCase.query.filter_by(fileType='file').all()
+            msg = query2dict(test_results)
+            response = {
+                'msg': msg,
+                'error': error
+            }
+            return jsonify(response)
+
+        if caseSystem:
+            testcases = CasePath.query.filter_by(testcase_ancestor=caseSystem).all()
+            if testcases:
+                for t in testcases:
+                    print(t.testcase_caseId)
+                    condition = (TestCase.caseId == t.testcase_caseId)
+                    condition = and_(condition, TestCase.fileType == 'file')
+                    if QA:
+                        condition = and_(condition, TestCase.changer == QA)
+                    if test_level:
+                        condition = and_(condition, TestCase.test_level == test_level)
+                    if peo:
+                        condition = and_(condition, TestCase.actionPeo == peo)
+                    if tag:
+                        condition = and_(condition, TestCase.tag == tag)
+
+                    print(condition)
+                    testcase = TestCase.query.filter(condition).all()
+                    print(testcase)
+                    for c in testcase:
+                        test_results.append(c)
+                msg = query2dict(test_results)
+            else:
+                msg = ""
+                error = "对应系统:{} 下的测试用例为空".format(TestCase.query.filter_by(caseId=caseSystem).first().caseName)
+        else:
+            if QA:
+                condition = and_(condition, TestCase.changer == QA)
+            if test_level:
+                condition = and_(condition, TestCase.test_level == test_level)
+            if peo:
+                condition = and_(condition, TestCase.actionPeo == peo)
+            if tag:
+                condition = and_(condition, TestCase.tag == tag)
+
+            condition = and_(condition, TestCase.fileType == 'file')
+            print(condition)
+            test_results = TestCase.query.filter(condition).all()
+            if test_results:
+                msg = query2dict(test_results)
+            else:
+                msg = ""
+                error = "对应测试用例为空"
+        response = {
+            'msg': msg,
+            'error': error
+        }
+        return jsonify(response)
+
+
+@bp.route('/uploadExcelFile/', methods=['POST'], strict_slashes=False)
+def handle_upload_file():
+    if request.method == "POST":
+        import xlrd
+        file_data = request.files.get("file")  # 获取文件要用request.FILES
+        f = file_data.read()
+        clinic_file = xlrd.open_workbook(file_contents=f)
+        # sheet1
+        table = clinic_file.sheet_by_index(1)
+        # 输出每一行的内容
+        # table.nrows获取该sheet中的有效行数
+        deal_sheet_contains(table)
+
+    response = {"meta": 200, "msg": "ok"}
+    return jsonify(response)
+
+
+'''
+    传入表格数据进行处理
+'''
+
+
+def deal_sheet_contains1(table_data):
+    treeStack = Stack()
+    paths = []
+    deep = 0
+    max_depth = 0
+    names = table_data.row_values(0)
+    print(names)
+    for name in names:
+        if '用例Suite' in name:
+            max_depth += 1
+    print("max_depth: ", max_depth)
+    while (deep < max_depth):
+        node = []
+        for row_num in range(1, table_data.nrows):
+            # print(table_data.row_values(row_num))
+            row_data = table_data.row_values(row_num)
+            if (row_data[deep] != ''):
+                print(table_data.row_values(row_num))
+                node.append({'name': row_data[deep], 'children': []})
+                # 当前深度不为空，是根节点
+                # node = set_import_node_folder(row_data[deep], deep, node)
+                pass
+        deep += 1
+        paths.append(node)
+    for p in paths:
+        print(p)
+
+    pass
+
+
+'''
+    处理excel的列表内容
+'''
+
+
+def deal_sheet_contains(table_data):
+    tables = []
+    for row_num in range(1, table_data.nrows):
+        tables.append(table_data.row_values(row_num))
+
+    names = table_data.row_values(0)
+    max_depth = get_max_depth(names)
+    for d in range(0, max_depth):
+        path = tables[0][d].strip()
+        for i in range(1, len(tables)):
+            if tables[i][d] == '':
+                tables[i][d] = path
+            else:
+                path = tables[i][d].strip()
+
+
+
+    for t in tables:
+         print(t)
+    saveTestCaseTable(tables, max_depth)
+
+
+'''
+    将测试用例保存到数据库
+'''
+
+
+def saveTestCaseTable(tables, depth):
+    for t in tables:
+        nullNode = 0
+        print(t)
+        fileType = 'file'
+        fatherId = 1
+        caseName = t[depth].strip()
+        test_level = t[depth + 1].strip()
+        preCondition = t[depth + 2].strip()
+        actionCondition = t[depth + 3].strip()
+        preResult = t[depth + 4].strip()
+        ps = t[depth + 5].strip()
+        tag = t[depth + 6].strip()
+
+        testcase = TestCase(caseName=caseName, fileType=fileType, fatherId=fatherId, test_level=test_level,
+                            preCondition=preCondition, actionCondition=actionCondition, preResult=preResult,
+                            ps=ps, changer=1)
+        DB.session.add(testcase)
+        DB.session.flush()
+        DB.session.commit()
+        for path in range(0, depth):
+            # 处理测试用例路径  testCase1
+            if t[path]:  # 路径名需要有值
+                caseName = t[path].strip()  # 测试用例名
+                if path == 0:
+                    fatherId = -1
+                else:
+                    fatherId = 0
+                fileType = 'folder'
+                pathNode = TestCase.query.filter_by(caseName=caseName).first()
+                if not pathNode:
+                    node_case = TestCase(caseName=caseName, fileType=fileType, fatherId=fatherId)
+                    DB.session.add(node_case)
+                    DB.session.flush()
+                    DB.session.commit()
+                    testcase_ancestor = node_case.caseId
+                else:
+                    testcase_ancestor = pathNode.caseId
+
+                level = depth - path - nullNode
+                testcase_caseId = testcase.caseId
+                check_path = CasePath(testcase_caseId=testcase_caseId,
+                                      testcase_ancestor=testcase_ancestor,
+                                      level=level)
+                DB.session.add(check_path)
+                DB.session.commit()
+        else:
+            nullNode += 1  # 否则路径层级空一级
+
+
+def get_max_depth(names):
+    max_depth = 0
+    for name in names:
+        if '用例Suite' in name:
+            max_depth += 1
+    return max_depth

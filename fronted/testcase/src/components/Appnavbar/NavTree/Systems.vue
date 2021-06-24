@@ -1,15 +1,15 @@
 <template>
   <div class="custom-tree-container">
     <div class="tree-condition-suffix">
-      <el-select v-model="userName" @change="getNodeDataByUser(userName)">
+      <!--el-select v-model="userName" @change="getNodeDataByUser(userName)">
         <el-option
           v-for="item in parentObj.options.QAs"
-          :key="item.value"
+          :key="item.key"
           :label="item.label"
           :value="item.value"
         >
         </el-option>
-      </el-select>
+      </el-select-->
       <el-input placeholder="关键字过滤查询" v-model="filterText"> </el-input>
     </div>
     <div class="block">
@@ -41,7 +41,7 @@
               <i class="el-icon-star-off" v-else-if="data.type == 'file'"> </i>
               <span>{{ node.label }} {{ data.caseId }}</span>
               <pop-over-operate
-                @updateNode="UpdateChooseNode"
+                @updateCurrentNode="updateCurrentNode"
                 :node="node"
                 :data="data"
               ></pop-over-operate>
@@ -50,7 +50,13 @@
               <i class="el-icon-folder-opened" v-if="data.type == 'folder'">
               </i>
               <i class="el-icon-star-off" v-else-if="data.type == 'file'"> </i>
-              <el-input v-focus="Test(node)" v-model="treeNodeInput" clearable>
+              <el-input
+                v-focus-input="InputVFocus(node)"
+                v-model="treeNodeInput"
+                clearable
+                ref="caseNodeNameInput"
+                autofocus
+              >
               </el-input>
               <i
                 class="el-icon-circle-check"
@@ -84,19 +90,18 @@ import axios from "axios";
 let caseId = 11112;
 export default {
   directives: {
-    //注册一个局部的自定义指令 v-focus
-    focus: {
-      mounted(el) {
-        console.log(el);
-        el.children[0].focus();
+    //注册一个局部的自定义指令 v-focus-Input
+    focusInput: {
+      inserted(el) {
+        console.log(el.children[0]);
+        el.querySelector("input").focus();
+        console.log();
         //因为el-input这是个组件，input外面被一层 div 包裹着,
         ///el打印出来是外面这个 div，需要找到内层的input
       },
     },
   },
-  beforeUnmount() {
-   
-  },
+  beforeUnmount() {},
   inject: ["parentObj"],
   created() {
     if (
@@ -133,7 +138,13 @@ export default {
     },
   },
 
-  mounted() {
+  mounted() {/***
+     * 发起修改当前文件夹名
+     */
+    this.$bus.on("SET_SYSTEM_CURRENT_NODE_NULL", () => {
+      this.$refs["tree"].setCurrentKey(null);
+      //console.log(param.node.data)
+    });
     /***
      * 发起修改当前文件夹名
      */
@@ -541,6 +552,7 @@ export default {
      * 1.对于文件夹，点击节点，选中该节点,自动展开该节点下面的子节点；
      *   右侧显示子一级的全部用例
      * 2.对于不可展开的用例，自动选中table中对应的caseId的行
+     * 3.右侧筛选框自动变为空
      */
     OnTreeClickChooseNode(data, node) {
       //this.currentNodeKey = node.data.caseId;
@@ -554,6 +566,7 @@ export default {
       } else {
         alert("节点只能是文件或者文件夹类型！！！");
       }
+      this.$bus.emit("RESET_SELECT_CONDITIONS", {});
     },
     /***
      * 获取文件夹类型节点下的直接子用例节点
@@ -589,10 +602,11 @@ export default {
     },
 
     /**
+     * 通过popover
      * 设置当前选中的node的值,并展开子node
      */
-    UpdateChooseNode(data, node, caseId) {
-      //console.log("---------------------");
+    updateCurrentNode(data, node, caseId) {
+      console.log("---------updateCurrrentNode------------");
       //this.currentNodeKey = currentNodeKey;
       this.$refs["tree"].setCurrentNode(data); //设置当前节点为选中节点
       //console.log("===========");
@@ -638,9 +652,15 @@ export default {
         });
     },*/
 
-    Test(node) {
+    /***
+     * 触发了输入聚焦函数
+     *
+     */
+    InputVFocus(node) {
       this.treeNodeInput = node.label;
       console.log("FOCUS FOCUS");
+      console.log(this.$refs["caseNodeNameInput"]);
+      //this.$refs.caseNodeNameInput.$refs.input.focus()
       console.log(node);
     },
 

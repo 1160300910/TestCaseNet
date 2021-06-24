@@ -139,7 +139,7 @@ const SelectInput = {
           @focus="focusTableCell(row, column_name)">
       <el-option
           v-for="item in options[column_name]"
-          :key="item.value"
+          :key="item.key"
           :label="item.label"
           :value="item.value"
         ></el-option>

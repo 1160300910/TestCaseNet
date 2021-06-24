@@ -6,8 +6,14 @@
       L30测试用例
     </div>
     <div class="editButton">
-      <!--el-button size="small" type="primary" v-on:click="getData"
-        >编辑用例</el-button
+      <input
+        type="file"
+        id="file"
+        ref="pathClear"
+        @change="uploadTestCasesExcel"
+      />
+      <!--el-button size="small" type="success" v-on:click="uploadTestCasesExcel"
+        >导入用例</el-button
       -->
     </div>
   </div>
@@ -35,7 +41,32 @@ export default {
     this.work = this.$route.params.userWork;
     this.userId = this.$route.params.userId;
   },
-  methods: {},
+  methods: {
+    /**
+     * 上传且导入用例
+     */
+    uploadTestCasesExcel(e) {
+      let formData = new FormData();
+      let data = JSON.stringify({
+        user: this.userName,
+      });
+      formData.append("file", e.target.files[0]);
+      formData.append("data", data); // 上传文件的同时， 也可以上传其他数据
+      let url = "uploadExcelFile";
+      let config = {
+        headers: { "Content-Type": "multipart/form-data" },
+      };
+      axios
+        .post(url, formData, config)
+        .then(function(response) {
+          console.log(response.data);
+        })
+        .then((res) => {
+          this.$refs.pathClear.value = "";
+        })
+        .catch((this.$refs.pathClear.value = ""));
+    },
+  },
   mounted() {},
 };
 </script>
@@ -63,7 +94,7 @@ export default {
   display: flex;
   flex-grow: 1;
   justify-content: left;
-  width: 5%;
+  width: 25%;
   height: 10%;
 }
 </style>

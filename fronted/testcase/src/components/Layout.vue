@@ -64,8 +64,8 @@ const peoHeads = [
 ];
 export default {
   beforeUnmount() {
-    console.log(this.$bus)
-    this.$bus.all.clear()
+    console.log(this.$bus);
+    this.$bus.all.clear();
     /*
       this.$bus.all.delete("CHANGE_TESTCASE_FOLDER_BY_POP")
       this.$bus.all.delete("CHANGE_TESTCASE_FOLDER_BY_POP",{});
@@ -77,18 +77,10 @@ export default {
       this.$bus.all.delete("CREATE_NEW_TESTCASE_NODE_POP");
       this.$bus.all.delete("DELETE_TESTCASE_NODE_BYPOP");
       this.$bus.all.delete("DELETE_TESTCASE_NODE_BYTABLE");*/
-      
-    console.log(this.$bus)
-    },
-  unmounted() {
-    console.log(
-      "——————————————————————————layput-offTestCaseListener——————————————————————————————————Layout"
-    );
-    this.offTestCaseListener();
-    console.log(
-      "——————————————————————————layput-unmouted——————————————————————————————————Layout"
-    );
+
+    console.log(this.$bus);
   },
+  unmounted() {},
   activated() {
     console.log(
       "——————————————————————————layput-activated——————————————————————————————————Layout"
@@ -133,24 +125,28 @@ export default {
         tags: [],
         test_level: [
           {
+            value: "",
+            key: "",
+          },
+          {
             value: "P0",
-            label: "P0",
+            key: "P0",
           },
           {
             value: "P1",
-            label: "P1",
+            key: "P1",
           },
           {
             value: "P2",
-            label: "P2",
+            key: "P2",
           },
           {
             value: "P3",
-            label: "P3",
+            key: "P3",
           },
           {
             value: "P4",
-            label: "P4",
+            key: "P4",
           },
         ],
       },
@@ -177,7 +173,6 @@ export default {
      * 注销bus监听器，避免重复注册bus容器的监听
      */
     offTestCaseListener: function() {
-
       /*
       //App-main
       console.log(this.$bus);
@@ -230,8 +225,6 @@ export default {
      */
     initOptions() {
       this.getQAPeoData();
-      this.getProjectPeoData();
-      this.getProjectSystemsData();
     },
     /**
      * 初始化QA组数据（只有QA可以修改和创建测试用例）
@@ -241,6 +234,9 @@ export default {
         //console.log(res.data.msg);
         var option = this.initOptionArray(res.data.msg, "peoId", "peoName");
         this.options.QAs = option;
+        this.$bus.emit("UPDATE_SELETOR_DATA", {
+          options: this.options,
+        }); //更新选项数据
       });
     },
     /**
@@ -257,41 +253,6 @@ export default {
         });
       }
       return options;
-    },
-    /**
-     * 初始化项目组人员数据（QA,策划和程序,PM）
-     */
-    getProjectPeoData() {
-      axios.get("getProjectPeos").then((res) => {
-        //console.log(res.data.msg);
-        var option = this.initOptionArray(res.data.msg, "peoId", "peoName");
-        this.options.peos = option;
-      });
-    },
-    /**
-     * 初始化项目测试用例系统选项
-     * fatherId =-1,且类型是fileType的即为系统名节点
-     */
-    getProjectSystemsData() {
-      axios.get("getProjectSystemsData").then((res) => {
-        //console.log(res.data.msg);
-        this.options.caseSystems = res.data.msg;
-        var option = this.initOptionArray(res.data.msg, "caseId", "caseName");
-        this.options.caseSystems = option;
-
-        this.$bus.emit("UPDATE_SELETOR_DATA", {
-          options: this.options,
-        }); //更新选项数据
-      });
-    },
-    /**
-     * 初始化项目测试用例标签数据
-     */
-    getProjectTestCaseTagData() {
-      axios.get("get").then((res) => {
-        //console.log(res.data.msg);
-        this.options.peos = res.data.msg;
-      });
     },
   },
 };

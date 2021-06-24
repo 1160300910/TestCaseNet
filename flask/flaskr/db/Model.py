@@ -60,10 +60,10 @@ class TestCase(DB.Model):
     # 用例标题，用例等级,前置条件，执行条件，预期结果，备注，标签，修改人
     caseId = DB.Column(DB.Integer, primary_key=True, autoincrement=True, unique=True)  # 用例编号
     caseName = DB.Column(DB.String(64))  # 用例标题
-    preCondition = DB.Column(DB.String(64))  # 前置条件
-    actionCondition = DB.Column(DB.String(64))  # 执行条件
-    preResult = DB.Column(DB.String(64), default='')  # 预期结果
-    ps = DB.Column(DB.String(64))  # 备注
+    preCondition = DB.Column(DB.String(300))  # 前置条件
+    actionCondition = DB.Column(DB.String(300))  # 执行条件
+    preResult = DB.Column(DB.String(300), default='')  # 预期结果
+    ps = DB.Column(DB.String(300))  # 备注
     test_level = DB.Column(DB.String(6), default='P1')  # 测试等级
     changer = DB.Column(DB.Integer, DB.ForeignKey('peo.peoId'))  # 修改人
 

@@ -157,7 +157,7 @@ export default {
       this.$bus.emit("DELETE_TESTCASE_NODE_BYPOP", { data: data, node: node });
     },
     UpdateFatherChooseNode(data, node, currentNodeKey) {
-      this.$emit("updateNode", data, node, currentNodeKey);
+      this.$emit("updateCurrentNode", data, node, currentNodeKey);
     },
     /**
      *  @click="ParentOnAdditionChoice(node)"
