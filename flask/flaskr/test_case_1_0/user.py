@@ -282,6 +282,10 @@ def SetNode(node):
     tmp['type'] = node.fileType
     tmp['isEditing'] = 0
     tmp['children'] = []
+    if node.fileType == 'folder':
+        tmp['testCase_num'] = len(CasePath.query.filter_by(testcase_ancestor=node.caseId).all())
+    else:
+        tmp['testCase_num'] = 0
     return tmp
 
 
@@ -671,7 +675,7 @@ def handle_upload_file():
         f = file_data.read()
         clinic_file = xlrd.open_workbook(file_contents=f)
         # sheet1
-        table = clinic_file.sheet_by_index(1)
+        table = clinic_file.sheet_by_index(2)
         # 输出每一行的内容
         # table.nrows获取该sheet中的有效行数
         deal_sheet_contains(table)
@@ -681,64 +685,31 @@ def handle_upload_file():
 
 
 '''
-    传入表格数据进行处理
-'''
-
-
-def deal_sheet_contains1(table_data):
-    treeStack = Stack()
-    paths = []
-    deep = 0
-    max_depth = 0
-    names = table_data.row_values(0)
-    print(names)
-    for name in names:
-        if '用例Suite' in name:
-            max_depth += 1
-    print("max_depth: ", max_depth)
-    while (deep < max_depth):
-        node = []
-        for row_num in range(1, table_data.nrows):
-            # print(table_data.row_values(row_num))
-            row_data = table_data.row_values(row_num)
-            if (row_data[deep] != ''):
-                print(table_data.row_values(row_num))
-                node.append({'name': row_data[deep], 'children': []})
-                # 当前深度不为空，是根节点
-                # node = set_import_node_folder(row_data[deep], deep, node)
-                pass
-        deep += 1
-        paths.append(node)
-    for p in paths:
-        print(p)
-
-    pass
-
-
-'''
     处理excel的列表内容
 '''
 
 
 def deal_sheet_contains(table_data):
+    # 构造存储列表
     tables = []
     for row_num in range(1, table_data.nrows):
         tables.append(table_data.row_values(row_num))
 
+    print(table_data.merged_cells)
+    for merge in table_data.merged_cells:
+        row_s = merge[0]
+        row_e = merge[1]
+        column_s = merge[2]
+        column_e = merge[3]
+        for row in range(row_s, row_e):
+            for column in range(column_s, column_e):
+                tables[row - 1][column] = table_data.cell_value(row_s, column_s)
+
     names = table_data.row_values(0)
     max_depth = get_max_depth(names)
-    for d in range(0, max_depth):
-        path = tables[0][d].strip()
-        for i in range(1, len(tables)):
-            if tables[i][d] == '':
-                tables[i][d] = path
-            else:
-                path = tables[i][d].strip()
-
-
 
     for t in tables:
-         print(t)
+        print(t)
     saveTestCaseTable(tables, max_depth)
 
 
@@ -749,6 +720,10 @@ def deal_sheet_contains(table_data):
 
 def saveTestCaseTable(tables, depth):
     for t in tables:
+        allNullNode = 0
+        for i in range(0, depth):
+            if t[i] == '':
+                allNullNode += 1
         nullNode = 0
         print(t)
         fileType = 'file'
@@ -767,9 +742,14 @@ def saveTestCaseTable(tables, depth):
         DB.session.add(testcase)
         DB.session.flush()
         DB.session.commit()
+
+        father = -1
         for path in range(0, depth):
+            set_path_folders(father, t[path].strip())
             # 处理测试用例路径  testCase1
-            if t[path]:  # 路径名需要有值
+            if t[path] == '':  # 路径名需要有值
+                nullNode += 1
+            else:
                 caseName = t[path].strip()  # 测试用例名
                 if path == 0:
                     fatherId = -1
@@ -786,15 +766,17 @@ def saveTestCaseTable(tables, depth):
                 else:
                     testcase_ancestor = pathNode.caseId
 
-                level = depth - path - nullNode
+                level = (depth - allNullNode) - path + nullNode
+
+                print("nullnODE", nullNode, "path: ", path, 'level:', level)
                 testcase_caseId = testcase.caseId
                 check_path = CasePath(testcase_caseId=testcase_caseId,
                                       testcase_ancestor=testcase_ancestor,
                                       level=level)
+                # print(caseName,t[path])
                 DB.session.add(check_path)
                 DB.session.commit()
-        else:
-            nullNode += 1  # 否则路径层级空一级
+                father = t[path].strip()
 
 
 def get_max_depth(names):
@@ -803,3 +785,39 @@ def get_max_depth(names):
         if '用例Suite' in name:
             max_depth += 1
     return max_depth
+
+
+def set_path_folders(father, nowNode):
+    if father == -1 or nowNode == '':
+        return
+    if father == nowNode:
+        level = 0
+    else:
+        level = 1
+
+    print(father, nowNode)
+    father_node = TestCase.query.filter_by(caseName=father).first()
+    if father_node:
+        testcase_ancestor = father_node.caseId
+    else:
+        father_node = TestCase(caseName=father, fileType='folder', fatherId=0)
+        DB.session.add(father_node)
+        DB.session.flush()
+        testcase_ancestor = father_node.caseId
+
+    now_node = TestCase.query.filter_by(caseName=nowNode).first()
+    if now_node:
+        testcase_caseId = now_node.caseId
+    else:
+        now_node = TestCase(caseName=nowNode, fileType='folder', fatherId=0)
+        DB.session.add(now_node)
+        DB.session.flush()
+        testcase_caseId = now_node.caseId
+    path = CasePath.query.filter_by(testcase_caseId=testcase_caseId, testcase_ancestor=testcase_ancestor).first()
+    if path:
+        print(path.pathId)
+        return
+    else:
+        now_path = CasePath(testcase_caseId=testcase_caseId, testcase_ancestor=testcase_ancestor, level=level)
+        DB.session.add(now_path)
+        DB.session.commit()

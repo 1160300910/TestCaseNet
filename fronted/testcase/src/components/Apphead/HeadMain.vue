@@ -33,10 +33,6 @@ export default {
     };
   },
   created() {
-    //require('@/assets/icons/048-woman.png')
-    //require('@/assets/icons/005-man.png')
-    // require('@/assets/icons/016-woman.png')
-    // require('@/assets/icons/010-woman.png')
     this.userName = this.$route.params.userName;
     this.work = this.$route.params.userWork;
     this.userId = this.$route.params.userId;

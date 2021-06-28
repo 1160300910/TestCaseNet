@@ -39,7 +39,11 @@
               <i class="el-icon-folder-opened" v-if="data.type == 'folder'">
               </i>
               <i class="el-icon-star-off" v-else-if="data.type == 'file'"> </i>
-              <span>{{ node.label }} {{ data.caseId }}</span>
+              <span class="node_label_css" v-if="data.type == 'folder'"
+                >{{ node.label }}({{ data.testCase_num }}) {{ data.caseId }}</span
+              ><span class="node_label_css" v-else-if="data.type == 'file'"
+                >{{ node.label }} {{ data.caseId }}</span
+              >
               <pop-over-operate
                 @updateCurrentNode="updateCurrentNode"
                 :node="node"
@@ -138,7 +142,8 @@ export default {
     },
   },
 
-  mounted() {/***
+  mounted() {
+    /***
      * 发起修改当前文件夹名
      */
     this.$bus.on("SET_SYSTEM_CURRENT_NODE_NULL", () => {
@@ -236,6 +241,7 @@ export default {
       this.deleteTestCaseNodeByTable(param.data.caseId);
     });
   },
+  
   methods: {
     /**
      * 实时根据选中的修改人Id输出过滤结果
@@ -535,6 +541,7 @@ export default {
           var NodeRoots = res.data.msg;
           if (res.data.msg) {
             this.node_data = JSON.parse(JSON.stringify(NodeRoots));
+            //this.initFolderChildrenNum(this.node_data);
           } else {
             alert("用户信息错误！");
             //用户信息有问题，跳转到重新登录界面
@@ -547,6 +554,18 @@ export default {
         .catch(function(error) {
           alert(error);
         });
+    },
+    /***
+     * 初始化文件节点的孩子数量
+     */
+    initFolderChildrenNum(node_datas) {
+      console.log(node_datas);
+      for (var t = 0; t < node_datas.length; t++) {
+        if (node_datas[t].type == "folder") {
+          node_datas[t].testCase_num = node_datas[t].children.length;
+        }
+      }
+      console.log(node_datas);
     },
     /**
      * 1.对于文件夹，点击节点，选中该节点,自动展开该节点下面的子节点；
@@ -611,46 +630,6 @@ export default {
       this.$refs["tree"].setCurrentNode(data); //设置当前节点为选中节点
       //console.log("===========");
     },
-    //————————————————————————————————————————————————————————————————————————————————————————————————————————————————————————
-    /***
-     * 建立某个系统文件夹下的测试用例
-     */
-    /*
-    CreateNewTestCase(node) {
-      var fileType = "file";
-      //从服务器获取新caseId
-      axios
-        .get("getNewCaseId")
-        .then((res) => {
-          console.log("异步返回");
-          var newCaseId = res.data.msg;
-          var newChild = this.CreateNodeData(newCaseId, fileType);
-          console.log(node.childNodes);
-          if (!node.data.children) {
-            node.data.children = [];
-          }
-          this.$refs["tree"].append(newChild, node); //新增node
-          this.$refs["tree"].setCurrentNode(newChild); //设置当前节点为新增节点
-          this.setCurrentTreePosGlobal(); //设置全局孩子节点
-          this.saveNodePathData(newCaseId); //保存节点路径
-
-          console.log(node.childNodes);
-
-          console.log("????????????????");
-          console.log(this.$refs["tree"].getCurrentNode());
-
-          console.log("????????????????!!!!!");
-          this.parentObj.node_data = newChild;
-
-          this.$bus.emit("CREATE_CHOOSE_TEST", {
-            caseId: newCaseId,
-            type: fileType,
-          }); //告诉table，发生了创造事件
-        })
-        .catch(function(error) {
-          alert(error);
-        });
-    },*/
 
     /***
      * 触发了输入聚焦函数
@@ -825,18 +804,18 @@ export default {
 .node_editing {
   flex: 1;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  align-items: left;
+  justify-content:flex-start;
   font-size: 14px;
   padding-right: 8px;
 }
 .node_label {
   flex: 1;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-size: 14px;
-  padding-right: 8px;
+  align-items:flex-start;
+  justify-content: flex-start;
+  font-size: 10px;
+  padding-right: 2px;
 }
 .custom-tree-node {
   flex: 1;
@@ -852,7 +831,8 @@ export default {
 
   justify-content: space-between;
 }
-.span {
+.node_label_css {
+  width: 180px;
   display: block;
   overflow: hidden;
   white-space: nowrap;

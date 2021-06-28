@@ -1604,3 +1604,834 @@ INFO  * Restarting with stat 88
 WARNING  * Debugger is active! 88
 INFO  * Debugger PIN: 742-918-802 88
 INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [25/Jun/2021 00:42:14] "POST /test_case/uploadExcelFile HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 00:42:14] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 00:42:14] "POST /test_case/userLogin HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 00:42:16] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 00:42:16] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 00:42:16] "GET /test_case/getUserTestCaseNodesArray/?userId=1&userName=%E5%B0%8F%E6%97%B6 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 00:42:19] "GET /test_case/getProjectSystemsData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 00:42:20] "POST /test_case/getSelectedTableDatas HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 00:42:56] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 00:42:56] "POST /test_case/getSelectedTableDatas HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 00:42:57] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 00:42:58] "POST /test_case/getSelectedTableDatas HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 00:43:00] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 00:43:00] "POST /test_case/getSelectedTableDatas HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 00:43:00] "POST /test_case/getSelectedTableDatas HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 00:43:02] "POST /test_case/getSelectedTableDatas HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 00:43:03] "POST /test_case/getSelectedTableDatas HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 00:43:05] "POST /test_case/getSelectedTableDatas HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 00:43:10] "POST /test_case/getSelectedTableDatas HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 00:43:14] "POST /test_case/updateTableColumnDataByName HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 00:43:20] "POST /test_case/getSelectedTableDatas HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 00:43:21] "GET /test_case/getProjectPeos HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 00:43:23] "POST /test_case/getSelectedTableDatas HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 00:43:23] "GET /test_case/getProjectPeos HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 00:43:24] "POST /test_case/getSelectedTableDatas HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 00:43:27] "POST /test_case/getSelectedTableDatas HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 00:43:28] "POST /test_case/getSelectedTableDatas HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 00:43:29] "POST /test_case/getSelectedTableDatas HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 00:43:31] "POST /test_case/getSelectedTableDatas HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 00:43:32] "POST /test_case/getSelectedTableDatas HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 00:43:36] "POST /test_case/getSelectedTableDatas HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 00:43:38] "POST /test_case/getSelectedTableDatas HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 00:43:39] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 00:43:41] "POST /test_case/getSelectedTableDatas HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 00:43:41] "GET /test_case/getProjectSystemsData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 00:43:42] "POST /test_case/getSelectedTableDatas HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 00:44:21] "GET /test_case/getProjectSystemsData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 09:32:40] "POST /test_case/getSelectedTableDatas HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 09:33:49] "GET /test_case/getProjectSystemsData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 09:33:51] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 09:33:56] "POST /test_case/userLogin HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 09:33:56] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 09:33:56] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 09:33:56] "GET /test_case/getUserTestCaseNodesArray/?userId=1&userName=%E5%B0%8F%E6%97%B6 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 09:34:02] "GET /test_case/getFolderTableTestCases/?caseId=170 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 09:34:03] "GET /test_case/getProjectSystemsData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 09:34:04] "POST /test_case/getSelectedTableDatas HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 09:35:01] "GET /test_case/getProjectSystemsData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 09:36:23] "POST /test_case/getSelectedTableDatas HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 09:36:35] "POST /test_case/saveTestCase HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 09:36:52] "POST /test_case/updateTableColumnDataByName HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 09:36:54] "POST /test_case/saveTestCase HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 09:37:10] "POST /test_case/updateTableColumnDataByName HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 09:37:11] "POST /test_case/saveTestCase HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 09:37:27] "POST /test_case/saveTestCase HTTP/1.1" 200 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [25/Jun/2021 09:52:14] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 09:52:16] "POST /test_case/userLogin HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 09:52:16] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 09:52:16] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 09:52:16] "GET /test_case/getUserTestCaseNodesArray/?userId=1&userName=%E5%B0%8F%E6%97%B6 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 09:52:21] "POST /test_case/uploadExcelFile HTTP/1.1" 500 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [25/Jun/2021 09:54:47] "POST /test_case/uploadExcelFile HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 09:54:55] "GET /test_case/getProjectSystemsData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 09:54:56] "POST /test_case/getSelectedTableDatas HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 09:54:59] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 09:55:01] "POST /test_case/userLogin HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 09:55:01] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 09:55:01] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 09:55:01] "GET /test_case/getUserTestCaseNodesArray/?userId=1&userName=%E5%B0%8F%E6%97%B6 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 09:55:02] "GET /test_case/getFolderTableTestCases?caseId=297 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 09:55:02] "GET /test_case/getFolderTableTestCases/?caseId=297 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 09:55:04] "GET /test_case/getFolderTableTestCases/?caseId=297 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 09:56:01] "GET /test_case/getFolderTableTestCases/?caseId=297 HTTP/1.1" 200 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [25/Jun/2021 10:03:24] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 10:03:25] "POST /test_case/userLogin HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 10:03:25] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 10:03:25] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 10:03:25] "GET /test_case/getUserTestCaseNodesArray/?userId=1&userName=%E5%B0%8F%E6%97%B6 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 10:03:40] "GET /test_case/getProjectSystemsData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 10:03:40] "POST /test_case/getSelectedTableDatas HTTP/1.1" 200 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [25/Jun/2021 10:06:41] "POST /test_case/uploadExcelFile HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 10:06:46] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 10:06:49] "POST /test_case/userLogin HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 10:06:49] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 10:06:49] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 10:06:49] "GET /test_case/getUserTestCaseNodesArray/?userId=1&userName=%E5%B0%8F%E6%97%B6 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 10:06:50] "GET /test_case/getFolderTableTestCases?caseId=473 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 10:06:50] "GET /test_case/getFolderTableTestCases/?caseId=473 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 10:06:53] "GET /test_case/getProjectSystemsData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 10:06:53] "POST /test_case/getSelectedTableDatas HTTP/1.1" 200 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [25/Jun/2021 10:09:41] "GET /test_case/getProjectSystemsData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 10:09:43] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 10:09:46] "POST /test_case/userLogin HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 10:09:46] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 10:09:46] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 10:09:46] "GET /test_case/getUserTestCaseNodesArray/?userId=1&userName=%E5%B0%8F%E6%97%B6 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 10:11:35] "POST /test_case/uploadExcelFile HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 10:11:35] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 10:11:36] "POST /test_case/userLogin HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 10:11:36] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 10:11:36] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 10:11:37] "GET /test_case/getUserTestCaseNodesArray/?userId=1&userName=%E5%B0%8F%E6%97%B6 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 10:11:38] "GET /test_case/getFolderTableTestCases?caseId=599 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 10:11:38] "GET /test_case/getFolderTableTestCases/?caseId=599 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 10:11:39] "GET /test_case/getFolderTableTestCases?caseId=600 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 10:11:39] "GET /test_case/getFolderTableTestCases/?caseId=600 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 10:11:41] "GET /test_case/getFolderTableTestCases?caseId=635 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 10:11:41] "GET /test_case/getFolderTableTestCases/?caseId=635 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 10:11:42] "GET /test_case/getProjectSystemsData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 10:11:43] "POST /test_case/getSelectedTableDatas HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 10:11:55] "GET /test_case/getFolderTableTestCases?caseId=650 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 10:11:55] "GET /test_case/getFolderTableTestCases/?caseId=650 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 10:12:01] "GET /test_case/getFolderTableTestCases?caseId=636 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 10:12:01] "GET /test_case/getFolderTableTestCases/?caseId=636 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 10:12:03] "GET /test_case/getProjectSystemsData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 10:12:03] "POST /test_case/getSelectedTableDatas HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 10:13:30] "GET /test_case/getFolderTableTestCases/?caseId=650 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 10:13:45] "GET /test_case/getFolderTableTestCases/?caseId=635 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 10:13:47] "GET /test_case/getFolderTableTestCases/?caseId=635 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 10:13:49] "GET /test_case/getFolderTableTestCases/?caseId=650 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 11:38:16] "POST /test_case/userLogin HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 11:38:17] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 11:38:17] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 11:38:17] "GET /test_case/getUserTestCaseNodesArray/?userId=1&userName=%E5%B0%8F%E6%97%B6 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 11:38:20] "GET /test_case/getFolderTableTestCases/?caseId=599 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 11:38:20] "GET /test_case/getFolderTableTestCases/?caseId=600 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 11:39:03] "GET /test_case/getFolderTableTestCases?caseId=601 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 11:39:03] "GET /test_case/getFolderTableTestCases/?caseId=601 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 11:39:45] "GET /test_case/getFolderTableTestCases?caseId=609 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 11:39:45] "GET /test_case/getFolderTableTestCases/?caseId=609 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 11:40:25] "GET /test_case/getFolderTableTestCases?caseId=688 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 11:40:25] "GET /test_case/getFolderTableTestCases/?caseId=688 HTTP/1.1" 200 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [25/Jun/2021 11:46:43] "POST /test_case/uploadExcelFile HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 11:47:06] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 11:47:08] "POST /test_case/userLogin HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 11:47:08] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 11:47:08] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 11:47:08] "GET /test_case/getUserTestCaseNodesArray/?userId=1&userName=%E5%B0%8F%E6%97%B6 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 11:47:09] "GET /test_case/getFolderTableTestCases?caseId=725 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 11:47:09] "GET /test_case/getFolderTableTestCases/?caseId=725 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 11:47:10] "GET /test_case/getFolderTableTestCases/?caseId=725 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 11:47:11] "GET /test_case/getFolderTableTestCases?caseId=726 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 11:47:11] "GET /test_case/getFolderTableTestCases/?caseId=726 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 11:47:12] "GET /test_case/getFolderTableTestCases?caseId=761 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 11:47:12] "GET /test_case/getFolderTableTestCases/?caseId=761 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 11:47:13] "GET /test_case/getFolderTableTestCases?caseId=814 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 11:47:13] "GET /test_case/getFolderTableTestCases/?caseId=814 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 11:47:14] "GET /test_case/getFolderTableTestCases?caseId=833 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 11:47:14] "GET /test_case/getFolderTableTestCases/?caseId=833 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 11:47:15] "GET /test_case/getFolderTableTestCases?caseId=776 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 11:47:15] "GET /test_case/getFolderTableTestCases/?caseId=776 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 11:47:20] "GET /test_case/getFolderTableTestCases/?caseId=776 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 11:47:23] "GET /test_case/getFolderTableTestCases/?caseId=776 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 11:47:23] "GET /test_case/getFolderTableTestCases/?caseId=776 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [25/Jun/2021 11:47:48] "GET /test_case/getFolderTableTestCases/?caseId=833 HTTP/1.1" 200 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [25/Jun/2021 11:51:36] "POST /test_case/uploadExcelFile HTTP/1.1" 200 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [28/Jun/2021 09:39:53] "POST /test_case/userLogin HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 09:39:53] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 09:39:53] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 09:39:53] "GET /test_case/getUserTestCaseNodesArray/?userId=1&userName=%E5%B0%8F%E6%97%B6 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 09:39:57] "POST /test_case/uploadExcelFile HTTP/1.1" 500 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [28/Jun/2021 09:40:57] "POST /test_case/uploadExcelFile HTTP/1.1" 200 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [28/Jun/2021 09:42:00] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 09:42:03] "POST /test_case/userLogin HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 09:42:03] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 09:42:03] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 09:42:03] "GET /test_case/getUserTestCaseNodesArray/?userId=1&userName=%E5%B0%8F%E6%97%B6 HTTP/1.1" 200 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [28/Jun/2021 09:42:26] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 09:42:34] "POST /test_case/userLogin HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 09:42:34] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 09:42:34] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 09:42:34] "GET /test_case/getUserTestCaseNodesArray/?userId=1&userName=%E5%B0%8F%E6%97%B6 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 09:43:58] "POST /test_case/uploadExcelFile HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 09:44:06] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 09:44:08] "POST /test_case/userLogin HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 09:44:08] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 09:44:08] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [28/Jun/2021 09:56:11] "POST /test_case/uploadExcelFile HTTP/1.1" 200 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:00:32] "POST /test_case/uploadExcelFile HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:04:08] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:04:10] "POST /test_case/userLogin HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:04:10] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:04:10] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:04:10] "GET /test_case/getUserTestCaseNodesArray/?userId=1&userName=%E5%B0%8F%E6%97%B6 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:04:12] "GET /test_case/getFolderTableTestCases?caseId=1156 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:04:12] "GET /test_case/getFolderTableTestCases/?caseId=1156 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:04:13] "GET /test_case/getFolderTableTestCases?caseId=1263 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:04:13] "GET /test_case/getFolderTableTestCases/?caseId=1263 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:04:15] "GET /test_case/getFolderTableTestCases?caseId=1244 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:04:15] "GET /test_case/getFolderTableTestCases/?caseId=1244 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:04:16] "GET /test_case/getFolderTableTestCases?caseId=1191 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:04:16] "GET /test_case/getFolderTableTestCases/?caseId=1191 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:04:17] "GET /test_case/getFolderTableTestCases?caseId=1165 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:04:17] "GET /test_case/getFolderTableTestCases/?caseId=1165 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:04:18] "GET /test_case/getFolderTableTestCases/?caseId=1165 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:04:19] "GET /test_case/getFolderTableTestCases?caseId=1157 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:04:19] "GET /test_case/getFolderTableTestCases/?caseId=1157 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:04:24] "GET /test_case/getFolderTableTestCases/?caseId=1157 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:04:25] "GET /test_case/getFolderTableTestCases/?caseId=1157 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:04:31] "GET /test_case/getFolderTableTestCases?caseId=1206 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:04:31] "GET /test_case/getFolderTableTestCases/?caseId=1206 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:04:33] "GET /test_case/getFolderTableTestCases?caseId=1192 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:04:33] "GET /test_case/getFolderTableTestCases/?caseId=1192 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:04:41] "GET /test_case/getFolderTableTestCases/?caseId=1244 HTTP/1.1" 200 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:08:27] "POST /test_case/uploadExcelFile HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:08:27] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:08:33] "POST /test_case/userLogin HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:08:33] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:08:33] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:08:33] "GET /test_case/getUserTestCaseNodesArray/?userId=1&userName=%E5%B0%8F%E6%97%B6 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:08:34] "GET /test_case/getFolderTableTestCases?caseId=1281 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:08:34] "GET /test_case/getFolderTableTestCases/?caseId=1281 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:08:34] "GET /test_case/getFolderTableTestCases/?caseId=1281 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:08:36] "GET /test_case/getFolderTableTestCases?caseId=1282 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:08:36] "GET /test_case/getFolderTableTestCases/?caseId=1282 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:08:37] "GET /test_case/getFolderTableTestCases?caseId=1283 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:08:37] "GET /test_case/getFolderTableTestCases/?caseId=1283 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:08:37] "GET /test_case/getFolderTableTestCases?caseId=1291 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:08:37] "GET /test_case/getFolderTableTestCases/?caseId=1291 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:08:38] "GET /test_case/getFolderTableTestCases?caseId=1317 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:08:38] "GET /test_case/getFolderTableTestCases/?caseId=1317 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:08:39] "GET /test_case/getFolderTableTestCases/?caseId=1317 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:08:40] "GET /test_case/getFolderTableTestCases?caseId=1318 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:08:40] "GET /test_case/getFolderTableTestCases/?caseId=1318 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:08:41] "GET /test_case/getFolderTableTestCases?caseId=1332 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:08:41] "GET /test_case/getFolderTableTestCases/?caseId=1332 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:08:45] "GET /test_case/getFolderTableTestCases?caseId=1389 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:08:45] "GET /test_case/getFolderTableTestCases/?caseId=1389 HTTP/1.1" 200 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:20:54] "POST /test_case/uploadExcelFile HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:25:37] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:25:39] "POST /test_case/userLogin HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:25:39] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:25:39] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:25:39] "GET /test_case/getUserTestCaseNodesArray/?userId=1&userName=%E5%B0%8F%E6%97%B6 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:25:40] "GET /test_case/getFolderTableTestCases?caseId=1407 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:25:40] "GET /test_case/getFolderTableTestCases/?caseId=1407 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:25:41] "GET /test_case/getFolderTableTestCases/?caseId=1407 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:25:42] "GET /test_case/getFolderTableTestCases?caseId=1408 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:25:42] "GET /test_case/getFolderTableTestCases/?caseId=1408 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:25:43] "GET /test_case/getFolderTableTestCases?caseId=1409 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:25:43] "GET /test_case/getFolderTableTestCases/?caseId=1409 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:25:43] "GET /test_case/getFolderTableTestCases?caseId=1418 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:25:44] "GET /test_case/getFolderTableTestCases/?caseId=1418 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:25:44] "GET /test_case/getFolderTableTestCases?caseId=1444 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:25:45] "GET /test_case/getFolderTableTestCases/?caseId=1444 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:25:47] "GET /test_case/getFolderTableTestCases/?caseId=1444 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:25:48] "GET /test_case/getFolderTableTestCases/?caseId=1444 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:25:50] "GET /test_case/getFolderTableTestCases?caseId=1497 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:25:50] "GET /test_case/getFolderTableTestCases/?caseId=1497 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:25:51] "GET /test_case/getFolderTableTestCases?caseId=1516 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:25:51] "GET /test_case/getFolderTableTestCases/?caseId=1516 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:25:53] "GET /test_case/getFolderTableTestCases/?caseId=1497 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:25:54] "GET /test_case/getFolderTableTestCases/?caseId=1444 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:25:57] "GET /test_case/getFolderTableTestCases/?caseId=1444 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:26:00] "GET /test_case/getFolderTableTestCases?caseId=1459 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:26:00] "GET /test_case/getFolderTableTestCases/?caseId=1459 HTTP/1.1" 200 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:53:13] "POST /test_case/uploadExcelFile HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:53:56] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:53:59] "POST /test_case/userLogin HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:53:59] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:53:59] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:53:59] "GET /test_case/getUserTestCaseNodesArray/?userId=1&userName=%E5%B0%8F%E6%97%B6 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:54:00] "GET /test_case/getFolderTableTestCases?caseId=1762 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:54:00] "GET /test_case/getFolderTableTestCases/?caseId=1762 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:54:01] "GET /test_case/getFolderTableTestCases?caseId=1763 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:54:01] "GET /test_case/getFolderTableTestCases/?caseId=1763 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:54:02] "GET /test_case/getFolderTableTestCases/?caseId=1763 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:54:02] "GET /test_case/getFolderTableTestCases?caseId=1764 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:54:03] "GET /test_case/getFolderTableTestCases/?caseId=1764 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:54:04] "GET /test_case/getFolderTableTestCases?caseId=1772 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:54:04] "GET /test_case/getFolderTableTestCases/?caseId=1772 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:54:07] "GET /test_case/getFolderTableTestCases?caseId=1798 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:54:07] "GET /test_case/getFolderTableTestCases/?caseId=1798 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:54:09] "GET /test_case/getFolderTableTestCases?caseId=1813 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:54:09] "GET /test_case/getFolderTableTestCases/?caseId=1813 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:54:10] "GET /test_case/getFolderTableTestCases?caseId=1799 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:54:10] "GET /test_case/getFolderTableTestCases/?caseId=1799 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:54:13] "GET /test_case/getFolderTableTestCases?caseId=1851 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:54:13] "GET /test_case/getFolderTableTestCases/?caseId=1851 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:54:16] "GET /test_case/getFolderTableTestCases?caseId=1870 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:54:16] "GET /test_case/getFolderTableTestCases/?caseId=1870 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:54:25] "GET /test_case/getFolderTableTestCases/?caseId=1763 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:54:27] "GET /test_case/getFolderTableTestCases/?caseId=1772 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:54:32] "GET /test_case/getFolderTableTestCases/?caseId=1870 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:54:33] "GET /test_case/getFolderTableTestCases/?caseId=1764 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:54:34] "GET /test_case/getFolderTableTestCases/?caseId=1763 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:54:35] "GET /test_case/getFolderTableTestCases/?caseId=1764 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:54:36] "GET /test_case/getFolderTableTestCases/?caseId=1772 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:54:37] "GET /test_case/getFolderTableTestCases/?caseId=1851 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:54:37] "GET /test_case/getFolderTableTestCases/?caseId=1851 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:54:38] "GET /test_case/getFolderTableTestCases/?caseId=1870 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:54:40] "GET /test_case/getFolderTableTestCases/?caseId=1762 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:54:40] "GET /test_case/getFolderTableTestCases/?caseId=1763 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 10:54:41] "GET /test_case/getFolderTableTestCases/?caseId=1764 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 11:17:57] "GET /test_case/getFolderTableTestCases/?caseId=1762 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 11:17:57] "GET /test_case/getFolderTableTestCases/?caseId=1763 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 11:17:58] "GET /test_case/getFolderTableTestCases/?caseId=1763 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 11:17:59] "GET /test_case/getFolderTableTestCases/?caseId=1764 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 11:18:03] "GET /test_case/getFolderTableTestCases/?caseId=1772 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 11:18:05] "GET /test_case/getFolderTableTestCases/?caseId=1798 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 11:18:05] "GET /test_case/getFolderTableTestCases/?caseId=1851 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 11:18:06] "GET /test_case/getFolderTableTestCases/?caseId=1870 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 11:18:13] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 11:18:22] "POST /test_case/userLogin HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 11:18:22] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 11:18:22] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 11:18:23] "GET /test_case/getUserTestCaseNodesArray/?userId=1&userName=%E5%B0%8F%E6%97%B6 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 11:18:24] "GET /test_case/getFolderTableTestCases/?caseId=1762 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 11:18:25] "GET /test_case/getFolderTableTestCases/?caseId=1762 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 11:18:25] "GET /test_case/getFolderTableTestCases/?caseId=1763 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 11:18:26] "GET /test_case/getFolderTableTestCases/?caseId=1763 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 11:18:27] "GET /test_case/getFolderTableTestCases/?caseId=1764 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 11:18:28] "GET /test_case/getFolderTableTestCases/?caseId=1772 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 11:18:30] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 11:18:31] "POST /test_case/getSelectedTableDatas HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 11:18:31] "GET /test_case/getProjectSystemsData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 11:18:32] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 11:18:32] "POST /test_case/getSelectedTableDatas HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 11:18:32] "POST /test_case/getSelectedTableDatas HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 11:18:32] "GET /test_case/getProjectSystemsData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 11:18:33] "POST /test_case/getSelectedTableDatas HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 11:18:39] "GET /test_case/getFolderTableTestCases/?caseId=1763 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 11:18:41] "GET /test_case/getFolderTableTestCases/?caseId=1764 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 11:18:44] "GET /test_case/getProjectSystemsData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 11:18:45] "POST /test_case/getSelectedTableDatas HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 11:18:46] "GET /test_case/getProjectSystemsData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 11:18:47] "POST /test_case/getSelectedTableDatas HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 11:18:49] "GET /test_case/getFolderTableTestCases/?caseId=1772 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 11:18:50] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 11:18:51] "POST /test_case/getSelectedTableDatas HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 11:18:52] "POST /test_case/getSelectedTableDatas HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 11:18:54] "POST /test_case/getSelectedTableDatas HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 11:18:55] "GET /test_case/getProjectPeos HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 11:18:56] "POST /test_case/getSelectedTableDatas HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 11:18:57] "GET /test_case/getProjectPeos HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 11:18:57] "POST /test_case/getSelectedTableDatas HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 11:41:50] "GET /test_case/getFolderTableTestCases/?caseId=1851 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 11:41:51] "GET /test_case/getFolderTableTestCases/?caseId=1870 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 11:41:53] "GET /test_case/getFolderTableTestCases/?caseId=1798 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 11:41:54] "GET /test_case/getFolderTableTestCases/?caseId=1798 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 11:41:55] "GET /test_case/getFolderTableTestCases/?caseId=1799 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 11:41:56] "GET /test_case/getFolderTableTestCases/?caseId=1813 HTTP/1.1" 200 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [28/Jun/2021 11:43:48] "POST /test_case/uploadExcelFile HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:12:54] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:12:59] "POST /test_case/userLogin HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:12:59] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:13:00] "GET /test_case/getUserTestCaseNodesArray/?userId=1&userName=%E5%B0%8F%E6%97%B6 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:13:00] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:13:01] "GET /test_case/getFolderTableTestCases?caseId=1888 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:13:01] "GET /test_case/getFolderTableTestCases/?caseId=1888 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:13:20] "GET /test_case/getFolderTableTestCases?caseId=1908 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:13:20] "GET /test_case/getFolderTableTestCases/?caseId=1908 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:13:22] "GET /test_case/getFolderTableTestCases?caseId=1969 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:13:22] "GET /test_case/getFolderTableTestCases/?caseId=1969 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:13:23] "GET /test_case/getFolderTableTestCases?caseId=2021 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:13:23] "GET /test_case/getFolderTableTestCases/?caseId=2021 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:13:24] "GET /test_case/getFolderTableTestCases?caseId=2027 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:13:24] "GET /test_case/getFolderTableTestCases/?caseId=2027 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:13:33] "GET /test_case/getFolderTableTestCases/?caseId=1969 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:14:15] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:14:16] "POST /test_case/userLogin HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:14:16] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:14:16] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:14:17] "GET /test_case/getUserTestCaseNodesArray/?userId=1&userName=%E5%B0%8F%E6%97%B6 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:14:18] "GET /test_case/getFolderTableTestCases/?caseId=1888 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:14:19] "GET /test_case/getFolderTableTestCases/?caseId=1888 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:15:23] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:15:26] "POST /test_case/userLogin HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:15:26] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:15:26] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:15:26] "GET /test_case/getUserTestCaseNodesArray/?userId=1&userName=%E5%B0%8F%E6%97%B6 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:15:27] "GET /test_case/getFolderTableTestCases/?caseId=1888 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:16:09] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:16:11] "POST /test_case/userLogin HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:16:12] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:16:12] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:16:12] "GET /test_case/getUserTestCaseNodesArray/?userId=1&userName=%E5%B0%8F%E6%97%B6 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:16:13] "GET /test_case/getFolderTableTestCases/?caseId=1888 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:17:28] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:17:30] "POST /test_case/userLogin HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:17:30] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:17:30] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:17:31] "GET /test_case/getUserTestCaseNodesArray/?userId=1&userName=%E5%B0%8F%E6%97%B6 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:17:32] "GET /test_case/getFolderTableTestCases/?caseId=1888 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:17:40] "GET /test_case/getFolderTableTestCases/?caseId=1908 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:17:43] "GET /test_case/getFolderTableTestCases/?caseId=1908 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:17:46] "GET /test_case/getFolderTableTestCases/?caseId=1969 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:17:47] "GET /test_case/getFolderTableTestCases/?caseId=1969 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:17:49] "GET /test_case/getFolderTableTestCases/?caseId=2021 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:17:51] "GET /test_case/getFolderTableTestCases/?caseId=2027 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:17:55] "GET /test_case/getFolderTableTestCases/?caseId=1888 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:24:08] "POST /test_case/userLogin HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:24:08] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:24:08] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:24:09] "GET /test_case/getUserTestCaseNodesArray/?userId=1&userName=%E5%B0%8F%E6%97%B6 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:24:53] "GET /test_case/getFolderTableTestCases/?caseId=1888 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:25:44] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:25:47] "POST /test_case/userLogin HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:25:47] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:25:47] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:25:48] "GET /test_case/getUserTestCaseNodesArray/?userId=1&userName=%E5%B0%8F%E6%97%B6 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:28:12] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:28:14] "POST /test_case/userLogin HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:28:15] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:28:15] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:28:15] "GET /test_case/getUserTestCaseNodesArray/?userId=1&userName=%E5%B0%8F%E6%97%B6 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:28:17] "GET /test_case/getFolderTableTestCases/?caseId=1888 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:30:11] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:30:13] "POST /test_case/userLogin HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:30:13] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:30:13] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:30:14] "GET /test_case/getUserTestCaseNodesArray/?userId=1&userName=%E5%B0%8F%E6%97%B6 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:30:16] "GET /test_case/getFolderTableTestCases/?caseId=1888 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:30:27] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:30:29] "POST /test_case/userLogin HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:30:29] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:30:29] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:30:30] "GET /test_case/getUserTestCaseNodesArray/?userId=1&userName=%E5%B0%8F%E6%97%B6 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:30:32] "GET /test_case/getFolderTableTestCases/?caseId=1888 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:30:56] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:30:58] "POST /test_case/userLogin HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:30:58] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:30:58] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:30:58] "GET /test_case/getUserTestCaseNodesArray/?userId=1&userName=%E5%B0%8F%E6%97%B6 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:30:58] "GET /test_case/getFolderTableTestCases/ HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:31:02] "GET /test_case/getFolderTableTestCases/?caseId=1888 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:31:55] "GET /test_case/getFolderTableTestCases/?caseId=1888 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:32:14] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:32:15] "POST /test_case/userLogin HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:32:16] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:32:16] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:32:16] "GET /test_case/getUserTestCaseNodesArray/?userId=1&userName=%E5%B0%8F%E6%97%B6 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:32:19] "GET /test_case/getFolderTableTestCases/?caseId=1888 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:32:41] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:32:42] "POST /test_case/userLogin HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:32:42] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:32:42] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:32:43] "GET /test_case/getUserTestCaseNodesArray/?userId=1&userName=%E5%B0%8F%E6%97%B6 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:32:46] "GET /test_case/getFolderTableTestCases/?caseId=1888 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:37:32] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:37:34] "POST /test_case/userLogin HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:37:34] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:37:34] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:37:35] "GET /test_case/getUserTestCaseNodesArray/?userId=1&userName=%E5%B0%8F%E6%97%B6 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:37:58] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:38:00] "POST /test_case/userLogin HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:38:00] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:38:00] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:38:01] "GET /test_case/getUserTestCaseNodesArray/?userId=1&userName=%E5%B0%8F%E6%97%B6 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:38:17] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:38:19] "POST /test_case/userLogin HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:38:19] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:38:19] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:38:20] "GET /test_case/getUserTestCaseNodesArray/?userId=1&userName=%E5%B0%8F%E6%97%B6 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:38:22] "GET /test_case/getFolderTableTestCases/?caseId=1888 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:38:56] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:38:58] "POST /test_case/userLogin HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:38:58] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:38:58] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:38:59] "GET /test_case/getUserTestCaseNodesArray/?userId=1&userName=%E5%B0%8F%E6%97%B6 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:39:41] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:39:42] "POST /test_case/userLogin HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:39:43] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:39:43] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:39:43] "GET /test_case/getUserTestCaseNodesArray/?userId=1&userName=%E5%B0%8F%E6%97%B6 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:40:29] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:40:31] "POST /test_case/userLogin HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:40:31] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:40:31] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:40:32] "GET /test_case/getUserTestCaseNodesArray/?userId=1&userName=%E5%B0%8F%E6%97%B6 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:40:39] "GET /test_case/getFolderTableTestCases/?caseId=1888 HTTP/1.1" 200 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:42:39] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:42:40] "POST /test_case/userLogin HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:42:40] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:42:40] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:42:41] "GET /test_case/getUserTestCaseNodesArray/?userId=1&userName=%E5%B0%8F%E6%97%B6 HTTP/1.1" 500 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:43:12] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:43:13] "POST /test_case/userLogin HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:43:16] "POST /test_case/userLogin HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:43:16] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:43:16] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:43:17] "GET /test_case/getUserTestCaseNodesArray/?userId=1&userName=%E5%B0%8F%E6%97%B6 HTTP/1.1" 500 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:44:06] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:44:08] "POST /test_case/userLogin HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:44:08] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:44:08] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:44:09] "GET /test_case/getUserTestCaseNodesArray/?userId=1&userName=%E5%B0%8F%E6%97%B6 HTTP/1.1" 200 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:44:32] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:44:34] "POST /test_case/userLogin HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:44:34] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:44:34] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:44:34] "GET /test_case/getUserTestCaseNodesArray/?userId=1&userName=%E5%B0%8F%E6%97%B6 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:44:36] "GET /test_case/getFolderTableTestCases/?caseId=1888 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:44:56] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:44:58] "POST /test_case/userLogin HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:44:58] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:44:58] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:44:59] "GET /test_case/getUserTestCaseNodesArray/?userId=1&userName=%E5%B0%8F%E6%97%B6 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:45:01] "GET /test_case/getFolderTableTestCases/?caseId=1888 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:45:03] "GET /test_case/getFolderTableTestCases/?caseId=1888 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:45:39] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:45:41] "POST /test_case/userLogin HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:45:41] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:45:41] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:45:41] "GET /test_case/getUserTestCaseNodesArray/?userId=1&userName=%E5%B0%8F%E6%97%B6 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:45:43] "GET /test_case/getFolderTableTestCases/?caseId=1888 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:47:00] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:47:02] "POST /test_case/userLogin HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:47:02] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:47:02] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:47:02] "GET /test_case/getUserTestCaseNodesArray/?userId=1&userName=%E5%B0%8F%E6%97%B6 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:47:03] "GET /test_case/getFolderTableTestCases/?caseId=1888 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:47:04] "GET /test_case/getFolderTableTestCases/?caseId=1888 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:47:12] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:47:14] "POST /test_case/userLogin HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:47:14] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:47:14] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:47:14] "GET /test_case/getUserTestCaseNodesArray/?userId=1&userName=%E5%B0%8F%E6%97%B6 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:47:16] "GET /test_case/getFolderTableTestCases/?caseId=1888 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:47:29] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:47:32] "POST /test_case/userLogin HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:47:32] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:47:32] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:47:32] "GET /test_case/getUserTestCaseNodesArray/?userId=1&userName=%E5%B0%8F%E6%97%B6 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:47:34] "GET /test_case/getFolderTableTestCases/?caseId=1888 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:47:58] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:48:00] "POST /test_case/userLogin HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:48:00] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:48:00] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:48:01] "GET /test_case/getUserTestCaseNodesArray/?userId=1&userName=%E5%B0%8F%E6%97%B6 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:48:02] "GET /test_case/getFolderTableTestCases/?caseId=1888 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:48:41] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:48:43] "POST /test_case/userLogin HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:48:43] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:48:43] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:48:44] "GET /test_case/getUserTestCaseNodesArray/?userId=1&userName=%E5%B0%8F%E6%97%B6 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:48:45] "GET /test_case/getFolderTableTestCases/?caseId=1888 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:50:02] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:50:04] "POST /test_case/userLogin HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:50:04] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:50:04] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:50:05] "GET /test_case/getUserTestCaseNodesArray/?userId=1&userName=%E5%B0%8F%E6%97%B6 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:50:06] "GET /test_case/getFolderTableTestCases/?caseId=1888 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 12:50:06] "GET /test_case/getFolderTableTestCases/?caseId=1888 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 13:08:10] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 13:08:13] "POST /test_case/userLogin HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 13:08:13] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 13:08:13] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [28/Jun/2021 13:08:14] "GET /test_case/getUserTestCaseNodesArray/?userId=1&userName=%E5%B0%8F%E6%97%B6 HTTP/1.1" 200 - 88

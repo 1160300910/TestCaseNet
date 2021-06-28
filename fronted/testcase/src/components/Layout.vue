@@ -278,7 +278,7 @@ export default {
 /* 左侧样式 */
 .navbar {
   position: absolute;
-  width: 280px;
+  width: 340px;
   top: 50px; /* 距离上面50像素 */
   left: 0px;
   bottom: 0px;
@@ -293,10 +293,10 @@ export default {
   flex-direction: column;
   position: absolute;
   top: 50px;
-  left: 280px;
+  left: 340px;
   bottom: 0px;
   right: 0px; /* 距离右边0像素 */
-  padding-top: 0px;
+  padding: 10px;
   padding-left: 10px;
   overflow-y: auto; /* 当内容过多时y轴出现滚动条 */
   /* background-color: red; */
