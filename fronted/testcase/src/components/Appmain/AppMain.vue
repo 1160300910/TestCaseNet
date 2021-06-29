@@ -150,10 +150,12 @@ export default {
   flex-direction: row;
   color: rgb(2, 24, 44);
   line-height: 20px;
-  top: 0px;
-  left: 0px;
-  right: 0px;
+  top: 10 px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
   font-size: 18px;
+  margin-bottom: 10px;
   align-items: center;
 }
 .selector_css3 {

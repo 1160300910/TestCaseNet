@@ -1,6 +1,7 @@
 // my-table.vue
 <template>
-  <el-table :data="data" :row-class-name="tableRowClassName" ref="my-table">
+  <el-table :data="data" :row-class-name="tableRowClassName" ref="my-table"
+  >
     <el-table-column
       v-for="colConfig in colConfigs"
       :key="colConfig.prop"

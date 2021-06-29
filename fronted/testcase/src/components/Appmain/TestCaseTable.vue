@@ -7,6 +7,7 @@
     ref="table"
     @cell-dblclick="ChangeInfoByCell"
     @current-change="CurrentTableLineChange"
+    class="table_css"
   >
     <template #opt="scope">
       <el-row>
@@ -77,8 +78,9 @@ const EdibleInput = {
             blurClickFinishInput(row, column_name)
           ">
       </el-input>
-      <span v-else><span> {{ row[column_name]}}</span></span>
-    `,
+      <span v-else-if="column_name=='caseName'" class="custom-table-row"><span> {{ row[column_name]}}</span></span>
+   <span v-else ><span> {{ row[column_name]}}</span></span>
+   `,
   methods: {
     /**
      * 修改输入时触发
@@ -235,9 +237,15 @@ export default {
      */
     this.$bus.on("UPDATE_CURRENT_NODE_DATA_CHOOSE", (data) => {
       console.log("UPDATE_CURRENT_NODE_DATA_CHOOSE 发生了");
+      //console.log(data)
+
       var currentRow = this.FindCurrentRow(data.caseId);
+      console.log(this.$refs['table'])
       if (currentRow) {
         this.$refs["table"].ChangeCurrentRow(currentRow);
+        var index = this.FindTableIndexByCaseId(data.caseId, data.caseName);
+        console.log("???_____________________index_____________________ "+index)
+        this.scrollTableTo('table',index);
       } else {
         //alert("Error !!! 没有找到对应的caseId的tableline");
         //需要利用fatherId获取选中testcase的父节点，得到对应的测试用例表
@@ -259,7 +267,7 @@ export default {
     this.$bus.on("UPDATE_CURRENT_FOLDER_TABLEDATAS", (param) => {
       console.log("UPDATE_CURRENT_FOLDER_TABLEDATAS 发生了");
       var data = this.SettleCellStates(param.data);
-      this.tableData = data; 
+      this.tableData = data;
       //console.log(param);
       if (param.caseId) {
         //如果有当前选中用例，则选中该用例
@@ -269,7 +277,86 @@ export default {
     });
   },
   methods: {
-    
+    /***
+     * 获取当前选中节点的index
+     */
+    FindTableIndexByCaseId(caseId, caseName) {
+      var navContents = document.querySelectorAll(".custom-table-row");
+      // 所有锚点元素的 offsetTop
+      console.log("navContents===========================");
+      //console.log(navContents);
+      var index = 0;
+      var save = 0;
+      for (var i = 0; i < navContents.length; i++) {
+        if (
+          caseName.trim() !=
+          navContents[i].textContent
+            .trim()
+            .split(" ")[0]
+            .trim()
+        ) {
+          index += 1;
+          console.log("不相等");
+        } else {
+          return index;
+        }
+      }
+    },
+    /**
+     * 点击树结构，使得table的界面跳转到对应的位置
+     * @param {refName} table的ref值
+     * @param {index} table的索引值
+     */
+    scrollTableTo(refName,index) {
+      // 获取目标的 offsetTop
+      // css选择器是从 1 开始计数，我们是从 0 开始，所以要 +1
+      if(!refName||!this.$refs[refName]) return
+      let vmEl = this.$refs[refName].$el
+      if(!vmEl) return 
+      const targetOffsetTop = vmEl.querySelectorAll('.el-table__body tr')[index].getBoundingClientRect().top
+      console.log(vmEl.querySelectorAll('.el-table__body tr')[index].getBoundingClientRect().top);
+      // 获取当前 offsetTop
+      let scrollTop = document.querySelector(".main").scrollTop;
+      // 定义一次跳 50 个像素，数字越大跳得越快，但是会有掉帧得感觉，步子迈大了会扯到蛋
+      const STEP = 50;
+      // 判断是往下滑还是往上滑
+      if (scrollTop > targetOffsetTop) {
+        // 往上滑
+        smoothUp();
+      } else {
+        // 往下滑
+        smoothDown();
+      }
+      // 定义往下滑函数
+      function smoothDown() {
+        console.log("smoothDown");
+        // 如果当前 scrollTop 小于 targetOffsetTop 说明视口还没滑到指定位置
+        if (scrollTop < targetOffsetTop) {
+          // 如果和目标相差距离大于等于 STEP 就跳 STEP
+          // 否则直接跳到目标点，目标是为了防止跳过了。
+          if (targetOffsetTop - scrollTop >= STEP) {
+            scrollTop += STEP;
+          } else {
+            scrollTop = targetOffsetTop;
+          }
+          document.querySelector(".main").scrollTop = scrollTop;
+          // 关于 requestAnimationFrame 可以自己查一下，在这种场景下，相比 setInterval 性价比更高
+          requestAnimationFrame(smoothDown);
+        }
+      }
+      // 定义往上滑函数
+      function smoothUp() {
+        if (scrollTop > targetOffsetTop) {
+          if (scrollTop - targetOffsetTop >= STEP) {
+            scrollTop -= STEP;
+          } else {
+            scrollTop = targetOffsetTop;
+          }
+          document.querySelector(".main").scrollTop = scrollTop;
+          requestAnimationFrame(smoothUp);
+        }
+      }
+    },
     /**
      * 取消编辑测试用例
      * 1.取消编辑态
@@ -518,6 +605,7 @@ export default {
         this.SaveOtherTableRows(currentRow);
         this.$bus.emit("CHANGE_CURRENT_TREENODE_FROM_TABLE", {
           caseId: currentRow.caseId,
+          caseName: currentRow.caseName,
         });
       }
     },
@@ -531,8 +619,8 @@ export default {
       var t;
       var table_datas = this.tableData;
       for (t = 0; t < table_datas.length; t++) {
-        console.log("------");
-        console.log(table_datas[t]);
+        //console.log("------");
+        //console.log(table_datas[t]);
         if (table_datas[t].caseId != row.caseId) {
           if (table_datas[t].isRowEditing) {
             this.SaveChange(row);
@@ -597,13 +685,13 @@ export default {
       {
         prop: "caseName",
         label: "用例标题",
-        width: 95,
+        width: 200,
         component: EdibleInput,
       },
       {
         prop: "test_level",
         label: "用例等级",
-        width: 100,
+        width: 80,
         component: SelectInput,
       },
       {
@@ -621,7 +709,7 @@ export default {
       {
         prop: "preResult",
         label: "预期结果",
-        width: 180,
+        width: 280,
         component: EdibleInput,
       },
       {
@@ -654,3 +742,9 @@ export default {
   },
 };
 </script>
+<style>
+.custom-table-row >span {
+  height: 80px;
+}
+
+</style>

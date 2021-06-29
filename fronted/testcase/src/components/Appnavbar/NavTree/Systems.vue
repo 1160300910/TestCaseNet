@@ -14,7 +14,7 @@
     </div>
     <div class="block">
       <p>
-        测试用例集
+        新增用例集
         <i @click="CreateNewRoot()" class="el-icon-edit"></i>
       </p>
       <el-tree
@@ -40,7 +40,8 @@
               </i>
               <i class="el-icon-star-off" v-else-if="data.type == 'file'"> </i>
               <span class="node_label_css" v-if="data.type == 'folder'"
-                >{{ node.label }}({{ data.testCase_num }}) {{ data.caseId }}</span
+                >{{ node.label }} ({{ data.testCase_num }})
+                {{ data.caseId }}</span
               ><span class="node_label_css" v-else-if="data.type == 'file'"
                 >{{ node.label }} {{ data.caseId }}</span
               >
@@ -142,7 +143,19 @@ export default {
     },
   },
 
+  destroy() {
+    // 必须移除监听器，不然当该vue组件被销毁了，监听器还在就会出错
+    /*window.removeEventListener("scroll", this.onTreeNodeScroll);
+  
+  */
+  },
   mounted() {
+    /***
+     * 监听全部的滑动事件，限制监听的修改对象为树
+     * 
+      window.addEventListener("scroll", this.onTreeNodeScroll, true);
+    */
+
     /***
      * 发起修改当前文件夹名
      */
@@ -163,6 +176,11 @@ export default {
      */
     this.$bus.on("CHANGE_CURRENT_TREENODE_FROM_TABLE", (data) => {
       this.$refs["tree"].setCurrentKey(data.caseId);
+      //输入跳转节点名，跳转到对应节点
+      var index = this.FindNodeIndexByCaseId(data.caseId, data.caseName);
+      console.log("index--------------------------------");
+      console.log(index);
+      this.scrollTreeTo(index);
     });
     /***
      * 获取父节点下的测试用例列表
@@ -241,8 +259,112 @@ export default {
       this.deleteTestCaseNodeByTable(param.data.caseId);
     });
   },
-  
   methods: {
+    /***
+     * 获取当前选中节点的index
+     */
+    FindNodeIndexByCaseId(caseId, caseName) {
+      var navContents = document.querySelectorAll(".custom-tree-node");
+      // 所有锚点元素的 offsetTop
+      var index = 0;
+      var save = 0;
+      for (var i = 0; i < navContents.length; i++) {
+        if (
+          caseName.trim() !=
+          navContents[i].textContent
+            .trim()
+            .split(" ")[0]
+            .trim()
+        ) {
+          index += 1;
+          console.log("不相等");
+        } else {
+          return index;
+        }
+      }
+    },
+    /**
+     * 滚动监听器
+     */
+    /* 
+    onTreeNodeScroll() {
+      // 获取所有锚点元素
+      const navContents = document.querySelectorAll(".custom-tree-node");
+      // 所有锚点元素的 offsetTop
+      const offsetTopArr = [];
+      navContents.forEach((item) => {
+        offsetTopArr.push(item.offsetTop);
+      });
+      // 获取当前文档流的 scrollTop
+      //console.log(document.querySelector('.navbar'));
+      const scrollTop = document.querySelector('.navbar').scrollTop;
+      //this.$parent.$el.scrollTop
+        // document.documentElement.scrollTop || document.body.scrollTop || window.pageYOffset
+      //console.log(this.$refs.tree.scrollTop)
+      console.log(scrollTop);
+      // 定义当前点亮的导航下标
+      let navIndex = 0;
+      for (let n = 0; n < offsetTopArr.length; n++) {
+        // 如果 scrollTop 大于等于第n个元素的 offsetTop 则说明 n-1 的内容已经完全不可见
+        // 那么此时导航索引就应该是n了
+        if (scrollTop >= offsetTopArr[n]) {
+          navIndex = n;
+        }
+      }
+      this.active = navIndex;
+    },*/
+    /***
+     * 跳转到指定索引的元素
+     */
+    scrollTreeTo(index) {
+      // 获取目标的 offsetTop
+      // css选择器是从 1 开始计数，我们是从 0 开始，所以要 +1
+      const targetOffsetTop = document.querySelectorAll(`.custom-tree-node`)[
+        index + 1
+      ].offsetTop;
+      // 获取当前 offsetTop
+      console.log(targetOffsetTop)
+      let scrollTop = document.querySelector(".navbar").scrollTop;
+      // 定义一次跳 50 个像素，数字越大跳得越快，但是会有掉帧得感觉，步子迈大了会扯到蛋
+      const STEP = 50;
+      // 判断是往下滑还是往上滑
+      if (scrollTop > targetOffsetTop) {
+        // 往上滑
+        smoothUp();
+      } else {
+        // 往下滑
+        smoothDown();
+      }
+      // 定义往下滑函数
+      function smoothDown() {
+        console.log("smoothDown");
+        // 如果当前 scrollTop 小于 targetOffsetTop 说明视口还没滑到指定位置
+        if (scrollTop < targetOffsetTop) {
+          // 如果和目标相差距离大于等于 STEP 就跳 STEP
+          // 否则直接跳到目标点，目标是为了防止跳过了。
+          if (targetOffsetTop - scrollTop >= STEP) {
+            scrollTop += STEP;
+          } else {
+            scrollTop = targetOffsetTop;
+          }
+          document.querySelector(".navbar").scrollTop = scrollTop;
+          // 关于 requestAnimationFrame 可以自己查一下，在这种场景下，相比 setInterval 性价比更高
+          requestAnimationFrame(smoothDown);
+        }
+      }
+      // 定义往上滑函数
+      function smoothUp() {
+        if (scrollTop > targetOffsetTop) {
+          if (scrollTop - targetOffsetTop >= STEP) {
+            scrollTop -= STEP;
+          } else {
+            scrollTop = targetOffsetTop;
+          }
+          document.querySelector(".navbar").scrollTop = scrollTop;
+          requestAnimationFrame(smoothUp);
+        }
+      }
+    },
     /**
      * 实时根据选中的修改人Id输出过滤结果
      *
@@ -275,7 +397,7 @@ export default {
       //显示过滤节点
       console.log(data.label + "  " + data.label.indexOf(value));
       if (!value) return true;
-      return data.label.indexOf(value) == -1;
+      return data.label.indexOf(value) !== -1;
     },
     /***
      * 删除测试用例节点
@@ -581,7 +703,8 @@ export default {
         this.getFolderNodeDatas(data.caseId, null);
       } else if (data.type === "file") {
         var fatherId = node.parent.data.caseId;
-        this.getFileNodeDataChoosed(data.caseId, fatherId);
+        //console.log(data)
+        this.getFileNodeDataChoosed(data.caseId, fatherId,data.label);
       } else {
         alert("节点只能是文件或者文件夹类型！！！");
       }
@@ -613,10 +736,11 @@ export default {
      * 获取文件类型节点下的直接子用例节点
      * 自动选中table中，对应的caseId
      */
-    getFileNodeDataChoosed(caseId, fatherId) {
+    getFileNodeDataChoosed(caseId, fatherId,caseName) {
       this.$bus.emit("UPDATE_CURRENT_NODE_DATA_CHOOSE", {
         caseId: caseId,
         fatherId: fatherId,
+        caseName: caseName,
       });
     },
 
@@ -727,6 +851,7 @@ export default {
     },
   },
   data() {
+    this.scrollTreeDom = null;
     const options = [
       {
         value: "西紫卡",
@@ -804,15 +929,15 @@ export default {
 .node_editing {
   flex: 1;
   display: flex;
-  align-items: left;
-  justify-content:flex-start;
+  align-items: center;
+  justify-content: center;
   font-size: 14px;
   padding-right: 8px;
 }
 .node_label {
   flex: 1;
   display: flex;
-  align-items:flex-start;
+  align-items: center;
   justify-content: flex-start;
   font-size: 10px;
   padding-right: 2px;

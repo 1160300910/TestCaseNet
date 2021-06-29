@@ -10,9 +10,14 @@ import TableT1 from '@/components/Appmain/Test/TableT1'
 import test from '@/components/Appnavbar/Test/test'
 import TreeTest from '@/components/Appnavbar/Test/TreeTest'
 import NavbarMain from '@/components/Appnavbar/NavbarMain'
+import TestToDo from '@/components/Test/TestToDo'
 
 
 const routes = [{
+        path: '/TestToDo',
+        component: TestToDo
+    },
+    {
         path: '/HelloWorld',
         component: HelloWorld
     },
