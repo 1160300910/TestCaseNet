@@ -113,10 +113,8 @@ export default {
           tag: this.optionInfo["tags"].select_val,
         })
         .then((res) => {
-          console.log(
-            "________________________res.data.msg________________________"
-          );
-          console.log(res.data.msg);
+         
+          //console.log(res.data.msg);
           if (res.data.msg) {
             // 刷新table的展示数据
             this.$bus.emit("UPDATE_CURRENT_FOLDER_TABLEDATAS", {

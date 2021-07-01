@@ -72,7 +72,7 @@ export default {
    
   },
   beforeUnmount() {
-    console.log(this.$bus);
+    //console.log(this.$bus);
     this.$bus.all.clear();
     /*
       this.$bus.all.delete("CHANGE_TESTCASE_FOLDER_BY_POP")
@@ -86,18 +86,12 @@ export default {
       this.$bus.all.delete("DELETE_TESTCASE_NODE_BYPOP");
       this.$bus.all.delete("DELETE_TESTCASE_NODE_BYTABLE");*/
 
-    console.log(this.$bus);
+    //console.log(this.$bus);
   },
   unmounted() {},
   activated() {
-    console.log(
-      "——————————————————————————layput-activated——————————————————————————————————Layout"
-    );
   },
   created() {
-    console.log(
-      "——————————————————————————layput-created——————————————————————————————————Layout"
-    );
 
     if (
       this.$route.params.userName &&

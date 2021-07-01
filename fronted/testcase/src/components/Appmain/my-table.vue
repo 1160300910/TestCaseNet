@@ -1,6 +1,10 @@
 // my-table.vue
 <template>
-  <el-table :data="data" :row-class-name="tableRowClassName" ref="my-table"
+  <el-table 
+  class="elTable_css"
+  :data="data" :row-class-name="tableRowClassName" ref="my-table"
+  :cell-style="{borderColor:'black'}"
+  :header-cell-style="getHeadCss"
   >
     <el-table-column
       v-for="colConfig in colConfigs"
@@ -75,6 +79,13 @@ export default {
     });
   },
   methods: {
+    getHeadCss({ row, column, rowIndex, columnIndex }) {
+      if (rowIndex === 0) {
+        return 'background:rgb(216, 216, 216);color:rgb(32, 32, 32);text-align:center;font-size:20px;font-weight:500;border: 1px solid black;'
+      } else {
+        return ''
+      }
+    },
     /**
      * 获取修改人（只能是QA）
      */
@@ -111,7 +122,7 @@ export default {
     FindCurrentTableRow(rowId) {
       var d;
       for (d = 0; d < this.data.length; d++) {
-        console.log(this.data[d]);
+        //(this.data[d]);
         if (this.data[d].caseId == rowId) {
           return this.data[d];
         }
@@ -168,3 +179,8 @@ export default {
   },
 };
 </script>
+<style scoped>
+.elTable_css{
+  border: 1px solid rgb(73, 73, 73);
+}
+</style>

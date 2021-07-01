@@ -281,7 +281,7 @@ def SetNode(node):
     tmp['isEditing'] = 0
     tmp['children'] = []
     if node.fileType == 'folder':
-        tmp['testCase_num'] = len(CasePath.query.filter_by(testcase_ancestor=node.caseId).all())
+        tmp['testCase_num'] = len(CasePath.query.filter_by(testcase_ancestor=node.caseId).all())-1
     else:
         tmp['testCase_num'] = 0
     return tmp

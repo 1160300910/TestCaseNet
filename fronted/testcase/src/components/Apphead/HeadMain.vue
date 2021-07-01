@@ -55,7 +55,7 @@ export default {
       axios
         .post(url, formData, config)
         .then(function(response) {
-          console.log(response.data);
+          //console.log(response.data);
         })
         .then((res) => {
           this.$refs.pathClear.value = "";

@@ -161,9 +161,9 @@ const SelectInput = {
      * 修改选中的表格内容
      */
     changeSelectTableCell(row, column_name) {
-      console.log("=============== changeSelectTableCell  ===============");
-      console.log(row[column_name]);
-      console.log(column_name);
+      //console.log("=============== changeSelectTableCell  ===============");
+      //console.log(row[column_name]);
+      //console.log(column_name);
       this.saveColumnData(row, column_name); //保存到服务器
       row.isColumnEditing[column_name] = false;
     },
@@ -174,9 +174,9 @@ const SelectInput = {
      * column_name：当前列名
      */
     saveColumnData(row, column_name) {
-      console.log("_______saveColumnData_____________");
-      console.log(row.caseId);
-      console.log(row[column_name]);
+      //console.log("_______saveColumnData_____________");
+      //console.log(row.caseId);
+      //console.log(row[column_name]);
       axios
         .post("updateTableColumnDataByName", {
           caseId: row.caseId,
@@ -184,7 +184,7 @@ const SelectInput = {
           column_name: column_name,
         })
         .then((res) => {
-          console.log(res.data);
+          //console.log(res.data);
         });
     },
   },
@@ -228,7 +228,7 @@ export default {
      */
     this.$bus.on("CREATE_NEW_TESTCASE_NOTIFY_TABLE", (param) => {
       console.log("CREATE_NEW_TESTCASE_NOTIFY_TABLE 发生了");
-      this.CreateDefaultTestCaseLine(param.data, param.fatherId);
+      this.CreateDefaultTestCaseLine(param.data, param.fatherId, param.broId);
     });
     /***
      * 告诉table,
@@ -240,14 +240,15 @@ export default {
       //console.log(data)
 
       var currentRow = this.FindCurrentRow(data.caseId);
-      console.log(this.$refs["table"]);
+      //console.log(this.$refs["table"]);
+      var index = -1;
       if (currentRow) {
         this.$refs["table"].ChangeCurrentRow(currentRow);
-        var index = this.FindTableIndexByCaseId(data.caseId, data.caseName);
+        index = this.FindTableIndexByCaseId(data.caseId, data.caseName);
         console.log(
           "???_____________________index_____________________ " + index
         );
-        if (index!=-1) {
+        if (index != -1) {
           this.scrollTableTo("table", index);
         }
       } else {
@@ -257,8 +258,22 @@ export default {
           fatherId: data.fatherId,
           caseId: data.caseId,
         });
+        this.waitForTableData(
+          () => {
+            //函数触发回调，表明table的数据已经更新且载入，可以被读取到
+            console.log("action___result");
+            index = this.FindTableIndexByCaseId(data.caseId, data.caseName);
+            var currentRow = this.FindCurrentRow(data.caseId);
+            this.$refs["table"].ChangeCurrentRow(currentRow); //修改当前行 为对应行
+            this.scrollTableTo("table", index); //设置滑动的滚轮，滚动到对应的table图表 位置
+          },
+          500, //设置等待时间间隔为0.5秒
+          data.caseId,
+          data.caseName
+        );
       }
     });
+
     /***
      * 在table里创建一行
      */
@@ -281,13 +296,32 @@ export default {
     });
   },
   methods: {
+    /**
+     * 等待通过table的Node所在的fatherID文件夹，
+     * 获取该文件夹下全部的测试用例文件
+     */
+    waitForTableData(callback, interval, caseId, caseName) {
+      let handle = setInterval(() => {
+        var index = this.FindTableIndexByCaseId(caseId, caseName);
+        if (index >= 0) {
+          // index>0 说明对应的文件已经在文件集合里面了，表明已经载入了需要的数据
+          clearInterval(handle);
+          // 此时可以清除间隔且返回到调用函数（俗称回调函数）
+          callback();
+        } else {
+          console.log("waiting!!!!!!!!!!!!!");
+          //否则，一直处于等待数据状态
+        }
+      }, interval);
+    },
+
     /***
      * 获取当前选中节点的index
      */
     FindTableIndexByCaseId(caseId, caseName) {
       var navContents = document.querySelectorAll(".custom-table-row");
       // 所有锚点元素的 offsetTop
-      console.log("navContents===========================");
+      //console.log("navContents===========================");
       //console.log(navContents);
       var index = 0;
       var save = 0;
@@ -300,12 +334,12 @@ export default {
             .trim()
         ) {
           index += 1;
-          console.log("不相等");
+          //console.log("不相等");
         } else {
           return index;
         }
       }
-      return -1
+      return -1;
     },
     /**
      * 点击树结构，使得table的界面跳转到对应的位置
@@ -313,22 +347,24 @@ export default {
      * @param {index} table的索引值
      */
     scrollTableTo(refName, index) {
-      console.log("scrollTableTo++++++++++++++++++=================")
+      //("scrollTableTo++++++++++++++++++=================")
       // 获取目标的 offsetTop
       // css选择器是从 1 开始计数，我们是从 0 开始，所以要 +1
       if (!refName || !this.$refs[refName]) return;
       let vmEl = this.$refs[refName].$el;
       if (!vmEl) return;
-      var targetOffsetTop = vmEl .querySelectorAll(".el-table__body tr")[index].getBoundingClientRect().top;
-      const containerTop = vmEl.querySelector(".el-table__body").getBoundingClientRect().top;
-      console.log(
-       containerTop,targetOffsetTop
-      );
+
+      var dom = vmEl.querySelectorAll(".el-table__body tr")[index];
+      var targetOffsetTop = dom.getBoundingClientRect().top;
+      const containerTop = vmEl
+        .querySelector(".el-table__body")
+        .getBoundingClientRect().top;
+      //console.log( containerTop,targetOffsetTop);
       targetOffsetTop = targetOffsetTop - containerTop;
       // 获取当前 offsetTop
       let scrollTop = document.querySelector(".main").scrollTop;
       // 定义一次跳 50 个像素，数字越大跳得越快，但是会有掉帧得感觉，步子迈大了会扯到蛋
-      const STEP = 50;
+      const STEP = 350;
       // 判断是往下滑还是往上滑
       if (scrollTop > targetOffsetTop) {
         // 往上滑
@@ -339,7 +375,7 @@ export default {
       }
       // 定义往下滑函数
       function smoothDown() {
-        console.log("smoothDown");
+        //console.log("smoothDown");
         // 如果当前 scrollTop 小于 targetOffsetTop 说明视口还没滑到指定位置
         if (scrollTop < targetOffsetTop) {
           // 如果和目标相差距离大于等于 STEP 就跳 STEP
@@ -404,9 +440,9 @@ export default {
      * 在服务器上创建一个默认测试用例，
      * 并返回该用例的id
      */
-    CreateDefaultTestCaseLine(data, fatherId) {
-      console.log(data);
-      console.log(fatherId);
+    CreateDefaultTestCaseLine(data, fatherId, broCaseId) {
+      //console.log(data);
+      //console.log(fatherId);
       var newTestCase = {
         caseId: data.caseId,
         caseName: "",
@@ -432,8 +468,22 @@ export default {
       };
       //this.parentObj.table_datas.unshift(newTestCase);
       //this.tableData = this.parentObj.table_datas;
-      this.tableData.unshift(newTestCase);
+      if (broCaseId) {
+        this.insertIntoTableAfterBrother(broCaseId, newTestCase);
+      } else {
+        this.tableData.push(newTestCase);
+      }
       this.$refs["table"].ChangeCurrentRow(newTestCase);
+    },
+    /***
+     * 找到table表里面对应的兄弟用例id，在兄弟的后面插入
+     */
+    insertIntoTableAfterBrother(broCaseId, newTestCase) {
+      for (var i = 0; i < this.tableData.length; i++) {
+        if (broCaseId == this.tableData[i].caseId) {
+          this.tableData.splice(1, i, newTestCase);
+        }
+      }
     },
     /***
      * 查找导航栏中选中用例所对应的行
@@ -441,7 +491,7 @@ export default {
     FindCurrentRow(caseId) {
       var d;
       for (d = 0; d < this.tableData.length; d++) {
-        console.log(this.tableData[d]);
+        //(this.tableData[d]);
         if (caseId == this.tableData[d].caseId) {
           return this.tableData[d];
         }
@@ -475,7 +525,7 @@ export default {
           fileType: "file",
         })
         .then((res) => {
-          console.log(res);
+          //console.log(res);
           //是需要修改的行
           table_line.isRowEditing = false;
         });
@@ -739,7 +789,7 @@ export default {
       {
         prop: "changer",
         label: "修改人",
-        width: 140
+        width: 140,
       },
 
       // 模版中的元素需要对应的有 slot="opt" 属性

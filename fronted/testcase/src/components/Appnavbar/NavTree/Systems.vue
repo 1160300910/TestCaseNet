@@ -14,7 +14,7 @@
     </div>
     <div class="navbar_tree_css">
       <p>
-        新增用例集
+        新增用例系统集
         <i @click="CreateNewRoot()" class="el-icon-edit"></i>
       </p>
       <el-tree
@@ -73,6 +73,8 @@
               <i class="el-icon-folder-opened" v-if="data.type == 'folder'">
               </i>
               <i class="el-icon-star-off" v-else-if="data.type == 'file'"> </i>
+              <!--
+                -->
               <el-input
                 v-focus-input="InputVFocus(node)"
                 v-model="treeNodeInput"
@@ -119,12 +121,13 @@ export default {
   directives: {
     //注册一个局部的自定义指令 v-focus-Input
     focusInput: {
-      inserted(el) {
-        console.log( "el.querySelector()===========================================");
+      mounted(el) {
+        console.log(
+          "el.querySelector()==========================================="
+        );
         console.log(el.children[0]);
         el.querySelector("input").focus();
-        console.log( "el.querySelector()==============");
-        console.log( el.querySelector("input"));
+        console.log(el.querySelector("input"));
         //因为el-input这是个组件，input外面被一层 div 包裹着,
         ///el打印出来是外面这个 div，需要找到内层的input
       },
@@ -266,6 +269,7 @@ export default {
      */
     this.$bus.on("DELETE_TESTCASE_NODE_BYPOP", (param) => {
       console.log("————删除————  DELETE_TESTCASE_NODE_BYPOP 发生了");
+      this.updateNodePathCaseNum(param.data, param.node, -1);
       if (param.data.type == "file") {
         this.deleteTestCaseNode(param.data, param.node);
       } else if (param.data.type == "folder") {
@@ -290,12 +294,12 @@ export default {
      * 激活popover
      */
     OnActivatePopOver(event, data, node, node_obj) {
-      this.$refs["tree"].setCurrentNode(data);
-      console.log("OnActivatePopOver=====================");
-      console.log(event);
-      console.log(data);
-      console.log(node);
-      console.log(node_obj);
+      this.OnTreeClickChooseNode(data, node);
+      //console.log("OnActivatePopOver=====================");
+      //console.log(event);
+      //console.log(data);
+      //console.log(node);
+      //console.log(node_obj);
       this.$bus.emit("SHOW_POPOVER_MENU", {
         node: node,
         data: data,
@@ -326,36 +330,6 @@ export default {
       }
       return -1;
     },
-    /**
-     * 滚动监听器
-     */
-    /* 
-    onTreeNodeScroll() {
-      // 获取所有锚点元素
-      const navContents = document.querySelectorAll(".node_row_label_css");
-      // 所有锚点元素的 offsetTop
-      const offsetTopArr = [];
-      navContents.forEach((item) => {
-        offsetTopArr.push(item.offsetTop);
-      });
-      // 获取当前文档流的 scrollTop
-      //console.log(document.querySelector('.navbar'));
-      const scrollTop = document.querySelector('.navbar').scrollTop;
-      //this.$parent.$el.scrollTop
-        // document.documentElement.scrollTop || document.body.scrollTop || window.pageYOffset
-      //console.log(this.$refs.tree.scrollTop)
-      console.log(scrollTop);
-      // 定义当前点亮的导航下标
-      let navIndex = 0;
-      for (let n = 0; n < offsetTopArr.length; n++) {
-        // 如果 scrollTop 大于等于第n个元素的 offsetTop 则说明 n-1 的内容已经完全不可见
-        // 那么此时导航索引就应该是n了
-        if (scrollTop >= offsetTopArr[n]) {
-          navIndex = n;
-        }
-      }
-      this.active = navIndex;
-    },*/
     /***
      * 跳转到指定索引的元素
      */
@@ -363,7 +337,7 @@ export default {
       // 获取目标的 offsetTop
       // css选择器是从 1 开始计数，我们是从 0 开始，所以要 +1
       const targetOffsetTop = document.querySelectorAll(`.node_row_label_css`)[
-        index + 1
+        index
       ].offsetTop;
       // 获取当前 offsetTop
       console.log(targetOffsetTop);
@@ -676,10 +650,10 @@ export default {
         .get("getNewCaseId")
         .then((res) => {
           var newCaseId = res.data.msg;
-          console.log(node.childNodes);
+          //console.log(node.childNodes);
           let creatorFileType = data.type;
-          console.log(data.type);
-          console.log(aimFileType);
+          //console.log(data.type);
+          //console.log(aimFileType);
           var newChild;
           if (aimFileType == "file" && creatorFileType == "file") {
             //文件创建文件，只能创造兄弟节点
@@ -693,17 +667,49 @@ export default {
           } else {
             alert("出现了异常创造情况！！！");
           }
-          console.log(node.childNodes);
-          if (aimFileType == "file") {
+          //console.log(node.childNodes);
+          if (aimFileType == "file" && creatorFileType == "file") {
             this.$bus.emit("CREATE_NEW_TESTCASE_NOTIFY_TABLE", {
               data: newChild,
               fatherId: data.caseId,
+              broId: data.caseId,
+            }); //告诉table，发生了创造事件*/
+          } else if (aimFileType == "file" && creatorFileType == "folder") {
+            this.$bus.emit("CREATE_NEW_TESTCASE_NOTIFY_TABLE", {
+              data: newChild,
+              fatherId: data.caseId,
+              broId: null,
             }); //告诉table，发生了创造事件*/
           }
+          //给路径上的所有节点的用例数目+1
+          this.updateNodePathCaseNum(data, node, 1);
         })
         .catch(function(error) {
           alert(error);
         });
+    },
+    /**
+     * 给路径上的所有节点的用例数目进行修改
+     * @param data,node
+     * @param num 需要修改的数目，-1或1用于增加或者删除
+     */
+    updateNodePathCaseNum(data, node, num) {
+      console.log("updateNodePathCaseNum==========================");
+      var parent = node;
+      console.log(parent);
+      var folder_children = 0;
+      if (parent && node.data.type == "folder" && num == -1) {
+        folder_children = parent.data.testCase_num;
+      }
+      while (parent != null) {
+        if (parent.data.type == "folder" && num == -1) {
+          parent.data.testCase_num += num * folder_children;
+          parent.data.testCase_num += num ;
+        } else {
+          parent.data.testCase_num += num;
+        }
+        parent = parent.parent;
+      }
     },
     /**
      * 初始化数据，获取测试用例目录数组
@@ -719,7 +725,6 @@ export default {
           if (res.data.msg) {
             this.node_data = JSON.parse(JSON.stringify(NodeRoots));
             console.log(this.node_data);
-            //this.initFolderChildrenNum(this.node_data);
           } else {
             alert("用户信息错误！");
             //用户信息有问题，跳转到重新登录界面
@@ -740,7 +745,7 @@ export default {
       console.log(node_datas);
       for (var t = 0; t < node_datas.length; t++) {
         if (node_datas[t].type == "folder") {
-          node_datas[t].testCase_num = node_datas[t].children.length;
+          node_datas[t].testCase_num = node_datas[t].children.length - 1;
         }
       }
       console.log(node_datas);
@@ -1083,7 +1088,6 @@ export default {
   margin-right: 2px;
   justify-content: flex-start;
   width: 180px;
-  overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
   flex-grow: 1;

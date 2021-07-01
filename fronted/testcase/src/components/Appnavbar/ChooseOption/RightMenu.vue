@@ -61,7 +61,7 @@ export default {
      * 展示popover
      */
     this.$bus.on("SHOW_POPOVER_MENU", (param) => {
-      console.log("————展示————  SHOW_POPOVER_MENU 发生了");
+      //console.log("————展示————  SHOW_POPOVER_MENU 发生了");
       this.visible = true;
       this.node = param.node;
       this.data = param.data;
@@ -223,7 +223,7 @@ export default {
 .menu_label_css {
   display: flex;
   justify-content: flex-start;
-  width: 180px;
+  width: 150px;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;

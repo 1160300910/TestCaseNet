@@ -28,7 +28,7 @@ export default {
     };
   },
   created() {
-    console.log(this.optionInfo);
+    //console.log(this.optionInfo);
   },
   mounted() {
     /**
@@ -45,8 +45,8 @@ export default {
      */
     changeOption(callback, val) {
       if (!callback) {
-        console.log("______________changeOption_____________")
-        console.log(val)
+       // console.log("______________changeOption_____________")
+        //console.log(val)
         //当隐藏下拉框时触发
         //alert(val)
         //alert(val)
@@ -62,7 +62,7 @@ export default {
             val: '',
           });
         } else {
-        console.log(obj)
+        //console.log(obj)
           this.$emit("changeSelectorCondition", {
             name: this.optionInfo.name,
             val: obj.key,
@@ -76,7 +76,7 @@ export default {
      * 根据optionName获取对应option数据 */
     getOptionData() {
       var optionInfo = this.optionInfo;
-      console.log("===================== getOptionData =====================");
+      //console.log("===================== getOptionData =====================");
       if (optionInfo.data && optionInfo.name == "test_level") {
         this.data = optionInfo.data;
       } else if (optionInfo.name == "caseSystems") {
