@@ -183,4 +183,6 @@ export default {
 .elTable_css{
   border: 1px solid rgb(73, 73, 73);
 }
+
+
 </style>
