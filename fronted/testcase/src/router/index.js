@@ -11,9 +11,13 @@ import test from '@/components/Appnavbar/Test/test'
 import TreeTest from '@/components/Appnavbar/Test/TreeTest'
 import NavbarMain from '@/components/Appnavbar/NavbarMain'
 import TestToDo from '@/components/Test/TestToDo'
+import RightMenu from '@/components/Appnavbar/ChooseOption/RightMenu'
 
 
 const routes = [{
+        path: '/RightMenu',
+        component: RightMenu
+    }, {
         path: '/TestToDo',
         component: TestToDo
     },

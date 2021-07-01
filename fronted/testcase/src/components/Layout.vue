@@ -16,6 +16,8 @@
     ></app-header>
     <app-navbar :style="{ 'background-color': work_nav_bk_color }"></app-navbar>
     <app-main></app-main>
+    
+  <right-menu></right-menu>
   </div>
 </template>
 
@@ -23,6 +25,7 @@
 // 会导入./AppHeader下面的index.vue组件
 import AppHeader from "./Apphead/HeadMain";
 import AppNavbar from "./Appnavbar/NavbarMain";
+import RightMenu from "./Appnavbar/ChooseOption/RightMenu.vue";
 import AppMain from "./Appmain/AppMain";
 import { ref } from "vue";
 
@@ -63,6 +66,11 @@ const peoHeads = [
   },
 ];
 export default {
+  components: { AppHeader, AppNavbar, AppMain,RightMenu },
+  mounted() {
+    this.getRoleData(this.userWork);
+   
+  },
   beforeUnmount() {
     console.log(this.$bus);
     this.$bus.all.clear();
@@ -163,10 +171,6 @@ export default {
     return {
       parentObj: this,
     };
-  },
-  components: { AppHeader, AppNavbar, AppMain },
-  mounted() {
-    this.getRoleData(this.userWork);
   },
   methods: {
     /***

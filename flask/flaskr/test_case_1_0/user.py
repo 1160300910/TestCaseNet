@@ -134,19 +134,17 @@ def saveTestCase():
         preResult = request.json.get('preResult')
         ps = request.json.get('ps')
         tag = request.json.get('tag')
-        changer = request.json.get('changer')
+        changer = int(request.json.get('changer'))
         fileType = request.json.get('fileType')
 
         state = '1'
         caseType = '1'  # 未执行，无需被执行
         peoType = '1'  # 暂定为测试
-        actionPeo = -1  # 暂定数据
-
-        peo = Peo.query.filter_by(peoName=changer).first()
+        actionPeo = changer  # 暂定数据
 
         if system_name:
             msg = setSystem(system_name, system_name)
-
+        '''
         if peo is not None:
             print(peo.peoId)
             changer = peo.peoId
@@ -154,7 +152,7 @@ def saveTestCase():
             print("==============")
         else:
             error = '没有id：{}！！'.format(changer)
-
+        '''
         testCase1 = TestCase(caseId=caseId, fatherId=fatherId
                              , caseName=caseName, test_level=test_level
                              , preCondition=preCondition, actionCondition=actionCondition

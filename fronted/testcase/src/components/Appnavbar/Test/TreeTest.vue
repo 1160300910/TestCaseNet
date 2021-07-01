@@ -126,8 +126,27 @@ export default {
 
 .el-tree--highlight-current .el-tree-node.is-current > .el-tree-node__content {
   /*current选中的样式 */
-  color: #4d95fd;
+  color: white;
   font-weight: bold;
-  background-color: #dde9ff !important;
+  background-color: rgb(3, 155, 191) !important;
 }
+/*
+* 行样式
+*/
+.node_row_css{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+/*
+ * 行内元素样式
+ */
+ .node_row_label_css{
+   margin-left: 5px;
+   margin-right: 5px;
+ }
+ 
 </style>

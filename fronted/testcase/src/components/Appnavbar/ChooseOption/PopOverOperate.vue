@@ -2,7 +2,7 @@
   <div>
     <el-popover
       placement="right-end"
-      trigger="click"
+      trigger="manual"
       v-model:visible="visible"
       @hide="UpdateFatherChooseNode(data, node, data.caseId)"
     >
@@ -59,7 +59,7 @@
           <el-button
             type="text"
             style="font-size: 16px; color: red;"
-            @click="DeleteTestCase( data,node)"
+            @click="DeleteTestCase(data, node)"
             >删除用例</el-button
           >
         </el-form-item>
@@ -76,51 +76,57 @@
           >
         </el-form-item>
       </el-form>
-
       <template #reference>
         <i
           class="el-icon-circle-plus-outline"
           style="font-size: 20px; color: grey"
+          @click="Test"
         ></i>
       </template>
     </el-popover>
   </div>
 </template>
 <script>
-import { getCurrentInstance } from "vue";
 export default {
   props: {
     //nowId: { type: Number, requires: true },
     //nowLable: { type: String, requires: true },
     node: { requirs: true },
-    nowChildren: {},
-    nowParent: {},
     data: { requires: true },
-    OnAdditionChoice: {
+    text: { requires: true },
+    /*
+    OnActivatePopOver: {
       type: Function,
       required: false,
-    },
+    },*/
   },
+  mounted() {},
   created() {
-    console.log("——————————————————————————PopoverOperator created————————————————————————————")
+    console.log(
+      "——————————————————————————PopoverOperator created————————————————————————————"
+    );
   },
   data() {
     return {
       visible: false,
     };
   },
-  inject: ["parentObj"],
   //向layout里修改当前选中行的信息
 
   methods: {
+    Test() {
+      this.visible = true;
+    },
     /***
      * 通知TreeNode创建新的子用例
      * 输入：
      * data : 当前节点的数据
      */
     CreateNewTestCaseFile(data, node) {
-      console.log("——————————————————————————CreateNewTestCaseFile————————————————————————————")
-  
+      console.log(
+        "——————————————————————————CreateNewTestCaseFile————————————————————————————"
+      );
+
       this.visible = false;
       var fileType = "file";
       this.$bus.emit("CREATE_NEW_TESTCASE_NODE_POP", {
@@ -186,10 +192,13 @@ export default {
     /**
      * 修改当前测试用例文件夹
      */
-    changeTestCaseFolder(data,node){
+    changeTestCaseFolder(data, node) {
       this.visible = false;
-      this.$bus.emit("CHANGE_TESTCASE_FOLDER_BY_POP", { data: data, node: node });
-    }
+      this.$bus.emit("CHANGE_TESTCASE_FOLDER_BY_POP", {
+        data: data,
+        node: node,
+      });
+    },
   },
 };
 </script>
@@ -200,11 +209,9 @@ export default {
   display: flex;
   flex-direction: row;
   justify-content: start;
-  height: 22px;
-  padding: auto;
+  height: 10px;
 }
 .elform_popover {
-  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: start;

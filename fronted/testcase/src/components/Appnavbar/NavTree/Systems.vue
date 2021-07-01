@@ -12,7 +12,7 @@
       </el-select-->
       <el-input placeholder="关键字过滤查询" v-model="filterText"> </el-input>
     </div>
-    <div class="block">
+    <div class="navbar_tree_css">
       <p>
         新增用例集
         <i @click="CreateNewRoot()" class="el-icon-edit"></i>
@@ -28,30 +28,48 @@
         highlight-current
         @node-click="OnTreeClickChooseNode"
         @node-expand="OnTreeClickChooseNode"
+        @node-contextmenu="OnActivatePopOver"
         ><template #default="{ node, data }">
-          <span class="custom-tree-node">
+          <span>
             <span v-if="testif" span="1">
               <!--i @click="remove(node, data)" 
               class="el-icon-delete"></i-->
               <el-checkbox> </el-checkbox
             ></span>
-            <div class="node_label" v-if="!data.isEditing">
-              <i class="el-icon-folder-opened" v-if="data.type == 'folder'">
+            <div class="node_row_no_editing_css" v-if="!data.isEditing">
+              <i v-if="data.type == 'folder' && node.expanded">
+                <img
+                  src="/icons/icon-folder-opened.png"
+                  style="width:20px; height: 20px"
+                />
               </i>
-              <i class="el-icon-star-off" v-else-if="data.type == 'file'"> </i>
-              <span class="node_label_css" v-if="data.type == 'folder'"
+              <i v-if="data.type == 'folder' && !node.expanded">
+                <img
+                  src="/icons/icon-folder.png"
+                  style="width:20px; height: 20px"
+                />
+              </i>
+              <i v-else-if="data.type == 'file'">
+                <img
+                  src="/icons/icon-file.png"
+                  style="width:20px; height: 20px"
+                />
+              </i>
+              <span class="node_row_label_css" v-if="data.type == 'folder'"
                 >{{ node.label }} ({{ data.testCase_num }})
-                {{ data.caseId }}</span
-              ><span class="node_label_css" v-else-if="data.type == 'file'"
-                >{{ node.label }} {{ data.caseId }}</span
-              >
-              <pop-over-operate
+                {{ data.caseId }}
+              </span>
+              <span class="node_row_label_css" v-else-if="data.type == 'file'">
+                {{ node.label }} {{ data.caseId }}
+              </span>
+              <!--pop-over-operate
                 @updateCurrentNode="updateCurrentNode"
                 :node="node"
                 :data="data"
-              ></pop-over-operate>
+              ></pop-over-operate-->
             </div>
-            <div class="node_editing" v-else>
+
+            <div class="node_row_editing_css" v-else>
               <i class="el-icon-folder-opened" v-if="data.type == 'folder'">
               </i>
               <i class="el-icon-star-off" v-else-if="data.type == 'file'"> </i>
@@ -62,7 +80,12 @@
                 ref="caseNodeNameInput"
                 autofocus
               >
-              </el-input>
+              </el-input
+              ><i
+                class="el-icon-circle-close"
+                style="font-size: 25px; color: red"
+                @click="cancelNodeEditing(data, node)"
+              ></i>
               <i
                 class="el-icon-circle-check"
                 style="font-size: 25px; color: green"
@@ -90,7 +113,6 @@
 </template>
 
 <script>
-import PopOverOperate from "../ChooseOption/PopOverOperate.vue";
 import axios from "axios";
 let caseId = 11112;
 export default {
@@ -98,9 +120,11 @@ export default {
     //注册一个局部的自定义指令 v-focus-Input
     focusInput: {
       inserted(el) {
+        console.log( "el.querySelector()===========================================");
         console.log(el.children[0]);
         el.querySelector("input").focus();
-        console.log();
+        console.log( "el.querySelector()==============");
+        console.log( el.querySelector("input"));
         //因为el-input这是个组件，input外面被一层 div 包裹着,
         ///el打印出来是外面这个 div，需要找到内层的input
       },
@@ -120,7 +144,7 @@ export default {
       this.initTreeNodeData(this.userName, this.userId);
     }
   },
-  components: { PopOverOperate },
+  components: {},
   watch: {
     /**
      * 实时根据输入的过滤内容输出过滤结果
@@ -180,7 +204,9 @@ export default {
       var index = this.FindNodeIndexByCaseId(data.caseId, data.caseName);
       console.log("index--------------------------------");
       console.log(index);
-      this.scrollTreeTo(index);
+      if (index != -1) {
+        this.scrollTreeTo(index);
+      }
     });
     /***
      * 获取父节点下的测试用例列表
@@ -260,11 +286,27 @@ export default {
     });
   },
   methods: {
+    /**
+     * 激活popover
+     */
+    OnActivatePopOver(event, data, node, node_obj) {
+      this.$refs["tree"].setCurrentNode(data);
+      console.log("OnActivatePopOver=====================");
+      console.log(event);
+      console.log(data);
+      console.log(node);
+      console.log(node_obj);
+      this.$bus.emit("SHOW_POPOVER_MENU", {
+        node: node,
+        data: data,
+        event: event,
+      });
+    },
     /***
      * 获取当前选中节点的index
      */
     FindNodeIndexByCaseId(caseId, caseName) {
-      var navContents = document.querySelectorAll(".custom-tree-node");
+      var navContents = document.querySelectorAll(".node_row_label_css");
       // 所有锚点元素的 offsetTop
       var index = 0;
       var save = 0;
@@ -282,6 +324,7 @@ export default {
           return index;
         }
       }
+      return -1;
     },
     /**
      * 滚动监听器
@@ -289,7 +332,7 @@ export default {
     /* 
     onTreeNodeScroll() {
       // 获取所有锚点元素
-      const navContents = document.querySelectorAll(".custom-tree-node");
+      const navContents = document.querySelectorAll(".node_row_label_css");
       // 所有锚点元素的 offsetTop
       const offsetTopArr = [];
       navContents.forEach((item) => {
@@ -319,11 +362,11 @@ export default {
     scrollTreeTo(index) {
       // 获取目标的 offsetTop
       // css选择器是从 1 开始计数，我们是从 0 开始，所以要 +1
-      const targetOffsetTop = document.querySelectorAll(`.custom-tree-node`)[
+      const targetOffsetTop = document.querySelectorAll(`.node_row_label_css`)[
         index + 1
       ].offsetTop;
       // 获取当前 offsetTop
-      console.log(targetOffsetTop)
+      console.log(targetOffsetTop);
       let scrollTop = document.querySelector(".navbar").scrollTop;
       // 定义一次跳 50 个像素，数字越大跳得越快，但是会有掉帧得感觉，步子迈大了会扯到蛋
       const STEP = 50;
@@ -574,13 +617,25 @@ export default {
     CreateNodeData(newCaseId, type) {
       var myDate = new Date();
       myDate.toLocaleString();
-      const node = {
-        caseId: newCaseId,
-        label: "",
-        type: type,
-        children: [],
-        isEditing: true,
-      };
+      var node = {};
+      if (type == "file") {
+        node = {
+          caseId: newCaseId,
+          label: "",
+          type: type,
+          children: [],
+          isEditing: true,
+        };
+      } else if (type == "folder") {
+        node = {
+          caseId: newCaseId,
+          label: "",
+          type: type,
+          children: [],
+          isEditing: true,
+          testCase_num: 0,
+        };
+      }
       return node;
     },
     /***
@@ -663,6 +718,7 @@ export default {
           var NodeRoots = res.data.msg;
           if (res.data.msg) {
             this.node_data = JSON.parse(JSON.stringify(NodeRoots));
+            console.log(this.node_data);
             //this.initFolderChildrenNum(this.node_data);
           } else {
             alert("用户信息错误！");
@@ -696,15 +752,16 @@ export default {
      * 3.右侧筛选框自动变为空
      */
     OnTreeClickChooseNode(data, node) {
+      this.$refs["tree"].setCurrentNode(data); //设置当前节点为选中节点
+
       //this.currentNodeKey = node.data.caseId;
       //console.log(node);
-      this.$refs["tree"].setCurrentNode(data); //设置当前节点为选中节点
       if (data.type == "folder") {
         this.getFolderNodeDatas(data.caseId, null);
       } else if (data.type === "file") {
         var fatherId = node.parent.data.caseId;
         //console.log(data)
-        this.getFileNodeDataChoosed(data.caseId, fatherId,data.label);
+        this.getFileNodeDataChoosed(data.caseId, fatherId, data.label);
       } else {
         alert("节点只能是文件或者文件夹类型！！！");
       }
@@ -736,7 +793,7 @@ export default {
      * 获取文件类型节点下的直接子用例节点
      * 自动选中table中，对应的caseId
      */
-    getFileNodeDataChoosed(caseId, fatherId,caseName) {
+    getFileNodeDataChoosed(caseId, fatherId, caseName) {
       this.$bus.emit("UPDATE_CURRENT_NODE_DATA_CHOOSE", {
         caseId: caseId,
         fatherId: fatherId,
@@ -923,7 +980,7 @@ export default {
 
 <style>
 .node_editing > .el-input > .el-input__inner {
-  height: 30px;
+  height: 20px;
   width: 120px;
 }
 .node_editing {
@@ -934,6 +991,7 @@ export default {
   font-size: 14px;
   padding-right: 8px;
 }
+/* 
 .node_label {
   flex: 1;
   display: flex;
@@ -942,6 +1000,7 @@ export default {
   font-size: 10px;
   padding-right: 2px;
 }
+
 .custom-tree-node {
   flex: 1;
   display: flex;
@@ -949,23 +1008,15 @@ export default {
   justify-content: space-between;
   font-size: 14px;
   padding-right: 8px;
-}
+}*/
 .tree-condition-suffix {
   flex: 1;
   display: flex;
-
   justify-content: space-between;
 }
-.node_label_css {
-  width: 180px;
-  display: block;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-}
 .el-tree-node > .el-tree-node__content {
-  /*设置选中的样式 */
-  height: 40px;
+  /*设置树节点的样式 */
+  height: 22px;
 }
 .el-tree-node:focus > .el-tree-node__content {
   /*设置选中的样式 */
@@ -978,8 +1029,64 @@ export default {
 }
 .el-tree--highlight-current .el-tree-node.is-current > .el-tree-node__content {
   /*current选中的样式 */
-  color: #4d95fd;
+  color: white;
   font-weight: bold;
-  background-color: #dde9ff !important;
+  background-color: rgb(3, 155, 191) !important;
+}
+
+/*
+* 行样式
+*/
+.node_row_css {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 14px;
+  flex-grow: 1;
+  background: #007bff;
+}
+/*
+ * 编辑中样式
+ */
+.node_row_editing_css {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 14px;
+  flex-grow: 1;
+}
+
+/*
+ * not编辑中样式
+ */
+.node_row_no_editing_css {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 14px;
+  flex-grow: 1;
+}
+
+/*
+ * 行内元素样式
+ */
+.node_row_label_css {
+  /* 设置node节点的label */
+  display: flex;
+  margin-left: 2px;
+  margin-right: 2px;
+  justify-content: flex-start;
+  width: 180px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  flex-grow: 1;
+  font-size: 15px;
 }
 </style>

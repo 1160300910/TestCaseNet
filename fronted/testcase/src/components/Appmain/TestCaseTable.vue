@@ -240,12 +240,16 @@ export default {
       //console.log(data)
 
       var currentRow = this.FindCurrentRow(data.caseId);
-      console.log(this.$refs['table'])
+      console.log(this.$refs["table"]);
       if (currentRow) {
         this.$refs["table"].ChangeCurrentRow(currentRow);
         var index = this.FindTableIndexByCaseId(data.caseId, data.caseName);
-        console.log("???_____________________index_____________________ "+index)
-        this.scrollTableTo('table',index);
+        console.log(
+          "???_____________________index_____________________ " + index
+        );
+        if (index!=-1) {
+          this.scrollTableTo("table", index);
+        }
       } else {
         //alert("Error !!! 没有找到对应的caseId的tableline");
         //需要利用fatherId获取选中testcase的父节点，得到对应的测试用例表
@@ -301,20 +305,26 @@ export default {
           return index;
         }
       }
+      return -1
     },
     /**
      * 点击树结构，使得table的界面跳转到对应的位置
      * @param {refName} table的ref值
      * @param {index} table的索引值
      */
-    scrollTableTo(refName,index) {
+    scrollTableTo(refName, index) {
+      console.log("scrollTableTo++++++++++++++++++=================")
       // 获取目标的 offsetTop
       // css选择器是从 1 开始计数，我们是从 0 开始，所以要 +1
-      if(!refName||!this.$refs[refName]) return
-      let vmEl = this.$refs[refName].$el
-      if(!vmEl) return 
-      const targetOffsetTop = vmEl.querySelectorAll('.el-table__body tr')[index].getBoundingClientRect().top
-      console.log(vmEl.querySelectorAll('.el-table__body tr')[index].getBoundingClientRect().top);
+      if (!refName || !this.$refs[refName]) return;
+      let vmEl = this.$refs[refName].$el;
+      if (!vmEl) return;
+      var targetOffsetTop = vmEl .querySelectorAll(".el-table__body tr")[index].getBoundingClientRect().top;
+      const containerTop = vmEl.querySelector(".el-table__body").getBoundingClientRect().top;
+      console.log(
+       containerTop,targetOffsetTop
+      );
+      targetOffsetTop = targetOffsetTop - containerTop;
       // 获取当前 offsetTop
       let scrollTop = document.querySelector(".main").scrollTop;
       // 定义一次跳 50 个像素，数字越大跳得越快，但是会有掉帧得感觉，步子迈大了会扯到蛋
@@ -406,7 +416,7 @@ export default {
         preResult: "",
         ps: "",
         test_level: "P1",
-        changer: "西子卡",
+        changer: this.parentObj.userName,
         fatherId: fatherId,
 
         isRowEditing: true,
@@ -458,7 +468,7 @@ export default {
           preResult: table_line.preResult,
           ps: table_line.ps,
           test_level: table_line.test_level,
-          changer: table_line.changer,
+          changer: this.parentObj.userId,
 
           fatherId: fatherId,
           tag: table_line.tag,
@@ -499,7 +509,7 @@ export default {
             preResult: data.preResult,
             ps: data.ps,
             test_level: data.test_level,
-            changer: data.changer,
+            changer: this.parentObj.userId,
 
             fatherId: fatherId,
             childId: childrenIds,
@@ -729,8 +739,7 @@ export default {
       {
         prop: "changer",
         label: "修改人",
-        width: 140,
-        component: SelectInput,
+        width: 140
       },
 
       // 模版中的元素需要对应的有 slot="opt" 属性
@@ -743,8 +752,7 @@ export default {
 };
 </script>
 <style>
-.custom-table-row >span {
+.custom-table-row > span {
   height: 80px;
 }
-
 </style>
