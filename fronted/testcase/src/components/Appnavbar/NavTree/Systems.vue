@@ -203,6 +203,7 @@ export default {
      * 从table设置当前选中的节点node
      */
     this.$bus.on("CHANGE_CURRENT_TREENODE_FROM_TABLE", (data) => {
+      console.log("CHANGE_CURRENT_TREENODE_FROM_TABLE==============================")
       this.$refs["tree"].setCurrentKey(data.caseId);
       //输入跳转节点名，跳转到对应节点
       var index = this.FindNodeIndexByCaseId(data.caseId, data.caseName);
@@ -791,6 +792,9 @@ export default {
      * 3.右侧筛选框自动变为空
      */
     OnTreeClickChooseNode(data, node) {
+      if(node && !node.expanded){
+        node.expanded=true
+      }
       this.$refs["tree"].setCurrentNode(data); //设置当前节点为选中节点
 
       //this.currentNodeKey = node.data.caseId;
