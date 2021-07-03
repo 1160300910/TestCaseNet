@@ -1,58 +1,76 @@
 <template>
-  <my-table
-    :data="tableData"
-    :col-configs="colConfigs"
-    highlight-current-row
-    border
-    ref="table"
-    @cell-dblclick="ChangeInfoByCell"
-    @current-change="CurrentTableLineChange"
-    class="table_css"
-  >
-    <template #opt="scope">
-      <el-row>
-        <el-button
-          size="mini"
-          type="primary"
-          icon="el-icon-edit"
-          v-if="!scope.data.row.isRowEditing"
-          circle
-          @click="ChangeTestCaseTableEditable(scope.data.row)"
-        ></el-button>
-        <el-button
-          v-else
-          size="mini"
-          type="success"
-          icon="el-icon-circle-check"
-          circle
-          @click="SaveChange(scope.data.row)"
-        ></el-button>
-        <el-button
-          type="info"
-          icon="el-icon-picture-outline"
-          circle
-          size="mini"
-        ></el-button
-        ><el-button
-          v-if="scope.data.row.isRowEditing"
-          type="warning"
-          size="mini"
-          icon="el-icon-error"
-          circle
-          @click="CancelEditingTestCase(scope.data.row)"
-        ></el-button>
-        <el-button
-          v-else
-          type="danger"
-          size="mini"
-          icon="el-icon-delete"
-          circle
-          @click="DeleteTableTestcase(scope.data.row)"
-        ></el-button>
-      </el-row>
-    </template>
+  <!--div class="table-head-css">
+    <table ref="middle-table">
+      <thead class="thead-middle">
+        <tr>
+          <th
+            v-for="colConfig in colConfigs"
+            :key="colConfig.prop"
+            :property="colConfig.prop"
+            :label="colConfig.label"
+            :width="colConfig.width"
+          >
+            {{ colConfig.label }}
+          </th>
+        </tr>
+      </thead>
+    </table>
+  </div-->
 
-    <!--template #chooseLevel="scope">
+  <div class="table-contain-css">
+    <my-table
+      :data="tableData"
+      :col-configs="colConfigs"
+      highlight-current-row
+      border
+      ref="table"
+      @cell-dblclick="ChangeInfoByCell"
+      @current-change="CurrentTableLineChange"
+    >
+      <template #opt="scope">
+        <el-row>
+          <el-button
+            size="mini"
+            type="primary"
+            icon="el-icon-edit"
+            v-if="!scope.data.row.isRowEditing"
+            circle
+            @click="ChangeTestCaseTableEditable(scope.data.row)"
+          ></el-button>
+          <el-button
+            v-else
+            size="mini"
+            type="success"
+            icon="el-icon-circle-check"
+            circle
+            @click="SaveChange(scope.data.row)"
+          ></el-button>
+          <el-button
+            type="info"
+            icon="el-icon-picture-outline"
+            circle
+            size="mini"
+          ></el-button
+          ><el-button
+            v-if="scope.data.row.isRowEditing"
+            type="warning"
+            size="mini"
+            icon="el-icon-error"
+            circle
+            @click="CancelEditingTestCase(scope.data.row)"
+          ></el-button>
+          <el-button
+            v-else
+            type="danger"
+            size="mini"
+            icon="el-icon-delete"
+            circle
+            @click="DeleteTableTestcase(scope.data.row)"
+          ></el-button>
+        </el-row>
+      </template>
+
+      <!--template #chooseLevel="scope">
       <el-select v-model="scope.data.row.test_level" placeholder="P0">
         <el-option
           v-for="item in options"
@@ -63,7 +81,8 @@
         </el-option>
       </el-select>
     </template-->
-  </my-table>
+    </my-table>
+  </div>
 </template>
 
 <script>
@@ -192,6 +211,18 @@ const SelectInput = {
 
 import axios from "axios";
 export default {
+  /** 
+   directives: {
+    //注册一个局部的自定义指令 v-pin
+    pin: {
+      mounted(el, binding, vnode) {
+        el.style.position = "fixed";
+        el.style.top = binding.value + "px";
+        console.log(el)
+      },
+    },
+  },*/
+  props: ["offsetTop"],
   inject: ["parentObj"],
   watch: {
     currentRow(row) {
@@ -204,11 +235,32 @@ export default {
     },
   },
   created() {
+    for (var i = 0; i < this.colConfigs.length; i++) {
+      this.compare += this.colConfigs[i].width;
+      //th_tree_doms[i].clientWidth = th_doms[i].clientWidth
+    }
     //console.log(this.tableData)
     //console.log(this.parentObj.table_datas)
     //this.tableData = this.parentObj.table_datas
   },
+  computed: {},
   mounted() {
+    const that = this;
+    window.onresize = () => {
+      return (() => {
+        console.log(document.querySelector(".table-head-css"));
+        console.log(document.querySelectorAll(".table-head-css th"));
+        var th_doms = document.querySelectorAll(".table-head-css th");
+        var th_tree_doms = document.querySelectorAll(".has-gutter tr th");
+        console.log(th_tree_doms);
+        for (var i = 0; i < th_doms.length; i++) {
+          this.colConfigs[i].width = th_doms[i].clientWidth;
+          //th_tree_doms[i].clientWidth = th_doms[i].clientWidth
+        }
+        window.screenWidth = document.body.clientWidth;
+        that.screenWidth = window.screenWidth;
+      })();
+    };
     //在组件B中监听动作的发生
     this.$bus.on("CHANGE_TESTCASE_BY_POP", (param) => {
       console.log("CHANGE_TESTCASE_BY_POP 发生了");
@@ -294,8 +346,75 @@ export default {
         this.$refs["table"].ChangeCurrentRow(currentRow);
       }
     });
+
+    /*
+     * 监听页面滚动事件，获取table对象的DOM
+     */
+    //window.addEventListener("scroll", this.scrollHandle, true);
   },
   methods: {
+    /**
+     * 处理滑动事件
+     */
+    scrollHandle() {
+      console.log("scrollHandle+++++++++++++++++++++++++");
+      var refName = "table";
+      if (!refName || !this.$refs[refName]) return;
+      let vmEl = this.$refs[refName].$el;
+      if (!vmEl) return;
+
+      //console.log(vmEl);
+      
+      const containerTop = document.querySelectorAll(".el-table__body tbody")[0].scrollTop; // 空间距离顶部的距离
+      console.log(document.querySelector(".el-table__body-wrapper").scrollTop);
+      console.log(containerTop);
+      console.log(this.$refs.table.$el)
+
+      /*
+      this.clientRect.top = Math.floor(top - parseInt(this.offsetTop, 10));
+      const containerTop = document.querySelector(".main").scrollTop; // 空间距离顶部的距离
+      console.log(containerTop);
+      this.theadStyle = "top:" + containerTop + "px;";
+
+      refName = "middle-table";
+      console.log("this.$refs['middle-table']");
+      console.log(this.$refs["middle-table"]);
+      if (!refName || !this.$refs[refName]) return;
+      vmEl = this.$refs[refName].$el;
+      if (!vmEl) return;
+      var dom = vmEl.querySelectorAll(".thead-middle")[0]; //获取表头dom
+
+      console.log(dom[0]);
+      */
+
+      /*
+      var dom = vmEl.querySelectorAll(".el-table__header-wrapper")[0]; //获取表头dom
+      var dom_table = vmEl.querySelectorAll(".el-table__body")[0]; //获取表体dom
+      var targetOffsetTop = dom.getBoundingClientRect().top; //表头到顶部的距离
+      var targetOffsetTop_body = dom_table.getBoundingClientRect().top; //表头到顶部的距离
+
+      const containerTop = document.querySelector(".main").scrollTop; // 空间距离顶部的距离
+
+
+      const { top } = dom_table.getBoundingClientRect()
+
+      console.log(dom);
+      console.log(dom_table);
+      console.log(this.offsetTop);
+       this.clientRect.top = Math.floor(top - parseInt(this.offsetTop, 10))
+      */
+      /*
+      var trans = targetOffsetTop_body - this.offsetTop;
+      console.log(targetOffsetTop, containerTop, this.offsetTop, trans);
+      if (trans < 0) {
+        //当位移小于0，也就是top已经在屏幕最上面时，进行修正
+        dom.style.top = `${containerTop + this.offsetTop}px`;
+        dom.style.position = `absolute`;
+        dom.style.transform = `translate3d(0px, ${containerTop +
+          this.offsetTop}px, 100px)`;
+      }*/
+    },
+
     /**
      * 等待通过table的Node所在的fatherID文件夹，
      * 获取该文件夹下全部的测试用例文件
@@ -347,7 +466,7 @@ export default {
      * @param {index} table的索引值
      */
     scrollTableTo(refName, index) {
-      //("scrollTableTo++++++++++++++++++=================")
+      ("scrollTableTo++++++++++++++++++=================");
       // 获取目标的 offsetTop
       // css选择器是从 1 开始计数，我们是从 0 开始，所以要 +1
       if (!refName || !this.$refs[refName]) return;
@@ -359,11 +478,18 @@ export default {
       const containerTop = vmEl
         .querySelector(".el-table__body")
         .getBoundingClientRect().top;
-      //console.log( containerTop,targetOffsetTop);
+      console.log(
+        "containerTop: ",
+        containerTop,
+        "targetOffsetTop: ",
+        targetOffsetTop
+      );
       targetOffsetTop = targetOffsetTop - containerTop;
       // 获取当前 offsetTop
-      let scrollTop = document.querySelector(".main").scrollTop;
+      let scrollTop = document.querySelector(".el-table__body-wrapper").scrollTop;
       // 定义一次跳 50 个像素，数字越大跳得越快，但是会有掉帧得感觉，步子迈大了会扯到蛋
+      console.log("scrollTop", scrollTop);
+      console.log("targetOffsetTop", targetOffsetTop);
       const STEP = 350;
       // 判断是往下滑还是往上滑
       if (scrollTop > targetOffsetTop) {
@@ -385,7 +511,11 @@ export default {
           } else {
             scrollTop = targetOffsetTop;
           }
-          document.querySelector(".main").scrollTop = scrollTop;
+          document.querySelector(".el-table__body-wrapper").scrollTop = scrollTop;
+          console.log(
+            "document.querySelector",
+            document.querySelector(".el-table__body-wrapper").scrollTop
+          );
           // 关于 requestAnimationFrame 可以自己查一下，在这种场景下，相比 setInterval 性价比更高
           requestAnimationFrame(smoothDown);
         }
@@ -398,7 +528,7 @@ export default {
           } else {
             scrollTop = targetOffsetTop;
           }
-          document.querySelector(".main").scrollTop = scrollTop;
+          document.querySelector(".el-table__body-wrapper").scrollTop = scrollTop;
           requestAnimationFrame(smoothUp);
         }
       }
@@ -738,8 +868,13 @@ export default {
       console.log(data);
     },
   },
+  destroy() {
+    // 必须移除监听器，不然当该vue组件被销毁了，监听器还在就会出错
+    //window.removeEventListener("scroll", this.scrollHandle);
+  },
   components: { myTable },
   data() {
+    this.compare = 0;
     const tableData = [];
     this.colConfigs = [
       {
@@ -802,7 +937,47 @@ export default {
 };
 </script>
 <style>
+.table-head-css {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  right: 0px; /* 距离右边0像素 */
+  padding-left: 10px;
+  line-height: 40px;
+  /* background-color: red; */
+}
+
+.table-contain-css {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  position: absolute;
+  top: 00px;
+  left: 0px;
+  bottom: 10px;
+  right: 10px; /* 距离右边0像素 */
+  padding-left: 10px;
+  overflow-y: auto; /* 当内容过多时y轴出现滚动条 */
+}
 .custom-table-row > span {
   height: 80px;
+}
+
+.thead-middle {
+  background: rgb(216, 216, 216);
+  color: rgb(32, 32, 32);
+  border: 1px solid black;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 500;
+  height: 40px;
+}
+
+.thead-middle > .tr > .th {
+  border: 1px solid black;
 }
 </style>

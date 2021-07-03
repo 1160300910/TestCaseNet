@@ -1,17 +1,20 @@
 // my-table.vue
 <template>
-  <el-table 
-  class="elTable_css"
-  :data="data" :row-class-name="tableRowClassName" ref="my-table"
-  :cell-style="{borderColor:'black'}"
-  :header-cell-style="getHeadCss"
+  <el-table
+    class="elTable_css"
+    :data="data"
+    :row-class-name="tableRowClassName"
+    ref="my-table"
+    :cell-style="{ borderColor: 'black' }"
+    :header-cell-style="getHeadCss"
+    :height="780"
+    fit
   >
     <el-table-column
       v-for="colConfig in colConfigs"
       :key="colConfig.prop"
       :property="colConfig.prop"
       :label="colConfig.label"
-      :width="colConfig.width"
     >
       <template #default="scope">
         <slot v-if="colConfig.slot" :name="colConfig.slot" :data="scope">
@@ -81,9 +84,9 @@ export default {
   methods: {
     getHeadCss({ row, column, rowIndex, columnIndex }) {
       if (rowIndex === 0) {
-        return 'background:rgb(216, 216, 216);color:rgb(32, 32, 32);text-align:center;font-size:20px;font-weight:500;border: 1px solid black;'
+        return "background:rgb(216, 216, 216);color:rgb(32, 32, 32);text-align:center;font-size:20px;font-weight:500;border: 1px solid black;";
       } else {
-        return ''
+        return "";
       }
     },
     /**
@@ -134,20 +137,29 @@ export default {
      * 能通过调用子组件，设置当前选中行
      *
      */
-    ChangeCurrentRow(row) {
-      this.$refs["my-table"].setCurrentRow(row);
+    ChangeCurrentRow(currentRow) {
+      this.$refs["my-table"].setCurrentRow(currentRow);
     },
-
+    /**
+     * 修改行类型，改变行的颜色
+     */
     tableRowClassName({ row, rowIndex }) {
-      if (rowIndex === 1) {
+      //console.log(rowIndex,row)
+      /*if (rowIndex === 1) {
         return "warning-row";
       } else if (rowIndex === 0) {
         return "success-row";
-      }
+      }*/
       return "";
     },
   },
   data() {
+    const backgroundColor = {
+      currentRow: {
+        type: String,
+        default: "#333",
+      },
+    };
     return {
       options: {
         test_level: [
@@ -179,10 +191,29 @@ export default {
   },
 };
 </script>
-<style scoped>
-.elTable_css{
-  border: 1px solid rgb(73, 73, 73);
+<style >
+.el-table .warning-row {
+  background: rgb(255, 242, 218);
+}
+.el-table .success-row {
+  background: #eaffde;
 }
 
+.el-table--striped .el-table__body tr.el-table__row--striped.current-row td,
+.el-table__body tr.current-row > td {
+  color:black;
+  background-color: rgb(197, 244, 255) !important;
+  font-size: 16px;
+}
 
+.elTable_css {
+  border-left: 1px solid rgb(99, 99, 99);
+}
+.el-table__header-wrapper {
+}
+
+.el-table__body-wrapper > .el-table__body {
+  border-color: rgb(99, 99, 99);
+  border: 1px solid rgb(99, 99, 99);
+}
 </style>

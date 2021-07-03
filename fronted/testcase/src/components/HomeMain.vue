@@ -16,7 +16,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style >
 .div_back {
   position: absolute;
   top: 0px;

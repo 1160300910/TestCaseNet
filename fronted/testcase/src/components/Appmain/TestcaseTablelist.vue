@@ -1,6 +1,5 @@
 <template>
   <el-table
-    border
     :data="tableData"
     style="width: 100%"
     :row-class-name="tableRowClassName"

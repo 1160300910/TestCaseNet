@@ -15,9 +15,11 @@
       :headSrc="headSrc"
     ></app-header>
     <app-navbar :style="{ 'background-color': work_nav_bk_color }"></app-navbar>
+
+    <selector-main></selector-main>
     <app-main></app-main>
-    
-  <right-menu></right-menu>
+
+    <right-menu></right-menu>
   </div>
 </template>
 
@@ -27,6 +29,7 @@ import AppHeader from "./Apphead/HeadMain";
 import AppNavbar from "./Appnavbar/NavbarMain";
 import RightMenu from "./Appnavbar/ChooseOption/RightMenu.vue";
 import AppMain from "./Appmain/AppMain";
+import SelectorMain from "./AppSelector/SelectorMain";
 import { ref } from "vue";
 
 import axios from "axios";
@@ -66,10 +69,9 @@ const peoHeads = [
   },
 ];
 export default {
-  components: { AppHeader, AppNavbar, AppMain,RightMenu },
+  components: { AppHeader, AppNavbar, AppMain, RightMenu, SelectorMain },
   mounted() {
     this.getRoleData(this.userWork);
-   
   },
   beforeUnmount() {
     //console.log(this.$bus);
@@ -89,10 +91,8 @@ export default {
     //console.log(this.$bus);
   },
   unmounted() {},
-  activated() {
-  },
+  activated() {},
   created() {
-
     if (
       this.$route.params.userName &&
       this.$route.params.userWork &&
@@ -256,7 +256,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style >
 /* 头部样式 */
 .header {
   align-items: center;
@@ -290,13 +290,27 @@ export default {
   flex: 1;
   flex-direction: column;
   position: absolute;
-  top: 50px;
+  top: 100px;
   left: 340px;
   bottom: 0px;
   right: 0px; /* 距离右边0像素 */
-  padding: 10px;
   padding-left: 10px;
   overflow-y: auto; /* 当内容过多时y轴出现滚动条 */
   /* background-color: red; */
+}
+/* 筛选器区域 */
+.select_main_css {
+  position: absolute;
+  display: flex;
+  flex-grow: 1;
+  justify-content: left;
+  flex-direction: row;
+  color: rgb(2, 24, 44);
+  top: 50px;
+  left: 340px;
+  right: 0px;
+  line-height: 50px;
+  font-size: 18px;
+  align-items: center;
 }
 </style>

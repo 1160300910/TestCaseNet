@@ -29,6 +29,7 @@
         @node-click="OnTreeClickChooseNode"
         @node-expand="OnTreeClickChooseNode"
         @node-contextmenu="OnActivatePopOver"
+        @node-collapse="OnTreeClickChooseNode"
         ><template #default="{ node, data }">
           <span>
             <span v-if="testif" span="1">
@@ -209,6 +210,22 @@ export default {
       console.log(index);
       if (index != -1) {
         this.scrollTreeTo(index);
+      } else {
+        /**
+         * 如果没有这个数据，则等待树节点加载这个数据，再进行跳转
+         */
+        this.waitForTreeNodeData(
+          () => {
+            //函数触发回调，表明table的数据已经更新且载入，可以被读取到
+            console.log("action___result");
+            index = this.FindNodeIndexByCaseId(data.caseId, data.caseName);
+            this.$refs["tree"].setCurrentKey(data.caseId);
+            this.scrollTreeTo( index); //设置滑动的滚轮，滚动到对应的treeNode 位置
+          },
+          500, //设置等待时间间隔为0.5秒
+          data.caseId,
+          data.caseName
+        );
       }
     });
     /***
@@ -291,6 +308,23 @@ export default {
   },
   methods: {
     /**
+     * 等待树的数据
+     */
+    waitForTreeNodeData(callback, interval, caseId, caseName) {
+      let handle = setInterval(() => {
+        var index = this.FindNodeIndexByCaseId(caseId, caseName);
+        if (index >= 0) {
+          // index>0 说明对应的文件已经在文件集合里面了，表明已经载入了需要的数据
+          clearInterval(handle);
+          // 此时可以清除间隔且返回到调用函数（俗称回调函数）
+          callback();
+        } else {
+          console.log("waiting!!!!!!!!!!!!!");
+          //否则，一直处于等待数据状态
+        }
+      }, interval);
+    },
+    /**
      * 激活popover
      */
     OnActivatePopOver(event, data, node, node_obj) {
@@ -343,7 +377,7 @@ export default {
       console.log(targetOffsetTop);
       let scrollTop = document.querySelector(".navbar").scrollTop;
       // 定义一次跳 50 个像素，数字越大跳得越快，但是会有掉帧得感觉，步子迈大了会扯到蛋
-      const STEP = 50;
+      const STEP = 150;
       // 判断是往下滑还是往上滑
       if (scrollTop > targetOffsetTop) {
         // 往上滑
@@ -704,7 +738,7 @@ export default {
       while (parent != null) {
         if (parent.data.type == "folder" && num == -1) {
           parent.data.testCase_num += num * folder_children;
-          parent.data.testCase_num += num ;
+          parent.data.testCase_num += num;
         } else {
           parent.data.testCase_num += num;
         }
