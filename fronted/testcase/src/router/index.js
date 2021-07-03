@@ -28,29 +28,42 @@ const routes = [{
     {
         path: '/Layout',
         name: 'Layout', // 路由名称
-        component: Layout // 组件对象
+        component: Layout, // 组件对象
+        meta: {
+            needLogin: true
+        },
     },
     {
         path: '/Login',
         name: 'Login', // 路由名称
-        component: Login // 组件对象
+        component: Login, // 组件对象
+        meta: {
+            needLogin: false
+        }
     },
     {
         path: '/',
         name: 'HomeMain',
-        component: HomeMain // 组件对象
+        component: HomeMain, // 组件对象
+        meta: {
+            needLogin: false
+        }
     }, {
         path: '/Testcase',
         component: TestCaseTable
     }, {
         path: '/RegisterPage',
         name: 'RegisterPage',
-        component: RegisterPage
+        component: RegisterPage,
+        meta: {
+            needLogin: false
+        }
     },
     {
         path: '/ModifyUserInfoPage',
         name: 'ModifyUserInfoPage',
-        component: ModifyUserInfoPage
+        component: ModifyUserInfoPage,
+
     }, {
         path: '/Test1',
         component: TableT1

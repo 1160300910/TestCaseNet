@@ -1,9 +1,17 @@
+import base64
+
 from modules.Stack import Stack
 from . import bp
 from flask import jsonify, flash, g, redirect, render_template, request, session, url_for
 from flaskr.db.Model import Peo, TestCase, query2dict, CasePath, CaseSystem
 from flaskr.db_init import DB
 from sqlalchemy.sql import and_
+import datetime
+import jwt
+from modules import globals_data
+
+from flask_jwt import JWT, jwt_required, current_identity
+from werkzeug.security import safe_str_cmp
 
 
 @bp.route('/', methods=['GET', 'POST'])
@@ -19,9 +27,12 @@ def userLogin():
     if request.method == 'POST':
         error = ''
         peoName = request.json.get('userName')
+        userPasswd = request.json.get('userPasswd')
         peo = Peo.query.filter_by(peoName=peoName).first()
-        if peo:
-            msg = {'peoId': peo.peoId, 'peoType': peo.peoType}
+        if peo and peo.peoPasswd == userPasswd:
+            token = encode_auth_token(peo.peoId,peoName)
+            token_data = base64.b64encode(token)
+            msg = {'peoId': peo.peoId, 'peoType': peo.peoType, 'token': str(token_data, 'utf-8')}
         else:
             msg = 0
             error = "该用户名尚未注册"
@@ -33,25 +44,142 @@ def userLogin():
         return jsonify(response)
 
 
+'''
+    设计token生成，进行鉴权
+'''
+
+
+def encode_auth_token(user_id,user_name):
+    try:
+        headers = {
+            'typ': 'JWT',
+            "alg": "HS256"
+        }
+        payload = {
+            "headers": headers,
+            "iss": 'xizika',  # 发行人
+            "exp": datetime.datetime.utcnow() + datetime.timedelta(days=0, hours=0, minutes=0, seconds=10),  # 过期时间
+            "iat": datetime.datetime.utcnow(),  # 签发时间
+            "user_id": user_id,  # 用户id
+            "user_name": user_name  # 用户名
+        }
+
+        # Setting.SECRET_KEY 这是加密的，一定要保管好，知道了就可以构造出你的token
+        signature = jwt.encode(payload, globals_data.SECRET_KEY, algorithm='HS256')
+        return signature
+    except Exception as e:
+        return e
+
+
+'''
+    解码用户数据
+'''
+
+
+def decode_auth_token(auth_token):
+    try:
+        payload = jwt.decode(auth_token, globals_data.SECRET_KEY, options={'verify_exp': True})
+        if payload:
+            payload['status']=1
+            payload['msg']='成功'
+            return payload
+        else:
+            raise jwt.InvalidTokenError
+    except jwt.ExpiredSignatureError:
+        return {
+            'status': 0,
+            'msg': 'Token过期'
+        }
+    except jwt.InvalidTokenError:
+        return {
+            'status': 0,
+            'msg': '无效Token'
+        }
+
+
+@bp.route('/parseUserToken', methods=['POST'], strict_slashes=False)
+def handele_get_user_token():
+    if request.method == 'POST':
+        error = ''
+        msg = ''
+        expiled =0
+        userId = ''
+        userName =''
+        peoType = ''
+        token = request.json.get('token')
+        print(token)
+        if token != '-1' :
+            token = token.encode(encoding='utf-8')
+            token = base64.b64decode(token)
+            token_data = decode_auth_token(token)
+            print(token_data)
+            if token_data['status'] == 1: # 成功获取到数据
+                expiled = 0
+                msg = token_data['msg']
+                peo = Peo.query.filter_by(peoId=token_data['user_id']).first()
+                userName = peo.peoName
+                userId = peo.peoId
+                peoType = peo.peoType
+            else:
+                expiled = 1
+        else:
+            pass
+
+        '''
+        peo = Peo.query.filter_by(peoName=peoName).first()
+        if peo and peo.peoPasswd == userPasswd:
+            token = encode_auth_token(peoName)
+            msg = {'peoId': peo.peoId, 'peoType': peo.peoType, 'token': token}
+        else:
+            msg = 0
+            error = "该用户名尚未注册或者用户密码错误！！！"
+            # flash(error)
+        '''
+        response = {
+            'expiled': expiled,
+            'msg': msg,
+            'error': error,
+            'userName':userName,
+            'userId':userId,
+            'peoType':peoType
+        }
+        return jsonify(response)
+
+
 @bp.route('/modifyUserInfo/', methods=['POST'], strict_slashes=False)
 def modifyUserInfo():
     if request.method == 'POST':
         error = ''
-        userOldName = request.json.get('userOldName')
-        peo = Peo.query.filter_by(peoName=userOldName).first()
+        userId = request.json.get('userId')
+        userName = request.json.get('userName')
+        userOldPasswd = request.json.get('userOldPasswd')
+        userNewPasswd = request.json.get('userNewPasswd')
+        userNewName = request.json.get('userNewName')
+        userWork = request.json.get('userWork')
+        peo = Peo.query.filter_by(peoId=userId, peoName=userName, peoPasswd=userOldPasswd).first()
         if peo:
-            # 存在这个用户，可以修改其信息
-            userWork = request.json.get('userWork')
-            userNewName = request.json.get('userNewName')
-            peo.peoName = userNewName
-            peo.peoType = int(userWork)
+            # 存在这个用户,密码和账号正确，可以修改其信息
+            if userNewName and userNewName != peo.peoName:
+                peo.peoName = userNewName
+            if userWork and userWork != peo.peoType:
+                peo.peoType = int(userWork)
+            if userNewPasswd:
+                peo.peoPasswd = userNewPasswd
+            token = encode_auth_token(userId,userName)
+            token_data = base64.b64encode(token)
+            if token:
+                peo.peoToken = str(token_data, 'utf-8')
+            print(str(token_data, 'utf-8'))
+
             DB.session.flush()
             DB.session.commit()
-            msg = {'peoId': peo.peoId, 'peoType': peo.peoType, 'peoName': peo.peoName}
+            msg = {'peoId': peo.peoId, 'peoType': peo.peoType, 'peoName': peo.peoName,
+                   'token': str(token_data, 'utf-8')}
         else:
             msg = 0
             error = "该用户名尚未注册,不可修改"
             flash(error)
+
         response = {
             'msg': msg,
             'error': error
@@ -64,6 +192,7 @@ def userRegister():
     if request.method == 'POST':
         peoName = request.json.get('userName')
         peoType = request.json.get('userWork')
+        userPasswd = request.json.get('userPasswd')
         print(peoName, peoType)
 
         msg = 0
@@ -71,17 +200,24 @@ def userRegister():
             error = '输入名字为空'
         elif not peoType:
             error = '尚未选择身份'
+        elif not userPasswd:
+            error = '尚未输入密码'
         elif Peo.query.filter_by(peoName=peoName).first() is not None:
             error = '用户名：{} 已经被注册过啦！'.format(peoName)
         else:
-            peo1 = Peo(peoName=peoName, peoType=int(peoType))
-            DB.session.add(peo1)
+            peo1 = Peo(peoName=peoName, peoType=int(peoType), peoPasswd=userPasswd)
             DB.session.flush()
-            msg = peo1.peoId
             error = None
-        if error is None:
+            token = encode_auth_token(peo1.peoId,peoName)
+            token_data = base64.b64encode(token)
+            peo1.peoToken = str(token_data, 'utf-8')
+            print(str(token_data, 'utf-8'))
+
+            DB.session.add(peo1)
             DB.session.commit()
+            msg = {'userId': peo1.peoId, 'token': str(token_data, 'utf-8')}
         flash(error)
+
         response = {
             'msg': msg,
             'error': error
@@ -281,7 +417,7 @@ def SetNode(node):
     tmp['isEditing'] = 0
     tmp['children'] = []
     if node.fileType == 'folder':
-        tmp['testCase_num'] = len(CasePath.query.filter_by(testcase_ancestor=node.caseId).all())-1
+        tmp['testCase_num'] = len(CasePath.query.filter_by(testcase_ancestor=node.caseId).all()) - 1
     else:
         tmp['testCase_num'] = 0
     return tmp
@@ -673,7 +809,7 @@ def handle_upload_file():
         f = file_data.read()
         clinic_file = xlrd.open_workbook(file_contents=f)
         # sheet1
-        table = clinic_file.sheet_by_index(2)
+        table = clinic_file.sheet_by_index(1)
         # 输出每一行的内容
         # table.nrows获取该sheet中的有效行数
         deal_sheet_contains(table)

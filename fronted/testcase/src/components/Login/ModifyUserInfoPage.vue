@@ -12,17 +12,26 @@
         :model="form"
       >
         <el-form-item
-          label="原用户名："
-          :rules="[{ required: true, message: '原名不能为空' }]"
+          label="原密码："
+          :rules="[{ required: true, message: '原密码不能为空' }]"
         >
           <el-input
-            v-model="form.old_name"
-            placeholder="请输入需要修改的原名"
+            v-model="form.old_password"
+            placeholder="请输入原密码进行验证"
+          ></el-input>
+        </el-form-item>
+        <el-form-item
+          label="新密码："
+          :rules="[{ required: true, message: '新密码不能为空' }]"
+        >
+          <el-input
+            v-model="form.new_password"
+            placeholder="请输入修改后的新密码"
           ></el-input>
         </el-form-item>
         <el-form-item
           label="新用户名："
-          :rules="[{ required: true, message: '新用户名不能为空' }]"
+          :rules="[{ required: false }]"
         >
           <el-input
             v-model="form.new_name"
@@ -31,7 +40,7 @@
         </el-form-item>
         <el-form-item
           label="职能："
-          :rules="[{ required: true, message: '职能不能为空' }]"
+          :rules="[{ required: false, message: '职能不能为空' }]"
         >
           <el-select
             v-model="form.work"
@@ -62,9 +71,12 @@ export default {
     return {
       labelPosition: "right",
       form: {
-        old_name: "",
-        new_name: "",
-        work: "",
+        userId:1,
+        userName:"小时",
+        old_password:"",
+        new_password: "",
+        new_name:"小时" ,
+        work: "1",
       },
       dialogFormVisible: true,
       filled: false,
@@ -84,13 +96,18 @@ export default {
       if (this.IsFilled()) {
         axios
           .post("/modifyUserInfo", {
-            userOldName: that.form.old_name,
+            userId:that.form.userId,
+            userName:that.form.userName,
+            userOldPasswd: that.form.old_password,
+            userNewPasswd: that.form.new_password,
             userNewName: that.form.new_name,
             userWork: that.form.work,
           })
           .then((res) => {
             console.log(res.data);
             if (res.data.msg) {
+              console.log(res.data.msg)
+              localStorage.setItem ("TOKEN", res.data.msg.token)
               //修改成功，跳转到主界面
               that.dialogFormVisible = false; //隐藏登录弹窗
               //指定跳转回到Login页面，可带参数
@@ -133,7 +150,7 @@ export default {
      * 检查下空是不是都填写了
      */
     IsFilled() {
-      if (this.form.name != "" && this.form.work != "") {
+      if (this.form.old_password != "" && this.form.new_password != "") {
         return true;
       } else {
         return false;

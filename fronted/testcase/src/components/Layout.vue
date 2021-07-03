@@ -30,6 +30,7 @@ import AppNavbar from "./Appnavbar/NavbarMain";
 import RightMenu from "./Appnavbar/ChooseOption/RightMenu.vue";
 import AppMain from "./Appmain/AppMain";
 import SelectorMain from "./AppSelector/SelectorMain";
+import { store } from '@/store/store.js'
 import { ref } from "vue";
 
 import axios from "axios";
@@ -93,16 +94,19 @@ export default {
   unmounted() {},
   activated() {},
   created() {
+    var userData = store.getUserData()
+    //console.log(userData)
     if (
-      this.$route.params.userName &&
-      this.$route.params.userWork &&
-      this.$route.params.userId
+      userData.userName &&
+      userData.work &&
+      userData.userId
     ) {
-      this.userName = this.$route.params.userName;
-      this.userWork = this.$route.params.userWork;
-      this.userId = this.$route.params.userId;
+      this.userName = userData.userName;
+      this.userWork = userData.work;
+      this.userId = userData.userId;
       this.initOptions();
     } else {
+      console.log("pushpush___________________________")
       //若尚未登录，跳转到登录界面
       this.$router.push({
         name: "Login",

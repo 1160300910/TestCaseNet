@@ -10,6 +10,9 @@
         <el-form-item label="用户名：">
           <el-input v-model="form.name" placeholder="请输入注册名"></el-input>
         </el-form-item>
+        <el-form-item label="密码：">
+          <el-input v-model="form.password" placeholder="请输入登录密码"></el-input>
+        </el-form-item>
         <el-form-item label="职能：">
           <el-select
             v-model="form.work"
@@ -43,6 +46,7 @@ export default {
       form: {
         name: "",
         work: "",
+        password:""
       },
       dialogFormVisible: true,
       filled: false,
@@ -71,11 +75,13 @@ export default {
           .post("/userRegister", {
             userName: that.form.name,
             userWork: that.form.work,
+            userPasswd:that.form.password,
           })
           .then((res) => {
             console.log(res.data);
             if (res.data.msg) {
               //注册成功，跳转到主界面
+              localStorage.setItem ("TOKEN", res.data.msg.token)
               that.dialogFormVisible = false; //隐藏登录弹窗
               //指定跳转回到Login页面，可带参数
               this.$router.replace({

@@ -8,6 +8,9 @@ class Peo(DB.Model):
     __table_args__ = {'extend_existing': True}
     peoId = DB.Column(DB.Integer, primary_key=True,
                       unique=True, autoincrement=True)
+    peoPasswd = DB.Column(DB.String(20),nullable=False)
+    peoToken = DB.Column(DB.String(500))
+
     peoName = DB.Column(DB.String(20))
     peoType = DB.Column(DB.Integer)
     createDate = DB.Column(DB.DateTime, default=datetime.now, nullable=False)

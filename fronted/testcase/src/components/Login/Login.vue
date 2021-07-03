@@ -10,6 +10,9 @@
         <el-form-item label="用户名：">
           <el-input v-model="form.name" placeholder="请输入用户名"></el-input>
         </el-form-item>
+        <el-form-item label="密码：">
+          <el-input v-model="form.password" placeholder="请输入登录密码"></el-input>
+        </el-form-item>
         <!--el-form-item label="职能：">
           <el-select
             v-model="form.work"
@@ -39,12 +42,14 @@
 
 <script>
 import axios from "axios";
+import {store} from '@/store/store.js'
 export default {
   data() {
     return {
       labelPosition: "right",
       form: {
         name: "",
+        password:""
       },
       dialogFormVisible: true,
       filled: false,
@@ -80,11 +85,16 @@ export default {
         axios
           .post("/userLogin", {
             userName: that.form.name,
+            userPasswd:that.form.password,
           })
           .then((res) => {
             console.log(res.data);
             if (res.data.msg) {
-              that.dialogFormVisible = false; //隐藏登录弹窗
+              localStorage.setItem ("TOKEN", res.data.msg.token)
+              //在用户刷新的时候userLogin会回到默认值false，所以我们需要用到HTML5储存
+              //我们设置一个名为Flag，值为isLogin的字段，作用是如果Flag有值且为isLogin的时候，证明用户已经登录了
+              // sessionStorage.setItem("FLAG","isLogin") //关闭窗口之后将会删除这些数据
+              //localStorage.setItem("FLAG","isLogin")//关闭窗口后不会删除这些数据
               this.$router.replace({
                 name: "Layout",
                 params: {
@@ -93,6 +103,7 @@ export default {
                   userWork: this.transWorkType(res.data.msg.peoType),
                 },
               });
+              that.dialogFormVisible = false; //隐藏登录弹窗
             } else {
               alert(res.data.error);
             }
