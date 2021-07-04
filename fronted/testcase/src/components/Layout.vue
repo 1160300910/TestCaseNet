@@ -1,11 +1,11 @@
 <template>
   <div>
-    <base href=".components/source/" />
+    <!--base href=".components/source/" /-->
     <!-- 引入样式 -->
-    <link
+    <!--link
       rel="stylesheet"
       href="https://unpkg.com/element-ui/lib/theme-chalk/index.css"
-    />
+    /-->
     
     <!-- 使用子组件,使用-，不建议使用驼峰 -->
     <app-header
@@ -22,6 +22,7 @@
     <app-main></app-main>
 
     <right-menu></right-menu>
+    <second-menu-dialogs></second-menu-dialogs>>
   </div>
 </template>
 
@@ -36,6 +37,7 @@ import { store } from '@/store/store.js'
 import { ref } from "vue";
 
 import axios from "axios";
+import SecondMenuDialogs from './Appnavbar/ChooseOption/SecondMenu/SecondMenuDialogs.vue';
 // 导入子组件，缩写格式 AppHeader: AppHeader
 const peoHeads = [
   {
@@ -72,7 +74,7 @@ const peoHeads = [
   },
 ];
 export default {
-  components: { AppHeader, AppNavbar, AppMain, RightMenu, SelectorMain },
+  components: { AppHeader, AppNavbar, AppMain, RightMenu, SelectorMain, SecondMenuDialogs },
   mounted() {
     this.getRoleData(this.userWork);
   },
@@ -111,7 +113,7 @@ export default {
       console.log("pushpush___________________________")
       //若尚未登录，跳转到登录界面
       this.$router.push({
-        name: "Login",
+        name: "HomeMain",
         params: {},
       });
     }

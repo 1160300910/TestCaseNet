@@ -1,6 +1,6 @@
 <template>
   <div class="header_left">
-    <img :src="headSrc" class="div1" />
+    <img :src="headSrc" class="head_img" />
     <div class="welcomeText">欢迎您! {{ work }} : [{{ userName }}]</div>
     <div class="TestCaseNameText">
       L30测试用例
@@ -76,10 +76,9 @@ export default {
 <style scoped>
 .header {
 }
-.div1 {
+.head_img {
   width: 50px;
   height: 50px;
-  background-color: 1px solid rgb(118, 60, 211);
 }
 .welcomeText {
   display: flex;
@@ -96,7 +95,7 @@ export default {
   display: flex;
   flex-grow: 1;
   justify-content: left;
-  width: 25%;
-  height: 10%;
+  width: 200px;
+  height: 30px;
 }
 </style>

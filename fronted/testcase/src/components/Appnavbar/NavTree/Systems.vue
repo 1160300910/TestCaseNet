@@ -1023,7 +1023,7 @@ export default {
 };
 </script>
 
- <style scoped>
+ <style>
 .node_editing > .el-input > .el-input__inner {
   height: 20px;
   width: 120px;

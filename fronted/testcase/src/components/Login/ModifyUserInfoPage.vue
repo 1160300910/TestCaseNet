@@ -29,10 +29,7 @@
             placeholder="请输入修改后的新密码"
           ></el-input>
         </el-form-item>
-        <el-form-item
-          label="新用户名："
-          :rules="[{ required: false }]"
-        >
+        <el-form-item label="新用户名：" :rules="[{ required: false }]">
           <el-input
             v-model="form.new_name"
             placeholder="请输入修改后的名字"
@@ -47,10 +44,10 @@
             placeholder="请选择 职能"
             style="width: 100%"
           >
-            <el-option label="策划" value="2"></el-option>
-            <el-option label="PM" value="4"></el-option>
-            <el-option label="QA" value="1"></el-option>
-            <el-option label="程序" value="3"></el-option>
+            <el-option label="策划" value="策划" key="2"></el-option>
+            <el-option label="PM" value="PM" key="4"></el-option>
+            <el-option label="QA" value="QA" key="1"></el-option>
+            <el-option label="程序" value="程序" key="3"></el-option>
           </el-select>
         </el-form-item>
       </el-form>
@@ -65,17 +62,32 @@
 </template>
 
 <script>
+import { store } from "@/store/store.js";
 import axios from "axios";
 export default {
+  created() {
+    if (store.getWork() && store.getUserName() && store.getUserId()) {
+      this.form.work = this.transWorkType(store.getWork());
+      this.form.userName = store.getUserName();
+      this.form.new_name = store.getUserName();
+      this.form.userId = store.getUserId();
+      console.log(store.getUserData());
+    } else {
+      this.$router.push({
+        name: "HomeMain",
+        params: {},
+      });
+    }
+  },
   data() {
     return {
       labelPosition: "right",
       form: {
-        userId:1,
-        userName:"小时",
-        old_password:"",
+        userId: 1,
+        userName: "小时",
+        old_password: "",
         new_password: "",
-        new_name:"小时" ,
+        new_name: "小时",
         work: "1",
       },
       dialogFormVisible: true,
@@ -86,28 +98,29 @@ export default {
     handleClose() {
       console.log(this.form.name);
       console.log(this.form.name != "");
-      this.$router.back()
+      this.$router.back();
     },
     /**
      * 用户信息修改
      */
     modifyUserInfo() {
       var that = this;
+      console.log(this.form.work);
       if (this.IsFilled()) {
         axios
           .post("/modifyUserInfo", {
-            userId:that.form.userId,
-            userName:that.form.userName,
+            userId: that.form.userId,
+            userName: that.form.userName,
             userOldPasswd: that.form.old_password,
             userNewPasswd: that.form.new_password,
             userNewName: that.form.new_name,
-            userWork: that.form.work,
+            userWork: this.transWorkType2Num(that.form.work),
           })
           .then((res) => {
             console.log(res.data);
             if (res.data.msg) {
-              console.log(res.data.msg)
-              localStorage.setItem ("TOKEN", res.data.msg.token)
+              console.log(res.data.msg);
+              localStorage.setItem("TOKEN", res.data.msg.token);
               //修改成功，跳转到主界面
               that.dialogFormVisible = false; //隐藏登录弹窗
               //指定跳转回到Login页面，可带参数
@@ -130,7 +143,7 @@ export default {
         alert("填写全部信息后才能使用噢！");
       }
     },
-     /**
+    /**
      * 获取角色类型，数字转换为具体类型
      */
     transWorkType(workId) {
@@ -140,9 +153,26 @@ export default {
         { key: "3", value: "程序" },
         { key: "4", value: "PM" },
       ];
-      for(var w=0;w<  works.length;w++){
-        if(workId==works[w].key){
-          return works[w].value
+      for (var w = 0; w < works.length; w++) {
+        if (workId == works[w].key) {
+          return works[w].value;
+        }
+      }
+    },
+
+    /**
+     * 获取角色类型，具体类型转换为数字
+     */
+    transWorkType2Num(workType) {
+      var works = [
+        { key: "1", value: "QA" },
+        { key: "2", value: "策划" },
+        { key: "3", value: "程序" },
+        { key: "4", value: "PM" },
+      ];
+      for (var w = 0; w < works.length; w++) {
+        if (workType == works[w].value) {
+          return works[w].key;
         }
       }
     },

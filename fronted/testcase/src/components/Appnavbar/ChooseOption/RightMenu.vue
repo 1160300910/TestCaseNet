@@ -37,6 +37,15 @@
       </div>
       <div
         class="menu_row_css"
+        v-if="data.type == 'folder'"
+        @click="setActionPeo(data, node)"
+      >
+        <i class="el-icon-user-solid" style="color: rgb(6, 153, 202);"></i>
+        <span class="menu_label_css">指派给对应人员....</span>
+      </div>
+      
+      <div
+        class="menu_row_css"
         v-if="data.type == 'file'"
         @click="DeleteTestCase(data, node)"
       >
@@ -81,16 +90,31 @@ export default {
   setup() {},
 
   methods: {
+    /**
+     * 点击弹出选择执行人弹窗
+     */
+    setActionPeo(data, node) {
+       this.$bus.emit("SHOW_SET_ACTION_PEO_DIALOG", {
+        data: data,
+        node: node,
+        visible:true
+      });
+      if (this.visible) {
+        this.visible = false;
+      }
+    },
     getContextmenu(e, data) {
       this.rightMenuStyle = "top:" + e.pageY + "px; left:" + e.pageX + "px";
       this.visible = true;
       this.currentNode = data;
+      /*
       if (data.children && data.children.length > 0) {
         this.addTypeLi = true;
       } else {
         this.addTypeLi = false;
-      }
+      }*/
       const self = this;
+      // 如果点击目标不是菜单，设置可见为false
       document.onclick = function(ev) {
         if (ev.target !== document.getElementById("rightMenu")) {
           self.visible = false;
@@ -114,7 +138,9 @@ export default {
         "——————————————————————————CreateNewTestCaseFile————————————————————————————"
       );
 
-      this.visible = false;
+      if (this.visible) {
+        this.visible = false;
+      }
       var fileType = "file";
       this.$bus.emit("CREATE_NEW_TESTCASE_NODE_POP", {
         data: data,
@@ -126,7 +152,9 @@ export default {
      * 通知TreeNode创建新的测试用例文件夹
      */
     CreateNewTestCaseFolder(data, node) {
-      this.visible = false;
+      if (this.visible) {
+        this.visible = false;
+      }
       var fileType = "folder";
       this.$bus.emit("CREATE_NEW_TESTCASE_NODE_POP", {
         data: data,
@@ -138,7 +166,9 @@ export default {
      * 复制测试用例
      */
     CopyTestcasePopOver(node, data) {
-      this.visible = false;
+      if (this.visible) {
+        this.visible = false;
+      }
     },
     /***
      * 删除测试用例节点
@@ -146,7 +176,9 @@ export default {
      * 2.table里需要删除
      */
     DeleteTestCase(data, node) {
-      this.visible = false;
+      if (this.visible) {
+        this.visible = false;
+      }
       this.$bus.emit("DELETE_TESTCASE_NODE_BYPOP", { data: data, node: node });
     },
     UpdateFatherChooseNode(data, node, currentNodeKey) {
@@ -173,14 +205,18 @@ export default {
      * nowChildren：当前节点的孩子
      */
     ChangeTestCase(data, node) {
-      this.visible = false;
+      if (this.visible) {
+        this.visible = false;
+      }
       this.$bus.emit("CHANGE_TESTCASE_BY_POP", { data: data, node: node });
     },
     /**
      * 修改当前测试用例文件夹
      */
     changeTestCaseFolder(data, node) {
-      this.visible = false;
+      if (this.visible) {
+        this.visible = false;
+      }
       this.$bus.emit("CHANGE_TESTCASE_FOLDER_BY_POP", {
         data: data,
         node: node,

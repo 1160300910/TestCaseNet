@@ -42,8 +42,15 @@ const routes = [{
         component: HelloWorld
     },
     {
-        path: '/Layout',
+        path: '/',
         name: 'Layout', // 路由名称
+        component: Layout, // 组件对象
+        meta: {
+            needLogin: true
+        },
+    }, {
+        path: '/Layout',
+        name: 'Layout_self', // 路由名称
         component: Layout, // 组件对象
         meta: {
             needLogin: true
@@ -58,7 +65,7 @@ const routes = [{
         }
     },
     {
-        path: '/',
+        path: '/HomeMain',
         name: 'HomeMain',
         component: HomeMain, // 组件对象
         meta: {
@@ -79,6 +86,9 @@ const routes = [{
         path: '/ModifyUserInfoPage',
         name: 'ModifyUserInfoPage',
         component: ModifyUserInfoPage,
+        meta: {
+            needLogin: true
+        }
 
     }, {
         path: '/Test1',

@@ -7,7 +7,7 @@
     ref="my-table"
     :cell-style="{ borderColor: 'black' }"
     :header-cell-style="getHeadCss"
-    :height="780"
+    :height="2200"
     fit
   >
     <el-table-column

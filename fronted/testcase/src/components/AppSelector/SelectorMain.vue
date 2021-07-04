@@ -1,7 +1,7 @@
 <template>
   <div class="select_main_css">
     <div class="title_css">系统名:</div>
-    <selector
+    <selector 
       :optionInfo="optionInfo.caseSystems"
       @changeSelectorCondition="changeSelectorCondition"
     ></selector>
@@ -25,8 +25,6 @@
       :optionInfo="optionInfo.tags"
       @changeSelectorCondition="changeSelectorCondition"
     ></selector>
-
-    
   </div>
 </template>
 <script>

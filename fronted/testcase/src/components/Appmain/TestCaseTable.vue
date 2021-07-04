@@ -211,17 +211,7 @@ const SelectInput = {
 
 import axios from "axios";
 export default {
-  /** 
-   directives: {
-    //注册一个局部的自定义指令 v-pin
-    pin: {
-      mounted(el, binding, vnode) {
-        el.style.position = "fixed";
-        el.style.top = binding.value + "px";
-        console.log(el)
-      },
-    },
-  },*/
+
   props: ["offsetTop"],
   inject: ["parentObj"],
   watch: {
@@ -791,7 +781,7 @@ export default {
       );
       console.log(currentRow);
       console.log(oldCurrentRow);
-      if (currentRow) {
+      if (currentRow && currentRow.caseName) {
         this.SaveOtherTableRows(currentRow);
         this.$bus.emit("CHANGE_CURRENT_TREENODE_FROM_TABLE", {
           caseId: currentRow.caseId,
@@ -964,9 +954,8 @@ export default {
   overflow-y: auto; /* 当内容过多时y轴出现滚动条 */
 }
 .custom-table-row > span {
-  height: 80px;
 }
-
+/*
 .thead-middle {
   background: rgb(216, 216, 216);
   color: rgb(32, 32, 32);
@@ -979,5 +968,5 @@ export default {
 
 .thead-middle > .tr > .th {
   border: 1px solid black;
-}
+}*/
 </style>

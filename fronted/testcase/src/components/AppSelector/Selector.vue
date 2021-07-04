@@ -6,6 +6,7 @@
     size="small"
     class="select_css"
     @visible-change="changeOption($event, value)"
+    ref="selector_ref"
   >
     <el-option
       v-for="item in data"
@@ -44,6 +45,12 @@ export default {
      * 当隐藏下拉框时触发
      */
     changeOption(callback, val) {
+      
+      console.log(this.$refs.selector_ref.popper);
+     
+      console.log(this.$refs.selector_ref.popper.popperRef);
+      console.log(this.$refs.selector_ref.$el);
+      console.log(this.$refs.selector_ref.visible);
       if (!callback) {
        // console.log("______________changeOption_____________")
         //console.log(val)

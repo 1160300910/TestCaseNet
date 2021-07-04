@@ -28,7 +28,7 @@
       </el-form>
       <div class="user_change_button">
         <el-button type="text" @click="registUser">注册用户</el-button>
-        <el-button type="text" @click="modifyUserInfo"> 修改用户信息</el-button>
+        <!--el-button type="text" @click="modifyUserInfo"> 修改用户信息</el-button-->
       </div>
       <template #footer>
         <div class="dialog-footer">

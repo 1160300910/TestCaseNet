@@ -30,7 +30,7 @@ def userLogin():
         userPasswd = request.json.get('userPasswd')
         peo = Peo.query.filter_by(peoName=peoName).first()
         if peo and peo.peoPasswd == userPasswd:
-            token = encode_auth_token(peo.peoId,peoName)
+            token = encode_auth_token(peo.peoId, peoName)
             token_data = base64.b64encode(token)
             msg = {'peoId': peo.peoId, 'peoType': peo.peoType, 'token': str(token_data, 'utf-8')}
         else:
@@ -49,7 +49,7 @@ def userLogin():
 '''
 
 
-def encode_auth_token(user_id,user_name):
+def encode_auth_token(user_id, user_name):
     try:
         headers = {
             'typ': 'JWT',
@@ -58,7 +58,7 @@ def encode_auth_token(user_id,user_name):
         payload = {
             "headers": headers,
             "iss": 'xizika',  # 发行人
-            "exp": datetime.datetime.utcnow() + datetime.timedelta(days=0, hours=0, minutes=5, seconds=10),  # 过期时间
+            "exp": datetime.datetime.utcnow() + datetime.timedelta(days=0, hours=0, minutes=30, seconds=10),  # 过期时间
             "iat": datetime.datetime.utcnow(),  # 签发时间
             "user_id": user_id,  # 用户id
             "user_name": user_name  # 用户名
@@ -80,8 +80,8 @@ def decode_auth_token(auth_token):
     try:
         payload = jwt.decode(auth_token, globals_data.SECRET_KEY, options={'verify_exp': True})
         if payload:
-            payload['status']=1
-            payload['msg']='成功'
+            payload['status'] = 1
+            payload['msg'] = '成功'
             return payload
         else:
             raise jwt.InvalidTokenError
@@ -102,18 +102,18 @@ def handele_get_user_token():
     if request.method == 'POST':
         error = ''
         msg = ''
-        expiled =0
+        expiled = 0
         userId = ''
-        userName =''
+        userName = ''
         peoType = ''
         token = request.json.get('token')
         print(token)
-        if token != '-1' :
+        if token != '-1':
             token = token.encode(encoding='utf-8')
             token = base64.b64decode(token)
             token_data = decode_auth_token(token)
             print(token_data)
-            if token_data['status'] == 1: # 成功获取到数据
+            if token_data['status'] == 1:  # 成功获取到数据
                 expiled = 0
                 msg = token_data['msg']
                 peo = Peo.query.filter_by(peoId=token_data['user_id']).first()
@@ -139,9 +139,9 @@ def handele_get_user_token():
             'expiled': expiled,
             'msg': msg,
             'error': error,
-            'userName':userName,
-            'userId':userId,
-            'peoType':peoType
+            'userName': userName,
+            'userId': userId,
+            'peoType': peoType
         }
         return jsonify(response)
 
@@ -165,7 +165,7 @@ def modifyUserInfo():
                 peo.peoType = int(userWork)
             if userNewPasswd:
                 peo.peoPasswd = userNewPasswd
-            token = encode_auth_token(userId,userName)
+            token = encode_auth_token(userId, userName)
             token_data = base64.b64encode(token)
             if token:
                 peo.peoToken = str(token_data, 'utf-8')
@@ -177,7 +177,12 @@ def modifyUserInfo():
                    'token': str(token_data, 'utf-8')}
         else:
             msg = 0
-            error = "该用户名尚未注册,不可修改"
+            if not Peo.query.filter_by(peoName=userName).first():
+                error = "该用户名尚未注册,不可修改"
+            elif not Peo.query.filter_by(peoName=userName, peoPasswd=userOldPasswd).first():
+                error = "用户原密码输入错误,不可修改"
+            elif not Peo.query.filter_by(peoId=userId, peoName=userName, peoPasswd=userOldPasswd).first():
+                error = "该用户id和名字出现错误！！！！,不可修改"
             flash(error)
 
         response = {
@@ -193,7 +198,7 @@ def userRegister():
         userName = request.json.get('userName')
         peoType = request.json.get('userWork')
         userPasswd = request.json.get('userPasswd')
-        print("userRegister",userName, peoType)
+        print("userRegister", userName, peoType)
 
         msg = 0
         if not userName:
@@ -209,7 +214,7 @@ def userRegister():
             DB.session.add(peo1)
             DB.session.flush()
             error = None
-            token = encode_auth_token(peo1.peoId,userName)
+            token = encode_auth_token(peo1.peoId, userName)
             token_data = base64.b64encode(token)
             peo1.peoToken = str(token_data, 'utf-8')
             print(str(token_data, 'utf-8'))
@@ -711,6 +716,35 @@ def getQAPeoData():
         }
         return jsonify(response)
 
+'''
+    从TreeNode的右键菜单设定文件夹的执行人
+'''
+@bp.route('/setActionPeoTreeNodeFolder/', methods=['POST'], strict_slashes=False)
+def setActionPeoTreeNodeFolder():
+    error = ''
+    if request.method == 'POST':
+        peoName = request.json.get('peoName')
+        peoId = request.json.get('peoId')
+        caseId = request.json.get('caseId')
+        action_peo = Peo.query.filter_by(peoName=peoName, peoId=peoId).all()
+        if action_peo:
+            # 存在这个人
+            testcases = CasePath.query.filter_by(testcase_ancestor=caseId).all()
+            for test in testcases:
+                testcase = TestCase.query.filter_by(caseId=test.testcase_caseId).first()
+                if testcase:
+                    testcase.actionPeo = peoId
+                    DB.session.flush()
+            msg = 1
+            DB.session.commit()
+        else:
+            msg = 0
+            error = "未找到对应用户或者信息错误！"
+        response = {
+            'msg': msg,
+            'error': error
+        }
+        return jsonify(response)
 
 @bp.route('/getProjectSystemsData/', methods=['GET'], strict_slashes=False)
 def getProjectSystemsData():
@@ -955,3 +989,4 @@ def set_path_folders(father, nowNode):
         now_path = CasePath(testcase_caseId=testcase_caseId, testcase_ancestor=testcase_ancestor, level=level)
         DB.session.add(now_path)
         DB.session.commit()
+

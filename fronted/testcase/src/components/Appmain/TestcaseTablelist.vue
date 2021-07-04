@@ -1,7 +1,7 @@
 <template>
   <el-table
     :data="tableData"
-    style="width: 100%"
+    style="width: 100px"
     :row-class-name="tableRowClassName"
     @cell-click="cellClick"
     highlight-current-row
