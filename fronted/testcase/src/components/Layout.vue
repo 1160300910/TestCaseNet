@@ -262,7 +262,7 @@ export default {
 };
 </script>
 
-<style >
+<style>
 /* 头部样式 */
 .header_left {
   align-items: center;

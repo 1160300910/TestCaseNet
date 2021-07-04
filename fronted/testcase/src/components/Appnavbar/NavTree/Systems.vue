@@ -116,6 +116,7 @@
 </template>
 
 <script>
+import { store } from '@/store/store.js'
 import axios from "axios";
 let caseId = 11112;
 export default {
@@ -137,14 +138,15 @@ export default {
   beforeUnmount() {},
   inject: ["parentObj"],
   created() {
+    var userData = store.getUserData()
     if (
-      this.$route.params.userName &&
-      this.$route.params.userWork &&
-      this.$route.params.userId
+      userData.userName &&
+      userData.work &&
+      userData.userId
     ) {
-      this.userName = this.$route.params.userName;
-      this.userWork = this.$route.params.userWork;
-      this.userId = this.$route.params.userId;
+        this.userName = userData.userName;
+      this.userWork = userData.work;
+      this.userId = userData.userId;
       this.initTreeNodeData(this.userName, this.userId);
     }
   },

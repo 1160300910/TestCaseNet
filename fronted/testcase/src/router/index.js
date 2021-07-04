@@ -14,8 +14,20 @@ import TestToDo from '@/components/Test/TestToDo'
 import RightMenu from '@/components/Appnavbar/ChooseOption/RightMenu'
 
 import UserDataManager from '@/components/AppUserManager/UserDataManager'
+import SelectorMain from '@/components/AppSelector/SelectorMain'
+import AppMain from '@/components/Appmain/AppMain'
+import HeadMain from '@/components/Apphead/HeadMain'
 
 const routes = [{
+        path: '/HeadMain',
+        component: HeadMain
+    }, {
+        path: '/AppMain',
+        component: AppMain
+    }, {
+        path: '/SelectorMain',
+        component: SelectorMain
+    }, {
         path: '/UserDataManager',
         component: UserDataManager
     }, {
@@ -53,7 +65,7 @@ const routes = [{
             needLogin: false
         }
     }, {
-        path: '/Testcase',
+        path: '/TestCaseTable',
         component: TestCaseTable
     }, {
         path: '/RegisterPage',

@@ -16,12 +16,13 @@
         >导入用例</el-button
       -->
     </div>
-    
+
     <user-data-manager></user-data-manager>
   </div>
 </template>
 
 <script>
+import { store } from "@/store/store.js";
 import axios from "axios";
 import UserDataManager from "@/components/AppUserManager/UserDataManager";
 
@@ -37,9 +38,10 @@ export default {
     };
   },
   created() {
-    this.userName = this.$route.params.userName;
-    this.work = this.$route.params.userWork;
-    this.userId = this.$route.params.userId;
+    var userData = store.getUserData();
+    this.userName = userData.userName;
+    this.userWork = userData.work;
+    this.userId = userData.userId;
   },
   methods: {
     /**

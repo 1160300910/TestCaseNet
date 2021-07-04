@@ -131,7 +131,7 @@ export default {
   },
 };
 </script>
-<style>
+<style scoped>
 .title_css {
   margin-right: 15px;
   margin-left: 7px;

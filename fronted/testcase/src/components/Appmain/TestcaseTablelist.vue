@@ -27,7 +27,6 @@
     <el-table-column
       prop="actionmethod"
       label="执行方案"
-      show-overflow-tooltip
       width="180"
     >
       <template #default="scope">

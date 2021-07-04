@@ -936,7 +936,7 @@ export default {
   },
 };
 </script>
-<style>
+<style scoped>
 .table-head-css {
   display: flex;
   flex-grow: 1;

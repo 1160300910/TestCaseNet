@@ -1,25 +1,8 @@
 <template>
   <div class="main">
-    <div class="selector_css3">
+    <div class="testcase_table_main_css">
       <test-case-table></test-case-table>
     </div>
-    <!--div class="table_head_floating">
-      <table ref="middle-table">
-        <thead class="thead-middle" :style="theadStyle">
-          <tr>
-            <th
-              v-for="colConfig in colConfigs"
-              :key="colConfig.prop"
-              :property="colConfig.prop"
-              :label="colConfig.label"
-              :width="colConfig.width"
-            >
-              {{ colConfig.label }}
-            </th>
-          </tr>
-        </thead>
-      </table>
-    </div-->
   </div>
 </template>
 <script>
@@ -36,7 +19,7 @@ export default {
 };
 </script>
 <style  scoped>
-.selector_css3 {
+.testcase_table_main_css {
   flex-grow: 20;
   color: aliceblue;
 }
