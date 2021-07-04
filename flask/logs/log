@@ -294,3 +294,13 @@ INFO 127.0.0.1 - - [05/Jul/2021 00:19:49] "GET /test_case/getFolderTableTestCase
 INFO 127.0.0.1 - - [05/Jul/2021 00:19:50] "GET /test_case/getProjectPeos HTTP/1.1" 200 - 88
 INFO 127.0.0.1 - - [05/Jul/2021 00:19:52] "POST /test_case/setActionPeoTreeNodeFolder HTTP/1.1" 200 - 88
 INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [05/Jul/2021 00:20:19] "POST /test_case/parseUserToken HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [05/Jul/2021 00:20:19] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [05/Jul/2021 00:20:19] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [05/Jul/2021 00:20:19] "GET /test_case/getUserTestCaseNodesArray/?userId=1&userName=%E5%B0%8F%E6%97%B6 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [05/Jul/2021 00:20:20] "GET /test_case/getFolderTableTestCases/?caseId=258 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [05/Jul/2021 00:20:21] "GET /test_case/getFolderTableTestCases/?caseId=269 HTTP/1.1" 200 - 88
