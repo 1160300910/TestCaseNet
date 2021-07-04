@@ -190,7 +190,7 @@ export default {
 };
 </script>
 
-<style>
+<style scope>
 .menu_row_css img {
   width: 15px;
   height: 15px;

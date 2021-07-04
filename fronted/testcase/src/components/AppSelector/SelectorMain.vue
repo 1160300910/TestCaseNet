@@ -1,31 +1,33 @@
 <template>
-    <div class="select_main_css">
-      <div class="title_css">系统名:</div>
-      <selector
-        :optionInfo="optionInfo.caseSystems"
-        @changeSelectorCondition="changeSelectorCondition"
-      ></selector>
-      <div class="title_css">修改人:</div>
-      <selector
-        :optionInfo="optionInfo.QAs"
-        @changeSelectorCondition="changeSelectorCondition"
-      ></selector>
-      <div class="title_css">用例等级:</div>
-      <selector
-        :optionInfo="optionInfo.test_level"
-        @changeSelectorCondition="changeSelectorCondition"
-      ></selector>
-      <div class="title_css">执行人:</div>
-      <selector
-        :optionInfo="optionInfo.peos"
-        @changeSelectorCondition="changeSelectorCondition"
-      ></selector>
-      <div class="title_css">tag:</div>
-      <selector
-        :optionInfo="optionInfo.tags"
-        @changeSelectorCondition="changeSelectorCondition"
-      ></selector>
-    </div>
+  <div class="select_main_css">
+    <div class="title_css">系统名:</div>
+    <selector
+      :optionInfo="optionInfo.caseSystems"
+      @changeSelectorCondition="changeSelectorCondition"
+    ></selector>
+    <div class="title_css">修改人:</div>
+    <selector
+      :optionInfo="optionInfo.QAs"
+      @changeSelectorCondition="changeSelectorCondition"
+    ></selector>
+    <div class="title_css">用例等级:</div>
+    <selector
+      :optionInfo="optionInfo.test_level"
+      @changeSelectorCondition="changeSelectorCondition"
+    ></selector>
+    <div class="title_css">执行人:</div>
+    <selector
+      :optionInfo="optionInfo.peos"
+      @changeSelectorCondition="changeSelectorCondition"
+    ></selector>
+    <div class="title_css">tag:</div>
+    <selector
+      :optionInfo="optionInfo.tags"
+      @changeSelectorCondition="changeSelectorCondition"
+    ></selector>
+
+    
+  </div>
 </template>
 <script>
 import axios from "axios";
@@ -130,7 +132,6 @@ export default {
 };
 </script>
 <style>
-
 .title_css {
   margin-right: 15px;
   margin-left: 7px;

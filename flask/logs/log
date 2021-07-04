@@ -9082,3 +9082,314 @@ INFO  * Restarting with stat 88
 WARNING  * Debugger is active! 88
 INFO  * Debugger PIN: 742-918-802 88
 INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [03/Jul/2021 21:10:17] "POST /test_case/uploadExcelFile HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [03/Jul/2021 21:10:40] "POST /test_case/parseUserToken HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [03/Jul/2021 21:10:47] "POST /test_case/userLogin HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [03/Jul/2021 21:10:47] "POST /test_case/parseUserToken HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [03/Jul/2021 21:10:47] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [03/Jul/2021 21:10:47] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [03/Jul/2021 21:10:47] "GET /test_case/getUserTestCaseNodesArray/?userId=1&userName=%E5%B0%8F%E6%97%B6 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [03/Jul/2021 21:10:51] "GET /test_case/getFolderTableTestCases?caseId=2 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [03/Jul/2021 21:10:51] "GET /test_case/getFolderTableTestCases/?caseId=2 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [03/Jul/2021 21:10:54] "GET /test_case/getFolderTableTestCases/?caseId=2 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [03/Jul/2021 21:12:10] "POST /test_case/parseUserToken HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [03/Jul/2021 21:12:14] "POST /test_case/userLogin HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [03/Jul/2021 21:12:14] "POST /test_case/parseUserToken HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [03/Jul/2021 21:12:14] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [03/Jul/2021 21:12:14] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [03/Jul/2021 21:12:14] "GET /test_case/getUserTestCaseNodesArray/?userId=1&userName=%E5%B0%8F%E6%97%B6 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [03/Jul/2021 21:12:16] "POST /test_case/parseUserToken HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [03/Jul/2021 21:12:16] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [03/Jul/2021 21:12:16] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [03/Jul/2021 21:12:18] "POST /test_case/parseUserToken HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [03/Jul/2021 21:12:19] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [03/Jul/2021 21:12:19] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [03/Jul/2021 21:12:21] "POST /test_case/parseUserToken HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [03/Jul/2021 21:12:21] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [03/Jul/2021 21:12:21] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 00:12:43] "POST /test_case/parseUserToken HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 00:12:54] "POST /test_case/userRegister HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 00:12:54] "POST /test_case/parseUserToken HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 00:12:56] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 00:12:56] "GET /test_case/getUserTestCaseNodesArray/?userId=[object+Object]&userName=%E9%98%BF%E6%96%87 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 00:16:45] "POST /test_case/userRegister HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 00:16:49] "POST /test_case/userRegister HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 00:16:49] "POST /test_case/parseUserToken HTTP/1.1" 500 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 00:16:54] "GET /test_case/getUserTestCaseNodesArray?userId=[object+Object]&userName=%E9%98%BF%E6%96%872 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 00:16:54] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 00:16:54] "GET /test_case/getUserTestCaseNodesArray/?userId=[object+Object]&userName=%E9%98%BF%E6%96%872 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 00:17:41] "POST /test_case/userLogin HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 00:17:41] "POST /test_case/parseUserToken HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 00:17:41] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 00:17:41] "GET /test_case/getUserTestCaseNodesArray?userId=3&userName=%E9%98%BF%E6%96%872 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 00:17:41] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 00:17:42] "GET /test_case/getUserTestCaseNodesArray/?userId=3&userName=%E9%98%BF%E6%96%872 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 00:17:44] "POST /test_case/parseUserToken HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 00:17:46] "POST /test_case/parseUserToken HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 00:17:46] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 00:17:46] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 00:18:44] "POST /test_case/parseUserToken HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 00:18:53] "POST /test_case/userRegister HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 00:18:53] "POST /test_case/parseUserToken HTTP/1.1" 500 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [04/Jul/2021 00:22:22] "GET /test_case/getUserTestCaseNodesArray?userId=4&userName=%E9%98%BF%E6%96%873 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 00:22:22] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 00:22:22] "GET /test_case/getUserTestCaseNodesArray/?userId=4&userName=%E9%98%BF%E6%96%873 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 00:22:33] "POST /test_case/userRegister HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 00:22:36] "POST /test_case/userRegister HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 00:22:36] "POST /test_case/parseUserToken HTTP/1.1" 500 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [04/Jul/2021 00:25:16] "GET /test_case/getUserTestCaseNodesArray?userId=5&userName=%E9%98%BF%E6%96%874 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 00:25:16] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 00:25:16] "GET /test_case/getUserTestCaseNodesArray/?userId=5&userName=%E9%98%BF%E6%96%874 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 00:25:23] "POST /test_case/userRegister HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 00:25:23] "POST /test_case/parseUserToken HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 00:25:23] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 00:25:23] "GET /test_case/getUserTestCaseNodesArray?userId=6&userName=%E9%98%BF%E6%96%875 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 00:25:23] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 00:25:23] "GET /test_case/getUserTestCaseNodesArray/?userId=6&userName=%E9%98%BF%E6%96%875 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 00:29:28] "POST /test_case/parseUserToken HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 00:29:35] "POST /test_case/userLogin HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 00:29:35] "POST /test_case/parseUserToken HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 00:29:35] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 00:29:35] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 00:29:35] "GET /test_case/getUserTestCaseNodesArray/?userId=1&userName=%E5%B0%8F%E6%97%B6 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 00:30:35] "POST /test_case/parseUserToken HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 00:30:38] "POST /test_case/userLogin HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 00:30:38] "POST /test_case/parseUserToken HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 00:30:38] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 00:30:38] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 00:30:39] "GET /test_case/getUserTestCaseNodesArray/?userId=1&userName=%E5%B0%8F%E6%97%B6 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 00:32:12] "POST /test_case/parseUserToken HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 00:32:15] "POST /test_case/userLogin HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 00:32:15] "POST /test_case/parseUserToken HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 00:32:15] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 00:32:15] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 00:32:15] "GET /test_case/getUserTestCaseNodesArray/?userId=1&userName=%E5%B0%8F%E6%97%B6 HTTP/1.1" 200 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [04/Jul/2021 00:33:05] "POST /test_case/parseUserToken HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 00:33:09] "POST /test_case/userLogin HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 00:33:09] "POST /test_case/parseUserToken HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 00:33:09] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 00:33:09] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 00:33:10] "GET /test_case/getUserTestCaseNodesArray/?userId=1&userName=%E5%B0%8F%E6%97%B6 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 00:52:11] "POST /test_case/parseUserToken HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 00:52:14] "POST /test_case/userLogin HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 00:52:14] "POST /test_case/parseUserToken HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 00:52:14] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 00:52:15] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 00:52:15] "GET /test_case/getUserTestCaseNodesArray/?userId=1&userName=%E5%B0%8F%E6%97%B6 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 00:53:31] "POST /test_case/parseUserToken HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 00:53:31] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 00:53:31] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 00:53:37] "POST /test_case/parseUserToken HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 00:53:37] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 00:53:37] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 00:53:45] "POST /test_case/parseUserToken HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 00:53:45] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 00:53:45] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 00:59:10] "POST /test_case/parseUserToken HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 00:59:14] "POST /test_case/userLogin HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 00:59:14] "POST /test_case/parseUserToken HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 00:59:14] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 00:59:14] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 00:59:14] "GET /test_case/getUserTestCaseNodesArray/?userId=1&userName=%E5%B0%8F%E6%97%B6 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:00:06] "POST /test_case/parseUserToken HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:00:06] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:00:06] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:00:16] "POST /test_case/parseUserToken HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:00:16] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:00:16] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:01:15] "POST /test_case/parseUserToken HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:01:15] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:01:15] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:01:21] "POST /test_case/parseUserToken HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:01:21] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:01:21] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:06:46] "GET /test_case/getFolderTableTestCases?caseId=1 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:06:46] "GET /test_case/getFolderTableTestCases/?caseId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:07:11] "POST /test_case/parseUserToken HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:07:14] "POST /test_case/userLogin HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:07:14] "POST /test_case/parseUserToken HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:07:14] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:07:14] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:07:14] "GET /test_case/getUserTestCaseNodesArray/?userId=1&userName=%E5%B0%8F%E6%97%B6 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:07:43] "POST /test_case/parseUserToken HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:07:44] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:07:44] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:08:00] "POST /test_case/parseUserToken HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:08:00] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:08:00] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:08:47] "POST /test_case/parseUserToken HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:08:47] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:08:47] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:09:02] "POST /test_case/parseUserToken HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:09:03] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:09:03] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:11:03] "POST /test_case/parseUserToken HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:11:06] "POST /test_case/userLogin HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:11:06] "POST /test_case/parseUserToken HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:11:06] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:11:06] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:11:06] "GET /test_case/getUserTestCaseNodesArray/?userId=1&userName=%E5%B0%8F%E6%97%B6 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:11:20] "POST /test_case/parseUserToken HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:11:20] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:11:20] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:11:31] "POST /test_case/parseUserToken HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:11:31] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:11:31] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:13:01] "POST /test_case/parseUserToken HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:13:01] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:13:01] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:13:14] "POST /test_case/parseUserToken HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:13:15] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:13:15] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:13:41] "POST /test_case/parseUserToken HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:13:44] "POST /test_case/userLogin HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:13:44] "POST /test_case/parseUserToken HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:13:44] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:13:44] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:13:44] "GET /test_case/getUserTestCaseNodesArray/?userId=1&userName=%E5%B0%8F%E6%97%B6 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:15:26] "POST /test_case/parseUserToken HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:15:26] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:15:26] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:15:35] "POST /test_case/parseUserToken HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:15:35] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:15:35] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:15:46] "POST /test_case/parseUserToken HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:15:46] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:15:46] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:15:56] "POST /test_case/parseUserToken HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:15:59] "POST /test_case/userLogin HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:15:59] "POST /test_case/parseUserToken HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:16:00] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:16:00] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:16:00] "GET /test_case/getUserTestCaseNodesArray/?userId=1&userName=%E5%B0%8F%E6%97%B6 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:16:20] "POST /test_case/parseUserToken HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:16:20] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:16:20] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:16:39] "POST /test_case/parseUserToken HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:16:40] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:16:40] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:18:31] "POST /test_case/parseUserToken HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:18:34] "POST /test_case/userLogin HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:18:34] "POST /test_case/parseUserToken HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:18:34] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:18:34] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:18:35] "GET /test_case/getUserTestCaseNodesArray/?userId=1&userName=%E5%B0%8F%E6%97%B6 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:18:55] "POST /test_case/parseUserToken HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:18:55] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:18:55] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:19:58] "POST /test_case/parseUserToken HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:19:59] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:19:59] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:20:11] "POST /test_case/parseUserToken HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:20:11] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:20:11] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:20:20] "POST /test_case/parseUserToken HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:20:20] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:20:20] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:20:30] "POST /test_case/parseUserToken HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:20:31] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:20:31] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:21:02] "POST /test_case/parseUserToken HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:21:05] "POST /test_case/userLogin HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:21:05] "POST /test_case/parseUserToken HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:21:05] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:21:05] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:21:06] "GET /test_case/getUserTestCaseNodesArray/?userId=1&userName=%E5%B0%8F%E6%97%B6 HTTP/1.1" 200 - 88
+INFO  * Detected change in 'D:\\Program\\ToolsAndProjects\\TestCase\\flask\\flaskr\\test_case_1_0\\user.py', reloading 88
+INFO  * Restarting with stat 88
+WARNING  * Debugger is active! 88
+INFO  * Debugger PIN: 742-918-802 88
+INFO  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit) 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:24:47] "POST /test_case/parseUserToken HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:24:49] "POST /test_case/userLogin HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:24:49] "POST /test_case/parseUserToken HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:24:50] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:24:50] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:24:50] "GET /test_case/getUserTestCaseNodesArray/?userId=1&userName=%E5%B0%8F%E6%97%B6 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:25:11] "POST /test_case/parseUserToken HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:25:11] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:25:11] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:25:14] "POST /test_case/parseUserToken HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:25:14] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:25:14] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:26:40] "POST /test_case/parseUserToken HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:26:41] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:26:41] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:28:04] "POST /test_case/parseUserToken HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:28:04] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:28:04] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:43:58] "POST /test_case/userLogin HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:43:58] "POST /test_case/parseUserToken HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:43:58] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:43:58] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:43:58] "GET /test_case/getUserTestCaseNodesArray/?userId=1&userName=%E5%B0%8F%E6%97%B6 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:45:44] "GET /test_case/getProjectSystemsData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:45:45] "POST /test_case/getSelectedTableDatas HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:45:45] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:45:47] "POST /test_case/getSelectedTableDatas HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:45:48] "POST /test_case/getSelectedTableDatas HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:45:48] "GET /test_case/getProjectPeos HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:45:49] "POST /test_case/getSelectedTableDatas HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:45:50] "POST /test_case/getSelectedTableDatas HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:45:56] "GET /test_case/getProjectSystemsData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:45:56] "POST /test_case/getSelectedTableDatas HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:45:57] "GET /test_case/getProjectSystemsData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:45:58] "POST /test_case/getSelectedTableDatas HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:51:14] "POST /test_case/parseUserToken HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:53:57] "POST /test_case/userLogin HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:53:57] "POST /test_case/parseUserToken HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:53:57] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:53:57] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:53:57] "GET /test_case/getUserTestCaseNodesArray/?userId=1&userName=%E5%B0%8F%E6%97%B6 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:54:03] "GET /test_case/getFolderTableTestCases/?caseId=2 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:54:13] "POST /test_case/parseUserToken HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:54:14] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:54:14] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:54:15] "GET /test_case/getFolderTableTestCases HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:54:15] "GET /test_case/getFolderTableTestCases/ HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:54:16] "GET /test_case/getFolderTableTestCases/?caseId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:54:21] "POST /test_case/parseUserToken HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:54:21] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:54:21] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:54:29] "POST /test_case/parseUserToken HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:54:30] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:54:30] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:54:31] "GET /test_case/getFolderTableTestCases/?caseId=1 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:54:43] "POST /test_case/parseUserToken HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:54:43] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:54:43] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:54:47] "POST /test_case/userLogin HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:54:47] "POST /test_case/parseUserToken HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:54:47] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:54:47] "GET /test_case/getQAPeoData HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:54:48] "GET /test_case/getUserTestCaseNodesArray/?userId=1&userName=%E5%B0%8F%E6%97%B6 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:54:50] "GET /test_case/getFolderTableTestCases?caseId=133 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:54:50] "GET /test_case/getFolderTableTestCases/?caseId=133 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:54:52] "GET /test_case/getFolderTableTestCases?caseId=134 HTTP/1.1" 301 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:54:52] "GET /test_case/getFolderTableTestCases/?caseId=134 HTTP/1.1" 200 - 88
+INFO 127.0.0.1 - - [04/Jul/2021 01:54:54] "GET /test_case/getFolderTableTestCases/?caseId=2 HTTP/1.1" 200 - 88

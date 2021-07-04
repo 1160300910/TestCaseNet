@@ -149,7 +149,7 @@ export default {
   },
 };
 </script>
-<style >
+<style scoped>
 .select_css {
   width: 120px;
 }

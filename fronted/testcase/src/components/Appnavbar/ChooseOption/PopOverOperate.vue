@@ -203,7 +203,7 @@ export default {
 };
 </script>
 
-<style >
+<style scoped>
 .elform_popover > .el-form-item {
   flex: 1;
   display: flex;

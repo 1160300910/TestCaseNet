@@ -78,7 +78,7 @@ export default {
             userPasswd:that.form.password,
           })
           .then((res) => {
-            console.log(res.data);
+            console.log(res.data.msg);
             if (res.data.msg) {
               //注册成功，跳转到主界面
               localStorage.setItem ("TOKEN", res.data.msg.token)
@@ -88,7 +88,7 @@ export default {
                 name: "Layout",
                 params: {
                   userName: that.form.name,
-                  userId: res.data.msg,
+                  userId: res.data.msg.userId,
                   userWork: that.transWorkType(that.form.work),
                 },
               });

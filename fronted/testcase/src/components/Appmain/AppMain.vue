@@ -35,7 +35,7 @@ export default {
   methods: {},
 };
 </script>
-<style >
+<style  scoped>
 .selector_css3 {
   flex-grow: 20;
   color: aliceblue;

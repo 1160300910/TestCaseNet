@@ -58,7 +58,7 @@ def encode_auth_token(user_id,user_name):
         payload = {
             "headers": headers,
             "iss": 'xizika',  # 发行人
-            "exp": datetime.datetime.utcnow() + datetime.timedelta(days=0, hours=0, minutes=0, seconds=10),  # 过期时间
+            "exp": datetime.datetime.utcnow() + datetime.timedelta(days=0, hours=0, minutes=5, seconds=10),  # 过期时间
             "iat": datetime.datetime.utcnow(),  # 签发时间
             "user_id": user_id,  # 用户id
             "user_name": user_name  # 用户名
@@ -190,30 +190,30 @@ def modifyUserInfo():
 @bp.route('/userRegister/', methods=['POST'], strict_slashes=False)
 def userRegister():
     if request.method == 'POST':
-        peoName = request.json.get('userName')
+        userName = request.json.get('userName')
         peoType = request.json.get('userWork')
         userPasswd = request.json.get('userPasswd')
-        print(peoName, peoType)
+        print("userRegister",userName, peoType)
 
         msg = 0
-        if not peoName:
+        if not userName:
             error = '输入名字为空'
         elif not peoType:
             error = '尚未选择身份'
         elif not userPasswd:
             error = '尚未输入密码'
-        elif Peo.query.filter_by(peoName=peoName).first() is not None:
-            error = '用户名：{} 已经被注册过啦！'.format(peoName)
+        elif Peo.query.filter_by(peoName=userName).first() is not None:
+            error = '用户名：{} 已经被注册过啦！'.format(userName)
         else:
-            peo1 = Peo(peoName=peoName, peoType=int(peoType), peoPasswd=userPasswd)
+            peo1 = Peo(peoName=userName, peoType=int(peoType), peoPasswd=userPasswd)
+            DB.session.add(peo1)
             DB.session.flush()
             error = None
-            token = encode_auth_token(peo1.peoId,peoName)
+            token = encode_auth_token(peo1.peoId,userName)
             token_data = base64.b64encode(token)
             peo1.peoToken = str(token_data, 'utf-8')
             print(str(token_data, 'utf-8'))
 
-            DB.session.add(peo1)
             DB.session.commit()
             msg = {'userId': peo1.peoId, 'token': str(token_data, 'utf-8')}
         flash(error)

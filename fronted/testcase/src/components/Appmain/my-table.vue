@@ -191,7 +191,7 @@ export default {
   },
 };
 </script>
-<style >
+<style>
 .el-table .warning-row {
   background: rgb(255, 242, 218);
 }

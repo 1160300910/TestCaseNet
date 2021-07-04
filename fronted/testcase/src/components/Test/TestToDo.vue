@@ -135,7 +135,7 @@ export default {
 }
 </script>
 
-<style >
+<style scoped>
   /* 内容区的样式 */
   .content {
     background-color: white;

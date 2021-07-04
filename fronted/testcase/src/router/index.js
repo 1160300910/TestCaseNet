@@ -13,8 +13,12 @@ import NavbarMain from '@/components/Appnavbar/NavbarMain'
 import TestToDo from '@/components/Test/TestToDo'
 import RightMenu from '@/components/Appnavbar/ChooseOption/RightMenu'
 
+import UserDataManager from '@/components/AppUserManager/UserDataManager'
 
 const routes = [{
+        path: '/UserDataManager',
+        component: UserDataManager
+    }, {
         path: '/RightMenu',
         component: RightMenu
     }, {

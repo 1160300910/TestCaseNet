@@ -1,5 +1,5 @@
 <template>
-  <div class="header">
+  <div class="header_left">
     <img :src="headSrc" class="div1" />
     <div class="welcomeText">欢迎您! {{ work }} : [{{ userName }}]</div>
     <div class="TestCaseNameText">
@@ -16,13 +16,17 @@
         >导入用例</el-button
       -->
     </div>
+    
+    <user-data-manager></user-data-manager>
   </div>
 </template>
 
 <script>
 import axios from "axios";
+import UserDataManager from "@/components/AppUserManager/UserDataManager";
 
 export default {
+  components: { UserDataManager },
   props: ["headSrc"],
   data: function() {
     return {
@@ -67,7 +71,7 @@ export default {
 };
 </script>
 
-<style >
+<style scoped>
 .header {
 }
 .div1 {

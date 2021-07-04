@@ -6,6 +6,7 @@
       rel="stylesheet"
       href="https://unpkg.com/element-ui/lib/theme-chalk/index.css"
     />
+    
     <!-- 使用子组件,使用-，不建议使用驼峰 -->
     <app-header
       :style="{
@@ -14,6 +15,7 @@
       }"
       :headSrc="headSrc"
     ></app-header>
+    
     <app-navbar :style="{ 'background-color': work_nav_bk_color }"></app-navbar>
 
     <selector-main></selector-main>
@@ -262,7 +264,7 @@ export default {
 
 <style >
 /* 头部样式 */
-.header {
+.header_left {
   align-items: center;
   display: flex;
   flex: 1;
